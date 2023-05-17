@@ -1,59 +1,44 @@
 // Chargement de la lib JS de WA
 import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 
-//Prompt des zones
-let escaliers;
-let welcome;
+let msgYumi;
+let msgStud1;
+let msgStud2;
+let msgStud3;
 
-let msgGuillaume;
-let msgFlavien;
-let msgBrice;
-let msgCyril;
-
-let userWaId;
-let userPseudo;
-let userName;
-let userLastname;
-let userEmail;
-let userScore;
-
-let is_first_quest_achieved = false;
-let is_second_quest_achieved = false;
-let is_third_quest_achieved = false;
-
-let is_registered = true;
 
 WA.onInit().then(() => {
     userPseudo = WA.player.name;
     userWaId = WA.player.uuid;
     WA.player.state.score = 0;
     userScore = WA.player.state.score;
-    console.log("HEEEERE " + WA.player.id);
+    // console.log("HEEEERE " + WA.player.uuid);
     // WA.player.setOutlineColor(255, 153, 51);
     // WA.chat.sendChatMessage('Hello world', 'Mr Robot');
 });
 
 
 WA.room.onEnterLayer("pnj1").subscribe(() => {
-    msgGuillaume = WA.ui.openPopup("messageGuillaume", "Guillaume Mikowski : 'Norme ISO 20121, on nous prend vraiment pour des cons ! Je vous en parle sur Linkedin.''", [{
-        label: "Je veux la lire",
+    msgYumi = WA.ui.openPopup("pnj1text", "Yumi : ' Bienvenue sur le land ! Découvrez les différents espaces du jeu en vous promenant !''"
+    , [{
+        label: "Génial, je veux en savoir plus !",
         className: "primary",
         callback: (popup) => {
-            WA.nav.openTab("https://www.linkedin.com/pulse/norme-iso-20121-nous-prend-vraiment-pour-des-cons-mikowski-/");
+            WA.nav.openTab("https://heroes.brainsonic.com/");
         }
     }]);
-
 });
 
 // Close the popup when we leave the zone.
-WA.room.onLeaveLayer("_website_perso_guillaumeM_tribune").subscribe(() => {
-    msgGuillaume.close();
+WA.room.onLeaveLayer("pnj1").subscribe(() => {
+    if(msgYumi != null)
+    msgYumi.close();
 })
 
 ///////////////////////////////////////////////
 
-WA.room.onEnterLayer("_website_heroes").subscribe(() => {
-    msgBrice = WA.ui.openPopup("LabMessage", "Bienvenue dans le lab Heroes ! Ici, on fabrique les talents pour renforcer les équipes de nos clients.", [{
+WA.room.onEnterLayer("pnj2").subscribe(() => {
+    msgStud1 = WA.ui.openPopup("pnj2text", " Bonjour je suis étudiant 1", [{
         label: "Génial, je veux en savoir plus !",
         className: "primary",
         callback: (popup) => {
@@ -64,251 +49,48 @@ WA.room.onEnterLayer("_website_heroes").subscribe(() => {
 });
 
 // Close the popup when we leave the zone.
-WA.room.onLeaveLayer("_website_heroes").subscribe(() => {
-    msgBrice.close();
+WA.room.onLeaveLayer("pnj2").subscribe(() => {
+    msgStud1.close();
 })
 
 ///////////////////////////////////////////////
 
-WA.room.onEnterLayer("_website_cyril").subscribe(() => {
-    msgCyril = WA.ui.openPopup("msgCyril", "Salut, c'est Cyril. Ici, je vous propose une sélection des meilleurs livres consacrés au marketing. Revenez régulièrement, on met à jour toutes les semaines !", [{
-        label: "Carrément !",
+WA.room.onEnterLayer("pnj3").subscribe(() => {
+    msgStud2 = WA.ui.openPopup("pnj3text", " Bonjour je suis étudiant 2", [{
+        label: "Bonjour !",
         className: "primary",
         callback: (popup) => {
-            WA.nav.openTab("https://cdhenin.notion.site/Livres-La-s-lection-du-p-le-Editorial-0b58151e539a4895936e62d3aabc2b7d");
+            WA.nav.openTab("https://heroes.brainsonic.com/");
         }
     }]);
 
 });
 
 // Close the popup when we leave the zone.
-WA.room.onLeaveLayer("_website_cyril").subscribe(() => {
-    msgCyril.close();
+WA.room.onLeaveLayer("pnj3").subscribe(() => {
+    msgStud2.close();
 })
 
 ///////////////////////////////////////////////
 
-WA.room.onEnterLayer("_website_perso_flav").subscribe(() => {
-    msgFlavien = WA.ui.openPopup("messageFlavien", "Flavien Lefort : Evénement digital, ce que 20 ans (ou presque) nous ont appris - à lire sur Linkedin", [{
-        label: "Je veux la lire",
+WA.room.onEnterLayer("pnj4").subscribe(() => {
+    msgStud3 = WA.ui.openPopup("pnj4text", " Bonjour je suis étudiant 3", [{
+        label: "Bonjour !",
         className: "primary",
         callback: (popup) => {
-            WA.nav.openTab("https://www.linkedin.com/pulse/ev%C3%A9nement-digital-ce-que-20-ans-ou-presque-nous-ont-appris-lefort/?originalSubdomain=fr");
+            WA.nav.openTab("https://heroes.brainsonic.com/");
         }
     }]);
+
 });
 
 // Close the popup when we leave the zone.
-WA.room.onLeaveLayer("_website_perso_flav").subscribe(() => {
-    msgFlavien.close();
+WA.room.onLeaveLayer("pnj4").subscribe(() => {
+    msgStud3.close();
 })
 
 ///////////////////////////////////////////////
 
-WA.room.onEnterLayer("_prompt_escaliers").subscribe(() => {
-    escaliers = WA.ui.openPopup("promptEscaliers", "Toutes nos excuses, le 1er étage est en travaux ! Revenez un peu plus tard.", [{
-        label: "Tant pis",
-        className: "primary",
-        callback: (popup) => {
-            // Close the popup when the "Close" button is pressed.
-            popup.close();
-        }
-    }]);
-});
-
-// Close the popup when we leave the zone.
-WA.room.onLeaveLayer("_prompt_escaliers").subscribe(() => {
-    escaliers.close();
-})
-
-///////////////////////////////////////////////
-
-WA.room.onEnterLayer("_prompt_welcome").subscribe(() => {
-    welcome = WA.ui.openPopup("promptWelcome", "Bonjour " + userPseudo + ", et bienvenue chez Brainsonic ! RDV à notre accueil pour obtenir quelques conseils pratiques !", [{
-        label: "J'ai compris !",
-        className: "primary",
-        callback: (popup) => {
-            // Close the popup when the "Close" button is pressed.
-            popup.close();
-
-        }
-    }]);
-});
-
-// Close the popup when we leave the zone.
-WA.room.onLeaveLayer("_prompt_welcome").subscribe(() => {
-    welcome.close();
-})
-
-///////////////////////////////////////////////
-
-let queteBegin;
-
-WA.room.onEnterLayer("_quete_begin").subscribe(() => {
-    if (!is_first_quest_achieved) {
-        queteBegin = WA.ui.openPopup("queteBegin", "Aventurier " + userPseudo + ", BrainsoMinion s'est caché quelque part dans l'agence, retrouve le pour remporter des BrainsoPoints !", [{
-            label: "Compris !",
-            className: "primary",
-            callback: (popup) => {
-                // Close the popup when the "Close" button is pressed.
-                popup.close();
-            }
-        }]);
-    }
-});
-
-// Close the popup when we leave the zone.
-WA.room.onLeaveLayer("_quete_begin").subscribe(() => {
-    if (!is_first_quest_achieved) {
-        queteBegin.close();
-    }
-})
-
-///////////////////////////////////////////////
-
-let brainsoMinion;
-
-WA.room.onEnterLayer("_brainso_minion").subscribe(() => {
-    if (!is_first_quest_achieved) {
-        userScore += 5;
-        is_first_quest_achieved = true;
-
-        let data = {
-            action: "update_score",
-            wa_id: WA.player.id,
-            new_score: userScore
-        }
-        socket.send(JSON.stringify(data));
-
-        brainsoMinion = WA.ui.openPopup("brainsoMinion", "Bien joué " + userPseudo + ", tu viens de remporter 5 BrainsoPoints !"
-                                                        + "\n Tu as maintenant " + userScore + " BrainsoPoints !"
-                                                        + "\n Un autre personnage t'attends en dehors de l'agence...", [{
-            label: "Super !",
-            className: "primary",
-            callback: (popup) => {
-                // Close the popup when the "Close" button is pressed.
-                popup.close();
-            }
-        }]);
-
-        data = {
-            action: "update_quest",
-            wa_id: WA.player.id,
-            quest_nbr: 1
-        }
-        socket.send(JSON.stringify(data));
-    }
-    else {
-        if (!is_second_quest_achieved) {
-            brainsoMinion = WA.ui.openPopup("brainsoMinion", userPseudo + ", n'essaye pas de gratter des BrainsoPoints, tu as déjà trouvé BrainsoMinion..."
-                                                                    + "\n Il te reste toujours un personnage à trouver en dehors de l'agence !", [{
-                label: "Bon ok !",
-                className: "primary",
-                callback: (popup) => {
-                    // Close the popup when the "Close" button is pressed.
-                    popup.close();
-                }
-            }]);
-        }
-        else {
-            brainsoMinion = WA.ui.openPopup("brainsoMinion", userPseudo + ", n'essaye pas de gratter des BrainsoPoints, tu as déjà trouvé BrainsoMinion..."
-                                                        + "\n Il te reste un dernier personnage à découvrir...", [{
-                label: "Bon ok !",
-                className: "primary",
-                callback: (popup) => {
-                    // Close the popup when the "Close" button is pressed.
-                    popup.close();
-                }
-            }]);
-        }
-    }
-});
-
-// Close the popup when we leave the zone.
-WA.room.onLeaveLayer("_brainso_minion").subscribe(() => {
-    brainsoMinion.close();
-})
-
-///////////////////////////////////////////////
-
-let brainsoBatman;
-
-WA.room.onEnterLayer("_brainso_batman").subscribe(() => {
-    if (is_first_quest_achieved && !is_second_quest_achieved) {
-        userScore += 10;
-        is_second_quest_achieved = true;
-
-        let data = {
-            action: "update_score",
-            wa_id: WA.player.id,
-            new_score: userScore
-        }
-        socket.send(JSON.stringify(data));
-
-        brainsoBatman = WA.ui.openPopup("Batman", "Bien joué " + userPseudo + ", tu viens de remporter 10 BrainsoPoints !"
-                                                + "\n Tu as maintenant " + userScore + " BrainsoPoints !"
-                                                + "\n Il te reste un dernier personnage à découvrir...", [{
-            label: "Super !",
-            className: "primary",
-            callback: (popup) => {
-                // Close the popup when the "Close" button is pressed.
-                popup.close();
-            }
-        }]);
-
-        data = {
-            action: "update_quest",
-            wa_id: WA.player.id,
-            quest_nbr: 2
-        }
-        socket.send(JSON.stringify(data));
-    }
-    else {
-        brainsoBatman = WA.ui.openPopup("Batman", userPseudo + ", n'essaye pas de gratter des BrainsoPoints, tu as déjà trouvé BrainsoBatman..."
-                                                + "\n Il te reste toujours un dernier personnage à trouver !", [{
-            label: "Bon ok !",
-            className: "primary",
-            callback: (popup) => {
-                // Close the popup when the "Close" button is pressed.
-                popup.close();
-            }
-        }]);
-    }
-});
-
-// Close the popup when we leave the zone.
-WA.room.onLeaveLayer("_brainso_batman").subscribe(() => {
-    brainsoBatman.close();
-})
-
-///////////////////////////////////////////////
-
-let chatBot;
-
-WA.room.onEnterLayer("_action_guybrush").subscribe(async () => {
-    if (is_first_quest_achieved && is_second_quest_achieved && !is_third_quest_achieved) {
-        console.log("https://chat.csml.dev/s/qv7m5yuob8wnf5inguwt0vfvy0spmsqx?metadata=%7B%22waid%22%3A%22" + userWaId + "%22%2C%22pseudo%22%3A%22" + userPseudo + "%22%2C%22score%22%3A%22" + userScore + "%22%7D");
-        chatBot = await WA.nav.openCoWebSite("https://chat.csml.dev/s/qv7m5yuob8wnf5inguwt0vfvy0spmsqx?metadata=%7B%22waid%22%3A%22" + userWaId + "%22%2C%22pseudo%22%3A%22" + userPseudo + "%22%2C%22score%22%3A%22" + userScore + "%22%7D", true, "", 50, 1, false, false);
-    }
-    else {
-        /* brainsoBatman = WA.ui.openPopup("Batman", userPseudo + ", n'essaye pas de gratter des BrainsoPoints, tu as déjà trouvé BrainsoBatman..."
-                                                + "\n Il te reste toujours un dernier personnage à trouver !", [{
-            label: "Bon ok !",
-            className: "primary",
-            callback: (popup) => {
-                // Close the popup when the "Close" button is pressed.
-                popup.close();
-            }
-        }]); */
-    }
-});
-
-// Close the popup when we leave the zone.
-WA.room.onLeaveLayer("_action_guybrush").subscribe(() => {
-    if (!is_third_quest_achieved) {
-        chatBot.close();
-    }
-})
 
 class Popup {
 
