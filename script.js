@@ -18,6 +18,15 @@ WA.onInit().then(() => {
 });
 
 
+});
+WA.ui.modal.openModal({
+    title: "Tutorial",
+    src: "https://workadventure.github.io/scripting-api-extra/tutorialv1.html",
+    allow: "fullscreen; clipboard-read; clipboard-write",
+    allowApi: !0,
+    position: "right"
+})
+
 WA.room.onEnterLayer("pnj1").subscribe(() => {
     msgYumi = WA.ui.openPopup("pnj1text", "Yumi : ' Bienvenue sur le land ! Découvrez les différents espaces du jeu en vous promenant !''"
     , [{
