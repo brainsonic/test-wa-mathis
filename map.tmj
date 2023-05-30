@@ -1623,11 +1623,11 @@
         {
          "columns":1,
          "firstgid":52575,
-         "image":"..\/..\/..\/Downloads\/modernexteriors-win\/Modern_Exteriors_32x32\/Animated_32x32\/Animated_gifs_32x32\/Fishes_3_32x32.gif",
+         "image":"tilesets\/Fishes_3_32x32.gif",
          "imageheight":32,
          "imagewidth":32,
          "margin":0,
-         "name":"Poissons",
+         "name":"Poissons GIF",
          "spacing":0,
          "tilecount":1,
          "tileheight":32,
