@@ -2198,69 +2198,24 @@
          "tilewidth":32
         }, 
         {
-         "columns":4,
          "firstgid":77895,
-         "image":"..\/..\/..\/Downloads\/MinifolksForestAnimals\/Outline\/MiniBunny.png",
-         "imageheight":128,
-         "imagewidth":128,
-         "margin":0,
-         "name":"Bunny",
-         "spacing":0,
-         "tilecount":16,
-         "tileheight":32,
-         "tilewidth":32
+         "source":"tilesets\/Bunny.tsx"
         }, 
         {
-         "columns":2,
          "firstgid":77911,
-         "image":"..\/..\/..\/Downloads\/MinifolksForestAnimals\/Outline\/MiniBird.png",
-         "imageheight":48,
-         "imagewidth":64,
-         "margin":0,
-         "name":"bird",
-         "spacing":0,
-         "tilecount":2,
-         "tileheight":32,
-         "tilewidth":32
+         "source":"tilesets\/bird.tsx"
         }, 
         {
-         "columns":1,
          "firstgid":77913,
-         "image":"..\/..\/..\/Downloads\/waterfowl.png",
-         "imageheight":32,
-         "imagewidth":32,
-         "margin":0,
-         "name":"Water animals",
-         "spacing":0,
-         "tilecount":1,
-         "tileheight":32,
-         "tilewidth":32
+         "source":"tilesets\/Water animals.tsx"
         }, 
         {
-         "columns":176,
          "firstgid":77914,
-         "image":"..\/..\/..\/Downloads\/Seasons_Modern_Exteriors_Complete_Tileset_32x32.png",
-         "imageheight":7584,
-         "imagewidth":5632,
-         "margin":0,
-         "name":"Seasons",
-         "spacing":0,
-         "tilecount":41712,
-         "tileheight":32,
-         "tilewidth":32
+         "source":"tilesets\/Seasons.tsx"
         }, 
         {
-         "columns":6,
          "firstgid":119626,
-         "image":"..\/..\/..\/Downloads\/MinifolksForestAnimals\/Outline\/MiniFox.png",
-         "imageheight":192,
-         "imagewidth":192,
-         "margin":0,
-         "name":"Fox",
-         "spacing":0,
-         "tilecount":36,
-         "tileheight":32,
-         "tilewidth":32
+         "source":"tilesets\/Fox.tsx"
         }],
  "tilewidth":32,
  "type":"map",
