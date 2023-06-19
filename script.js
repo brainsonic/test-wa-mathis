@@ -27,79 +27,79 @@ WA.ui.modal.openModal({
     position: "right"
 });
 
-WA.room.onEnterLayer("pnj1").subscribe(() => {
-    msgYumi = WA.ui.openPopup("pnj1text", "Yumi : ' Bienvenue sur le land ! Découvrez les différents espaces du jeu en vous promenant !''"
-    , [{
-        label: "Génial, je veux en savoir plus !",
-        className: "primary",
-        callback: (popup) => {
-            WA.nav.openTab("https://heroes.brainsonic.com/");
-        }
-    }]);
+// WA.room.onEnterLayer("pnj1").subscribe(() => {
+//     msgYumi = WA.ui.openPopup("pnj1text", "Yumi : ' Bienvenue sur le land ! Découvrez les différents espaces du jeu en vous promenant !''"
+//     , [{
+//         label: "Génial, je veux en savoir plus !",
+//         className: "primary",
+//         callback: (popup) => {
+//             WA.nav.openTab("https://heroes.brainsonic.com/");
+//         }
+//     }]);
 
-});
+// });
 
-// Close the popup when we leave the zone.
-WA.room.onLeaveLayer("pnj1").subscribe(() => {
-    if(msgYumi != null)
-    msgYumi.close();
-})
+// // Close the popup when we leave the zone.
+// WA.room.onLeaveLayer("pnj1").subscribe(() => {
+//     if(msgYumi != null)
+//     msgYumi.close();
+// })
 
-///////////////////////////////////////////////
+// ///////////////////////////////////////////////
 
-WA.room.onEnterLayer("pnj2").subscribe(() => {
-    msgStud1 = WA.ui.openPopup("pnj2text", " Bonjour je suis étudiant 1", [{
-        label: "Génial, je veux en savoir plus !",
-        className: "primary",
-        callback: (popup) => {
-            WA.nav.openTab("https://heroes.brainsonic.com/");
-        }
-    }]);
+// WA.room.onEnterLayer("pnj2").subscribe(() => {
+//     msgStud1 = WA.ui.openPopup("pnj2text", " Bonjour je suis étudiant 1", [{
+//         label: "Génial, je veux en savoir plus !",
+//         className: "primary",
+//         callback: (popup) => {
+//             WA.nav.openTab("https://heroes.brainsonic.com/");
+//         }
+//     }]);
 
-});
+// });
 
-// Close the popup when we leave the zone.
-WA.room.onLeaveLayer("pnj2").subscribe(() => {
-    msgStud1.close();
-})
+// // Close the popup when we leave the zone.
+// WA.room.onLeaveLayer("pnj2").subscribe(() => {
+//     msgStud1.close();
+// })
 
-///////////////////////////////////////////////
+// ///////////////////////////////////////////////
 
-WA.room.onEnterLayer("pnj3").subscribe(() => {
-    msgStud2 = WA.ui.openPopup("pnj3text", " Bonjour je suis étudiant 2", [{
-        label: "Bonjour !",
-        className: "primary",
-        callback: (popup) => {
-            WA.nav.openTab("https://heroes.brainsonic.com/");
-        }
-    }]);
+// WA.room.onEnterLayer("pnj3").subscribe(() => {
+//     msgStud2 = WA.ui.openPopup("pnj3text", " Bonjour je suis étudiant 2", [{
+//         label: "Bonjour !",
+//         className: "primary",
+//         callback: (popup) => {
+//             WA.nav.openTab("https://heroes.brainsonic.com/");
+//         }
+//     }]);
 
-});
+// });
 
-// Close the popup when we leave the zone.
-WA.room.onLeaveLayer("pnj3").subscribe(() => {
-    msgStud2.close();
-})
+// // Close the popup when we leave the zone.
+// WA.room.onLeaveLayer("pnj3").subscribe(() => {
+//     msgStud2.close();
+// })
 
-///////////////////////////////////////////////
+// ///////////////////////////////////////////////
 
-WA.room.onEnterLayer("pnj4").subscribe(() => {
-    msgStud3 = WA.ui.openPopup("pnj4text", " Bonjour je suis étudiant 3", [{
-        label: "Bonjour !",
-        className: "primary",
-        callback: (popup) => {
-            WA.nav.openTab("https://heroes.brainsonic.com/");
-        }
-    }]);
+// WA.room.onEnterLayer("pnj4").subscribe(() => {
+//     msgStud3 = WA.ui.openPopup("pnj4text", " Bonjour je suis étudiant 3", [{
+//         label: "Bonjour !",
+//         className: "primary",
+//         callback: (popup) => {
+//             WA.nav.openTab("https://heroes.brainsonic.com/");
+//         }
+//     }]);
 
-});
+// });
 
-// Close the popup when we leave the zone.
-WA.room.onLeaveLayer("pnj4").subscribe(() => {
-    msgStud3.close();
-})
+// // Close the popup when we leave the zone.
+// WA.room.onLeaveLayer("pnj4").subscribe(() => {
+//     msgStud3.close();
+// })
 
-///////////////////////////////////////////////
+// ///////////////////////////////////////////////
 
 
 class Popup {
