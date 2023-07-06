@@ -33,6 +33,7 @@ WA.room.onEnterLayer("pnj1").subscribe(() => {
 
 // Close the popup when we leave the zone.
 WA.room.onLeaveLayer("pnj1").subscribe(() => {
+    if (triggerMessage !== undefined)
     triggerMessage.remove();
 });
 
