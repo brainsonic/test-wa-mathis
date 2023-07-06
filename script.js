@@ -25,7 +25,7 @@ WA.room.onEnterLayer("pnj1").subscribe(() => {
                 src: "https://chat.csml.dev/s/nyf8dzadrsfgpyk11xotf451cpw7y3ts",
                 allow: "fullscreen; clipboard-read; clipboard-write",
                 allowApi: !0,
-                position: "left"
+                position: "right"
             });
         }
     })
