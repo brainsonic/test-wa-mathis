@@ -1,22 +1,10 @@
 // Chargement de la lib JS de WA
 import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 
-let msgYumi;
-let msgStud1;
-let msgStud2;
-let msgStud3;
+
 
 
 WA.onInit().then(() => {
-    userPseudo = WA.player.name;
-    userWaId = WA.player.uuid;
-    WA.player.state.score = 0;
-    userScore = WA.player.state.score;
-    // console.log("HEEEERE " + WA.player.uuid);
-    // WA.player.setOutlineColor(255, 153, 51);
-    // WA.chat.sendChatMessage('Hello world', 'Mr Robot');
-
-
 });
 
 WA.ui.modal.openModal({
@@ -26,24 +14,28 @@ WA.ui.modal.openModal({
     allowApi: !0,
     position: "right"
 });
+var triggerMessage;
 
-// WA.room.onEnterLayer("pnj1").subscribe(() => {
-//     msgYumi = WA.ui.openPopup("pnj1text", "Yumi : ' Bienvenue sur le land ! Découvrez les différents espaces du jeu en vous promenant !''"
-//     , [{
-//         label: "Génial, je veux en savoir plus !",
-//         className: "primary",
-//         callback: (popup) => {
-//             WA.nav.openTab("https://heroes.brainsonic.com/");
-//         }
-//     }]);
+WA.room.onEnterLayer("pnj1").subscribe(() => {
+    triggerMessage = WA.ui.displayActionMessage({
+        message: "Appuyez sur espace pour discuter avec Yumi !",
+        callback: () => {
+            WA.ui.modal.openModal({
+                title: "Yumi",
+                src: "https://chat.csml.dev/s/nyf8dzadrsfgpyk11xotf451cpw7y3ts",
+                allow: "fullscreen; clipboard-read; clipboard-write",
+                allowApi: !0,
+                position: "right"
+            });
+        }
+    })
+});
 
-// });
-
-// // Close the popup when we leave the zone.
-// WA.room.onLeaveLayer("pnj1").subscribe(() => {
-//     if(msgYumi != null)
-//     msgYumi.close();
-// })
+// Close the popup when we leave the zone.
+WA.room.onLeaveLayer("pnj1").subscribe(() => {
+    if (triggerMessage !== undefined)
+    triggerMessage.remove();
+});
 
 // ///////////////////////////////////////////////
 
