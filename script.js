@@ -198,3 +198,4 @@ Moonbike.next = function(){
         position: "right"
     });
 }
+let Piano = new Modal("Pnjs/Piano", "Appuyez sur espace pour jouer du piano !", "https://64ix.github.io/WA-Edited-Tutorial/piano/dist/index.html", "center");
