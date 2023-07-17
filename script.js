@@ -168,6 +168,6 @@ let PanneauPont = new Dialog("Pnjs/Panneau Pont", "Appuyez sur espace pour inté
 let PanneauGare = new Dialog("Pnjs/Panneau Gare", "Appuyez sur espace pour intéragir avec le panneau !", ["Vous vous trouvez à la Gare du Monde de Yumi"], "Panneau Gare");
 let PanneauChemin = new Dialog("Pnjs/Panneau Chemin", "Appuyez sur espace pour intéragir avec le panneau !", ["À l'Ouest, la place principale. Au Sud, le port."], "Panneau Chemin");
 let PanneauQuai = new Dialog("Pnjs/Panneau Quai", "Appuyez sur espace pour intéragir avec le panneau !", ["Vous vous trouvez au Port du Monde de Yumi"], "Panneau Quai");
-let PanneauPlace = new Dialog("Pnjs/Panneau Place", "Appuyez sur espace pour intéragir avec le panneau !", ["Vous vous trouvez sur la place principale"], "Panneau Place");
+let PanneauTerrasse = new Dialog("Pnjs/Panneau Terrasse", "Appuyez sur espace pour intéragir avec le panneau !", ["Vous vous trouvez sur la place principale"], "Panneau Terrasse");
 
 
