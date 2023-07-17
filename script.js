@@ -1,7 +1,7 @@
 // Chargement de la lib JS de WA
 import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 
-
+const githubLink = "https://github.com/brainsonic/test-wa-mathis/"
 
 // let msgStud2;
 // let dialog2;
@@ -110,7 +110,7 @@ class Modal extends Interaction{
 // tutorial
 WA.ui.modal.openModal({
     title: "Tutorial",
-    src: "https://workadventure.github.io/scripting-api-extra/tutorialv1.html",
+    src: githubLink + "Tutorial/tutorial.html",
     allow: "fullscreen; clipboard-read; clipboard-write",
     allowApi: !0,
     position: "right"
