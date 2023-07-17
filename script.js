@@ -85,9 +85,12 @@ class Dialog extends Interaction{
     }
 }
 class Modal extends Interaction{
-    constructor(_layer, _message, _modal) {
+    position = "right";
+    constructor(_layer, _message, _modal, _position) {
         super(_layer, _message);
         this.modal = _modal;
+        if(_position !== undefined)
+        this.position = _position;
     }
     interact(){
         this.open();
@@ -98,7 +101,7 @@ class Modal extends Interaction{
             src: this.modal,
             allow: "fullscreen; clipboard-read; clipboard-write",
             allowApi: !0,
-            position: "right"
+            position: this.position
         });
     }
     exit(){
@@ -182,4 +185,5 @@ Statue.next = function(){
         position: "right"
     });
 }
+let Pong = new Modal("Pnjs/Pong", "Appuyez sur espace pour jouer au Pong !", "https://64ix.github.io/WA-Edited-Tutorial/pong.html", "center");
 
