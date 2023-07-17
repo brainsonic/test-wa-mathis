@@ -177,7 +177,7 @@ let Formulaire = new Modal("Pnjs/Formulaire", "Appuyez sur espace pour ouvrir le
 let Statue = new Dialog("Pnjs/Statue", "Appuyez sur espace pour intéragir avec la statue !", ["Cette tête de tigre géante a été réalisée l'année dernière, en collaboration avec l'influenceur HiHacks et les apprentis chaudronniers du Pôle formation UIMM Nouvelle-Aquitaine"], "Statue");
 Statue.next = function(){
     this.currentState.close();
-    this.currentState = WA.ui.modal.openModal({
+    WA.ui.modal.openModal({
         title: "Yumi",
         src: "https://www.youtube.com/embed/APBCjKv6nvA",
         allow: "fullscreen; clipboard-read; clipboard-write",
@@ -190,7 +190,7 @@ let Basket = new Modal("Pnjs/Basket", "Appuyez sur espace pour jouer au Basket !
 let Moonbike = new Dialog("Pnjs/MoonbikePNJ", "Appuyez sur espace pour parler à Anthony !", ["Bonjour, moi c’est Anthony, je suis en charge de la production des MoonBikes. Je vous laisse découvrir mon projet."], "Moonbike");
 Moonbike.next = function(){
     this.currentState.close();
-    this.currentState = WA.ui.modal.openModal({
+    WA.ui.modal.openModal({
         title: "Moonbike",
         src: "https://www.youtube.com/embed/eE3kWcMZsuE",
         allow: "fullscreen; clipboard-read; clipboard-write",
