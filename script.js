@@ -186,4 +186,5 @@ Statue.next = function(){
     });
 }
 let Pong = new Modal("Pnjs/Pong", "Appuyez sur espace pour jouer au Pong !", "https://64ix.github.io/WA-Edited-Tutorial/pong.html", "center");
+let Basket = new Modal("Pnjs/Basket", "Appuyez sur espace pour jouer au Basket !", "https://64ix.github.io/WA-Edited-Tutorial/shooting-hoops/dist/index.html", "center");
 
