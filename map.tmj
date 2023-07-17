@@ -3031,7 +3031,7 @@
                 {
                  "height":62.9727945578229,
                  "id":47,
-                 "name":"Panneau Terasse",
+                 "name":"Panneau Terrasse",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -3060,7 +3060,7 @@
                          "value":"Appuyez sur Espace pour entrer dans la r\u00e9union"
                         }],
                  "rotation":0,
-                 "type":"",
+                 "type":"area",
                  "visible":true,
                  "width":549.333333333333,
                  "x":1692,

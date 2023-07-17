@@ -164,3 +164,10 @@ let Captain = new Dialog("Pnjs/pnj2", "Appuyez sur espace pour discuter avec le 
 let Skieuse = new Dialog("Pnjs/pnj3", "Appuyez sur espace pour discuter avec la Skieuse !", textSkieuse, "pnj3text");
 let Chantier = new Dialog("Pnjs/pnj4", "Appuyez sur espace pour discuter avec la Cheffe de chantier !", textChantier, "pnj4text");
 let Scientifique = new Dialog("Pnjs/pnj5", "Appuyez sur espace pour discuter avec la Scientifique !", textScientifique, "pnj5text");
+let PanneauPont = new Dialog("Pnjs/Panneau Pont", "Appuyez sur espace pour intéragir avec le panneau !", ["Au Nord, la gare. Au Sud, la place principale."], "Panneau Pont");
+let PanneauGare = new Dialog("Pnjs/Panneau Gare", "Appuyez sur espace pour intéragir avec le panneau !", ["Vous vous trouvez à la Gare du Monde de Yumi"], "Panneau Gare");
+let PanneauChemin = new Dialog("Pnjs/Panneau Chemin", "Appuyez sur espace pour intéragir avec le panneau !", ["À l'Ouest, la place principale. Au Sud, le port."], "Panneau Chemin");
+let PanneauQuai = new Dialog("Pnjs/Panneau Quai", "Appuyez sur espace pour intéragir avec le panneau !", ["Vous vous trouvez au Port du Monde de Yumi"], "Panneau Quai");
+let PanneauPlace = new Dialog("Pnjs/Panneau Place", "Appuyez sur espace pour intéragir avec le panneau !", ["Vous vous trouvez sur la place principale"], "Panneau Place");
+
+
