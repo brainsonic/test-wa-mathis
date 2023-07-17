@@ -171,4 +171,15 @@ let PanneauChemin = new Dialog("Pnjs/Panneau Chemin", "Appuyez sur espace pour i
 let PanneauQuai = new Dialog("Pnjs/Panneau Quai", "Appuyez sur espace pour intéragir avec le panneau !", ["Vous vous trouvez au Port du Monde de Yumi"], "Panneau Quai");
 let PanneauTerrasse = new Dialog("Pnjs/Panneau Terrasse", "Appuyez sur espace pour intéragir avec le panneau !", ["Vous vous trouvez sur la place principale"], "Panneau Terrasse");
 let Formulaire = new Modal("Pnjs/Formulaire", "Appuyez sur espace pour ouvrir le formulaire !", formLink);
+let Statue = new Dialog("Pnjs/Statue", "Appuyez sur espace pour intéragir avec la statue !", ["Cette tête de tigre géante a été réalisée l'année dernière, en collaboration avec l'influenceur HiHacks et les apprentis chaudronniers du Pôle formation UIMM Nouvelle-Aquitaine"], "Statue");
+Statue.next = function(){
+    this.currentState.close();
+    this.currentState = WA.ui.modal.openModal({
+        title: "Yumi",
+        src: "https://www.youtube.com/embed/APBCjKv6nvA",
+        allow: "fullscreen; clipboard-read; clipboard-write",
+        allowApi: !0,
+        position: "right"
+    });
+}
 
