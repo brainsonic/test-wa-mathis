@@ -187,4 +187,14 @@ Statue.next = function(){
 }
 let Pong = new Modal("Pnjs/Pong", "Appuyez sur espace pour jouer au Pong !", "https://64ix.github.io/WA-Edited-Tutorial/pong.html", "center");
 let Basket = new Modal("Pnjs/Basket", "Appuyez sur espace pour jouer au Basket !", "https://64ix.github.io/WA-Edited-Tutorial/shooting-hoops/dist/index.html", "center");
-
+let Moonbike = new Dialog("Pnjs/MoonbikePNJ", "Appuyez sur espace pour parler à Anthony !", ["Bonjour, moi c’est Anthony, je suis en charge de la production des MoonBikes. Je vous laisse découvrir mon projet."], "Moonbike");
+Moonbike.next = function(){
+    this.currentState.close();
+    this.currentState = WA.ui.modal.openModal({
+        title: "Moonbike",
+        src: "https://www.youtube.com/embed/eE3kWcMZsuE",
+        allow: "fullscreen; clipboard-read; clipboard-write",
+        allowApi: !0,
+        position: "right"
+    });
+}
