@@ -108,6 +108,23 @@ class Modal extends Interaction{
         WA.ui.modal.closeModal();
     }
 }
+class PopUpVideo extends Dialog{
+    constructor(_layer, _message, _dialog, _object, _video) {
+        super(_layer, _message, _dialog, _object);
+        this.video = _video;
+    }
+    next(){
+        this.finished = true;
+        this.currentState.close();
+        WA.ui.modal.openModal({
+            title: "UIMM",
+            src: this.video,
+            allow: "fullscreen; clipboard-read; clipboard-write",
+            allowApi: !0,
+            position: "right"
+        });
+    }
+}
 
 // END CLASS ///////////////////////////////////////////////
 
@@ -174,28 +191,11 @@ let PanneauChemin = new Dialog("Pnjs/Panneau Chemin", "Appuyez sur espace pour i
 let PanneauQuai = new Dialog("Pnjs/Panneau Quai", "Appuyez sur espace pour intéragir avec le panneau !", ["Vous vous trouvez au Port du Monde de Yumi"], "Panneau Quai");
 let PanneauTerrasse = new Dialog("Pnjs/Panneau Terrasse", "Appuyez sur espace pour intéragir avec le panneau !", ["Vous vous trouvez sur la place principale"], "Panneau Terrasse");
 let Formulaire = new Modal("Pnjs/Formulaire", "Appuyez sur espace pour ouvrir le formulaire !", formLink);
-let Statue = new Dialog("Pnjs/Statue", "Appuyez sur espace pour intéragir avec la statue !", ["Cette tête de tigre géante a été réalisée l'année dernière, en collaboration avec l'influenceur HiHacks et les apprentis chaudronniers du Pôle formation UIMM Nouvelle-Aquitaine"], "Statue");
-Statue.next = function(){
-    this.currentState.close();
-    WA.ui.modal.openModal({
-        title: "Yumi",
-        src: "https://www.youtube.com/embed/APBCjKv6nvA",
-        allow: "fullscreen; clipboard-read; clipboard-write",
-        allowApi: !0,
-        position: "right"
-    });
-}
+let Statue = new PopUpVideo("Pnjs/Statue", "Appuyez sur espace pour intéragir avec la statue !", ["Cette tête de tigre géante a été réalisée l'année dernière, en collaboration avec l'influenceur HiHacks et les apprentis chaudronniers du Pôle formation UIMM Nouvelle-Aquitaine"], "Statue","https://www.youtube.com/embed/APBCjKv6nvA");
 let Pong = new Modal("Pnjs/Pong", "Appuyez sur espace pour jouer au Pong !", "https://64ix.github.io/WA-Edited-Tutorial/pong.html", "center");
 let Basket = new Modal("Pnjs/Basket", "Appuyez sur espace pour jouer au Basket !", "https://64ix.github.io/WA-Edited-Tutorial/shooting-hoops/dist/index.html", "center");
-let Moonbike = new Dialog("Pnjs/MoonbikePNJ", "Appuyez sur espace pour parler à Anthony !", ["Bonjour, moi c’est Anthony, je suis en charge de la production des MoonBikes. Je vous laisse découvrir mon projet."], "Moonbike");
-Moonbike.next = function(){
-    this.currentState.close();
-    WA.ui.modal.openModal({
-        title: "Moonbike",
-        src: "https://www.youtube.com/embed/eE3kWcMZsuE",
-        allow: "fullscreen; clipboard-read; clipboard-write",
-        allowApi: !0,
-        position: "right"
-    });
-}
+let Moonbike = new PopUpVideo("Pnjs/MoonbikePNJ", "Appuyez sur espace pour parler à Anthony !", ["Bonjour, moi c’est Anthony, je suis en charge de la production des MoonBikes. Je vous laisse découvrir mon projet."], "Moonbike","https://www.youtube.com/embed/eE3kWcMZsuE");
 let Piano = new Modal("Pnjs/Piano", "Appuyez sur espace pour jouer du piano !", "https://64ix.github.io/WA-Edited-Tutorial/piano/dist/index.html", "center");
+let Jeune1 = new PopUpVideo("Pnjs/Jeune1", "Appuyez sur espace pour parler à Anthonin !", ["Salut moi c'est Anthonin ! Pour découvrir sur quel super projet j'ai travaillé c'est ici :"], "Jeune1","https://www.youtube.com/embed/9QDd6dH0-Xc");
+let Jeune2 = new PopUpVideo("Pnjs/Jeune2", "Appuyez sur espace pour parler à Killian !", ["Salut moi c'est Killian ! Pour découvrir sur quel super projet j'ai travaillé c'est ici :"], "Jeune2","https://www.youtube.com/embed/pDMzhgu_Qbo");
+let Jeune3 = new PopUpVideo("Pnjs/Jeune3", "Appuyez sur espace pour parler à Manon!", ["Bonjour, moi c'est Manon et pour découvrir sur quel super projet j'ai travaillé c'est ici :"], "Jeune3","https://www.youtube.com/embed/mgX4eHVDlTc");
