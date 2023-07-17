@@ -2,6 +2,7 @@
 import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 
 const tutorialLink = "https://64ix.github.io/WA-Edited-Tutorial/tutorial.html"
+const formLink = "https://0eb89b36.sibforms.com/serve/MUIFAAOmzgE4ndFT9kNM-uBs4YlJeU3A1QwPa7YPDBm_4l4UD0FQQoYC0ux_H4XuTeKySpVQcQo2jya0tZpk6_txstHp_WI3cITYRWoILzlf-gvw2SzeYepvtFGVDghH2mm6NG1VZcxRV5fW8C1xa1Gn_UECrK-eMhv0SmFNOVo54fmNEHLNrJIUlBtQw9H96pu0IPmE-xMcxnvn";
 
 // let msgStud2;
 // let dialog2;
@@ -169,5 +170,5 @@ let PanneauGare = new Dialog("Pnjs/Panneau Gare", "Appuyez sur espace pour inté
 let PanneauChemin = new Dialog("Pnjs/Panneau Chemin", "Appuyez sur espace pour intéragir avec le panneau !", ["À l'Ouest, la place principale. Au Sud, le port."], "Panneau Chemin");
 let PanneauQuai = new Dialog("Pnjs/Panneau Quai", "Appuyez sur espace pour intéragir avec le panneau !", ["Vous vous trouvez au Port du Monde de Yumi"], "Panneau Quai");
 let PanneauTerrasse = new Dialog("Pnjs/Panneau Terrasse", "Appuyez sur espace pour intéragir avec le panneau !", ["Vous vous trouvez sur la place principale"], "Panneau Terrasse");
-
+let Formulaire = new Modal("Pnjs/Formulaire", "Appuyez sur espace pour ouvrir le formulaire !", formLink);
 
