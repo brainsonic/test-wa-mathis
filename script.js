@@ -70,11 +70,13 @@ class Dialog extends Interaction{
     next(){
         this.state++;
         if(this.state >= this.dialog.length){
+            if(this.currentState !== undefined)
             this.currentState.close();
             this.finished = true;
             this.state = 0;
         }
         else{
+            if(this.currentState !== undefined)
             this.currentState.close();
             this.open();
         }
