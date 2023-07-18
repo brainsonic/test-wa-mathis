@@ -162,7 +162,7 @@ const textCaptain = [
 const textSkieuse = [
     "Hello !",
     "Vous voulez faire un tour de Moonbike ?",
-    "D’accord, mais d’abord, laissez-moi vous parler un peu de l’innovation dans l’industrie. C’est vrai que, quand on parle d’innovation industrielle, on pense souvent à des machines super sophistiquées, mais c’est aussi de nouvelles méthodes de production.",
+    "D’accord, mais d’abord, laissez-moi vous parler un peu de l’innovation dans l’industrie.",
     "L’industrie, c'est le secteur qui innove le plus en France, avec 75% des dépenses de R&D françaises et 7 entreprises figurant dans le top 10 des déposants de brevets.    ",
     "Industrie 4.0, industrie connectée, industrie du futur : le secteur se transforme en profondeur grâce à des technologies comme la fabrication additive, la cobotique ou encore les objets connectés – autant d’innovation qui améliorent la production.    ",
     "Et tout cela crée de nouveaux métiers (data scientist, programmeur industriel, ingénieur cobot…) et transforme les modes d’organisation du travail. Sans oublier que de nombreuses innovations industrielles vont dans le sens d’une société plus durable.    ",
