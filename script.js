@@ -143,10 +143,10 @@ const textCaptain = [
     "Ahoy !",
     "Ça vous dit d’embarquer avec moi pour un petit tour d’horizon de l’industrie maritime ?",
     "Allez, on met les voiles !",
-    "La France a beau être un petit pays, elle compte le deuxième domaine maritime mondial, juste derrière les États-Unis. Alors forcément, la mer compte beaucoup dans l’économie !",
-    "Les industries de la mer regroupent 4 secteurs : l’industrie navale, l’industrie nautique, les énergies marines renouvelables et l’offshore.",
-    "Cela représente 125 000 emplois, qui sont concentrés sur le littoral avec des ports industriels comme Dunkerque et d’autres tournées vers le transport de marchandises à l’image de Marseille.",
-    "Aujourd’hui, les principaux défis du secteur sont la décarbonation, le recrutement et la transition numérique.",
+    "La France a beau être un petit pays, elle compte le deuxième domaine maritime mondial, juste derrière les États-Unis. Alors forcément, la mer compte beaucoup dans l’économie !    ",
+    "Dans l’industrie navale, on inclut la construction et la déconstruction navales, mais aussi les activités utilisant le même savoir-faire, comme les énergies maritimes renouvelables (EMR) et la sécurité maritime e.",
+    "Si l’industrie navale mondiale est dominée par l’Asie, la France reste dans la régate en misant sur la construction de paquebots et de navires de défense, comme c’est le cas à Saint-Nazaire, aux chantiers de l’Atlantique.",
+    "En gros, on se démarque grâce à nos technologies de pointe, mais aussi par nos engagements environnementaux et nos bonnes conditions de travail.",
     "Voilà pour un petit aperçu de l’industrie marine, tu veux découvrir d’autres industries ?",
     "Alors n’hésite pas à parler aux autres Yumi !",
     "Allez, bon vent !"
@@ -155,26 +155,19 @@ const textSkieuse = [
     "Hello !",
     "Vous voulez faire un tour de Moonbike ?",
     "D’accord, mais d’abord, laissez-moi vous parler un peu de l’innovation dans l’industrie. C’est vrai que, quand on parle d’innovation industrielle, on pense souvent à des machines super sophistiquées, mais c’est aussi de nouvelles méthodes de production.",
-    "On utilise par exemple des robots dans l’industrie depuis longtemps pour remplacer l’homme ou des cobots, des robots collaboratifs, pour travailler avec lui.",
-    "Cela a beaucoup fait évoluer les métiers, comme le dessin assisté par ordinateur qui permet de réaliser des objets à l’aide d’une imprimante 3D.",
-    "Mais l’innovation cherche aujourd’hui à prendre en compte les considérations sociales et environnementales en améliorant les bien-être des employés et la protection de l’environnement.",
-    "Le moonbike en est un bel exemple : c’est le premier snowbike électrique du marché !",
-    "Allez maintenant vous pouvez l’essayer, tout schuss !"
-];
-const textChantier = [
-    "Hop hop hop",
-    "Pardon, mais on ne passe pas.",
-    "Le showroom est en travaux et il ouvrira dans quelques mois.",
-    "Pour en savoir plus, je vous invite à discuter avec ma collègue scientifique dans son labo.",
-    "Bonne journée !"
+    "L’industrie, c'est le secteur qui innove le plus en France, avec 75% des dépenses de R&D françaises et 7 entreprises figurant dans le top 10 des déposants de brevets.    ",
+    "Industrie 4.0, industrie connectée, industrie du futur : le secteur se transforme en profondeur grâce à des technologies comme la fabrication additive, la cobotique ou encore les objets connectés – autant d’innovation qui améliorent la production.    ",
+    "Et tout cela crée de nouveaux métiers (data scientist, programmeur industriel, ingénieur cobot…) et transforme les modes d’organisation du travail. Sans oublier que de nombreuses innovations industrielles vont dans le sens d’une société plus durable.    ",
+    "Le Moonbikes en est un bel exemple ! C’est le premier snowbike électrique du marché : un mode de déplacement beaucoup plus écologique que ces ancêtres à moteur thermique    ",
+    "Allez maintenant vous pouvez aller le découvrir, tout schuss.    "
 ];
 const textScientifique = [
     "Bonjour à vous",
     "Moi je suis la scientifique de la bande et ce que j’adore c’est trouver des solutions pour améliorer la vie de chacun.",
     "Pour exemple j’ai travaillé sur le projet de l’AGV, l’automotrice à grande vitesse, c’est un train à grande vitesse construit par Alstom et qui ressemble au TGV. La différence est que le moteur est réparti le long de la rame et pas seulement aux extrémités.",
-    "Grâce à ça, il y a plus d’espace pour les voyageurs et le poids du train est réduit, ce qui permet de réduire la consommation d’énergie, tout en parcourant 1000 km en 3 heures. Impressionnant non ?",
+    "Grâce à cette innovation, il y a plus d’espace pour les voyageurs et le poids du train est réduit, ce qui permet de réduire la consommation d’énergie. Cela permet de parcourir 1000 km en 3 heures ! Impressionnant non ?",
     "J’ai aussi mis au point les téléporteurs que vous verrez un peu partout sur l’île, et que je vous invite à essayer.",
-    "En ce moment, je travaille sur un nouveau projet : le showroom de l’industrie, où je vais pouvoir exposer toutes mes inventions !",
+    "En ce moment, je travaille sur un nouveau projet : où je vais pouvoir mettre en lumière toutes les inventions et les témoignages de pros de l’industrie !    ",
     "Il n’est pas encore ouvert au public, mais il le sera bientôt.",
     "Je vous tiendrais au courant !",
     "À plus tard !"
@@ -183,8 +176,9 @@ const textScientifique = [
 let Accueil = new Modal("Pnjs/pnj1", "Appuyez sur espace pour discuter avec Yumi !", "https://chat.csml.dev/s/nyf8dzadrsfgpyk11xotf451cpw7y3ts");
 let Captain = new Dialog("Pnjs/pnj2", "Appuyez sur espace pour discuter avec le Capitaine !", textCaptain, "pnj2text");
 let Skieuse = new Dialog("Pnjs/pnj3", "Appuyez sur espace pour discuter avec la Skieuse !", textSkieuse, "pnj3text");
-let Chantier = new Dialog("Pnjs/pnj4", "Appuyez sur espace pour discuter avec la Cheffe de chantier !", textChantier, "pnj4text");
+let Chantier = new Modal("Pnjs/pnj4", "Appuyez sur espace pour discuter avec la Cheffe de chantier !", "https://chat.csml.dev/s/8vkjunics58v1iooxyh81mok17zjbcqs");
 let Scientifique = new Dialog("Pnjs/pnj5", "Appuyez sur espace pour discuter avec la Scientifique !", textScientifique, "pnj5text");
+let Ingénieur = new Modal("Pnjs/pnj6", "Appuyez sur espace pour discuter avec l'Ingénieur !", "https://chat.csml.dev/s/2bxcjwpr0pzbufgnptzcejhomq4ajror");
 let PanneauPont = new Dialog("Pnjs/Panneau Pont", "Appuyez sur espace pour intéragir avec le panneau !", ["Au Nord, la gare. Au Sud, la place principale."], "Panneau Pont");
 let PanneauGare = new Dialog("Pnjs/Panneau Gare", "Appuyez sur espace pour intéragir avec le panneau !", ["Vous vous trouvez à la Gare du Monde de Yumi"], "Panneau Gare");
 let PanneauChemin = new Dialog("Pnjs/Panneau Chemin", "Appuyez sur espace pour intéragir avec le panneau !", ["À l'Ouest, la place principale. Au Sud, le port."], "Panneau Chemin");
