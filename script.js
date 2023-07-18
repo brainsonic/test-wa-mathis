@@ -38,6 +38,7 @@ class Interaction {
         // override this
     }
     close(){
+        if (this.triggerMessage !== undefined)
         this.triggerMessage.remove();
         this.exit();
     }
@@ -70,18 +71,24 @@ class Dialog extends Interaction{
     next(){
         this.state++;
         if(this.state >= this.dialog.length){
+            if(this.currentState !== undefined)
             this.currentState.close();
+            this.currentState = undefined;
             this.finished = true;
             this.state = 0;
         }
         else{
+            if(this.currentState !== undefined)
             this.currentState.close();
+            this.currentState = undefined;
+
             this.open();
         }
     }
     exit(){
         if(!this.finished && this.currentState !== undefined)
         this.currentState.close();
+        this.currentState = undefined;
     }
 }
 class Modal extends Interaction{
@@ -116,6 +123,7 @@ class PopUpVideo extends Dialog{
     next(){
         this.finished = true;
         this.currentState.close();
+        this.currentState = undefined;
         WA.ui.modal.openModal({
             title: "UIMM",
             src: this.video,
@@ -141,7 +149,7 @@ WA.ui.modal.openModal({
 
 const textCaptain = [
     "Ahoy !",
-    "Ça vous dit d’embarquer avec moi pour un petit tour d’horizon de l’industrie maritime ?",
+    "Ça vous dit d’embarquer avec moi pour un petit tour d’horizon de l’industrie navale ?    ",
     "Allez, on met les voiles !",
     "La France a beau être un petit pays, elle compte le deuxième domaine maritime mondial, juste derrière les États-Unis. Alors forcément, la mer compte beaucoup dans l’économie !    ",
     "Dans l’industrie navale, on inclut la construction et la déconstruction navales, mais aussi les activités utilisant le même savoir-faire, comme les énergies maritimes renouvelables (EMR) et la sécurité maritime e.",
