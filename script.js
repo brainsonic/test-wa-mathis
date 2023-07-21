@@ -4,13 +4,12 @@ import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 const tutorialLink = "https://64ix.github.io/WA-Edited-Tutorial/tutorial.html"
 const formLink = "https://0eb89b36.sibforms.com/serve/MUIFAAOmzgE4ndFT9kNM-uBs4YlJeU3A1QwPa7YPDBm_4l4UD0FQQoYC0ux_H4XuTeKySpVQcQo2jya0tZpk6_txstHp_WI3cITYRWoILzlf-gvw2SzeYepvtFGVDghH2mm6NG1VZcxRV5fW8C1xa1Gn_UECrK-eMhv0SmFNOVo54fmNEHLNrJIUlBtQw9H96pu0IPmE-xMcxnvn";
 
-// let msgStud2;
-// let dialog2;
-
 WA.onInit().then(() => {
 });
 
-
+document.onkeydown = function (e) {
+    console.log(e);
+}
 
 // CLASS ///////////////////////////////////////////////
 class Interaction {
@@ -70,20 +69,14 @@ class Dialog extends Interaction{
     }
     next(){
         this.state++;
+        if(this.currentState !== undefined)
+        this.currentState.close();
+        this.currentState = undefined;
         if(this.state >= this.dialog.length){
-            if(this.currentState !== undefined)
-            this.currentState.close();
-            this.currentState = undefined;
             this.finished = true;
             this.state = 0;
         }
-        else{
-            if(this.currentState !== undefined)
-            this.currentState.close();
-            this.currentState = undefined;
-
-            this.open();
-        }
+        else this.open();
     }
     exit(){
         if(!this.finished && this.currentState !== undefined)
@@ -201,3 +194,4 @@ let Piano = new Modal("Pnjs/Piano", "Appuyez sur espace pour jouer du piano !", 
 let Jeune1 = new PopUpVideo("Pnjs/Jeune1", "Appuyez sur espace pour parler à Anthonin !", ["Salut moi c'est Anthonin ! Pour découvrir sur quel super projet j'ai travaillé c'est ici :"], "Jeune1","https://www.youtube.com/embed/9QDd6dH0-Xc");
 let Jeune2 = new PopUpVideo("Pnjs/Jeune2", "Appuyez sur espace pour parler à Killian !", ["Salut moi c'est Killian ! Pour découvrir sur quel super projet j'ai travaillé c'est ici :"], "Jeune2","https://www.youtube.com/embed/pDMzhgu_Qbo");
 let Jeune3 = new PopUpVideo("Pnjs/Jeune3", "Appuyez sur espace pour parler à Manon!", ["Bonjour, moi c'est Manon et pour découvrir sur quel super projet j'ai travaillé c'est ici :"], "Jeune3","https://www.youtube.com/embed/mgX4eHVDlTc");
+let Vidéo = new Modal("Zones/Vidéo", "Appuyez sur espace pour regarder la vidéo !", "https://www.youtube.com/embed/9QDd6dH0-Xc", "center");
