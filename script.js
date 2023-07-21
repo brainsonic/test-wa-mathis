@@ -7,9 +7,6 @@ const formLink = "https://0eb89b36.sibforms.com/serve/MUIFAAOmzgE4ndFT9kNM-uBs4Y
 WA.onInit().then(() => {
 });
 
-document.onkeydown = function (e) {
-    console.log(e);
-}
 
 // CLASS ///////////////////////////////////////////////
 class Interaction {
