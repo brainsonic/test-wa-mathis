@@ -59,7 +59,7 @@ class Dialog extends Interaction{
     }
     open(){
         this.currentState = WA.ui.openPopup(this.object, this.dialog[this.state], [{
-            label: "Suivant",
+            label: this.state < this.dialog.length - 1 ? "Suivant" : "Fermer",
             className: "primary",
             callback: (popup) => {
                 this.next();            
