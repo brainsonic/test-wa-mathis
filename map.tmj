@@ -6148,7 +6148,7 @@
                  "height":100,
                  "id":89,
                  "name":"Ray",
-                 "opacity":0.5,
+                 "opacity":0.4,
                  "type":"tilelayer",
                  "visible":true,
                  "width":100,
