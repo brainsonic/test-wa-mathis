@@ -111,17 +111,21 @@ class PopUpVideo extends Dialog{
         super(_layer, _message, _dialog, _object);
         this.video = _video;
     }
-    next(){
+    async next(){
         this.finished = true;
         this.currentState.close();
         this.currentState = undefined;
-        WA.ui.modal.openModal({
-            title: "UIMM",
-            src: this.video,
-            allow: "fullscreen; clipboard-read; clipboard-write",
-            allowApi: !0,
-            position: "right"
-        });
+        // await WA.nav.openCoWebSite({
+        //     //title: "UIMM",
+        //     //src: this.video,
+        //     //allow: "fullscreen; clipboard-read; clipboard-write",
+        //     //position: "right"
+        //     url: this.video,
+        //     allowApi: !0,
+        //     closable: true,
+
+        // });
+        await WA.nav.openCoWebSite(this.video, true, "", 50, 1, true, false);
     }
 }
 
