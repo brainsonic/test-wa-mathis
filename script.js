@@ -136,33 +136,36 @@ const textCaptain = [
     "Ahoy !",
     "Ça vous dit d’embarquer avec moi pour un petit tour d’horizon de l’industrie navale ?    ",
     "Allez, on met les voiles !",
-    "La France a beau être un petit pays, elle compte le deuxième domaine maritime mondial, juste derrière les États-Unis. Alors forcément, la mer compte beaucoup dans l’économie !",
-    "Dans l’industrie navale, on inclut la construction et la déconstruction navales, mais aussi les activités utilisant le même savoir-faire, comme les énergies maritimes renouvelables (EMR) et la sécurité maritime.",
-    "Si l’industrie navale mondiale est dominée par l’Asie, la France reste dans la régate en misant sur la construction de paquebots et de navires de défense, comme c’est le cas à Saint-Nazaire, aux chantiers de l’Atlantique.",
+    "La France possède le deuxième domaine maritime mondial, juste derrière les États-Unis. Alors forcément, la mer compte beaucoup dans l’économie !​",
+    "Dans l’industrie navale, on fabrique des porte-avions, des sous-marins nucléaires, des frégates, des bateaux de pêche, mais aussi des hydroliennes et des éoliennes flottantes.",
+    "En France, on est très fort pour les constructions complexes, comme les paquebots, les navires passagers et les navires militaires.",
     "En gros, on se démarque grâce à nos technologies de pointe, mais aussi par nos engagements environnementaux et nos bonnes conditions de travail.",
+    "Donc on a besoin de compétences techniques pointues pour concevoir, produire et entretenir des navires de plus en plus performants et écologiques.",
+    "Cela concerne une grande diversité de métiers (plus de 300 !) qui sont en pleine évolution en raison des mutations technologiques et de l’émergence de nouveaux marchés. ",
+    "Bref l’horizon est prometteur avec de grosses perspectives de développement dans les énergies renouvelables, les ressources maritimes et les biocarburants.​",
+    "Les océans sont un des enjeux stratégiques de notre siècle matelot !​",
     "Voilà pour un petit aperçu de l’industrie marine, tu veux découvrir d’autres industries ?",
-    "Alors n’hésite pas à parler aux autres Yumi !",
-    "Allez, bon vent !"
+    "Alors n’hésite pas à parler aux autres Yumi, bon vent !​",
 ]
 const textSkieuse = [
     "Hello !",
     "Vous voulez faire un tour de Moonbike ?",
     "D’accord, mais d’abord, laissez-moi vous parler un peu de l’innovation dans l’industrie.",
-    "L’industrie, c'est le secteur qui innove le plus en France, avec 75% des dépenses de R&D françaises et 7 entreprises figurant dans le top 10 des déposants de brevets.    ",
-    "Industrie 4.0, industrie connectée, industrie du futur : le secteur se transforme en profondeur grâce à des technologies comme la fabrication additive, la cobotique ou encore les objets connectés – autant d’innovation qui améliorent la production.    ",
+    "L’industrie, c'est le secteur qui innove le plus en France, avec 72% des dépenses de R&D françaises.",
+    "Industrie 4.0, industrie connectée, industrie du futur : le secteur se transforme en profondeur grâce à des technologies comme la fabrication additive, la cobotique ou encore les objets connectés – autant d’innovation qui améliorent la production et le quotidien de celles et ceux qui y travaillent.​    ",
     "Et tout cela crée de nouveaux métiers (data scientist, programmeur industriel, ingénieur cobot…) et transforme les modes d’organisation du travail. Sans oublier que de nombreuses innovations industrielles vont dans le sens d’une société plus durable.    ",
-    "Le Moonbikes en est un bel exemple ! C’est le premier snowbike électrique du marché : un mode de déplacement beaucoup plus écologique que ces ancêtres à moteur thermique    ",
+    "Le Moonbike en est un bel exemple ! C’est le premier snowbike 100% électrique du marché : un mode de déplacement beaucoup plus écologique.​",
     "Allez maintenant vous pouvez aller le découvrir, tout schuss.    "
 ];
 const textScientifique = [
     "Bonjour à vous",
-    "Moi je suis la scientifique de la bande et ce que j’adore c’est trouver des solutions pour améliorer la vie de chacun.",
+    "Je suis la scientifique de la bande et ce que j’adore c’est trouver des solutions pour améliorer la vie de chacun.​",
     "Par exemple, j'ai pris part au projet AGV, automotrice à grande vitesse ! C'est un train à grande vitesse construit par Alstom et qui ressemble au TGV. La différence est que le moteur est réparti le long de la rame et plus seulement aux extrémités.",
     "Grâce à cette innovation, il y a plus d’espace pour les voyageurs et le poids du train est réduit, ce qui permet de réduire la consommation d’énergie. Cela permet de parcourir 1000 km en 3 heures ! Impressionnant non ?",
-    "J’ai aussi mis au point les téléporteurs que vous verrez un peu partout sur l’île, et que je vous invite à essayer.",
-    "En ce moment, je travaille sur un nouveau projet : où je vais pouvoir mettre en lumière toutes les inventions et les témoignages de pros de l’industrie !    ",
+    "J’ai aussi mis au point les téléporteurs que vous verrez un peu partout sur l’île, et que je vous invite à essayer. Il suffit de se placer dessus afin de se téléporter d’une pièce à l’autre.​",
+    "En ce moment, je travaille sur un nouveau projet : le Showroom de l’industrie, où je vais pouvoir mettre en lumière toutes les inventions et les témoignages de professionnels de l’industrie !​",
     "Il n’est pas encore ouvert au public, mais il le sera bientôt.",
-    "Je vous tiendrais au courant !",
+    "Je vous tiendrai au courant !",
     "À plus tard !"
 ];
 
