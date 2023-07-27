@@ -115,16 +115,6 @@ class PopUpVideo extends Dialog{
         this.finished = true;
         this.currentState.close();
         this.currentState = undefined;
-        // await WA.nav.openCoWebSite({
-        //     //title: "UIMM",
-        //     //src: this.video,
-        //     //allow: "fullscreen; clipboard-read; clipboard-write",
-        //     //position: "right"
-        //     url: this.video,
-        //     allowApi: !0,
-        //     closable: true,
-
-        // });
         await WA.nav.openCoWebSite(this.video, true, "", 50, 1, true, false);
     }
 }
