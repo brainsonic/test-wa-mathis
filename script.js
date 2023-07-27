@@ -10,13 +10,20 @@ WA.onInit().then(() => {
 
 
 // CLASS ///////////////////////////////////////////////
+
+// class Interaction
+// layer : string : nom de la couche sur laquelle l'interaction est possible
+// message : string : message affiché au joueur pour l'inviter à intéragir
 class Interaction {
     constructor(_layer, _message){
+        //setup des variables
         this.layer = _layer;
         this.message = _message;
+        //setup des listeners WA pour les layers prévus
         this.setup();
     }
     setup(){
+        //listener d'entrée sur le layer, créé le message d'interaction
         WA.room.onEnterLayer(this.layer).subscribe(() => {
             this.triggerMessage = WA.ui.displayActionMessage({
                 message: this.message,
@@ -25,24 +32,34 @@ class Interaction {
                 }
             })
         });
+        //listener de sortie, lance la fonction de sortie qui fermera le message d'interaction si il est ouvert
         WA.room.onLeaveLayer(this.layer).subscribe(() => {
             if (this.triggerMessage !== undefined)
             this.close();
         }
         );
-    }   
+    }
+    //fonction d'intéraction, à override   
     interact(){
         // override this
     }
+    //fonction de sortie
     close(){
         if (this.triggerMessage !== undefined)
         this.triggerMessage.remove();
+        // lance la fonction exit, à override selon les besoins des sous-classes
         this.exit();
     }
+    //fonction de sortie, à override selon les besoins des sous-classes
     exit(){
         // override this
     }
 }
+// class Dialog
+// layer : string : nom de la couche sur laquelle l'interaction est possible
+// message : string : message affiché au joueur pour l'inviter à intéragir
+// dialog : string[] : tableau de string, chaque string est un nouveau popup
+// object : string : nom de l'objet sur lequel le popup s'ouvre
 class Dialog extends Interaction{
     
     constructor(_layer, _message, _dialog, _object) {
@@ -51,15 +68,19 @@ class Dialog extends Interaction{
         this.dialog = _dialog;
         this.state = 0;
     }
-
+    //fonction d'intéraction, ouvre le popup
     interact(){
         this.open();
     }
+    //fonction d'ouverture du popup en fonction du state du dialogue
     open(){
+        // ouvre le popup avec le texte correspondant au state actuel
+        // bouton change de texte si le state est le dernier
         this.currentState = WA.ui.openPopup(this.object, this.dialog[this.state], [{
             label: this.state < this.dialog.length - 1 ? "Suivant" : "Fermer",
             className: "primary",
             callback: (popup) => {
+                // appel de la fonction next qui gère le changement de state et d'autres choses
                 this.next();            
             }
         }]);
@@ -67,9 +88,11 @@ class Dialog extends Interaction{
     }
     next(){
         this.state++;
+        // ferme le popup actuel, set en undefined pour éviter les bugs
         if(this.currentState !== undefined)
         this.currentState.close();
         this.currentState = undefined;
+        // check si fini, sinon ouvre le popup suivant
         if(this.state >= this.dialog.length){
             this.finished = true;
             this.state = 0;
@@ -82,7 +105,13 @@ class Dialog extends Interaction{
         this.currentState = undefined;
     }
 }
+// class Modal : Ouvrir une fenetre modale
+// layer : string : nom de la couche sur laquelle l'interaction est possible
+// message : string : message affiché au joueur pour l'inviter à intéragir
+// modal : string : lien vers le modal
+// position : string : position du modal
 class Modal extends Interaction{
+    //par defaut, position à droite
     position = "right";
     constructor(_layer, _message, _modal, _position) {
         super(_layer, _message);
@@ -94,6 +123,7 @@ class Modal extends Interaction{
         this.open();
     }
     open(){
+        // ouvre le modal
         WA.ui.modal.openModal({
             title: "Yumi",
             src: this.modal,
@@ -106,11 +136,13 @@ class Modal extends Interaction{
         WA.ui.modal.closeModal();
     }
 }
+// class PopUpVideo : Popup qui ouvre un site web à la sortie
 class PopUpVideo extends Dialog{
     constructor(_layer, _message, _dialog, _object, _video) {
         super(_layer, _message, _dialog, _object);
         this.video = _video;
     }
+    // override de la fonction next pour ouvrir le site web, async car cowebsite est une fonction asynchrone
     async next(){
         this.finished = true;
         this.currentState.close();
@@ -122,6 +154,7 @@ class PopUpVideo extends Dialog{
 // END CLASS ///////////////////////////////////////////////
 
 // tutorial
+// pourquoi pas faire un truc qui se souvient si le joueur a déjà fait le tuto et qui ne l'affiche pas si c'est le cas
 WA.ui.modal.openModal({
     title: "Tutorial",
     src: tutorialLink ,
@@ -132,6 +165,7 @@ WA.ui.modal.openModal({
 
 // PNJs
 
+// texte des pnj sous format de tableau de string, chaque string est un nouveau popup
 const textCaptain = [
     "Ahoy !",
     "Ça vous dit d’embarquer avec moi pour un petit tour d’horizon de l’industrie navale ?    ",
@@ -139,7 +173,6 @@ const textCaptain = [
     "La France possède le deuxième domaine maritime mondial, juste derrière les États-Unis. Alors forcément, la mer compte beaucoup dans l’économie !​",
     "Dans l’industrie navale, on fabrique des porte-avions, des sous-marins nucléaires, des frégates, des bateaux de pêche, mais aussi des hydroliennes et des éoliennes flottantes.",
     "En France, on est très fort pour les constructions complexes, comme les paquebots, les navires passagers et les navires militaires.",
-    "En gros, on se démarque grâce à nos technologies de pointe, mais aussi par nos engagements environnementaux et nos bonnes conditions de travail.",
     "Donc on a besoin de compétences techniques pointues pour concevoir, produire et entretenir des navires de plus en plus performants et écologiques.",
     "Cela concerne une grande diversité de métiers (plus de 300 !) qui sont en pleine évolution en raison des mutations technologiques et de l’émergence de nouveaux marchés. ",
     "Bref l’horizon est prometteur avec de grosses perspectives de développement dans les énergies renouvelables, les ressources maritimes et les biocarburants.​",
@@ -169,6 +202,7 @@ const textScientifique = [
     "À plus tard !"
 ];
 
+// instanciation des pnj, stockage dans des variables au cas où on voudrait les supprimer ou autre
 let Accueil = new Modal("Pnjs/pnj1", "Appuyez sur espace pour discuter avec Yumi !", "https://chat.csml.dev/s/nyf8dzadrsfgpyk11xotf451cpw7y3ts");
 let Captain = new Dialog("Pnjs/pnj2", "Appuyez sur espace pour discuter avec le Capitaine !", textCaptain, "pnj2text");
 let Skieuse = new Dialog("Pnjs/pnj3", "Appuyez sur espace pour discuter avec la Skieuse !", textSkieuse, "pnj3text");
