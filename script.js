@@ -30,7 +30,7 @@ WA.onInit().then(() => {
 
 // CLASS ///////////////////////////////////////////////
 
-// class Interaction
+// class Interaction : endroit sur la map où l'on peut intéragir
 // layer : string : nom de la layer sur laquelle l'interaction est possible
 // message : string : message affiché au joueur pour l'inviter à intéragir
 class Interaction {
@@ -90,7 +90,7 @@ class Dialog extends Interaction {
   //fonction d'ouverture du popup en fonction du state du dialogue
   open() {
     // ouvre le popup avec le texte correspondant au state actuel
-    // bouton change de texte si le state est le dernier
+    // bouton change de label si c'est le dernier popup
     this.currentState = WA.ui.openPopup(this.object, this.dialog[this.state], [
       {
         label: this.state < this.dialog.length - 1 ? "Suivant" : "Fermer",
@@ -199,7 +199,7 @@ const textSkieuse = [
   "Vous voulez faire un tour de Moonbike ?",
   "D’accord, mais d’abord, laissez-moi vous parler un peu de l’innovation dans l’industrie.",
   "L’industrie, c'est le secteur qui innove le plus en France, avec 72% des dépenses de R&D françaises.",
-  "Industrie 4.0, industrie connectée, industrie du futur : le secteur se transforme en profondeur grâce à des technologies comme la fabrication additive, la cobotique ou encore les objets connectés – autant d’innovation qui améliorent la production et le quotidien de celles et ceux qui y travaillent.​    ",
+  "Industrie 4.0, industrie connectée, industrie du futur : le secteur se transforme en profondeur grâce à des technologies comme la fabrication additive, la cobotique ou encore les objets connectés – autant d’innovations qui améliorent la production et le quotidien de celles et ceux qui y travaillent.​    ",
   "Et tout cela crée de nouveaux métiers (data scientist, programmeur industriel, ingénieur cobot…) et transforme les modes d’organisation du travail. Sans oublier que de nombreuses innovations industrielles vont dans le sens d’une société plus durable.    ",
   "Le Moonbike en est un bel exemple ! C’est le premier snowbike 100% électrique du marché : un mode de déplacement beaucoup plus écologique.​",
   "Allez maintenant vous pouvez aller le découvrir, tout schuss.    ",
@@ -256,16 +256,16 @@ let Moonbike = new PopUpVideo(
   "Pnjs/MoonbikePNJ",
   "Appuyez sur espace pour parler à Anthony !",
   [
-    "Bonjour, moi c’est Anthony, je suis en charge de la production des MoonBikes. Je vous laisse découvrir mon projet.",
+    "Bonjour, moi c’est Anthony, je suis en charge de la production des Moonbikes. Je vous laisse découvrir mon projet.",
   ],
   "Moonbike",
   linkVideoMoonbike
 );
 let Jeune1 = new PopUpVideo(
   "Pnjs/Jeune1",
-  "Appuyez sur espace pour parler à Anthonin !",
+  "Appuyez sur espace pour parler à Antonin !",
   [
-    "Salut moi c'est Anthonin ! Pour découvrir sur quel super projet j'ai travaillé c'est ici :",
+    "Salut moi c'est Antonin ! Pour découvrir sur quel super projet j'ai travaillé c'est ici :",
   ],
   "Jeune1",
   linkVideoJeune1
