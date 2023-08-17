@@ -4377,7 +4377,7 @@
                  "name":"collider",
                  "opacity":1,
                  "type":"tilelayer",
-                 "visible":true,
+                 "visible":false,
                  "width":100,
                  "x":0,
                  "y":0
@@ -4739,14 +4739,14 @@
                  "name":"entries",
                  "opacity":1,
                  "type":"group",
-                 "visible":true,
+                 "visible":false,
                  "x":0,
                  "y":0
                 }],
          "name":"Zones",
          "opacity":1,
          "type":"group",
-         "visible":true,
+         "visible":false,
          "x":0,
          "y":0
         }, 
