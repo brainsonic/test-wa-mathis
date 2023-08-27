@@ -190,18 +190,18 @@ const textCaptain = [
   "Donc on a besoin de compétences techniques pointues pour concevoir, produire et entretenir des navires de plus en plus performants et écologiques.",
   "Cela concerne une grande diversité de métiers (plus de 300 !) qui sont en pleine évolution en raison des mutations technologiques et de l’émergence de nouveaux marchés. ",
   "Bref l’horizon est prometteur avec de grosses perspectives de développement dans les énergies renouvelables, les ressources maritimes et les biocarburants.​",
-  "Les océans sont un des enjeux stratégiques de notre siècle matelot !​",
+  "Les océans sont un des enjeux stratégiques de notre siècle, matelot !​",
   "Voilà pour un petit aperçu de l’industrie marine, tu veux découvrir d’autres industries ?",
   "Alors n’hésite pas à parler aux autres Yumi, bon vent !​",
 ];
 const textSkieuse = [
   "Hello !",
-  "Vous voulez faire un tour de Moonbike ?",
+  "Vous voulez faire un tour de MoonBike ?",
   "D’accord, mais d’abord, laissez-moi vous parler un peu de l’innovation dans l’industrie.",
   "L’industrie, c'est le secteur qui innove le plus en France, avec 72% des dépenses de R&D françaises.",
   "Industrie 4.0, industrie connectée, industrie du futur : le secteur se transforme en profondeur grâce à des technologies comme la fabrication additive, la cobotique ou encore les objets connectés – autant d’innovations qui améliorent la production et le quotidien de celles et ceux qui y travaillent.​    ",
   "Et tout cela crée de nouveaux métiers (data scientist, programmeur industriel, ingénieur cobot…) et transforme les modes d’organisation du travail. Sans oublier que de nombreuses innovations industrielles vont dans le sens d’une société plus durable.    ",
-  "Le Moonbike en est un bel exemple ! C’est le premier snowbike 100% électrique du marché : un mode de déplacement beaucoup plus écologique.​",
+  "Le MoonBike en est un bel exemple ! C’est le premier snowbike 100% électrique du marché : un mode de déplacement beaucoup plus écologique.​",
   "Allez maintenant vous pouvez aller le découvrir, tout schuss.    ",
 ];
 const textScientifique = [
@@ -256,7 +256,7 @@ let Moonbike = new PopUpVideo(
   "Pnjs/MoonbikePNJ",
   "Appuyez sur espace pour parler à Anthony !",
   [
-    "Bonjour, moi c’est Anthony, je suis en charge de la production des Moonbikes. Je vous laisse découvrir mon projet.",
+    "Bonjour, moi c’est Anthony, je suis en charge de la production des MoonBikes. Je vous laisse découvrir mon projet.",
   ],
   "Moonbike",
   linkVideoMoonbike
