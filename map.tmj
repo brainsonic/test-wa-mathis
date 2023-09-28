@@ -9037,17 +9037,7 @@
          "tilecount":80,
          "tileheight":32,
          "tilewidth":32
-        }, 
-        {
-         "columns":0,
-         "firstgid":184450,
-         "margin":0,
-         "name":"Name Labo Yumi",
-         "spacing":0,
-         "tilecount":0,
-         "tileheight":32,
-         "tilewidth":32
-        }, 
+        },  
         {
          "columns":21,
          "firstgid":184499,
