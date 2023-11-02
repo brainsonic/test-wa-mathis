@@ -297,9 +297,9 @@ let Lauak = new PopUpVideo(
   "Pnjs/MetierRoom/Lauak",
   "Appuyez sur espace pour parler à Lauak!",
   [
-    "Bonjour, moi c’est Lauak !"
+    "Bonjour, moi c’est Lauak !",
   ],
-  "Lauak",
+  "Lauakdsdd",
   lauakVideoLink,
 )
 
