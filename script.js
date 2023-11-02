@@ -416,7 +416,7 @@ let ApprentiRobotVideo = new Modal(
 )
 
 let ApprentiChaudronniereVideo = new Modal(
-  "Pnjs/MetierRoom/ApprentiRobot",
+  "Pnjs/MetierRoom/ApprentiChaudron",
   "Appuyez sur espace pour regarder la vidéo !",
   apprentiChaudronniereVideoLink,
   "center",
