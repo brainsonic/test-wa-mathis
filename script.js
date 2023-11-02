@@ -24,7 +24,13 @@ const linkVideo = "https://www.youtube.com/embed/9QDd6dH0-Xc"; // temporaire, à
 
 //Phase 2
 
+//MétierRoom
 const lauakVideoLink = "https://www.youtube.com/embed/dO4SjOcNDTk?si=3i_0ivZqE0k4L9HS";
+const cariVideoLink = "https://www.youtube.com/embed/dO4SjOcNDTk?si=3i_0ivZqE0k4L9HS";
+const ingProdVideoLink = "https://www.youtube.com/embed/8HlmZkJX_UQ?si=l0-8bOC_kMy2YYvv";
+const apprentiRobotLink = "https://www.youtube.com/embed/CZae_izqWiw?si=QQiQ9J4Pc7s2gUk8";
+const apprentiChaudronniereVideoLink = "https://www.youtube.com/embed/yz_6sGfsP2Q?si=BRitYLOYLMKJgEqr";
+const YumiMetierBot = "https://chat.csml.dev/s/klex5ttuh9bmpen8gyo4tssus4liqxgb";
 
 // SETUP ///////////////////////////////////////////////
 WA.onInit().then(() => {
@@ -293,16 +299,6 @@ let Jeune3 = new PopUpVideo(
   linkVideoJeune3
 );
 
-let Lauak = new PopUpVideo(
-  "Pnjs/MetierRoom/Lauak",
-  "Appuyez sur espace pour parler à Lauak!",
-  [
-    "Bonjour, moi c’est Lauak !",
-  ],
-  "Lauak",
-  lauakVideoLink,
-)
-
 // END PNJ ///////////////////////////////////////////////
 
 // INTERACTIONS DIVERSES ///////////////////////////////////////////////
@@ -382,5 +378,57 @@ let Piano = new Modal(
 );
 
 //Phase 2
+let Lauak = new PopUpVideo(
+  "Pnjs/MetierRoom/Lauak",
+  "Appuyez sur espace pour parler à Lauak!",
+  [
+    "Bonjour, moi c’est Lauak !",
+  ],
+  "Lauak",
+  lauakVideoLink,
+)
+
+let Cari = new PopUpVideo(
+  "Pnjs/MetierRoom/Cari",
+  "Appuyez sur espace pour parler à Cari!",
+  [
+    "Bonjour, moi c’est Cari !",
+  ],
+  "Cari",
+  lauakVideoLink,
+)
+
+let IngProd = new PopUpVideo(
+  "Pnjs/MetierRoom/IngProd",
+  "Appuyez sur espace pour parler à l'ingénieur de production!",
+  [
+    "Bonjour, je suis l'ingénieur de production!",
+  ],
+  "IngProd",
+  ingProdVideoLink,
+)
+
+let ApprentiRobotVideo = new Modal(
+  "Pnjs/MetierRoom/ApprentiRobot",
+  "Appuyez sur espace pour regarder la vidéo !",
+  apprentiRobotLink,
+  "center",
+)
+
+let ApprentiChaudronniereVideo = new Modal(
+  "Pnjs/MetierRoom/ApprentiRobot",
+  "Appuyez sur espace pour regarder la vidéo !",
+  apprentiChaudronniereVideoLink,
+  "center",
+)
+
+let yumiMetier = new Modal(
+  "Pnjs/MetierRoom/chatBot_1",
+  "Appuyez sur espace pour discuter avec Yumi!",
+  YumiMetierBot
+);
+
+
+
 
 // END INTERACTIONS DIVERSES ///////////////////////////////////////////////
