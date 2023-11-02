@@ -293,6 +293,16 @@ let Jeune3 = new PopUpVideo(
   linkVideoJeune3
 );
 
+let Lauak = new PopUpVideo(
+  "Pnjs/MetierRoom/Lauak",
+  "Appuyez sur espace pour parler à Lauak!",
+  [
+    "Bonjour, moi c’est Lauak !"
+  ],
+  "Lauak",
+  lauakVideoLink,
+)
+
 // END PNJ ///////////////////////////////////////////////
 
 // INTERACTIONS DIVERSES ///////////////////////////////////////////////
@@ -373,13 +383,4 @@ let Piano = new Modal(
 
 //Phase 2
 
-let Lauak = new PopUpVideo(
-  "Pnjs/MetierRoom/Lauak",
-  "Appuyez sur espace pour parler à Lauak!",
-  [
-    "Bonjour, moi c’est Lauak !"
-  ],
-  "Lauak",
-  "https://www.youtube.com/embed/APBCjKv6nvA",
-)
 // END INTERACTIONS DIVERSES ///////////////////////////////////////////////
