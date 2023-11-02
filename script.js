@@ -46,6 +46,24 @@ const respBureauVideoLink = "https://www.youtube.com/embed/YzXnbdKdbwY?si=5Jt9Zc
 const YumiITWBot = "https://chat.csml.dev/s/bpzoedzc279smw2i649rwhtst9rguvva";
 const worldSkillsVideoLink = "https://www.youtube.com/embed/videoseries?si=wKcics6QWpDWdVob&amp;list=PLEe-8ZKtOy6Oxx1qU_qRhdcBmy-lXBtqQ";
 
+//ParkInside
+
+const doigbyVideoLink = "https://www.youtube.com/embed/3An5XwFbKgM?si=Sm7VNc1OKJpUxyQz";
+const tiboInShapeVideoLink = "https://www.youtube.com/embed/3yAL-w1U-6s?si=EBabp9OWFY4KbO8s";
+const HiHacksVideoLink = "https://chat.csml.dev/s/imk4tlho3spmxlis9e1ejs3wlita2aco";
+
+//Labo Yumi
+
+const drNozmanVideoLink = "https://www.youtube.com/embed/zZL1SjBGkNc?si=_z_dfadNSmzm-qOr";
+const hiHacksVideoLink = "https://www.youtube.com/watch?v=BChzaJv_JzQ&t=102s";
+
+//DinningRoom
+
+const apprenti_1VideoLink = "https://www.youtube.com/watch?v=bIG_XU7XRbw&list=PLFysjt-P1QCMGkyhGiYfkTfj2D0IZBcja&index=7";
+const apprenti_2VideoLink = "https://www.youtube.com/watch?v=gxCuiA3-L4Q&list=PLFysjt-P1QCMGkyhGiYfkTfj2D0IZBcja&index=18";
+const apprenti_3VideoLink = "https://www.youtube.com/watch?v=XZlUUGS7qng&list=PLFysjt-P1QCMGkyhGiYfkTfj2D0IZBcja&index=6";
+const apprenti_4VideoLink = "https://www.youtube.com/watch?v=DU7kScvKs6w&list=PLFysjt-P1QCMGkyhGiYfkTfj2D0IZBcja&index=17";
+const apprenti_5VideoLink = "https://www.youtube.com/watch?v=G4lEOWcPYv4";
 
 // SETUP ///////////////////////////////////////////////
 WA.onInit().then(() => {
@@ -525,5 +543,108 @@ let WorldSkills = new Modal(
   worldSkillsVideoLink,
   "center",
 );
+
+//ParkInside
+
+let Doigby = new PopUpVideo(
+  "Pnjs/ParkInside/Doigby",
+  "Appuyez sur espace pour parler à Doigby!",
+  [
+    "Coucou tout le monde, c'est Doigby et aujourd'hui je vous fait découvrir les métiers de l'UIMM!",
+  ],
+  "Doigby",
+  tiboInShapeVideoLink,
+);
+
+let Tiboinshape = new PopUpVideo(
+  "Pnjs/ParkInside/Tiboinshape",
+  "Appuyez sur espace pour parler à Tiboinshape!",
+  [
+    "Daaamn la teamShape !!, aujourd'hui je vous fait découvrir les métiers que l'on retrouve à l'UIMM !",
+  ],
+  "Tiboinshape",
+  tiboInShapeVideoLink,
+);
+
+let HiHacksBot = new Modal(
+  "Pnjs/ParkInside/Hihacks",
+  "Appuyez sur espace pour discuter avec Hihacks!",
+  HiHacksVideoLink
+);
+
+//Labo Yumi
+
+let DrNozman = new PopUpVideo(
+  "Pnjs/LaboRoom/DrNozman",
+  "Appuyez sur espace pour parler à DrNozman!",
+  [
+    "Salut à tous !! Ici Nozman, aujourd'hui je vais vous présenter une vidéo un peu spécial concernant l'UIMM",
+  ],
+  "DrNozman",
+  drNozmanVideoLink,
+);
+
+let HiHacks = new PopUpVideo(
+  "Pnjs/LaboRoom/Hihacks_labo",
+  "Appuyez sur espace pour parler à Hihacks!",
+  [
+    "Bonjour, c'est moi Hihacks. Aujourd'hui je vais vous présenter une vidéo concernant l'UIMM",
+  ],
+  "Hihacks_labo",
+  hiHacksVideoLink,
+);
+
+//Dinning Room
+
+let Apprenti_1 = new PopUpVideo(
+  "Pnjs/DinningRoom/Apprenti_1",
+  "Appuyez sur espace pour parler à Magaly!",
+  [
+    "Bonjour, c'est moi Magaly. Aujourd'hui je vais vous présenter une vidéo concernant l'UIMM",
+  ],
+  "Apprenti_1",
+  apprenti_1VideoLink,
+);
+
+let Apprenti_2 = new PopUpVideo(
+  "Pnjs/DinningRoom/Apprenti_2",
+  "Appuyez sur espace pour parler à Joris!",
+  [
+    "Bonjour, c'est moi Joris. Aujourd'hui je vais vous présenter une vidéo concernant l'UIMM",
+  ],
+  "Apprenti_2",
+  apprenti_2VideoLink,
+);
+
+let Apprenti_3 = new PopUpVideo(
+  "Pnjs/DinningRoom/Apprenti_3",
+  "Appuyez sur espace pour parler à Julien!",
+  [
+    "Bonjour, c'est moi Julien. Aujourd'hui je vais vous présenter une vidéo concernant l'UIMM",
+  ],
+  "Apprenti_3",
+  apprenti_3VideoLink,
+);
+
+let Apprenti_4 = new PopUpVideo(
+  "Pnjs/DinningRoom/Apprenti_4",
+  "Appuyez sur espace pour parler à Fanny!",
+  [
+    "Bonjour, c'est moi Fanny. Aujourd'hui je vais vous présenter une vidéo concernant l'UIMM",
+  ],
+  "Apprenti_4",
+  apprenti_4VideoLink,
+);
+
+let Apprenti_5 = new PopUpVideo(
+  "Pnjs/DinningRoom/Apprenti_5",
+  "Appuyez sur espace pour parler à Nassredine!",
+  [
+    "Bonjour, c'est moi Nassredine. Aujourd'hui je vais vous présenter une vidéo concernant l'UIMM",
+  ],
+  "Apprenti_5",
+  apprenti_5VideoLink,
+);
+
 
 // END INTERACTIONS DIVERSES ///////////////////////////////////////////////
