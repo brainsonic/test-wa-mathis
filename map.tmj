@@ -8004,6 +8004,28 @@
                  "width":0,
                  "x":1141.26553349522,
                  "y":1752.60677046136
+                }, 
+                {
+                 "height":71.4183688044566,
+                 "id":66,
+                 "name":"IngProd",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":149.978574489359,
+                 "x":1719.75432081131,
+                 "y":1582.63105270676
+                }, 
+                {
+                 "height":0,
+                 "id":67,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":2311.09841451221,
+                 "y":1562.63390944151
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -9243,7 +9265,7 @@
          "y":0
         }],
  "nextlayerid":145,
- "nextobjectid":64,
+ "nextobjectid":68,
  "orientation":"orthogonal",
  "properties":[
         {
