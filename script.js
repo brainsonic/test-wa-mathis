@@ -380,6 +380,6 @@ let Lauak = new PopUpVideo(
     "Bonjour, moi c’est Lauak !"
   ],
   "Lauak",
-  lauakVideoLink,
+  "https://www.youtube.com/embed/APBCjKv6nvA",
 )
 // END INTERACTIONS DIVERSES ///////////////////////////////////////////////
