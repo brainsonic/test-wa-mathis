@@ -374,7 +374,7 @@ let Piano = new Modal(
 //Phase 2
 
 let Lauak = new PopUpVideo(
-  "Pnjs/MetierRoom",
+  "Pnjs/MetierRoom/Lauak",
   "Appuyez sur espace pour parler à Lauak!",
   [
     "Bonjour, moi c’est Lauak !"
