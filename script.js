@@ -50,7 +50,7 @@ const worldSkillsVideoLink = "https://www.youtube.com/embed/videoseries?si=wKcic
 
 const doigbyVideoLink = "https://www.youtube.com/embed/3An5XwFbKgM?si=Sm7VNc1OKJpUxyQz";
 const tiboInShapeVideoLink = "https://www.youtube.com/embed/3yAL-w1U-6s?si=EBabp9OWFY4KbO8s";
-const HiHacksVideoLink = "https://chat.csml.dev/s/imk4tlho3spmxlis9e1ejs3wlita2aco";
+const HiHacksBotLink = "https://chat.csml.dev/s/imk4tlho3spmxlis9e1ejs3wlita2aco";
 
 //Labo Yumi
 
@@ -59,11 +59,11 @@ const hiHacksVideoLink = "https://www.youtube.com/watch?v=BChzaJv_JzQ&t=102s";
 
 //DinningRoom
 
-const apprenti_1VideoLink = "https://www.youtube.com/watch?v=bIG_XU7XRbw&list=PLFysjt-P1QCMGkyhGiYfkTfj2D0IZBcja&index=7";
-const apprenti_2VideoLink = "https://www.youtube.com/watch?v=gxCuiA3-L4Q&list=PLFysjt-P1QCMGkyhGiYfkTfj2D0IZBcja&index=18";
-const apprenti_3VideoLink = "https://www.youtube.com/watch?v=XZlUUGS7qng&list=PLFysjt-P1QCMGkyhGiYfkTfj2D0IZBcja&index=6";
-const apprenti_4VideoLink = "https://www.youtube.com/watch?v=DU7kScvKs6w&list=PLFysjt-P1QCMGkyhGiYfkTfj2D0IZBcja&index=17";
-const apprenti_5VideoLink = "https://www.youtube.com/watch?v=G4lEOWcPYv4";
+const apprenti_1VideoLink = "https://www.youtube.com/embed/bIG_XU7XRbw?si=TmzUGmFJ11DA-Mhz";
+const apprenti_2VideoLink = "https://www.youtube.com/embed/gxCuiA3-L4Q?si=15Pm8Vsp_im5XbLO";
+const apprenti_3VideoLink = "https://www.youtube.com/embed/XZlUUGS7qng?si=L9sT1Pkp2bRlEUVV";
+const apprenti_4VideoLink = "https://www.youtube.com/embed/DU7kScvKs6w?si=4eaGA75dDZP0dIxT";
+const apprenti_5VideoLink = "https://www.youtube.com/embed/G4lEOWcPYv4?si=wa9eJCX3TbsLQZS2";
 
 // SETUP ///////////////////////////////////////////////
 WA.onInit().then(() => {
@@ -553,7 +553,7 @@ let Doigby = new PopUpVideo(
     "Coucou tout le monde, c'est Doigby et aujourd'hui je vous fait découvrir les métiers de l'UIMM!",
   ],
   "Doigby",
-  tiboInShapeVideoLink,
+  doigbyVideoLink,
 );
 
 let Tiboinshape = new PopUpVideo(
@@ -569,7 +569,7 @@ let Tiboinshape = new PopUpVideo(
 let HiHacksBot = new Modal(
   "Pnjs/ParkInside/Hihacks",
   "Appuyez sur espace pour discuter avec Hihacks!",
-  HiHacksVideoLink
+  HiHacksBotLink
 );
 
 //Labo Yumi
