@@ -26,11 +26,26 @@ const linkVideo = "https://www.youtube.com/embed/9QDd6dH0-Xc"; // temporaire, à
 
 //MétierRoom
 const lauakVideoLink = "https://www.youtube.com/embed/dO4SjOcNDTk?si=3i_0ivZqE0k4L9HS";
-const cariVideoLink = "https://www.youtube.com/embed/dO4SjOcNDTk?si=3i_0ivZqE0k4L9HS";
+const cariVideoLink = "https://www.youtube.com/embed/dO4SjOcNDTk?si=3i_0ivZqE0k4L9HS"; //TO CHANGE
 const ingProdVideoLink = "https://www.youtube.com/embed/8HlmZkJX_UQ?si=l0-8bOC_kMy2YYvv";
 const apprentiRobotLink = "https://www.youtube.com/embed/CZae_izqWiw?si=QQiQ9J4Pc7s2gUk8";
 const apprentiChaudronniereVideoLink = "https://www.youtube.com/embed/yz_6sGfsP2Q?si=BRitYLOYLMKJgEqr";
 const YumiMetierBot = "https://chat.csml.dev/s/klex5ttuh9bmpen8gyo4tssus4liqxgb";
+
+//ShowRoom
+
+const emmaVideoLink = "https://www.youtube.com/embed/eBuPRPSBXlc?si=iMw0riL5KJyYjfIe";
+const Liebherr_aerospaceVideoLink = "https://www.youtube.com/embed/eBuPRPSBXlc?si=iMw0riL5KJyYjfIe"; //TO CHANGE
+const OtechVideoLink = "https://www.youtube.com/embed/eBuPRPSBXlc?si=iMw0riL5KJyYjfIe"; //TO CHANGE
+const dessinateurInduVideoLink = "https://www.youtube.com/embed/IEtX1_vx98g?si=wt_aAReOPxkrhaAO";
+const respRDVideoLink = "https://www.youtube.com/embed/dFBHOiedwkQ?si=3CJQ8h6MYL10nkSg";
+const ajustMonteurVideoLink = "https://www.youtube.com/embed/oJQcLWtGmDY?si=wcUwCbNc-Yw7bSS-";
+const dataScientistVideoLink = "https://www.youtube.com/embed/ixlo9WwbvuE?si=hhiUylKLOuW5i-Dj";
+const chargeAffVideoLink = "https://www.youtube.com/embed/vVhIHuG0dgI?si=APRxPS1Q6Ws3Vs40";
+const respBureauVideoLink = "https://www.youtube.com/embed/YzXnbdKdbwY?si=5Jt9ZcvzwENDE7nA";
+const YumiITWBot = "https://chat.csml.dev/s/bpzoedzc279smw2i649rwhtst9rguvva";
+const worldSkillsVideoLink = "https://www.youtube.com/embed/videoseries?si=wKcics6QWpDWdVob&amp;list=PLEe-8ZKtOy6Oxx1qU_qRhdcBmy-lXBtqQ";
+
 
 // SETUP ///////////////////////////////////////////////
 WA.onInit().then(() => {
@@ -378,6 +393,8 @@ let Piano = new Modal(
 );
 
 //Phase 2
+
+//MetierRoom
 let Lauak = new PopUpVideo(
   "Pnjs/MetierRoom/Lauak",
   "Appuyez sur espace pour parler à Lauak!",
@@ -420,12 +437,93 @@ let ApprentiChaudronniereVideo = new Modal(
   "Appuyez sur espace pour regarder la vidéo !",
   apprentiChaudronniereVideoLink,
   "center",
-)
+);
 
 let yumiMetier = new Modal(
   "Pnjs/MetierRoom/chatBot_1",
   "Appuyez sur espace pour discuter avec Yumi!",
   YumiMetierBot
+);
+
+//ShowRoom
+
+let Emma = new PopUpVideo(
+  "Pnjs/ShowRoom/Emma",
+  "Appuyez sur espace pour parler à Emma!",
+  [
+    "Bonjour, moi c’est Emma !",
+  ],
+  "Emma",
+  emmaVideoLink,
+);
+
+let Liebherr_aerospace = new Modal(
+  "Pnjs/ShowRoom/Liebherr_aerospace",
+  "Appuyez sur espace pour regarder la vidéo !",
+  Liebherr_aerospaceVideoLink,
+  "center",
+);
+
+let Otech = new Modal(
+  "Pnjs/ShowRoom/Otech",
+  "Appuyez sur espace pour regarder la vidéo !",
+  OtechVideoLink,
+  "center",
+);
+
+let DessinateurIndu = new Modal(
+  "Pnjs/ShowRoom/DessinateurIndu",
+  "Appuyez sur espace pour regarder la vidéo !",
+  dessinateurInduVideoLink,
+  "center",
+);
+
+let RespRD = new Modal(
+  "Pnjs/ShowRoom/RespR&D",
+  "Appuyez sur espace pour regarder la vidéo !",
+  respRDVideoLink,
+  "center",
+);
+
+let AjustMonteur = new Modal(
+  "Pnjs/ShowRoom/AjustMonteur",
+  "Appuyez sur espace pour regarder la vidéo !",
+  ajustMonteurVideoLink,
+  "center",
+);
+
+let DataScientist = new Modal(
+  "Pnjs/ShowRoom/DataScientist",
+  "Appuyez sur espace pour regarder la vidéo !",
+  dataScientistVideoLink,
+  "center",
+);
+
+let ChargAff = new Modal(
+  "Pnjs/ShowRoom/ChargeAff",
+  "Appuyez sur espace pour regarder la vidéo !",
+  chargeAffVideoLink,
+  "center",
+);
+
+let RespBureau = new Modal(
+  "Pnjs/ShowRoom/RespBureau",
+  "Appuyez sur espace pour regarder la vidéo !",
+  respBureauVideoLink,
+  "center",
+);
+
+let yumiITW = new Modal(
+  "Pnjs/ShowRoom/ITWBot",
+  "Appuyez sur espace pour discuter avec Yumi!",
+  YumiITWBot
+);
+
+let WorldSkills = new Modal(
+  "Pnjs/ShowRoom/WorldSkills",
+  "Appuyez sur espace pour regarder la vidéo !",
+  worldSkillsVideoLink,
+  "center",
 );
 
 // END INTERACTIONS DIVERSES ///////////////////////////////////////////////
