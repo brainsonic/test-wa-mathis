@@ -6972,7 +6972,7 @@
          "name":"Pnjs",
          "opacity":1,
          "type":"group",
-         "visible":true,
+         "visible":false,
          "x":0,
          "y":0
         }, 
@@ -7793,7 +7793,7 @@
          "name":"Zones",
          "opacity":1,
          "type":"group",
-         "visible":true,
+         "visible":false,
          "x":0,
          "y":0
         }, 
@@ -8013,8 +8013,8 @@
                  "type":"",
                  "visible":true,
                  "width":149.978574489359,
-                 "x":1719.75432081131,
-                 "y":1582.63105270676
+                 "x":1861.61188814573,
+                 "y":1585.50654393651
                 }, 
                 {
                  "height":0,
