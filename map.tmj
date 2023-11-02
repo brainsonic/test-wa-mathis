@@ -7973,19 +7973,41 @@
                  "y":2092.6665
                 }, 
                 {
-                 "height":109.984287958863,
+                 "height":102.842451078417,
                  "id":55,
                  "name":"Lauak",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":217.111841165548,
-                 "x":1091.2726753321,
-                 "y":1592.62962433938
+                 "width":234.252249678618,
+                 "x":1019.85430652764,
+                 "y":1771.17554635052
+                }, 
+                {
+                 "height":75.7034709327238,
+                 "id":59,
+                 "name":"Cari",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":182.831024139409,
+                 "x":1154.12083988002,
+                 "y":1378.37451792601
+                }, 
+                {
+                 "height":0,
+                 "id":63,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1141.26553349522,
+                 "y":1752.60677046136
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }, 
@@ -9221,7 +9243,7 @@
          "y":0
         }],
  "nextlayerid":145,
- "nextobjectid":59,
+ "nextobjectid":64,
  "orientation":"orthogonal",
  "properties":[
         {
