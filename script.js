@@ -220,6 +220,43 @@ WA.ui.modal.openModal({
   position: "right",
 });
 
+//ZONE HELP ///////////////////////////////////////////////
+WA.room.onEnterLayer("Zones/Help").subscribe(() => {
+  WA.controls.restorePlayerProximityMeeting();
+});
+
+WA.room.onLeaveLayer("Zones/Help").subscribe(() => {
+  WA.controls.disablePlayerProximityMeeting();
+});
+
+//ZONE OUTGATE INFO
+const textOutGate = "Vous êtes sorti de la gare";
+let openInfoPopup = false; //Check if the popUp is already open
+WA.room.onLeaveLayer("Zones/OutGate").subscribe(() => {
+  if (openInfoPopup == false)
+  {
+    openInfoPopup = true;
+    // open modal 
+    WA.ui.modal.openModal({
+      title: "Popup",
+      src: popupLink,
+      allow: "fullscreen; clipboard-read; clipboard-write",
+      allowApi: !0,
+      position: "center",
+    });
+  }
+});
+
+//BUTTON TUTORIAL
+
+WA.ui.actionBar.addButton({
+  id: 'tutorial-btn',
+  label: 'Tutoriel',
+  callback: (event) => {
+    tutorial();
+  }
+})
+
 // TEXTES PNJ ///////////////////////////////////////////////
 
 // texte des pnj sous format de tableau de string, chaque string est un nouveau popup
