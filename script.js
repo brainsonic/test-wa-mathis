@@ -422,4 +422,10 @@ let ApprentiChaudronniereVideo = new Modal(
   "center",
 )
 
+let yumiMetier = new Modal(
+  "Pnjs/MetierRoom/chatBot_1",
+  "Appuyez sur espace pour discuter avec Yumi!",
+  YumiMetierBot
+);
+
 // END INTERACTIONS DIVERSES ///////////////////////////////////////////////
