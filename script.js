@@ -422,12 +422,30 @@ let PanneauQuai = new Dialog(
   ["Vous vous trouvez au Port du Monde de Yumi"],
   "Panneau Quai"
 );
+
 let PanneauTerrasse = new Dialog(
   "Pnjs/Panneau Terrasse",
   "Appuyez sur espace pour intéragir avec le panneau !",
   ["Vous vous trouvez sur la place principale"],
   "Panneau Terrasse"
 );
+
+let PanneauParcCentre = new Dialog(
+  "Pnjs/Panneau Parc Centre",
+  "Appuyez sur espace pour intéragir avec le panneau !",
+  ["À gauche la ShowRoom - En haut à droite le Labo Yumi - En haut à gauche l'Apprenti room"],
+  "PanneauParcCentre"
+);
+
+let PanneauParcHaut = new Dialog(
+  "Pnjs/Panneau Parc Haut",
+  "Appuyez sur espace pour intéragir avec le panneau !",
+  ["Labo Yumi"],
+  "PanneauParcHaut"
+);
+//Phase 2
+
+
 
 // Mini Jeux
 let Pong = new Modal(
