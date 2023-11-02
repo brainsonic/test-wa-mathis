@@ -22,6 +22,10 @@ const linkVideoJeune3 = "https://www.youtube.com/embed/mgX4eHVDlTc";
 const linkVideoMoonbike = "https://www.youtube.com/embed/eE3kWcMZsuE";
 const linkVideo = "https://www.youtube.com/embed/9QDd6dH0-Xc"; // temporaire, à modifier quand la vidéo sera uploadée
 
+//Phase 2
+
+const lauakVideoLink = "https://www.youtube.com/embed/dO4SjOcNDTk?si=3i_0ivZqE0k4L9HS";
+
 // SETUP ///////////////////////////////////////////////
 WA.onInit().then(() => {
   // désactiver les proximity meeting parceque peu utile
@@ -367,4 +371,15 @@ let Piano = new Modal(
   "center"
 );
 
+//Phase 2
+
+let Lauak = new PopUpVideo(
+  "Pnjs/MetierRoom",
+  "Appuyez sur espace pour parler à Lauak!",
+  [
+    "Bonjour, moi c’est Lauak !"
+  ],
+  "Lauak",
+  lauakVideoLink,
+)
 // END INTERACTIONS DIVERSES ///////////////////////////////////////////////
