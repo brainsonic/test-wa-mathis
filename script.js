@@ -299,7 +299,7 @@ let Lauak = new PopUpVideo(
   [
     "Bonjour, moi c’est Lauak !",
   ],
-  "Lauakdsdd",
+  "Lauak",
   lauakVideoLink,
 )
 

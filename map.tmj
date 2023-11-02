@@ -6972,7 +6972,7 @@
          "name":"Pnjs",
          "opacity":1,
          "type":"group",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }, 
@@ -7971,6 +7971,17 @@
                  "width":157.333,
                  "x":2277.3335,
                  "y":2092.6665
+                }, 
+                {
+                 "height":109.984287958863,
+                 "id":55,
+                 "name":"Lauak",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":217.111841165548,
+                 "x":1091.2726753321,
+                 "y":1592.62962433938
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -9209,8 +9220,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":144,
- "nextobjectid":55,
+ "nextlayerid":145,
+ "nextobjectid":59,
  "orientation":"orthogonal",
  "properties":[
         {
