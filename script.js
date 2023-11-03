@@ -56,7 +56,7 @@ const InfluenceBotLink = "https://chat.csml.dev/s/2yh4lfxd7nba5zevmybgseb41bcn6h
 //Labo Yumi
 
 const drNozmanVideoLink = "https://www.youtube.com/embed/zZL1SjBGkNc?si=_z_dfadNSmzm-qOr";
-const hiHacksVideoLink = "https://www.youtube.com/watch?v=BChzaJv_JzQ&t=102s";
+const hiHacksVideoLink = "https://www.youtube.com/embed/BChzaJv_JzQ?si=K1G9ZNtbFTiTO3AA";
 const YumiLabBotLink = "https://chat.csml.dev/s/fb5kvplgaqoxlqfq9c2solxxt5jbyfh5";
 
 //DinningRoom
@@ -603,7 +603,7 @@ let ChargAff = new PopUpVideo(
   [
     "Quel est le rôle du chargé d'affaires ? Réponse en vidéo !"
   ],
-  "ChargeAff",
+  "ChargAff",
   chargeAffVideoLink,
 );
 
