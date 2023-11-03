@@ -22,19 +22,19 @@ const linkVideoJeune3 = "https://www.youtube.com/embed/mgX4eHVDlTc";
 const linkVideoMoonbike = "https://www.youtube.com/embed/eE3kWcMZsuE";
 const linkVideo = "https://www.youtube.com/embed/9QDd6dH0-Xc"; // temporaire, à modifier quand la vidéo sera uploadée
 
-//Phase 2
+/* ------------ Phase 2 ------------ */
 
 //MétierRoom
-const lauakVideoLink = "https://www.youtube.com/embed/dO4SjOcNDTk?si=3i_0ivZqE0k4L9HS";
-const cariVideoLink = "https://www.youtube.com/embed/dO4SjOcNDTk?si=L_LmAHn2qbeB2iyN"; //TO CHANGE
+const nicolasVideoLink = "https://www.youtube.com/embed/dO4SjOcNDTk?si=3i_0ivZqE0k4L9HS";
+const cariVideoLink = "https://www.youtube.com/embed/cM2U-uKXzts?si=HSPzO1A938ei964m";
 const ingProdVideoLink = "https://www.youtube.com/embed/8HlmZkJX_UQ?si=l0-8bOC_kMy2YYvv";
 const apprentiRobotLink = "https://www.youtube.com/embed/CZae_izqWiw?si=QQiQ9J4Pc7s2gUk8";
-const apprentiChaudronniereVideoLink = "https://www.youtube.com/embed/yz_6sGfsP2Q?si=BRitYLOYLMKJgEqr";
+const apprentiChaudronniereVideoLink = "https://www.youtube.com/embed/5zDXk6J0hHo?si=DQ3jPiXhQLJgWTOH";
 const YumiMetierBot = "https://chat.csml.dev/s/klex5ttuh9bmpen8gyo4tssus4liqxgb";
 
 //ShowRoom
 
-const emmaVideoLink = "https://www.youtube.com/embed/eBuPRPSBXlc?si=iMw0riL5KJyYjfIe";
+const anaisVideoLink = "https://www.youtube.com/embed/eBuPRPSBXlc?si=r_3zCqDW0qUB3d8K";
 const Liebherr_aerospaceVideoLink = "https://www.youtube.com/embed/eBuPRPSBXlc?si=iMw0riL5KJyYjfIe"; //TO CHANGE
 const OtechVideoLink = "https://www.youtube.com/embed/eBuPRPSBXlc?si=iMw0riL5KJyYjfIe"; //TO CHANGE
 const dessinateurInduVideoLink = "https://www.youtube.com/embed/IEtX1_vx98g?si=wt_aAReOPxkrhaAO";
@@ -51,11 +51,13 @@ const worldSkillsVideoLink = "https://www.youtube.com/embed/videoseries?si=wKcic
 const doigbyVideoLink = "https://www.youtube.com/embed/3An5XwFbKgM?si=Sm7VNc1OKJpUxyQz";
 const tiboInShapeVideoLink = "https://www.youtube.com/embed/3yAL-w1U-6s?si=EBabp9OWFY4KbO8s";
 const HiHacksBotLink = "https://chat.csml.dev/s/imk4tlho3spmxlis9e1ejs3wlita2aco";
+const InfluenceBotLink = "https://chat.csml.dev/s/2yh4lfxd7nba5zevmybgseb41bcn6h9b";
 
 //Labo Yumi
 
 const drNozmanVideoLink = "https://www.youtube.com/embed/zZL1SjBGkNc?si=_z_dfadNSmzm-qOr";
 const hiHacksVideoLink = "https://www.youtube.com/watch?v=BChzaJv_JzQ&t=102s";
+const YumiLabBotLink = "https://chat.csml.dev/s/fb5kvplgaqoxlqfq9c2solxxt5jbyfh5";
 
 //DinningRoom
 
@@ -64,6 +66,8 @@ const apprenti_2VideoLink = "https://www.youtube.com/embed/gxCuiA3-L4Q?si=15Pm8V
 const apprenti_3VideoLink = "https://www.youtube.com/embed/XZlUUGS7qng?si=L9sT1Pkp2bRlEUVV";
 const apprenti_4VideoLink = "https://www.youtube.com/embed/DU7kScvKs6w?si=4eaGA75dDZP0dIxT";
 const apprenti_5VideoLink = "https://www.youtube.com/embed/G4lEOWcPYv4?si=wa9eJCX3TbsLQZS2";
+
+/* ------------ Phase ?? ------------ */
 
 // SETUP ///////////////////////////////////////////////
 WA.onInit().then(() => {
@@ -433,7 +437,7 @@ let PanneauTerrasse = new Dialog(
 let PanneauParcCentre = new Dialog(
   "Pnjs/Panneau Parc Centre",
   "Appuyez sur espace pour intéragir avec le panneau !",
-  ["À gauche la ShowRoom - En haut à droite le Labo Yumi - En haut à gauche l'Apprenti room"],
+  ["À gauche la hub des métiers - En haut à droite le Lab Yumi - En haut à gauche la cafet' des apprentis - En bas le salon des vocations"],
   "PanneauParcCentre"
 );
 
@@ -470,21 +474,21 @@ let Piano = new Modal(
 //Phase 2
 
 //MetierRoom
-let Lauak = new PopUpVideo(
-  "Pnjs/MetierRoom/Lauak",
-  "Appuyez sur espace pour parler à Lauak!",
+let Nicolas = new PopUpVideo(
+  "Pnjs/MetierRoom/Nicolas",
+  "Appuyez sur espace pour parler à Nicolas!",
   [
-    "Bonjour, moi c’est Lauak !",
+    "Bonjour, moi c’est Nicolas et je suis soudeur dans l’industrie aéronautique. Venez découvrir mon métier !",
   ],
-  "Lauak",
-  lauakVideoLink,
+  "Nicolas",
+  nicolasVideoLink,
 )
 
 let Cari = new PopUpVideo(
   "Pnjs/MetierRoom/Cari",
-  "Appuyez sur espace pour parler à Cari!",
+  "Appuyez sur espace pour parler à Jordan!",
   [
-    "Bonjour, moi c’est Cari !",
+    "Bonjour, moi c’est Jordan et je suis concepteur de systèmes embarqués. Vous connaissez ? Non ? Alors venez découvrir mon métier !",
   ],
   "Cari",
   cariVideoLink,
@@ -494,24 +498,30 @@ let IngProd = new PopUpVideo(
   "Pnjs/MetierRoom/IngProd",
   "Appuyez sur espace pour parler à l'ingénieur de production!",
   [
-    "Bonjour, je suis l'ingénieur de production!",
+    "Bonjour, moi c’est Alexandra et je suis ingénieure de production. Je vous invite à découvrir mon parcours et mon quotidien dans cette vidéo.",
   ],
   "IngProd",
   ingProdVideoLink,
 )
 
-let ApprentiRobotVideo = new Modal(
+let ApprentiRobotVideo = new PopUpVideo(
   "Pnjs/MetierRoom/ApprentiRobot",
   "Appuyez sur espace pour regarder la vidéo !",
+  [
+    "Thomas est apprenti dans la robotique. Découvrez son métier en vidéo ! "
+  ],
+  "ApprentiRobot",
   apprentiRobotLink,
-  "center",
 )
 
-let ApprentiChaudronniereVideo = new Modal(
+let ApprentiChaudronniereVideo = new PopUpVideo(
   "Pnjs/MetierRoom/ApprentiChaudron",
   "Appuyez sur espace pour regarder la vidéo !",
+  [
+    "Découvrez en vidéo le métier de Pauline, apprentie en chaudronnerie navale."
+  ],
+  "ApprentiChaudronniere",
   apprentiChaudronniereVideoLink,
-  "center",
 );
 
 let yumiMetier = new Modal(
@@ -523,13 +533,13 @@ let yumiMetier = new Modal(
 //ShowRoom
 
 let Emma = new PopUpVideo(
-  "Pnjs/ShowRoom/Emma",
-  "Appuyez sur espace pour parler à Emma!",
+  "Pnjs/ShowRoom/Anais",
+  "Appuyez sur espace pour parler à Anais!",
   [
-    "Bonjour, moi c’est Emma !",
+    "Salut, moi c’est Anaïs et je suis technicienne méthodes. Si vous ne savez pas en quoi ça consiste : venez, je vous montre ! ",
   ],
-  "Emma",
-  emmaVideoLink,
+  "Anais",
+  anaisVideoLink,
 );
 
 let Liebherr_aerospace = new Modal(
@@ -546,46 +556,65 @@ let Otech = new Modal(
   "center",
 );
 
-let DessinateurIndu = new Modal(
+let DessinateurIndu = new PopUpVideo(
   "Pnjs/ShowRoom/DessinateurIndu",
   "Appuyez sur espace pour regarder la vidéo !",
+  [
+    "Ronan est dessinateur industriel. Découvrez son métier en vidéo !"
+  ],
+  "DessinateurIndu",
   dessinateurInduVideoLink,
-  "center",
 );
 
-let RespRD = new Modal(
+let RespRD = new PopUpVideo(
   "Pnjs/ShowRoom/RespR&D",
   "Appuyez sur espace pour regarder la vidéo !",
+  [
+    "Isabelle est responsable R&D. Découvrez son métier en vidéo !"
+  ],
+  "RespRD",
   respRDVideoLink,
-  "center",
+
 );
 
-let AjustMonteur = new Modal(
+let AjustMonteur = new PopUpVideo(
   "Pnjs/ShowRoom/AjustMonteur",
   "Appuyez sur espace pour regarder la vidéo !",
+  [
+    "C'est quoi le métier d'ajusteur-monteur ? Pour le découvrir c'est ici."
+  ],
+  "AjustMonteur",
   ajustMonteurVideoLink,
-  "center",
 );
 
-let DataScientist = new Modal(
+let DataScientist = new PopUpVideo(
   "Pnjs/ShowRoom/DataScientist",
   "Appuyez sur espace pour regarder la vidéo !",
+  [
+    "C'est quoi le métier de data scientist ? Pour le découvrir c'est ici."
+  ],
+  "DataScientist",
   dataScientistVideoLink,
-  "center",
 );
 
-let ChargAff = new Modal(
+let ChargAff = new PopUpVideo(
   "Pnjs/ShowRoom/ChargeAff",
   "Appuyez sur espace pour regarder la vidéo !",
+  [
+    "Quel est le rôle du chargé d'affaires ? Réponse en vidéo !"
+  ],
+  "ChargeAff",
   chargeAffVideoLink,
-  "center",
 );
 
-let RespBureau = new Modal(
+let RespBureau = new PopUpVideo(
   "Pnjs/ShowRoom/RespBureau",
   "Appuyez sur espace pour regarder la vidéo !",
+  [
+    "Comment devenir responsable bureau d'études et méthodes ? Réponse en vidéo !"
+  ],
+  "RespBureau",
   respBureauVideoLink,
-  "center",
 );
 
 let yumiITW = new Modal(
@@ -594,11 +623,14 @@ let yumiITW = new Modal(
   YumiITWBot
 );
 
-let WorldSkills = new Modal(
+let WorldSkills = new PopUpVideo(
   "Pnjs/ShowRoom/WorldSkills",
   "Appuyez sur espace pour regarder la vidéo !",
+  [
+    "Connaissez-vous les WorldSkills, la grande compétition des métiers ? Et bien c'est le moment de les découvrir en visionnant la saison 1 de 'WorldSkills, La Série', réalisée avec les apprentis de l'industrie ! Accrochez-vous, sensations fortes garanties"
+  ],
+  "WorldSkills",
   worldSkillsVideoLink,
-  "center",
 );
 
 //ParkInside
@@ -607,7 +639,7 @@ let Doigby = new PopUpVideo(
   "Pnjs/ParkInside/Doigby",
   "Appuyez sur espace pour parler à Doigby!",
   [
-    "Coucou tout le monde, c'est Doigby et aujourd'hui je vous fait découvrir les métiers de l'UIMM!",
+    "Hello, moi c’est Doigby ! Je suis vidéaste et Yumi m’a mis au défi de construire une fusée dans Minecraft avec l'aide des internautes. Pensez-vous que j'ai réussi ? Je vous laisse la surprise...",
   ],
   "Doigby",
   doigbyVideoLink,
@@ -617,7 +649,7 @@ let Tiboinshape = new PopUpVideo(
   "Pnjs/ParkInside/Tiboinshape",
   "Appuyez sur espace pour parler à Tiboinshape!",
   [
-    "Daaamn la teamShape !!, aujourd'hui je vous fait découvrir les métiers que l'on retrouve à l'UIMM !",
+    "Hello, moi c’est Maëva : le vidéaste Tibo InShape est revenu en Bac Pro pour découvrir mon métier d’ajusteur-monteur, ainsi que les autres métiers de l'industrie aéronautique. Regardez ce que ça donne !",
   ],
   "Tiboinshape",
   tiboInShapeVideoLink,
@@ -629,13 +661,19 @@ let HiHacksBot = new Modal(
   HiHacksBotLink
 );
 
+let InfluenceBot = new Modal(
+  "Pnjs/ParkInside/Influence",
+  "Appuyez sur espace pour discuter avec Influence!",
+  InfluenceBotLink
+);
+
 //Labo Yumi
 
 let DrNozman = new PopUpVideo(
   "Pnjs/LaboRoom/DrNozman",
   "Appuyez sur espace pour parler à DrNozman!",
   [
-    "Salut à tous !! Ici Nozman, aujourd'hui je vais vous présenter une vidéo un peu spécial concernant l'UIMM",
+    "Bonjour, moi c’est Dr Nozman et comme je suis un grand curieux, j’ai voulu découvrir comment étaient faites les prothèses d’aujourd’hui. Venez, je vous explique tout.",
   ],
   "DrNozman",
   drNozmanVideoLink,
@@ -645,19 +683,24 @@ let HiHacks = new PopUpVideo(
   "Pnjs/LaboRoom/Hihacks_labo",
   "Appuyez sur espace pour parler à Hihacks!",
   [
-    "Bonjour, c'est moi Hihacks. Aujourd'hui je vais vous présenter une vidéo concernant l'UIMM",
+    "Salut ! Moi c’est Henry Hihacks et grâce à Thiaifène, apprenti en BTS Maintenance des Systèmes, j’ai réalisé un projet complètement fou... Vous êtes curieux de le découvrir ? Alors regardez ma vidéo !",
   ],
   "Hihacks_labo",
   hiHacksVideoLink,
 );
 
+let YumiLabBot = new Modal(
+  "Pnjs/LaboRoom/YumiLab",
+  "Appuyez sur espace pour discuter avec Yumi!",
+  YumiLabBotLink
+);
 //Dinning Room
 
 let Apprenti_1 = new PopUpVideo(
   "Pnjs/DinningRoom/Apprenti_1",
   "Appuyez sur espace pour parler à Magaly!",
   [
-    "Bonjour, c'est moi Magaly. Aujourd'hui je vais vous présenter une vidéo concernant l'UIMM",
+    "Bonjour, moi c’est Magaly, et grâce à l’industrie j’ai réussi à combiner ma passion et mon métier. Vous voulez savoir comment ? Allez, j'enfile mon casque et je vous montre !",
   ],
   "Apprenti_1",
   apprenti_1VideoLink,
@@ -667,7 +710,7 @@ let Apprenti_2 = new PopUpVideo(
   "Pnjs/DinningRoom/Apprenti_2",
   "Appuyez sur espace pour parler à Joris!",
   [
-    "Bonjour, c'est moi Joris. Aujourd'hui je vais vous présenter une vidéo concernant l'UIMM",
+    "Salut, moi c’est Joris. Le point commun entre ma passion et mon métier, c’est l’esprit d’équipe. Vous voulez en savoir plus ? Alors regardez cette vidéo !",
   ],
   "Apprenti_2",
   apprenti_2VideoLink,
@@ -677,7 +720,7 @@ let Apprenti_3 = new PopUpVideo(
   "Pnjs/DinningRoom/Apprenti_3",
   "Appuyez sur espace pour parler à Julien!",
   [
-    "Bonjour, c'est moi Julien. Aujourd'hui je vais vous présenter une vidéo concernant l'UIMM",
+    "Bonjour, moi c’est Julien et je suis passionné d'informatique : j'en ai fait mon métier ! Découvrez mon parcours en vidéo."
   ],
   "Apprenti_3",
   apprenti_3VideoLink,
@@ -687,7 +730,7 @@ let Apprenti_4 = new PopUpVideo(
   "Pnjs/DinningRoom/Apprenti_4",
   "Appuyez sur espace pour parler à Fanny!",
   [
-    "Bonjour, c'est moi Fanny. Aujourd'hui je vais vous présenter une vidéo concernant l'UIMM",
+    "Moi c’est Fanny, et grâce à l'alternance j'ai pu effectuer un semestre universitaire à l'étranger. Ça vous intéresse ? Alors venez découvrir mon parcours !",
   ],
   "Apprenti_4",
   apprenti_4VideoLink,
@@ -697,7 +740,7 @@ let Apprenti_5 = new PopUpVideo(
   "Pnjs/DinningRoom/Apprenti_5",
   "Appuyez sur espace pour parler à Nassredine!",
   [
-    "Bonjour, c'est moi Nassredine. Aujourd'hui je vais vous présenter une vidéo concernant l'UIMM",
+    "Bonjour, je m’appelle Nasreddine et ce que j'aime dans mon métier c'est le côté à la fois pointu et technique. Regardez cette vidéo pour mieux comprendre !",
   ],
   "Apprenti_5",
   apprenti_5VideoLink,
