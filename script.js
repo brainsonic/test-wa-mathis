@@ -26,7 +26,7 @@ const linkVideo = "https://www.youtube.com/embed/9QDd6dH0-Xc"; // temporaire, à
 
 //MétierRoom
 const lauakVideoLink = "https://www.youtube.com/embed/dO4SjOcNDTk?si=3i_0ivZqE0k4L9HS";
-const cariVideoLink = "https://www.youtube.com/embed/dO4SjOcNDTk?si=3i_0ivZqE0k4L9HS"; //TO CHANGE
+const cariVideoLink = "https://www.youtube.com/embed/dO4SjOcNDTk?si=L_LmAHn2qbeB2iyN"; //TO CHANGE
 const ingProdVideoLink = "https://www.youtube.com/embed/8HlmZkJX_UQ?si=l0-8bOC_kMy2YYvv";
 const apprentiRobotLink = "https://www.youtube.com/embed/CZae_izqWiw?si=QQiQ9J4Pc7s2gUk8";
 const apprentiChaudronniereVideoLink = "https://www.youtube.com/embed/yz_6sGfsP2Q?si=BRitYLOYLMKJgEqr";
@@ -487,7 +487,7 @@ let Cari = new PopUpVideo(
     "Bonjour, moi c’est Cari !",
   ],
   "Cari",
-  lauakVideoLink,
+  cariVideoLink,
 )
 
 let IngProd = new PopUpVideo(
