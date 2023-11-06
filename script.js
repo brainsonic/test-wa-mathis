@@ -12,22 +12,19 @@ const pianoLink =
 const scribbleLink = "https://brainsonic.github.io/WA-Misc-EasterEggs/scribble/index.html";
 const poolLink = "https://brainsonic.github.io/WA-Misc-EasterEggs/pool/index.html";
 
-/** Phase 1 Formulaire 
 const formLink =
   "https://0eb89b36.sibforms.com/serve/MUIFAAOmzgE4ndFT9kNM-uBs4YlJeU3A1QwPa7YPDBm_4l4UD0FQQoYC0ux_H4XuTeKySpVQcQo2jya0tZpk6_txstHp_WI3cITYRWoILzlf-gvw2SzeYepvtFGVDghH2mm6NG1VZcxRV5fW8C1xa1Gn_UECrK-eMhv0SmFNOVo54fmNEHLNrJIUlBtQw9H96pu0IPmE-xMcxnvn";
-*/
 
 const linkChatBotAccueil =
   "https://chat.csml.dev/s/39iezvakvlqapvdwnakm2gjw6f1czgdp";
-const linkChatBotChantier =
-  "https://chat.csml.dev/s/8vkjunics58v1iooxyh81mok17zjbcqs";
+
 const linkChatBotIngénieure =
   "https://chat.csml.dev/s/2bxcjwpr0pzbufgnptzcejhomq4ajror";
 const linkVideoJeune1 = "https://www.youtube.com/embed/9QDd6dH0-Xc";
 const linkVideoJeune2 = "https://www.youtube.com/embed/pDMzhgu_Qbo";
 const linkVideoJeune3 = "https://www.youtube.com/embed/mgX4eHVDlTc";
 const linkVideoMoonbike = "https://www.youtube.com/embed/eE3kWcMZsuE";
-const linkVideo = "https://www.youtube.com/embed/9QDd6dH0-Xc"; // temporaire, à modifier quand la vidéo sera uploadée
+const linkVideo = "https://www.youtube.com/embed/7Xe-xnqLoBI?rel=0";
 
 /* ------------ Phase 2 ------------ */
 
@@ -337,11 +334,7 @@ let Skieuse = new Dialog(
   textSkieuse,
   "pnj3text"
 );
-let Chantier = new Modal(
-  "Pnjs/pnj4",
-  "Appuyez sur espace pour discuter avec la Cheffe de chantier !",
-  linkChatBotChantier
-);
+
 let Scientifique = new Dialog(
   "Pnjs/pnj5",
   "Appuyez sur espace pour discuter avec la Scientifique !",
@@ -394,13 +387,11 @@ let Jeune3 = new PopUpVideo(
 
 // INTERACTIONS DIVERSES ///////////////////////////////////////////////
 
-/* Phase 1 pour les formulaires
 let Formulaire = new Modal(
   "Pnjs/Formulaire",
   "Appuyez sur espace pour ouvrir le formulaire !",
   formLink
 );
-*/
 
 let Statue = new PopUpVideo(
   "Pnjs/Statue",
