@@ -437,14 +437,14 @@ let PanneauTerrasse = new Dialog(
 let PanneauParcCentre = new Dialog(
   "Pnjs/Panneau Parc Centre",
   "Appuyez sur espace pour intéragir avec le panneau !",
-  ["À gauche la hub des métiers - En haut à droite le Lab Yumi - En haut à gauche la cafet' des apprentis - En bas le salon des vocations"],
+  ["À gauche le hub des métiers - En haut à droite le Lab de Yumi - En haut à gauche la cafet' des apprentis - En bas le salon des vocations"],
   "PanneauParcCentre"
 );
 
 let PanneauParcHaut = new Dialog(
   "Pnjs/Panneau Parc Haut",
   "Appuyez sur espace pour intéragir avec le panneau !",
-  ["Labo Yumi"],
+  ["Le lab de Yumi"],
   "PanneauParcHaut"
 );
 //Phase 2
@@ -542,6 +542,7 @@ let Emma = new PopUpVideo(
   anaisVideoLink,
 );
 
+/*
 let Liebherr_aerospace = new Modal(
   "Pnjs/ShowRoom/Liebherr_aerospace",
   "Appuyez sur espace pour regarder la vidéo !",
@@ -555,6 +556,7 @@ let Otech = new Modal(
   OtechVideoLink,
   "center",
 );
+*/
 
 let DessinateurIndu = new PopUpVideo(
   "Pnjs/ShowRoom/DessinateurIndu",
@@ -627,7 +629,7 @@ let WorldSkills = new PopUpVideo(
   "Pnjs/ShowRoom/WorldSkills",
   "Appuyez sur espace pour regarder la vidéo !",
   [
-    "Connaissez-vous les WorldSkills, la grande compétition des métiers ? Et bien c'est le moment de les découvrir en visionnant la saison 1 de 'WorldSkills, La Série', réalisée avec les apprentis de l'industrie ! Accrochez-vous, sensations fortes garanties"
+    "Connaissez-vous les WorldSkills, la grande compétition des métiers ? Et bien c'est le moment de les découvrir en visionnant la saison 1 de 'WorldSkills, La Série', réalisée avec les apprentis de l'industrie ! Accrochez-vous, sensations fortes garanties."
   ],
   "WorldSkills",
   worldSkillsVideoLink,
