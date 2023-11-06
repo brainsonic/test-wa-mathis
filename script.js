@@ -9,6 +9,9 @@ const basketLink =
 const pianoLink =
   "https://64ix.github.io/WA-Edited-Tutorial/piano/dist/index.html";
 
+const scribbleLink = "";
+const poolLink = "";
+
 /** Phase 1 Formulaire 
 const formLink =
   "https://0eb89b36.sibforms.com/serve/MUIFAAOmzgE4ndFT9kNM-uBs4YlJeU3A1QwPa7YPDBm_4l4UD0FQQoYC0ux_H4XuTeKySpVQcQo2jya0tZpk6_txstHp_WI3cITYRWoILzlf-gvw2SzeYepvtFGVDghH2mm6NG1VZcxRV5fW8C1xa1Gn_UECrK-eMhv0SmFNOVo54fmNEHLNrJIUlBtQw9H96pu0IPmE-xMcxnvn";
@@ -483,6 +486,20 @@ let Piano = new Modal(
   pianoLink,
   "center"
 );
+
+let Scribble = new Modal(
+  "Pnjs/MetierRoom/Scribble",
+  "Appuyez sur espace pour faire des dessins",
+  scribbleLink,
+  "center"
+)
+
+let Pool = new Modal(
+  "Pnjs/ShowRoom/Pool",
+  "Appuyer sur espace pour faire du billard",
+  poolLink,
+  "center"
+)
 
 //Phase 2
 
