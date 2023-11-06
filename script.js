@@ -8,8 +8,12 @@ const basketLink =
   "https://64ix.github.io/WA-Edited-Tutorial/shooting-hoops/dist/index.html";
 const pianoLink =
   "https://64ix.github.io/WA-Edited-Tutorial/piano/dist/index.html";
+
+/** Phase 1 Formulaire 
 const formLink =
   "https://0eb89b36.sibforms.com/serve/MUIFAAOmzgE4ndFT9kNM-uBs4YlJeU3A1QwPa7YPDBm_4l4UD0FQQoYC0ux_H4XuTeKySpVQcQo2jya0tZpk6_txstHp_WI3cITYRWoILzlf-gvw2SzeYepvtFGVDghH2mm6NG1VZcxRV5fW8C1xa1Gn_UECrK-eMhv0SmFNOVo54fmNEHLNrJIUlBtQw9H96pu0IPmE-xMcxnvn";
+*/
+
 const linkChatBotAccueil =
   "https://chat.csml.dev/s/39iezvakvlqapvdwnakm2gjw6f1czgdp";
 const linkChatBotChantier =
@@ -388,11 +392,14 @@ let Jeune3 = new PopUpVideo(
 
 // INTERACTIONS DIVERSES ///////////////////////////////////////////////
 
+/* Phase 1 pour les formulaires
 let Formulaire = new Modal(
   "Pnjs/Formulaire",
   "Appuyez sur espace pour ouvrir le formulaire !",
   formLink
 );
+*/
+
 let Statue = new PopUpVideo(
   "Pnjs/Statue",
   "Appuyez sur espace pour intéragir avec la statue !",
