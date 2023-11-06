@@ -275,7 +275,6 @@ WA.ui.actionBar.addButton({
     tutorial();
   }
 })
-
 // TEXTES PNJ ///////////////////////////////////////////////
 
 // texte des pnj sous format de tableau de string, chaque string est un nouveau popup
