@@ -9,8 +9,8 @@ const basketLink =
 const pianoLink =
   "https://64ix.github.io/WA-Edited-Tutorial/piano/dist/index.html";
 
-const scribbleLink = "";
-const poolLink = "";
+const scribbleLink = "https://brainsonic.github.io/WA-Misc-EasterEggs/scribble/index.html";
+const poolLink = "https://brainsonic.github.io/WA-Misc-EasterEggs/pool/index.html";
 
 /** Phase 1 Formulaire 
 const formLink =
