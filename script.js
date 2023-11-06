@@ -11,7 +11,7 @@ const pianoLink =
 const formLink =
   "https://0eb89b36.sibforms.com/serve/MUIFAAOmzgE4ndFT9kNM-uBs4YlJeU3A1QwPa7YPDBm_4l4UD0FQQoYC0ux_H4XuTeKySpVQcQo2jya0tZpk6_txstHp_WI3cITYRWoILzlf-gvw2SzeYepvtFGVDghH2mm6NG1VZcxRV5fW8C1xa1Gn_UECrK-eMhv0SmFNOVo54fmNEHLNrJIUlBtQw9H96pu0IPmE-xMcxnvn";
 const linkChatBotAccueil =
-  "https://chat.csml.dev/s/nyf8dzadrsfgpyk11xotf451cpw7y3ts";
+  "https://chat.csml.dev/s/39iezvakvlqapvdwnakm2gjw6f1czgdp";
 const linkChatBotChantier =
   "https://chat.csml.dev/s/8vkjunics58v1iooxyh81mok17zjbcqs";
 const linkChatBotIngénieure =
@@ -254,6 +254,15 @@ WA.room.onLeaveLayer("Zones/OutGate").subscribe(() => {
 });
 */
 //BUTTON TUTORIAL
+function tutorial() {
+  WA.ui.modal.openModal({
+    title: "Tutorial",
+    src: tutorialLink,
+    allow: "fullscreen; clipboard-read; clipboard-write",
+    allowApi: !0,
+    position: "right",
+  });
+}
 
 WA.ui.actionBar.addButton({
   id: 'tutorial-btn',
@@ -448,8 +457,6 @@ let PanneauParcHaut = new Dialog(
   "PanneauParcHaut"
 );
 //Phase 2
-
-
 
 // Mini Jeux
 let Pong = new Modal(
