@@ -9358,33 +9358,6 @@
                  "y":2247.26530340136
                 }, 
                 {
-                 "height":237.333333333333,
-                 "id":48,
-                 "name":"JitsiRoom",
-                 "properties":[
-                        {
-                         "name":"jitsiRoom",
-                         "type":"string",
-                         "value":"UIMM_WA"
-                        }, 
-                        {
-                         "name":"jitsiTrigger",
-                         "type":"string",
-                         "value":"onaction"
-                        }, 
-                        {
-                         "name":"jitsiTriggerMessage",
-                         "type":"string",
-                         "value":"Appuyez sur Espace pour entrer dans la r\u00e9union"
-                        }],
-                 "rotation":0,
-                 "type":"area",
-                 "visible":true,
-                 "width":549.333333333333,
-                 "x":1692,
-                 "y":2114.66666666667
-                }, 
-                {
                  "height":132,
                  "id":50,
                  "name":"Statue",
@@ -9749,7 +9722,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }, 
