@@ -516,7 +516,7 @@ let IngProd = new PopUpVideo(
   "Pnjs/MetierRoom/IngProd",
   "Appuyez sur espace pour parler à Alexandra !",
   [
-    "Bonjour, moi c’est Alexandra et je suis ingénieure de production. Je vous invite à découvrir mon parcours et mon quotidien dans cette vidéo.",
+    "Bonjour, moi c’est Alexandra et je suis ingénieur de production. Je vous invite à découvrir mon parcours et mon quotidien dans cette vidéo.",
   ],
   "IngProd",
   ingProdVideoLink,
@@ -552,7 +552,7 @@ let yumiMetier = new Modal(
 
 let Emma = new PopUpVideo(
   "Pnjs/ShowRoom/Anais",
-  "Appuyez sur espace pour parler à Anais !",
+  "Appuyez sur espace pour parler à Anaïs !",
   [
     "Salut, moi c’est Anaïs et je suis technicienne méthodes. Si vous ne savez pas en quoi ça consiste : venez, je vous montre ! ",
   ],
