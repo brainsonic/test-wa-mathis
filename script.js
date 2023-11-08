@@ -238,7 +238,6 @@ WA.room.onLeaveLayer("Zones/Help").subscribe(() => {
 });
 
 //ZONE OUTGATE INFO
-/*
 const popupLink = "https://brainsonic.github.io/UIMM-WA-Extras/popup.html";
 const textOutGate = "Vous êtes sorti de la gare";
 let openInfoPopup = false; //Check if the popUp is already open
@@ -256,7 +255,6 @@ WA.room.onLeaveLayer("Zones/OutGate").subscribe(() => {
     });
   }
 });
-*/
 //BUTTON TUTORIAL
 function tutorial() {
   WA.ui.modal.openModal({
