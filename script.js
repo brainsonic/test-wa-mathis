@@ -296,7 +296,7 @@ const textSkieuse = [
   "Hello !",
   "Vous voulez faire un tour de MoonBike ?",
   "D’accord, mais d’abord, laissez-moi vous parler un peu de l’innovation dans l’industrie.",
-  "L’industrie, c'est le secteur qui innove le plus en France, elle représente 72% des dépenses de R&D.",
+  "L’industrie, c'est le secteur qui innove le plus en France, elle représente 72% des dépenses de R&D françaises.",
   "Industrie 4.0, industrie connectée, industrie du futur : le secteur se transforme en profondeur grâce à des technologies comme la fabrication additive, la cobotique ou encore les objets connectés – autant d’innovations qui améliorent la production et le quotidien de celles et ceux qui y travaillent.​    ",
   "Et tout cela crée de nouveaux métiers (data scientist, programmeur industriel, ingénieur cobot…) et transforme les modes d’organisation du travail. Sans oublier que de nombreuses innovations industrielles vont dans le sens d’une société plus durable.    ",
   "Le MoonBike en est un bel exemple ! C’est le premier snowbike 100% électrique du marché : un mode de déplacement beaucoup plus écologique.​",
@@ -372,7 +372,7 @@ let Jeune2 = new PopUpVideo(
 );
 let Jeune3 = new PopUpVideo(
   "Pnjs/Jeune3",
-  "Appuyez sur espace pour parler à Manon!",
+  "Appuyez sur espace pour parler à Manon !",
   [
     "Bonjour, moi c'est Manon et pour découvrir sur quel super projet j'ai travaillé c'est ici :",
   ],
@@ -443,7 +443,7 @@ let PanneauTerrasse = new Dialog(
 let PanneauParcCentre = new Dialog(
   "Pnjs/Panneau Parc Centre",
   "Appuyez sur espace pour intéragir avec le panneau !",
-  ["À gauche le hub des métiers - En haut à droite le Lab de Yumi - En haut à gauche la cafet' des apprentis - En bas le salon des vocations"],
+  ["À gauche le hub des métiers - En haut à droite le lab de Yumi - En haut à gauche la cafet' des apprentis - En bas le salon des vocations"],
   "PanneauParcCentre"
 );
 
@@ -477,14 +477,14 @@ let Piano = new Modal(
 
 let Scribble = new Modal(
   "Pnjs/MetierRoom/Scribble",
-  "Appuyez sur espace pour faire des dessins",
+  "Appuyez sur espace pour faire des dessins !",
   scribbleLink,
   "center"
 )
 
 let Pool = new Modal(
   "Pnjs/ShowRoom/Pool",
-  "Appuyer sur espace pour faire du billard",
+  "Appuyer sur espace pour faire du billard !",
   poolLink,
   "center"
 )
@@ -494,7 +494,7 @@ let Pool = new Modal(
 //MetierRoom
 let Nicolas = new PopUpVideo(
   "Pnjs/MetierRoom/Nicolas",
-  "Appuyez sur espace pour parler à Nicolas!",
+  "Appuyez sur espace pour parler à Nicolas !",
   [
     "Bonjour, moi c’est Nicolas et je suis soudeur dans l’industrie aéronautique. Venez découvrir mon métier !",
   ],
@@ -504,7 +504,7 @@ let Nicolas = new PopUpVideo(
 
 let Cari = new PopUpVideo(
   "Pnjs/MetierRoom/Cari",
-  "Appuyez sur espace pour parler à Jordan!",
+  "Appuyez sur espace pour parler à Jordan !",
   [
     "Bonjour, moi c’est Jordan et je suis concepteur de systèmes embarqués. Vous connaissez ? Non ? Alors venez découvrir mon métier !",
   ],
@@ -514,7 +514,7 @@ let Cari = new PopUpVideo(
 
 let IngProd = new PopUpVideo(
   "Pnjs/MetierRoom/IngProd",
-  "Appuyez sur espace pour parler à l'ingénieur de production!",
+  "Appuyez sur espace pour parler à Alexandra !",
   [
     "Bonjour, moi c’est Alexandra et je suis ingénieure de production. Je vous invite à découvrir mon parcours et mon quotidien dans cette vidéo.",
   ],
@@ -544,7 +544,7 @@ let ApprentiChaudronniereVideo = new PopUpVideo(
 
 let yumiMetier = new Modal(
   "Pnjs/MetierRoom/chatBot_1",
-  "Appuyez sur espace pour discuter avec Yumi!",
+  "Appuyez sur espace pour discuter avec Yumi !",
   YumiMetierBot
 );
 
@@ -552,7 +552,7 @@ let yumiMetier = new Modal(
 
 let Emma = new PopUpVideo(
   "Pnjs/ShowRoom/Anais",
-  "Appuyez sur espace pour parler à Anais!",
+  "Appuyez sur espace pour parler à Anais !",
   [
     "Salut, moi c’est Anaïs et je suis technicienne méthodes. Si vous ne savez pas en quoi ça consiste : venez, je vous montre ! ",
   ],
@@ -639,7 +639,7 @@ let RespBureau = new PopUpVideo(
 
 let yumiITW = new Modal(
   "Pnjs/ShowRoom/ITWBot",
-  "Appuyez sur espace pour discuter avec Yumi!",
+  "Appuyez sur espace pour discuter avec Yumi Journaliste !",
   YumiITWBot
 );
 
@@ -657,7 +657,7 @@ let WorldSkills = new PopUpVideo(
 
 let Doigby = new PopUpVideo(
   "Pnjs/ParkInside/Doigby",
-  "Appuyez sur espace pour parler à Doigby!",
+  "Appuyez sur espace pour parler à Doigby !",
   [
     "Hello, moi c’est Doigby ! Je suis vidéaste et Yumi m’a mis au défi de construire une fusée dans Minecraft avec l'aide des internautes. Pensez-vous que j'ai réussi ? Je vous laisse la surprise...",
   ],
@@ -667,7 +667,7 @@ let Doigby = new PopUpVideo(
 
 let Tiboinshape = new PopUpVideo(
   "Pnjs/ParkInside/Tiboinshape",
-  "Appuyez sur espace pour parler à Tiboinshape!",
+  "Appuyez sur espace pour parler à Maëva !",
   [
     "Hello, moi c’est Maëva : le vidéaste Tibo InShape est revenu en Bac Pro pour découvrir mon métier d’ajusteur-monteur, ainsi que les autres métiers de l'industrie aéronautique. Regardez ce que ça donne !",
   ],
@@ -677,13 +677,13 @@ let Tiboinshape = new PopUpVideo(
 
 let HiHacksBot = new Modal(
   "Pnjs/ParkInside/Hihacks",
-  "Appuyez sur espace pour discuter avec Hihacks!",
+  "Appuyez sur espace pour discuter avec Romane !",
   HiHacksBotLink
 );
 
 let InfluenceBot = new Modal(
   "Pnjs/ParkInside/Influence",
-  "Appuyez sur espace pour discuter avec Influence!",
+  "Appuyez sur espace pour discuter avec Yumi Créatrice !",
   InfluenceBotLink
 );
 
@@ -691,7 +691,7 @@ let InfluenceBot = new Modal(
 
 let DrNozman = new PopUpVideo(
   "Pnjs/LaboRoom/DrNozman",
-  "Appuyez sur espace pour parler à DrNozman!",
+  "Appuyez sur espace pour parler à DrNozman !",
   [
     "Bonjour, moi c’est Dr Nozman et comme je suis un grand curieux, j’ai voulu découvrir comment étaient faites les prothèses d’aujourd’hui. Venez, je vous explique tout.",
   ],
@@ -701,7 +701,7 @@ let DrNozman = new PopUpVideo(
 
 let HiHacks = new PopUpVideo(
   "Pnjs/LaboRoom/Hihacks_labo",
-  "Appuyez sur espace pour parler à Hihacks!",
+  "Appuyez sur espace pour parler à Henry !",
   [
     "Salut ! Moi c’est Henry Hihacks et grâce à Thiaifène, apprenti en BTS Maintenance des Systèmes, j’ai réalisé un projet complètement fou... Vous êtes curieux de le découvrir ? Alors regardez ma vidéo !",
   ],
@@ -711,14 +711,14 @@ let HiHacks = new PopUpVideo(
 
 let YumiLabBot = new Modal(
   "Pnjs/LaboRoom/YumiLab",
-  "Appuyez sur espace pour discuter avec Yumi!",
+  "Appuyez sur espace pour discuter avec Yumi Scientifique !",
   YumiLabBotLink
 );
 //Dinning Room
 
 let Apprenti_1 = new PopUpVideo(
   "Pnjs/DinningRoom/Apprenti_1",
-  "Appuyez sur espace pour parler à Magaly!",
+  "Appuyez sur espace pour parler à Magaly !",
   [
     "Bonjour, moi c’est Magaly, et grâce à l’industrie j’ai réussi à combiner ma passion et mon métier. Vous voulez savoir comment ? Allez, j'enfile mon casque et je vous montre !",
   ],
@@ -728,7 +728,7 @@ let Apprenti_1 = new PopUpVideo(
 
 let Apprenti_2 = new PopUpVideo(
   "Pnjs/DinningRoom/Apprenti_2",
-  "Appuyez sur espace pour parler à Joris!",
+  "Appuyez sur espace pour parler à Joris !",
   [
     "Salut, moi c’est Joris. Le point commun entre ma passion et mon métier, c’est l’esprit d’équipe. Vous voulez en savoir plus ? Alors regardez cette vidéo !",
   ],
@@ -738,7 +738,7 @@ let Apprenti_2 = new PopUpVideo(
 
 let Apprenti_3 = new PopUpVideo(
   "Pnjs/DinningRoom/Apprenti_3",
-  "Appuyez sur espace pour parler à Julien!",
+  "Appuyez sur espace pour parler à Julien !",
   [
     "Bonjour, moi c’est Julien et je suis passionné d'informatique : j'en ai fait mon métier ! Découvrez mon parcours en vidéo."
   ],
@@ -748,7 +748,7 @@ let Apprenti_3 = new PopUpVideo(
 
 let Apprenti_4 = new PopUpVideo(
   "Pnjs/DinningRoom/Apprenti_4",
-  "Appuyez sur espace pour parler à Fanny!",
+  "Appuyez sur espace pour parler à Fanny !",
   [
     "Moi c’est Fanny, et grâce à l'alternance j'ai pu effectuer un semestre universitaire à l'étranger. Ça vous intéresse ? Alors venez découvrir mon parcours !",
   ],
@@ -758,7 +758,7 @@ let Apprenti_4 = new PopUpVideo(
 
 let Apprenti_5 = new PopUpVideo(
   "Pnjs/DinningRoom/Apprenti_5",
-  "Appuyez sur espace pour parler à Nassredine!",
+  "Appuyez sur espace pour parler à Nassredine !",
   [
     "Bonjour, je m’appelle Nasreddine et ce que j'aime dans mon métier c'est le côté à la fois pointu et technique. Regardez cette vidéo pour mieux comprendre !",
   ],
@@ -768,7 +768,7 @@ let Apprenti_5 = new PopUpVideo(
 
 let Apprenti_6 = new PopUpVideo(
   "Pnjs/DinningRoom/Apprenti_6",
-  "Appuyez sur espace pour parler à Mathis!",
+  "Appuyez sur espace pour parler à Mathis !",
   [
     "Salut, moi c’est Mathis, j'ai 19 ans et je suis apprenti en conception industrielle. Vous connaissez ? Non ? Alors je vous invite à découvrir mon métier en vidéo !",
   ],
