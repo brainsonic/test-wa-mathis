@@ -18,8 +18,7 @@ const formLink =
 const linkChatBotAccueil =
   "https://chat.csml.dev/s/39iezvakvlqapvdwnakm2gjw6f1czgdp";
 
-const linkChatBotIngénieure =
-  "https://chat.csml.dev/s/2bxcjwpr0pzbufgnptzcejhomq4ajror";
+const linkChatBotIngénieure = "https://chat.csml.dev/s/modkshn4koeqaqdjiaj5pa7hfxah6s57";
 const linkVideoJeune1 = "https://www.youtube.com/embed/9QDd6dH0-Xc";
 const linkVideoJeune2 = "https://www.youtube.com/embed/pDMzhgu_Qbo";
 const linkVideoJeune3 = "https://www.youtube.com/embed/mgX4eHVDlTc";
@@ -70,6 +69,7 @@ const apprenti_2VideoLink = "https://www.youtube.com/embed/gxCuiA3-L4Q?si=15Pm8V
 const apprenti_3VideoLink = "https://www.youtube.com/embed/XZlUUGS7qng?si=L9sT1Pkp2bRlEUVV";
 const apprenti_4VideoLink = "https://www.youtube.com/embed/DU7kScvKs6w?si=4eaGA75dDZP0dIxT";
 const apprenti_5VideoLink = "https://www.youtube.com/embed/G4lEOWcPYv4?si=wa9eJCX3TbsLQZS2";
+const apprenti_6VideoLink = "https://www.youtube.com/embed/Y35a-PeWnCY?si=ssJEvtuE8AQ5yQ43";
 
 /* ------------ Phase ?? ------------ */
 
@@ -296,7 +296,7 @@ const textSkieuse = [
   "Hello !",
   "Vous voulez faire un tour de MoonBike ?",
   "D’accord, mais d’abord, laissez-moi vous parler un peu de l’innovation dans l’industrie.",
-  "L’industrie, c'est le secteur qui innove le plus en France, avec 72% des dépenses de R&D.",
+  "L’industrie, c'est le secteur qui innove le plus en France, elle représente 72% des dépenses de R&D.",
   "Industrie 4.0, industrie connectée, industrie du futur : le secteur se transforme en profondeur grâce à des technologies comme la fabrication additive, la cobotique ou encore les objets connectés – autant d’innovations qui améliorent la production et le quotidien de celles et ceux qui y travaillent.​    ",
   "Et tout cela crée de nouveaux métiers (data scientist, programmeur industriel, ingénieur cobot…) et transforme les modes d’organisation du travail. Sans oublier que de nombreuses innovations industrielles vont dans le sens d’une société plus durable.    ",
   "Le MoonBike en est un bel exemple ! C’est le premier snowbike 100% électrique du marché : un mode de déplacement beaucoup plus écologique.​",
@@ -764,6 +764,16 @@ let Apprenti_5 = new PopUpVideo(
   ],
   "Apprenti_5",
   apprenti_5VideoLink,
+);
+
+let Apprenti_6 = new PopUpVideo(
+  "Pnjs/DinningRoom/Apprenti_6",
+  "Appuyez sur espace pour parler à Mathis!",
+  [
+    "Salut, moi c’est Mathis, j'ai 19 ans et je suis apprenti en conception industrielle. Vous connaissez ? Non ? Alors je vous invite à découvrir mon métier en vidéo !",
+  ],
+  "Apprenti_6",
+  apprenti_6VideoLink,
 );
 
 
