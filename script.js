@@ -296,7 +296,7 @@ const textSkieuse = [
   "Hello !",
   "Vous voulez faire un tour de MoonBike ?",
   "D’accord, mais d’abord, laissez-moi vous parler un peu de l’innovation dans l’industrie.",
-  "L’industrie, c'est le secteur qui innove le plus en France, avec 72% des dépenses de R&D françaises.",
+  "L’industrie, c'est le secteur qui innove le plus en France, avec 72% des dépenses de R&D.",
   "Industrie 4.0, industrie connectée, industrie du futur : le secteur se transforme en profondeur grâce à des technologies comme la fabrication additive, la cobotique ou encore les objets connectés – autant d’innovations qui améliorent la production et le quotidien de celles et ceux qui y travaillent.​    ",
   "Et tout cela crée de nouveaux métiers (data scientist, programmeur industriel, ingénieur cobot…) et transforme les modes d’organisation du travail. Sans oublier que de nombreuses innovations industrielles vont dans le sens d’une société plus durable.    ",
   "Le MoonBike en est un bel exemple ! C’est le premier snowbike 100% électrique du marché : un mode de déplacement beaucoup plus écologique.​",
