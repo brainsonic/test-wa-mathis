@@ -74,6 +74,8 @@ const apprenti_6VideoLink = "https://www.youtube.com/embed/Y35a-PeWnCY?si=ssJEvt
 /* ------------ Phase ?? ------------ */
 
 // SETUP ///////////////////////////////////////////////
+
+const url_api = "https://127.0.0.1:8000";
 WA.onInit().then(() => {
   // désactiver les proximity meeting parceque peu utile
   WA.controls.disablePlayerProximityMeeting();
@@ -83,14 +85,52 @@ WA.onInit().then(() => {
 
 // class Interaction : endroit sur la map où l'on peut intéragir
 // layer : string : nom de la layer sur laquelle l'interaction est possible
-// message : string : message affiché au joueur pour l'inviter à intéragir
+// message : string : message affiché au joueur pour l'inviter à int éragir
+// category_tracker : string : catégorie du tracker (hit, interact, ....)
+// type_tracker : string : type du tracker (bot, video, formulaire, ....)
+// name_tracker : string : nom du tracker - permet de chercher précisément une interaction si besoin
 class Interaction {
-  constructor(_layer, _message) {
+  constructor(_layer, _message, _category_tracker, _type_tracker, _name_tracker) {
     //setup des variables
     this.layer = _layer;
     this.message = _message;
     //setup des listeners WA pour les layers prévus
     this.setup();
+
+    /* ---- API Tracker Stat ---- */
+
+    const data = {
+      type: _type_tracker,
+      category: _category_tracker,
+      name: _name_tracker,
+    }
+    const request = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/ld+json'
+      },
+      body: JSON.stringify(data)
+    }
+
+    fetch(url_api, request)
+      .then(response => {
+        if(!response.ok) {
+          console.log('Erreur tracker');
+          throw new Error('Network response was not OK')
+        }
+        return response.json();
+      })
+      .then(data => {
+
+        console.log('Response :', data);
+
+      })
+      .catch(error => {
+        
+        console.error('Error:', error)
+      })
+
+
   }
   setup() {
     //listener d'entrée sur le layer, créé le message d'interaction
@@ -128,8 +168,8 @@ class Interaction {
 // dialog : string[] : tableau de string, chaque string est un nouveau popup
 // object : string : nom de l'objet sur lequel le popup s'ouvre
 class Dialog extends Interaction {
-  constructor(_layer, _message, _dialog, _object) {
-    super(_layer, _message);
+  constructor(_layer, _message, _dialog, _object, _category_tracker, _type_tracker, _name_tracker) {
+    super(_layer, _message, _category_tracker, _type_tracker, _name_tracker);
     this.object = _object;
     this.dialog = _dialog;
     this.state = 0;
@@ -179,8 +219,8 @@ class Dialog extends Interaction {
 class Modal extends Interaction {
   //par defaut, position à droite
   position = "right";
-  constructor(_layer, _message, _modal, _position) {
-    super(_layer, _message);
+  constructor(_layer, _message, _modal, _position, _category_tracker, _type_tracker, _name_tracker) {
+    super(_layer, _message, _category_tracker, _type_tracker, _name_tracker);
     this.modal = _modal;
     if (_position !== undefined) this.position = _position;
   }
@@ -203,8 +243,8 @@ class Modal extends Interaction {
 }
 // class PopUpVideo : Popup qui ouvre un site web à la sortie
 class PopUpVideo extends Dialog {
-  constructor(_layer, _message, _dialog, _object, _video) {
-    super(_layer, _message, _dialog, _object);
+  constructor(_layer, _message, _dialog, _object, _video, _category_tracker, _type_tracker, _name_tracker) {
+    super(_layer, _message, _dialog, _object, _category_tracker, _type_tracker, _name_tracker);
     this.video = _video;
   }
   // override de la fonction next pour ouvrir le site web, async car cowebsite est une fonction asynchrone
@@ -315,31 +355,47 @@ const textScientifique = [
 let Accueil = new Modal(
   "Pnjs/pnj1",
   "Appuyez sur espace pour discuter avec Yumi !",
-  linkChatBotAccueil
+  linkChatBotAccueil,
+  "interact",
+  "PNJ",
+  "Yumi_accueil"
+
 );
 let Captain = new Dialog(
   "Pnjs/pnj2",
   "Appuyez sur espace pour discuter avec le Capitaine !",
   textCaptain,
-  "pnj2text"
+  "pnj2text",
+  "interact",
+  "PNJ",
+  "PNJ_Capitaine"
 );
 let Skieuse = new Dialog(
   "Pnjs/pnj3",
   "Appuyez sur espace pour discuter avec la Skieuse !",
   textSkieuse,
-  "pnj3text"
+  "pnj3text",
+  "interact",
+  "PNJ",
+  "PNJ_Skieuse"
 );
 
 let Scientifique = new Dialog(
   "Pnjs/pnj5",
   "Appuyez sur espace pour discuter avec la Scientifique !",
   textScientifique,
-  "pnj5text"
+  "pnj5text",
+  "interact",
+  "PNJ",
+  "PNJ_Scientifique"
 );
 let Ingénieure = new Modal(
   "Pnjs/pnj6",
   "Appuyez sur espace pour discuter avec l'Ingénieure !",
-  linkChatBotIngénieure
+  linkChatBotIngénieure,
+  "interact",
+  "PNJ",
+  "PNJ_Ingénieure"
 );
 let Moonbike = new PopUpVideo(
   "Pnjs/MoonbikePNJ",
@@ -348,7 +404,10 @@ let Moonbike = new PopUpVideo(
     "Bonjour, moi c’est Anthony, je suis en charge de la production des MoonBikes. Je vous laisse découvrir mon projet.",
   ],
   "Moonbike",
-  linkVideoMoonbike
+  linkVideoMoonbike,
+  "interact",
+  "PNJ",
+  "PNJ_Anthony",
 );
 let Jeune1 = new PopUpVideo(
   "Pnjs/Jeune1",
@@ -357,7 +416,10 @@ let Jeune1 = new PopUpVideo(
     "Salut moi c'est Antonin ! Pour découvrir sur quel super projet j'ai travaillé c'est ici :",
   ],
   "Jeune1",
-  linkVideoJeune1
+  linkVideoJeune1,
+  "interact",
+  "PNJ",
+  "PNJ_Antonin"
 );
 let Jeune2 = new PopUpVideo(
   "Pnjs/Jeune2",
@@ -366,7 +428,10 @@ let Jeune2 = new PopUpVideo(
     "Salut moi c'est Killian ! Pour découvrir sur quel super projet j'ai travaillé c'est ici :",
   ],
   "Jeune2",
-  linkVideoJeune2
+  linkVideoJeune2,
+  "interact",
+  "PNJ",
+  "PNJ_Killian"
 );
 let Jeune3 = new PopUpVideo(
   "Pnjs/Jeune3",
@@ -375,7 +440,10 @@ let Jeune3 = new PopUpVideo(
     "Bonjour, moi c'est Manon et pour découvrir sur quel super projet j'ai travaillé c'est ici :",
   ],
   "Jeune3",
-  linkVideoJeune3
+  linkVideoJeune3,
+  "interact",
+  "PNJ",
+  "PNJ_Manon"
 );
 
 // END PNJ ///////////////////////////////////////////////
@@ -385,7 +453,10 @@ let Jeune3 = new PopUpVideo(
 let Formulaire = new Modal(
   "Pnjs/Formulaire",
   "Appuyez sur espace pour ouvrir le formulaire !",
-  formLink
+  formLink,
+  "interact",
+  "Form",
+  "Formulaire_debut"
 );
 
 let Statue = new PopUpVideo(
@@ -395,14 +466,20 @@ let Statue = new PopUpVideo(
     "Cette tête de tigre géante a été réalisée l'année dernière, en collaboration avec l'influenceur HiHacks et les apprentis chaudronniers du Pôle formation UIMM Nouvelle-Aquitaine",
   ],
   "Statue",
-  "https://www.youtube.com/embed/APBCjKv6nvA"
+  "https://www.youtube.com/embed/APBCjKv6nvA",
+  "interact",
+  "Video",
+  "Video_Statue"
 );
 //salle vidéo
 let Vidéo = new Modal(
   "Zones/Vidéo",
   "Appuyez sur espace pour regarder la vidéo !",
   linkVideo,
-  "center"
+  "center",
+  "interact",
+  "Video",
+  "Video_Salle_Conf"
 );
 
 // Panneaux
@@ -410,46 +487,67 @@ let PanneauPont = new Dialog(
   "Pnjs/Panneau Pont",
   "Appuyez sur espace pour intéragir avec le panneau !",
   ["Au Nord, la gare. Au Sud, la place principale."],
-  "Panneau Pont"
+  "Panneau Pont",
+  "interact",
+  "Panel",
+  "Panneau_Pont"
 );
 let PanneauGare = new Dialog(
   "Pnjs/Panneau Gare",
   "Appuyez sur espace pour intéragir avec le panneau !",
   ["Vous vous trouvez à la Gare du Monde de Yumi"],
-  "Panneau Gare"
+  "Panneau Gare",
+  "interact",
+  "Panel",
+  "Panneau_Gare"
 );
 let PanneauChemin = new Dialog(
   "Pnjs/Panneau Chemin",
   "Appuyez sur espace pour intéragir avec le panneau !",
   ["À l'Ouest, la place principale. Au Sud, le port."],
-  "Panneau Chemin"
+  "Panneau Chemin",
+  "interact",
+  "Panel",
+  "Panneau_Chemin"
 );
 let PanneauQuai = new Dialog(
   "Pnjs/Panneau Quai",
   "Appuyez sur espace pour intéragir avec le panneau !",
   ["Vous vous trouvez au Port du Monde de Yumi"],
-  "Panneau Quai"
+  "Panneau Quai",
+  "interact",
+  "Panel",
+  "Panneau_Quai"
 );
 
 let PanneauTerrasse = new Dialog(
   "Pnjs/Panneau Terrasse",
   "Appuyez sur espace pour intéragir avec le panneau !",
   ["Vous vous trouvez sur la place principale"],
-  "Panneau Terrasse"
+  "Panneau Terrasse",
+  "interact",
+  "Panel",
+  "Panneau_Terrasse"
 );
 
 let PanneauParcCentre = new Dialog(
   "Pnjs/Panneau Parc Centre",
   "Appuyez sur espace pour intéragir avec le panneau !",
   ["À gauche le hub des métiers - En haut à droite le lab de Yumi - En haut à gauche la cafet' des apprentis - En bas le salon des vocations"],
-  "PanneauParcCentre"
+  "PanneauParcCentre",
+  "interact",
+  "Panel",
+  "Panneau_ParcCentre"
 );
 
 let PanneauParcHaut = new Dialog(
   "Pnjs/Panneau Parc Haut",
   "Appuyez sur espace pour intéragir avec le panneau !",
   ["Le lab de Yumi"],
-  "PanneauParcHaut"
+  "PanneauParcHaut",
+  "interact",
+  "Panel",
+  "Panneau_ParcHaut"
 );
 //Phase 2
 
@@ -458,33 +556,48 @@ let Pong = new Modal(
   "Pnjs/Pong",
   "Appuyez sur espace pour jouer au Pong !",
   pongLink,
-  "center"
+  "center",
+  "interact",
+  "Game",
+  "Game_Pong"
 );
 let Basket = new Modal(
   "Pnjs/Basket",
   "Appuyez sur espace pour jouer au Basket !",
   basketLink,
-  "center"
+  "center",
+  "interact",
+  "Game",
+  "Game_Basket"
 );
 let Piano = new Modal(
   "Pnjs/Piano",
   "Appuyez sur espace pour jouer du piano !",
   pianoLink,
-  "center"
+  "center",
+  "interact",
+  "Game",
+  "Game_Piano"
 );
 
 let Scribble = new Modal(
   "Pnjs/MetierRoom/Scribble",
   "Appuyez sur espace pour faire des dessins !",
   scribbleLink,
-  "center"
+  "center",
+  "interact",
+  "Game",
+  "Game_Scribble"
 )
 
 let Pool = new Modal(
   "Pnjs/ShowRoom/Pool",
   "Appuyer sur espace pour faire du billard !",
   poolLink,
-  "center"
+  "center",
+  "interact",
+  "Game",
+  "Game_Pool"
 )
 
 //Phase 2
@@ -498,6 +611,9 @@ let Nicolas = new PopUpVideo(
   ],
   "Nicolas",
   nicolasVideoLink,
+  "interact",
+  "PNJ",
+  "PNJ_Nicolas"
 )
 
 let Cari = new PopUpVideo(
@@ -508,6 +624,9 @@ let Cari = new PopUpVideo(
   ],
   "Cari",
   cariVideoLink,
+  "interact",
+  "PNJ",
+  "PNJ_Cari"
 )
 
 let IngProd = new PopUpVideo(
@@ -518,6 +637,9 @@ let IngProd = new PopUpVideo(
   ],
   "IngProd",
   ingProdVideoLink,
+  "interact",
+  "PNJ",
+  "PNJ_Alexandra"
 )
 
 let ApprentiRobotVideo = new PopUpVideo(
@@ -528,6 +650,9 @@ let ApprentiRobotVideo = new PopUpVideo(
   ],
   "ApprentiRobot",
   apprentiRobotLink,
+  "interact",
+  "Video",
+  "Video_Thomas"
 )
 
 let ApprentiChaudronniereVideo = new PopUpVideo(
@@ -538,12 +663,18 @@ let ApprentiChaudronniereVideo = new PopUpVideo(
   ],
   "ApprentiChaudronniere",
   apprentiChaudronniereVideoLink,
+  "interact",
+  "Video",
+  "Video_Pauline"
 );
 
 let yumiMetier = new Modal(
   "Pnjs/MetierRoom/chatBot_1",
   "Appuyez sur espace pour discuter avec Yumi !",
-  YumiMetierBot
+  YumiMetierBot,
+  "interact",
+  "PNJ",
+  "PNJ_YumiMetier"
 );
 
 //ShowRoom
@@ -556,6 +687,9 @@ let Emma = new PopUpVideo(
   ],
   "Anais",
   anaisVideoLink,
+  "interact",
+  "PNJ",
+  "PNJ_Anais"
 );
 
 /*
@@ -582,6 +716,9 @@ let DessinateurIndu = new PopUpVideo(
   ],
   "DessinateurIndu",
   dessinateurInduVideoLink,
+  "interact",
+  "Video",
+  "Video_Ronan"
 );
 
 let RespRD = new PopUpVideo(
@@ -592,6 +729,9 @@ let RespRD = new PopUpVideo(
   ],
   "RespRD",
   respRDVideoLink,
+  "interact",
+  "Video",
+  "Video_Isabelle"
 
 );
 
@@ -603,6 +743,9 @@ let AjustMonteur = new PopUpVideo(
   ],
   "AjustMonteur",
   ajustMonteurVideoLink,
+  "interact",
+  "Video",
+  "Video_Nicolas"
 );
 
 let DataScientist = new PopUpVideo(
@@ -613,6 +756,9 @@ let DataScientist = new PopUpVideo(
   ],
   "DataScientist",
   dataScientistVideoLink,
+  "interact",
+  "Video",
+  "Video_DataScientist",
 );
 
 let ChargAff = new PopUpVideo(
@@ -623,6 +769,9 @@ let ChargAff = new PopUpVideo(
   ],
   "ChargAff",
   chargeAffVideoLink,
+  "interact",
+  "Video",
+  "Video_ChargeAff",
 );
 
 let RespBureau = new PopUpVideo(
@@ -633,12 +782,18 @@ let RespBureau = new PopUpVideo(
   ],
   "RespBureau",
   respBureauVideoLink,
+  "interact",
+  "Video",
+  "Video_RespBureau",
 );
 
 let yumiITW = new Modal(
   "Pnjs/ShowRoom/ITWBot",
   "Appuyez sur espace pour discuter avec Yumi Journaliste !",
-  YumiITWBot
+  YumiITWBot,
+  "interact",
+  "PNJ",
+  "PNJ_YumiJournaliste",
 );
 
 let WorldSkills = new PopUpVideo(
@@ -649,6 +804,9 @@ let WorldSkills = new PopUpVideo(
   ],
   "WorldSkills",
   worldSkillsVideoLink,
+  "interact",
+  "Video",
+  "Video_WorldSkills",
 );
 
 //ParkInside
@@ -661,6 +819,9 @@ let Doigby = new PopUpVideo(
   ],
   "Doigby",
   doigbyVideoLink,
+  "interact",
+  "PNJ",
+  "PNJ_Doigby",
 );
 
 let Tiboinshape = new PopUpVideo(
@@ -671,18 +832,27 @@ let Tiboinshape = new PopUpVideo(
   ],
   "Tiboinshape",
   tiboInShapeVideoLink,
+  "interact",
+  "PNJ",
+  "PNJ_Maeva",
 );
 
 let HiHacksBot = new Modal(
   "Pnjs/ParkInside/Hihacks",
   "Appuyez sur espace pour discuter avec Romane !",
-  HiHacksBotLink
+  HiHacksBotLink,
+  "interact",
+  "PNJ",
+  "PNJ_Romane",
 );
 
 let InfluenceBot = new Modal(
   "Pnjs/ParkInside/Influence",
   "Appuyez sur espace pour discuter avec Yumi Créatrice !",
-  InfluenceBotLink
+  InfluenceBotLink,
+  "interact",
+  "PNJ",
+  "PNJ_YumiCreatrice",
 );
 
 //Labo Yumi
@@ -695,6 +865,9 @@ let DrNozman = new PopUpVideo(
   ],
   "DrNozman",
   drNozmanVideoLink,
+  "interact",
+  "PNJ",
+  "PNJ_Nozman",
 );
 
 let HiHacks = new PopUpVideo(
@@ -705,12 +878,18 @@ let HiHacks = new PopUpVideo(
   ],
   "Hihacks_labo",
   hiHacksVideoLink,
+  "interact",
+  "PNJ",
+  "PNJ_HenryHihacks",
 );
 
 let YumiLabBot = new Modal(
   "Pnjs/LaboRoom/YumiLab",
   "Appuyez sur espace pour discuter avec Yumi Scientifique !",
-  YumiLabBotLink
+  YumiLabBotLink,
+  "interact",
+  "PNJ",
+  "PNJ_YumiScientifique",
 );
 //Dinning Room
 
@@ -722,6 +901,9 @@ let Apprenti_1 = new PopUpVideo(
   ],
   "Apprenti_1",
   apprenti_1VideoLink,
+  "interact",
+  "PNJ",
+  "PNJ_Magaly",
 );
 
 let Apprenti_2 = new PopUpVideo(
@@ -732,6 +914,9 @@ let Apprenti_2 = new PopUpVideo(
   ],
   "Apprenti_2",
   apprenti_2VideoLink,
+  "interact",
+  "PNJ",
+  "PNJ_Joris",
 );
 
 let Apprenti_3 = new PopUpVideo(
@@ -742,6 +927,9 @@ let Apprenti_3 = new PopUpVideo(
   ],
   "Apprenti_3",
   apprenti_3VideoLink,
+  "interact",
+  "PNJ",
+  "PNJ_Julien",
 );
 
 let Apprenti_4 = new PopUpVideo(
@@ -752,6 +940,9 @@ let Apprenti_4 = new PopUpVideo(
   ],
   "Apprenti_4",
   apprenti_4VideoLink,
+  "interact",
+  "PNJ",
+  "PNJ_Fanny",
 );
 
 let Apprenti_5 = new PopUpVideo(
@@ -762,6 +953,9 @@ let Apprenti_5 = new PopUpVideo(
   ],
   "Apprenti_5",
   apprenti_5VideoLink,
+  "interact",
+  "PNJ",
+  "PNJ_Nassredine",
 );
 
 let Apprenti_6 = new PopUpVideo(
@@ -772,6 +966,9 @@ let Apprenti_6 = new PopUpVideo(
   ],
   "Apprenti_6",
   apprenti_6VideoLink,
+  "interact",
+  "PNJ",
+  "PNJ_Mathis",
 );
 
 
