@@ -392,6 +392,7 @@ let Accueil = new Modal(
   "Pnjs/pnj1",
   "Appuyez sur espace pour discuter avec Yumi !",
   linkChatBotAccueil,
+  "right",
   "interact",
   "PNJ",
   "Yumi_accueil"
@@ -429,6 +430,7 @@ let Ingénieure = new Modal(
   "Pnjs/pnj6",
   "Appuyez sur espace pour discuter avec l'Ingénieure !",
   linkChatBotIngénieure,
+  "right",
   "interact",
   "PNJ",
   "PNJ_Ingénieure"
@@ -490,6 +492,7 @@ let Formulaire = new Modal(
   "Pnjs/Formulaire",
   "Appuyez sur espace pour ouvrir le formulaire !",
   formLink,
+  "right",
   "interact",
   "Form",
   "Formulaire_debut"
@@ -708,6 +711,7 @@ let yumiMetier = new Modal(
   "Pnjs/MetierRoom/chatBot_1",
   "Appuyez sur espace pour discuter avec Yumi !",
   YumiMetierBot,
+  "right",
   "interact",
   "PNJ",
   "PNJ_YumiMetier"
@@ -827,6 +831,7 @@ let yumiITW = new Modal(
   "Pnjs/ShowRoom/ITWBot",
   "Appuyez sur espace pour discuter avec Yumi Journaliste !",
   YumiITWBot,
+  "right",
   "interact",
   "PNJ",
   "PNJ_YumiJournaliste",
@@ -877,6 +882,7 @@ let HiHacksBot = new Modal(
   "Pnjs/ParkInside/Hihacks",
   "Appuyez sur espace pour discuter avec Romane !",
   HiHacksBotLink,
+  "right",
   "interact",
   "PNJ",
   "PNJ_Romane",
@@ -886,6 +892,7 @@ let InfluenceBot = new Modal(
   "Pnjs/ParkInside/Influence",
   "Appuyez sur espace pour discuter avec Yumi Créatrice !",
   InfluenceBotLink,
+  "right",
   "interact",
   "PNJ",
   "PNJ_YumiCreatrice",
@@ -923,6 +930,7 @@ let YumiLabBot = new Modal(
   "Pnjs/LaboRoom/YumiLab",
   "Appuyez sur espace pour discuter avec Yumi Scientifique !",
   YumiLabBotLink,
+  "right",
   "interact",
   "PNJ",
   "PNJ_YumiScientifique",
