@@ -75,7 +75,8 @@ const apprenti_6VideoLink = "https://www.youtube.com/embed/Y35a-PeWnCY?si=ssJEvt
 
 // SETUP ///////////////////////////////////////////////
 
-const url_api = "https://127.0.0.1:8000";
+const url_api = "https://uimm-trackers-api-stg-0b60361e2cd1.herokuapp.com/api/tracker_events";
+
 WA.onInit().then(() => {
   // désactiver les proximity meeting parceque peu utile
   WA.controls.disablePlayerProximityMeeting();
