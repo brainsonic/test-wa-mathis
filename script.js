@@ -95,42 +95,11 @@ class Interaction {
     //setup des variables
     this.layer = _layer;
     this.message = _message;
+    this.category_tracker = _category_tracker;
+    this.type_tracker = _type_tracker;
+    this.name_tracker = _name_tracker;
     //setup des listeners WA pour les layers prévus
     this.setup();
-
-    /* ---- API Tracker Stat ---- */
-
-    const data = {
-      type: _type_tracker,
-      category: _category_tracker,
-      name: _name_tracker,
-    }
-    const request = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/ld+json'
-      },
-      body: JSON.stringify(data)
-    }
-
-    fetch(url_api, request)
-      .then(response => {
-        if(!response.ok) {
-          console.log('Erreur tracker');
-          throw new Error('Network response was not OK')
-        }
-        return response.json();
-      })
-      .then(data => {
-
-        console.log('Response :', data);
-
-      })
-      .catch(error => {
-        
-        console.error('Error:', error)
-      })
-
 
   }
   setup() {
@@ -151,6 +120,7 @@ class Interaction {
   //fonction d'intéraction, à override
   interact() {
     // override this
+
   }
   //fonction de sortie
   close() {
@@ -177,6 +147,38 @@ class Dialog extends Interaction {
   }
   //fonction d'intéraction, ouvre le popup
   interact() {
+    /* ---- API Tracker Stat ---- */
+
+    const data = {
+      type: this.type_tracker,
+      category: this.category_tracker,
+      name: this.name_tracker,
+    }
+    const request = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/ld+json'
+      },
+      body: JSON.stringify(data)
+    }
+
+    fetch(url_api, request)
+      .then(response => {
+        if(!response.ok) {
+          console.log('Erreur tracker');
+          throw new Error('Network response was not OK')
+        }
+        return response.json();
+      })
+      .then(data => {
+
+        console.log('Response :', data);
+
+      })
+      .catch(error => {
+        
+        console.error('Error:', error)
+      })
     this.open();
   }
   //fonction d'ouverture du popup en fonction du state du dialogue
@@ -226,6 +228,39 @@ class Modal extends Interaction {
     if (_position !== undefined) this.position = _position;
   }
   interact() {
+    /* ---- API Tracker Stat ---- */
+
+    const data = {
+      type: this.type_tracker,
+      category: this.category_tracker,
+      name: this.name_tracker,
+    }
+    const request = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/ld+json'
+      },
+      body: JSON.stringify(data)
+    }
+
+    fetch(url_api, request)
+      .then(response => {
+        if(!response.ok) {
+          console.log('Erreur tracker');
+          throw new Error('Network response was not OK')
+        }
+        return response.json();
+      })
+      .then(data => {
+
+        console.log('Response :', data);
+
+      })
+      .catch(error => {
+        
+        console.error('Error:', error)
+      })
+
     this.open();
   }
   open() {
