@@ -1024,6 +1024,7 @@ let Apprenti_6 = new PopUpVideo(
 class ItemOnLayer {
   constructor(_layer, _message)
   {
+    this.message = _message;
     this.layer = _layer;
     this.setup();
   }
