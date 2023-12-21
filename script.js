@@ -1022,10 +1022,12 @@ let Apprenti_6 = new PopUpVideo(
 //Phase Test Item
 
 class ItemOnLayer {
-  constructor(_layer, _message)
+  constructor(_layer, _message, _dialog, _item)
   {
     this.message = _message;
     this.layer = _layer;
+    this.dialog = _dialog;
+    this.item = _item;
     this.setup();
   }
 
@@ -1045,13 +1047,15 @@ class ItemOnLayer {
     });
   }
 
+  //Set l'objet au joueur
   pickUpItem() {
     WA.onInit().then(() => {
       console.log('Player : ', WA.player.name);
-      if (WA.player.state.sword == null)
+      console.log('Item : ', this.item);
+      if (WA.player.state[this.item] == null)
       {
         console.log("Le joueur ne possède pas d'arme");
-        WA.player.state.saveVariable("sword", true, {
+        WA.player.state.saveVariable(this.item, true, {
           public: true,
           persist: true,
           ttl: 24 * 3600,
@@ -1060,9 +1064,13 @@ class ItemOnLayer {
       }
       else
       {
-        console.log("Le joueur possède ", WA.player.state.sword);
+        console.log("Le joueur possède ", WA.player.state[this.item]);
       }
     })
+  }
+
+  open() {
+
   }
 
   close() {
@@ -1078,5 +1086,7 @@ class ItemOnLayer {
 
 let ItemSword = new ItemOnLayer(
   "Items/Sword",
-  "Appuyez sur espace pour ramasser l'épée de la muerte"
+  "Appuyez sur espace pour ramasser l'épée de la muerte",
+  ["Vous récuperez l'épée de la muerte"],
+  "sword"
 );
