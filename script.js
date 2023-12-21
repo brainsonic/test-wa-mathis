@@ -1046,7 +1046,6 @@ class ItemOnLayer {
   }
 
   pickUpItem() {
-    console.log('Player succefully pick up the item');
   }
 
   close() {
