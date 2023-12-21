@@ -1054,7 +1054,7 @@ class ItemOnLayer {
         WA.player.state.saveVariable("Sword", true, {
           public: true,
           persist: true,
-          scope: "word"
+          scope: "world"
         })
       }
       else
