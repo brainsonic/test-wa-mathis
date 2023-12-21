@@ -1022,12 +1022,14 @@ let Apprenti_6 = new PopUpVideo(
 //Phase Test Item
 
 class ItemOnLayer {
-  constructor(_layer, _message, _dialog, _item)
+  constructor(_layer, _message, _dialog, _object, _item)
   {
     this.message = _message;
     this.layer = _layer;
     this.dialog = _dialog;
+    this.object = _object;
     this.item = _item;
+    this.state = 0;
     this.setup();
   }
 
@@ -1070,7 +1072,30 @@ class ItemOnLayer {
   }
 
   open() {
-
+    // ouvre le popup avec le texte correspondant au state actuel
+    // bouton change de label si c'est le dernier popup
+    this.currentState = WA.ui.openPopup(this.object, this.dialog[this.state], [
+      {
+        label: this.state < this.dialog.length - 1 ? "Suivant" : "Fermer",
+        className: "primary",
+        callback: (popup) => {
+          // appel de la fonction next qui gère le changement de state et d'autres choses
+          this.next();
+        },
+      },
+    ]);
+    this.finished = false;
+  }
+  next() {
+    this.state++;
+    // ferme le popup actuel, set en undefined pour éviter les bugs
+    if (this.currentState !== undefined) this.currentState.close();
+    this.currentState = undefined;
+    // check si fini, sinon ouvre le popup suivant
+    if (this.state >= this.dialog.length) {
+      this.finished = true;
+      this.state = 0;
+    } else this.open();
   }
 
   close() {
@@ -1080,13 +1105,16 @@ class ItemOnLayer {
   }
   //fonction de sortie, à override selon les besoins des sous-classes
   exit() {
-    // override this
+    if (!this.finished && this.currentState !== undefined)
+      this.currentState.close();
+    this.currentState = undefined;
   }
 }
 
 let ItemSword = new ItemOnLayer(
   "Items/Sword",
   "Appuyez sur espace pour ramasser l'épée de la muerte",
-  ["Vous récuperez l'épée de la muerte"],
+  ["Vous avez récuperé l'épée de la muerte"],
+  "swordText",
   "sword"
 );
