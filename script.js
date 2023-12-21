@@ -1051,7 +1051,7 @@ class ItemOnLayer {
       if (WA.player.state.sword == null)
       {
         console.log("Le joueur ne possède pas d'arme");
-        WA.player.state.saveVariable("Sword", true, {
+        WA.player.state.saveVariable("sword", true, {
           public: true,
           persist: true,
           ttl: 24 * 3600,
