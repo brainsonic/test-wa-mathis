@@ -1069,6 +1069,7 @@ class ItemOnLayer {
         console.log("Le joueur possède ", WA.player.state[this.item]);
       }
       this.open();
+      console.log('FINI');
     });
   }
 
@@ -1088,6 +1089,7 @@ class ItemOnLayer {
     ]);
     this.finished = false;
   }
+
   next() {
     this.state++;
     // ferme le popup actuel, set en undefined pour éviter les bugs
