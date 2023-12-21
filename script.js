@@ -1035,9 +1035,6 @@ class ItemOnLayer {
       this.triggerMessage = WA.ui.displayActionMessage({
         message: this.message,
         callback: () => {
-          WA.onInit().then(() => {
-            console.log('Player : ', WA.player.name);
-          });
           this.pickUpItem()
         },
       });
@@ -1051,6 +1048,19 @@ class ItemOnLayer {
   pickUpItem() {
     WA.onInit().then(() => {
       console.log('Player : ', WA.player.name);
+      if (WA.player.state.sword == null)
+      {
+        console.log("Le joueur ne possède pas d'arme");
+        WA.player.state.saveVariable("Sword", true, {
+          public: true,
+          persist: true,
+          scope: "word"
+        })
+      }
+      else
+      {
+        console.log("Le joueur possède ", WA.player.state.sword);
+      }
     })
   }
 
