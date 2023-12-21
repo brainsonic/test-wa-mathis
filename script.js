@@ -1069,6 +1069,7 @@ class ItemOnLayer {
         console.log("Le joueur possède ", WA.player.state[this.item]);
       }
     })
+    this.open();
   }
 
   open() {
