@@ -1032,7 +1032,7 @@ class ItemOnLayer {
   setup() {
     //listener d'entrée sur le layer, créé le message d'interaction
     WA.room.onEnterLayer(this.layer).subscribe(() => {
-      console.og('Yes');
+      console.log('Yes');
       this.triggerMessage = WA.ui.displayActionMessage({
         message: this.message,
         callback: () => {
