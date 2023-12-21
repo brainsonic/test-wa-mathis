@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="16" height="8" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="1">
+ <tileset firstgid="1" name="Room_Builder_32x32" tilewidth="32" tileheight="32" tilecount="8284" columns="76">
+  <image source="tilesets/Room_Builder_32x32.png" width="2432" height="3488"/>
+ </tileset>
+ <tileset firstgid="8285" name="yumi-standard 2" tilewidth="32" tileheight="32" tilecount="4" columns="2">
+  <image source="tilesets/Assets Julien/yumi-standard 2.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="8289" name="socle-teleportation" tilewidth="32" tileheight="32" tilecount="4" columns="2">
+  <image source="tilesets/Assets Julien/socle-teleportation.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="8293" name="Modern_Exteriors_Complete_Tileset_32x32" tilewidth="32" tileheight="32" tilecount="41712" columns="176">
+  <image source="tilesets/Modern_Exteriors_Complete_Tileset_32x32.png" width="5632" height="7584"/>
+ </tileset>
+ <tileset firstgid="50005" name="Modern_Office_32x32" tilewidth="32" tileheight="32" tilecount="848" columns="16">
+  <image source="tilesets/Modern_Office_32x32.png" width="512" height="1696"/>
+ </tileset>
+ <tileset firstgid="50853" name="Interiors_32x32" tilewidth="32" tileheight="32" tilecount="17024" columns="16">
+  <image source="tilesets/Interiors_32x32.png" width="512" height="34048"/>
+ </tileset>
+ <tileset firstgid="67877" name="pixel-cyberpunk-interior" tilewidth="32" tileheight="32" tilecount="231" columns="21">
+  <image source="tilesets/pixel-cyberpunk-interior.png" width="672" height="352"/>
+ </tileset>
+ <tileset firstgid="68108" name="bras-robot-mecanique" tilewidth="32" tileheight="32" tilecount="16" columns="4">
+  <image source="tilesets/Assets Julien/bras-robot-mecanique.png" width="128" height="128"/>
+ </tileset>
+ <tileset firstgid="68124" name="cable1 2" tilewidth="32" tileheight="32" tilecount="20" columns="2">
+  <image source="tilesets/cable1 2.png" width="64" height="320"/>
+ </tileset>
+ <tileset firstgid="68144" name="cable1" tilewidth="32" tileheight="32" tilecount="20" columns="2">
+  <image source="tilesets/cable1.png" width="64" height="320"/>
+ </tileset>
+ <layer id="1" name="Layer 1" width="16" height="8">
+  <data encoding="csv">
+397,0,0,0,0,0,0,0,0,0,0,0,0,0,0,395,
+472,0,0,0,0,0,0,0,0,0,0,0,0,0,0,472,
+472,0,0,0,0,0,0,0,0,0,0,0,0,0,0,472,
+472,0,0,0,0,0,0,0,0,0,0,0,0,0,0,472,
+472,0,0,0,0,0,0,67973,0,0,0,0,0,0,0,472,
+472,0,0,0,0,0,0,0,0,0,0,0,0,0,0,472,
+1445,1446,1446,1446,1446,1446,1446,1446,1446,1446,1446,1446,1446,1446,1446,1447,
+1521,1522,1522,1522,1522,1522,1522,1522,1522,1522,1522,1522,1522,1522,1522,1523
+</data>
+ </layer>
+ <layer id="2" name="Layer 2" width="16" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="3" name="Layer 3" width="16" height="8">
+  <data encoding="csv">
+0,3129,3129,3129,3129,3129,3129,3129,3129,3129,3129,3129,3129,3129,3129,0,
+0,3205,3205,3205,3205,3205,3205,3205,3205,3205,3205,3205,3205,3205,3205,0,
+0,67923,67923,67923,67923,67923,67923,67923,67923,67923,67923,67923,67923,67923,67923,0,
+0,67923,67923,67923,67923,67923,67923,67923,67923,67923,67923,67923,67923,67923,67923,0,
+0,67923,67923,67923,67923,67923,67923,67923,67923,67923,67923,67923,67923,67923,67923,0,
+0,67923,67923,67923,67923,67923,67923,67923,67923,67923,67923,67923,67923,67923,67923,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="6" name="Layer 4" width="16" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,60981,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,60997,0,0,0,0,0,0,0,2684422689,2684422687,2684422685,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,64535,64536,64537,0,0,0,0,0,0,0,0,0,0,0,0,
+0,64567,64568,64569,0,0,60414,60415,0,60465,60466,0,0,0,0,0,
+0,64583,64584,64585,0,0,60430,60431,0,60481,60482,0,0,0,0,0,
+0,0,0,0,0,0,60446,60447,0,60497,60498,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="7" name="Layer 5" width="16" height="8">
+  <data encoding="csv">
+0,0,61103,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,61119,61013,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,3221293550,3221293550,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,68159,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,68161,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,68163,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="5" name="Layer 6" width="16" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,63920,63921,63922,68109,68110,0,0,0,0,
+0,2147540561,2147540560,2147540559,67988,0,0,63936,63937,63938,68113,68114,0,67905,0,0,
+0,2147540577,2147540576,2147540575,68009,0,0,0,0,0,68117,68118,8289,8290,0,0,
+0,2147540593,2147540592,2147540591,0,0,0,0,0,0,68121,68122,8291,8292,0,0,
+0,2147540609,2147540608,2147540607,0,0,0,0,0,0,0,0,0,57753,57754,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,57769,57770,0,
+1445,1446,1446,1446,1446,1446,1446,1446,1446,1446,1446,1446,1446,1446,1446,1447,
+1521,1522,1522,1522,1522,1522,1522,1522,1522,1522,1522,1522,1522,1522,1522,1523
+</data>
+ </layer>
+ <layer id="10" name="Layer 7" width="16" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,2684422638,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="4" name="png" width="16" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,8285,8286,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,8287,8288,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,51397,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+</map>
