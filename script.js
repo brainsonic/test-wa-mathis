@@ -1035,6 +1035,9 @@ class ItemOnLayer {
       this.triggerMessage = WA.ui.displayActionMessage({
         message: this.message,
         callback: () => {
+          WA.onInit().then(() => {
+            console.log('Player : ', WA.player.name);
+          });
           this.pickUpItem()
         },
       });
