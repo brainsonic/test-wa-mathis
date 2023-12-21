@@ -1017,3 +1017,49 @@ let Apprenti_6 = new PopUpVideo(
 
 
 // END INTERACTIONS DIVERSES ///////////////////////////////////////////////
+
+
+//Phase Test Item
+
+class ItemOnLayer {
+  constructor(_layer, _message)
+  {
+    this.layer = _layer;
+    this.setup();
+  }
+
+  setup() {
+    //listener d'entrée sur le layer, créé le message d'interaction
+    WA.room.onEnterLayer(this.layer).subscribe(() => {
+      this.triggerMessage = WA.ui.displayActionMessage({
+        message: this.message,
+        callback: () => {
+          this.pickUpItem()
+        },
+      });
+    });
+    //listener de sortie, lance la fonction de sortie qui fermera le message d'interaction si il est ouvert
+    WA.room.onLeaveLayer(this.layer).subscribe(() => {
+      if (this.triggerMessage !== undefined) this.close();
+    });
+  }
+
+  pickUpItem() {
+    console.log('Player succefully pick up the item');
+  }
+
+  close() {
+    if (this.triggerMessage !== undefined) this.triggerMessage.remove();
+    // lance la fonction exit, à override selon les besoins des sous-classes
+    this.exit();
+  }
+  //fonction de sortie, à override selon les besoins des sous-classes
+  exit() {
+    // override this
+  }
+}
+
+let ItemSword = new ItemOnLayer(
+  "Items/Sword",
+  "Appuyez sur espace pour ramasser l'épée de la muerte"
+);
