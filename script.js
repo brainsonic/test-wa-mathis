@@ -1068,13 +1068,14 @@ class ItemOnLayer {
       {
         console.log("Le joueur possède ", WA.player.state[this.item]);
       }
-    })
-    this.open();
+      this.open();
+    });
   }
 
   open() {
     // ouvre le popup avec le texte correspondant au state actuel
     // bouton change de label si c'est le dernier popup
+    console.log('Yes');
     this.currentState = WA.ui.openPopup(this.object, this.dialog[this.state], [
       {
         label: this.state < this.dialog.length - 1 ? "Suivant" : "Fermer",
