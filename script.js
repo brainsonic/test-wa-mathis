@@ -1046,6 +1046,9 @@ class ItemOnLayer {
   }
 
   pickUpItem() {
+    WA.onInit().then(() => {
+      console.log('Player : ', WA.player.name);
+    })
   }
 
   close() {
