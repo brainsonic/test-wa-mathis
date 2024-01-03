@@ -117,36 +117,9 @@ class Interaction {
       if (this.triggerMessage !== undefined) this.close();
     });
   }
-  //fonction d'intéraction, à override
-  interact() {
-    // override this
 
-  }
-  //fonction de sortie
-  close() {
-    if (this.triggerMessage !== undefined) this.triggerMessage.remove();
-    // lance la fonction exit, à override selon les besoins des sous-classes
-    this.exit();
-  }
-  //fonction de sortie, à override selon les besoins des sous-classes
-  exit() {
-    // override this
-  }
-}
-// class Dialog
-// layer : string : nom de la layer sur laquelle l'interaction est possible
-// message : string : message affiché au joueur pour l'inviter à intéragir
-// dialog : string[] : tableau de string, chaque string est un nouveau popup
-// object : string : nom de l'objet sur lequel le popup s'ouvre
-class Dialog extends Interaction {
-  constructor(_layer, _message, _dialog, _object, _category_tracker, _type_tracker, _name_tracker) {
-    super(_layer, _message, _category_tracker, _type_tracker, _name_tracker);
-    this.object = _object;
-    this.dialog = _dialog;
-    this.state = 0;
-  }
-  //fonction d'intéraction, ouvre le popup
-  interact() {
+  //Fonction pour track les interactions
+  track() {
     /* ---- API Tracker Stat ---- */
 
     const data = {
@@ -178,8 +151,43 @@ class Dialog extends Interaction {
       .catch(error => {
         
         console.error('Error:', error)
-      })
+      }) 
+  }
+  //fonction d'intéraction, à override
+  interact() {
+    // override this
+    this.track();
+
+  }
+  //fonction de sortie
+  close() {
+    if (this.triggerMessage !== undefined) this.triggerMessage.remove();
+    // lance la fonction exit, à override selon les besoins des sous-classes
+    this.exit();
+  }
+  //fonction de sortie, à override selon les besoins des sous-classes
+  exit() {
+    // override this
+  }
+}
+// class Dialog
+// layer : string : nom de la layer sur laquelle l'interaction est possible
+// message : string : message affiché au joueur pour l'inviter à intéragir
+// dialog : string[] : tableau de string, chaque string est un nouveau popup
+// object : string : nom de l'objet sur lequel le popup s'ouvre
+class Dialog extends Interaction {
+  constructor(_layer, _message, _dialog, _object, _category_tracker, _type_tracker, _name_tracker) {
+    super(_layer, _message, _category_tracker, _type_tracker, _name_tracker);
+    this.object = _object;
+    this.dialog = _dialog;
+    this.state = 0;
+  }
+  //fonction d'intéraction, ouvre le popup
+  interact() {
+
+    this.track();
     this.open();
+    
   }
   //fonction d'ouverture du popup en fonction du state du dialogue
   open() {
@@ -228,41 +236,11 @@ class Modal extends Interaction {
     if (_position !== undefined) this.position = _position;
   }
   interact() {
-    /* ---- API Tracker Stat ---- */
 
-    const data = {
-      type: this.type_tracker,
-      category: this.category_tracker,
-      name: this.name_tracker,
-    }
-    const request = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/ld+json'
-      },
-      body: JSON.stringify(data)
-    }
-
-    fetch(url_api, request)
-      .then(response => {
-        if(!response.ok) {
-          console.log('Erreur tracker');
-          throw new Error('Network response was not OK')
-        }
-        return response.json();
-      })
-      .then(data => {
-
-        console.log('Response :', data);
-
-      })
-      .catch(error => {
-        
-        console.error('Error:', error)
-      })
-
+    this.track();
     this.open();
   }
+
   open() {
     // ouvre le modal
     WA.ui.modal.openModal({
