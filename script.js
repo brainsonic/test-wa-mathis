@@ -187,7 +187,7 @@ class Dialog extends Interaction {
 
     this.track();
     this.open();
-    
+
   }
   //fonction d'ouverture du popup en fonction du state du dialogue
   open() {
@@ -1007,6 +1007,7 @@ class ItemOnLayer extends Interaction{
     this.object = _object;
     this.item = _item;
     this.state = 0;
+    this.alreadyHaveItem = 0;
   }
 
   //Set l'objet au joueur
@@ -1027,17 +1028,18 @@ class ItemOnLayer extends Interaction{
       else
       {
         console.log("Le joueur possède ", WA.player.state[this.item]);
+        this.alreadyHaveItem = 1;
       }
       this.open();
-      console.log('FINI');
+      this.track();
     });
   }
 
   open() {
     // ouvre le popup avec le texte correspondant au state actuel
     // bouton change de label si c'est le dernier popup
-    console.log('Yes');
-    this.currentState = WA.ui.openPopup(this.object, this.dialog[this.state], [
+    var text = this.alreadyHaveItem == 0 ? this.dialog[this.state] : ["Vous possédez déjà l'objet"];
+    this.currentState = WA.ui.openPopup(this.object, text , [
       {
         label: this.state < this.dialog.length - 1 ? "Suivant" : "Fermer",
         className: "primary",
