@@ -1029,7 +1029,6 @@ class ItemOnLayer extends Interaction{
     this.object = _object;
     this.item = _item;
     this.state = 0;
-    this.setup();
   }
 
   //Set l'objet au joueur
