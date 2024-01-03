@@ -1021,11 +1021,10 @@ let Apprenti_6 = new PopUpVideo(
 
 //Phase Test Item
 
-class ItemOnLayer {
-  constructor(_layer, _message, _dialog, _object, _item)
+class ItemOnLayer extends Interaction{
+  constructor(_layer, _message, _dialog, _object, _item, _category_tracker, _type_tracker, _name_tracker)
   {
-    this.message = _message;
-    this.layer = _layer;
+    super(_layer, _message, _category_tracker, _type_tracker, _name_tracker);
     this.dialog = _dialog;
     this.object = _object;
     this.item = _item;
@@ -1033,24 +1032,8 @@ class ItemOnLayer {
     this.setup();
   }
 
-  setup() {
-    //listener d'entrée sur le layer, créé le message d'interaction
-    WA.room.onEnterLayer(this.layer).subscribe(() => {
-      this.triggerMessage = WA.ui.displayActionMessage({
-        message: this.message,
-        callback: () => {
-          this.pickUpItem()
-        },
-      });
-    });
-    //listener de sortie, lance la fonction de sortie qui fermera le message d'interaction si il est ouvert
-    WA.room.onLeaveLayer(this.layer).subscribe(() => {
-      if (this.triggerMessage !== undefined) this.close();
-    });
-  }
-
   //Set l'objet au joueur
-  pickUpItem() {
+  interact() {
     WA.onInit().then(() => {
       console.log('Player : ', WA.player.name);
       console.log('Item : ', this.item);
@@ -1102,11 +1085,6 @@ class ItemOnLayer {
     } else this.open();
   }
 
-  close() {
-    if (this.triggerMessage !== undefined) this.triggerMessage.remove();
-    // lance la fonction exit, à override selon les besoins des sous-classes
-    this.exit();
-  }
   //fonction de sortie, à override selon les besoins des sous-classes
   exit() {
     if (!this.finished && this.currentState !== undefined)
@@ -1120,5 +1098,8 @@ let ItemSword = new ItemOnLayer(
   "Appuyez sur espace pour ramasser l'épée de la muerte",
   ["Vous avez récuperé l'épée de la muerte"],
   "swordText",
-  "sword"
+  "sword",
+  "interract",
+  "Object",
+  "Object_sword"
 );
