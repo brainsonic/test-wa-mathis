@@ -1041,7 +1041,7 @@ class ItemOnLayer extends Interaction{
     var text = this.alreadyHaveItem == 0 ? this.dialog[this.state] : ["Vous possédez déjà l'objet"];
     this.currentState = WA.ui.openPopup(this.object, text , [
       {
-        label: this.state < this.dialog.length - 1 ? "Suivant" : "Fermer",
+        label: this.state < text.length - 1 ? "Suivant" : "Fermer",
         className: "primary",
         callback: (popup) => {
           // appel de la fonction next qui gère le changement de state et d'autres choses
