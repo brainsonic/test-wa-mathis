@@ -145,11 +145,10 @@ class Interaction {
       })
       .then(data => {
 
-        console.log('Response :', data);
+        //console.log('Response :', data);
 
       })
       .catch(error => {
-        
         console.error('Error:', error)
       }) 
   }
@@ -1013,11 +1012,11 @@ class ItemOnLayer extends Interaction{
   //Set l'objet au joueur
   interact() {
     WA.onInit().then(() => {
-      console.log('Player : ', WA.player.name);
-      console.log('Item : ', this.item);
+      //console.log('Player : ', WA.player.name);
+      //console.log('Item : ', this.item);
       if (WA.player.state[this.item] == null)
       {
-        console.log("Le joueur ne possède pas d'arme");
+        //console.log("Le joueur ne possède pas d'arme");
         WA.player.state.saveVariable(this.item, true, {
           public: true,
           persist: true,
@@ -1027,7 +1026,7 @@ class ItemOnLayer extends Interaction{
       }
       else
       {
-        console.log("Le joueur possède ", WA.player.state[this.item]);
+        //console.log("Le joueur possède ", WA.player.state[this.item]);
         this.alreadyHaveItem = 1;
       }
       this.open();
