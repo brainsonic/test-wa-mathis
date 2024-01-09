@@ -75,6 +75,8 @@ const apprenti_6VideoLink = "https://www.youtube.com/embed/Y35a-PeWnCY?si=ssJEvt
 
 // SETUP ///////////////////////////////////////////////
 
+
+
 const url_api = "https://uimm-trackers-api-stg-0b60361e2cd1.herokuapp.com/api/tracker_events";
 
 WA.onInit().then(() => {
@@ -82,6 +84,10 @@ WA.onInit().then(() => {
   WA.controls.disablePlayerProximityMeeting();
 });
 
+WA.room.onEnterLayer('TestCase').subscribe(() => {
+  WA.room.showLayer('TestCase');
+  console.log('PASSAGE OK');
+});
 // CLASS ///////////////////////////////////////////////
 
 // class Interaction : endroit sur la map où l'on peut intéragir
