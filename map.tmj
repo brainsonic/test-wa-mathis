@@ -9866,10 +9866,21 @@
                  "width":425,
                  "x":474.038461538461,
                  "y":1389.42307692308
+                }, 
+                {
+                 "height":103.515353619564,
+                 "id":96,
+                 "name":"swordText",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":206.335973322218,
+                 "x":2871.3352785883,
+                 "y":2154.36987633736
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }, 
@@ -11105,7 +11116,7 @@
          "y":0
         }],
  "nextlayerid":164,
- "nextobjectid":96,
+ "nextobjectid":97,
  "orientation":"orthogonal",
  "properties":[
         {
