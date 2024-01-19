@@ -1086,7 +1086,7 @@ function trapLayer(_layer)
   });
 }
 
-nb_hole = 23;
+let nb_hole = 23;
 for (let index = 1; index < nb_hole + 1; index++)
 {
   trapLayer('HideTile/TrappedRoom/Hole_' + index, 52, 13); 
