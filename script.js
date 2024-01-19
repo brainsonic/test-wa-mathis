@@ -1076,7 +1076,7 @@ let Apprenti_6 = new PopUpVideo(
 /* Function to tp the player in the departure
 * You have to hide the layer in the Tiled
 */
-function trapLayer(_layer)
+function trapLayer(_layer, _posX, _posY)
 {
   WA.room.onEnterLayer(_layer).subscribe(() => {
     WA.room.showLayer(_layer);
