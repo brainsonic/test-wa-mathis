@@ -84,10 +84,6 @@ WA.onInit().then(() => {
   WA.controls.disablePlayerProximityMeeting();
 });
 
-WA.room.onEnterLayer('HideTile/TestCase').subscribe(() => {
-  WA.room.showLayer('HideTile/TestCase');
-  console.log('PASSAGE OK');
-});
 // CLASS ///////////////////////////////////////////////
 
 // class Interaction : endroit sur la map où l'on peut intéragir
@@ -272,6 +268,80 @@ class PopUpVideo extends Dialog {
     this.currentState.close();
     this.currentState = undefined;
     await WA.nav.openCoWebSite(this.video, true, "", 50, 1, true, false);
+  }
+}
+
+//Class to pickup an item
+class ItemOnLayer extends Interaction{
+  constructor(_layer, _message, _dialog, _object, _item, _category_tracker, _type_tracker, _name_tracker)
+  {
+    super(_layer, _message, _category_tracker, _type_tracker, _name_tracker);
+    this.dialog = _dialog;
+    this.object = _object;
+    this.item = _item;
+    this.state = 0;
+    this.alreadyHaveItem = 0;
+  }
+
+  //Set l'objet au joueur
+  interact() {
+    WA.onInit().then(() => {
+      //console.log('Player : ', WA.player.name);
+      //console.log('Item : ', this.item);
+      if (WA.player.state[this.item] == null)
+      {
+        //console.log("Le joueur ne possède pas d'arme");
+        WA.player.state.saveVariable(this.item, true, {
+          public: true,
+          persist: true,
+          ttl: 24 * 3600,
+          scope: "world"
+        })
+      }
+      else
+      {
+        //console.log("Le joueur possède ", WA.player.state[this.item]);
+        this.alreadyHaveItem = 1;
+      }
+      this.open();
+      this.track();
+    });
+  }
+
+  open() {
+    // ouvre le popup avec le texte correspondant au state actuel
+    // bouton change de label si c'est le dernier popup
+    this.dialog = this.alreadyHaveItem == 0 ? this.dialog : ["Vous possédez déjà l'objet"];
+    this.currentState = WA.ui.openPopup(this.object, this.dialog[this.state] , [
+      {
+        label: this.state < this.dialog.length - 1 ? "Suivant" : "Fermer",
+        className: "primary",
+        callback: (popup) => {
+          // appel de la fonction next qui gère le changement de state et d'autres choses
+          this.next();
+        },
+      },
+    ]);
+    this.finished = false;
+  }
+
+  next() {
+    this.state++;
+    // ferme le popup actuel, set en undefined pour éviter les bugs
+    if (this.currentState !== undefined) this.currentState.close();
+    this.currentState = undefined;
+    // check si fini, sinon ouvre le popup suivant
+    if (this.state >= this.dialog.length) {
+      this.finished = true;
+      this.state = 0;
+    } else this.open();
+  }
+
+  //fonction de sortie, à override selon les besoins des sous-classes
+  exit() {
+    if (!this.finished && this.currentState !== undefined)
+      this.currentState.close();
+    this.currentState = undefined;
   }
 }
 
@@ -1001,80 +1071,25 @@ let Apprenti_6 = new PopUpVideo(
 
 // END INTERACTIONS DIVERSES ///////////////////////////////////////////////
 
+//Phase 3 Item and hidden layer
 
-//Phase Test Item
-
-class ItemOnLayer extends Interaction{
-  constructor(_layer, _message, _dialog, _object, _item, _category_tracker, _type_tracker, _name_tracker)
-  {
-    super(_layer, _message, _category_tracker, _type_tracker, _name_tracker);
-    this.dialog = _dialog;
-    this.object = _object;
-    this.item = _item;
-    this.state = 0;
-    this.alreadyHaveItem = 0;
-  }
-
-  //Set l'objet au joueur
-  interact() {
-    WA.onInit().then(() => {
-      //console.log('Player : ', WA.player.name);
-      //console.log('Item : ', this.item);
-      if (WA.player.state[this.item] == null)
-      {
-        //console.log("Le joueur ne possède pas d'arme");
-        WA.player.state.saveVariable(this.item, true, {
-          public: true,
-          persist: true,
-          ttl: 24 * 3600,
-          scope: "world"
-        })
-      }
-      else
-      {
-        //console.log("Le joueur possède ", WA.player.state[this.item]);
-        this.alreadyHaveItem = 1;
-      }
-      this.open();
-      this.track();
+/* Function to tp the player in the departure
+* You have to hide the layer in the Tiled
+*/
+function trapLayer(_layer)
+{
+  WA.room.onEnterLayer(_layer).subscribe(() => {
+    WA.room.showLayer(_layer);
+    WA.onInit.then(() => {
+      WA.player.teleport(_posX, _posY);
     });
-  }
+  });
+}
 
-  open() {
-    // ouvre le popup avec le texte correspondant au state actuel
-    // bouton change de label si c'est le dernier popup
-    this.dialog = this.alreadyHaveItem == 0 ? this.dialog : ["Vous possédez déjà l'objet"];
-    this.currentState = WA.ui.openPopup(this.object, this.dialog[this.state] , [
-      {
-        label: this.state < this.dialog.length - 1 ? "Suivant" : "Fermer",
-        className: "primary",
-        callback: (popup) => {
-          // appel de la fonction next qui gère le changement de state et d'autres choses
-          this.next();
-        },
-      },
-    ]);
-    this.finished = false;
-  }
-
-  next() {
-    this.state++;
-    // ferme le popup actuel, set en undefined pour éviter les bugs
-    if (this.currentState !== undefined) this.currentState.close();
-    this.currentState = undefined;
-    // check si fini, sinon ouvre le popup suivant
-    if (this.state >= this.dialog.length) {
-      this.finished = true;
-      this.state = 0;
-    } else this.open();
-  }
-
-  //fonction de sortie, à override selon les besoins des sous-classes
-  exit() {
-    if (!this.finished && this.currentState !== undefined)
-      this.currentState.close();
-    this.currentState = undefined;
-  }
+nb_hole = 23;
+for (let index = 1; index < nb_hole + 1; index++)
+{
+  trapLayer('HideTile/TrappedRoom/Hole_' + index, 52, 13); 
 }
 
 let ItemSword = new ItemOnLayer(
