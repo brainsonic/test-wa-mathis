@@ -1080,7 +1080,7 @@ function trapLayer(_layer)
 {
   WA.room.onEnterLayer(_layer).subscribe(() => {
     WA.room.showLayer(_layer);
-    WA.onInit.then(() => {
+    WA.onInit().then(() => {
       WA.player.teleport(_posX, _posY);
     });
   });
@@ -1091,7 +1091,6 @@ for (let index = 1; index < nb_hole + 1; index++)
 {
   trapLayer('HideTile/TrappedRoom/Hole_' + index, 52, 13); 
 }
-
 let ItemSword = new ItemOnLayer(
   "Items/Sword",
   "Appuyez sur espace pour ramasser l'épée de la muerte",
