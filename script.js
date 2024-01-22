@@ -1366,10 +1366,14 @@ let trapDoor = new InteractAction(
   ["Vous devez rassemblé les 4 indices avant de pouvoir d'ouvrir la trappe"],
   'trapDoorText',
   () => {
-    if (WA.player.state["CafetHint"] != null && WA.player.state["CafetHint"] == true
-      && WA.player.state["ChestHint"] != null && WA.player.state["ChestHint"] == true
-      && WA.player.state["CoatRackHint"] != null && WA.player.state["CoatRackHint"] == true
-      && WA.player.state["BinHint"] != null && WA.player.state["BinHint"] == true)
+    console.log("Indice : ", WA.player.state["cafetHint"]);
+    console.log("Indice : ", WA.player.state["chestHint"]);
+    console.log("Indice : ", WA.player.state["coatRackHint"]);
+    console.log("Indice : ", WA.player.state["cinHint"]);
+    if (WA.player.state["cafetHint"] != null && WA.player.state["cafetHint"] == true
+      && WA.player.state["chestHint"] != null && WA.player.state["chestHint"] == true
+      && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
+      && WA.player.state["binHint"] != null && WA.player.state["binHint"] == true)
     {
       console.log('Vous entrez dans la room');
       return true;
