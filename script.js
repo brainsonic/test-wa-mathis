@@ -435,7 +435,7 @@ class ItemPickUpOnCondition extends ItemOnLayer{
   interact() {
     WA.onInit().then(() => {
       //console.log('Player : ', WA.player.name);
-      console.log('Item : ', this.condition);
+      console.log('Item : ', WA.player.state);
       if (this.condition == true)
       {
         if (WA.player.state[this.item] == null)
@@ -1266,11 +1266,9 @@ let cardAccess = new ItemPickUpOnCondition(
   "cardAccessText",
   "cardAccess",
   () => {
-    let consol = WA.onInit().then(() => {
-      return  WA.player.state["TalkToYumiTrappedRoom_1"] != null ? true : false;
+    return WA.onInit().then(() => {
+      return  WA.player.state["TalkToYumiTrappedRoom_2"] != null ? true : false;
     });
-    console.log('TALLKKKKKTOYUMIIII :', consol);
-    return consol;
   },
   "interract",
   "Object",
