@@ -237,6 +237,9 @@ class InteractAction extends Dialog {
   //fonction d'intéraction, ouvre le popup
   interact() {
 
+    WA.onInit().then(() => {
+      this.function_action();
+    });
     this.track();
     this.open();
 
@@ -245,7 +248,7 @@ class InteractAction extends Dialog {
   open() {
     // ouvre le popup avec le texte correspondant au state actuel
     // bouton change de label si c'est le dernier popup
-    if (this.function_action == false)
+    if (this.function_action() == false)
     {
       this.dialog = this.dialog_condition;
     }
@@ -320,10 +323,8 @@ class ModalAction extends Modal {
     this.function_action = _function_action;
   }
   interact() {
-
-    console.log('TEST REUSSI');
     WA.onInit().then(() => {
-      console.log(this.function_action());
+      this.function_action();
     });
     this.open();
     this.track();
@@ -466,7 +467,7 @@ class ItemPickUpOnCondition extends ItemOnLayer{
     // ouvre le popup avec le texte correspondant au state actuel
     // bouton change de label si c'est le dernier popup
     this.dialog = this.alreadyHaveItem == 0 ? this.dialog : ["Vous possédez déjà l'objet"];
-    if (this.condition == false)
+    if (this.condition() == false)
     {
       this.dialog = this.dialog_condition;
     }
@@ -1243,7 +1244,6 @@ let YumiTrappedBot = new ModalAction(
       var variable = "TalkToYumiTrappedRoom";
       if (WA.player.state[variable] == null)
       {
-        console.log("Variable Recup");
         WA.player.state.saveVariable(variable, true, {
           public: true,
           persist: true,
@@ -1273,3 +1273,29 @@ let cardAccess = new ItemPickUpOnCondition(
   "Object",
   "Object_cardAccess"
 );
+
+//Open Door TrappedRoom
+let doorTrappedRoom = new InteractAction(
+  "InteractAction/TrappedRoom/FinalDoor",
+  "Appuyez sur espace pour insérer la carte d'accès",
+  ["La porte est ouverte"],
+  ["Vous devez avoir la carte d'accès"],
+  'doorTrappedRoomText',
+  () => {
+    if (WA.player.state["cardAccess"] != null)
+    {
+      WA.room.hideLayer('beforePlayer/TrappedRoom/DoorFinal');
+      WA.room.setProperty('beforePlayer/TrappedRoom/CollideDoorFinal', collides, false);
+      console.log('OK');
+      return true;
+    }
+    else
+    {
+      console.log('KO');
+      return false;
+    }
+  },
+  "interract",
+  "InteractAction",
+  "Object_doorTrappedRoom"
+)
