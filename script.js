@@ -321,7 +321,7 @@ class ModalAction extends Modal {
   }
   interact() {
 
-      this.function_action;
+      this.function_action();
       this.open();
       this.track();
   }
@@ -435,9 +435,11 @@ class ItemPickUpOnCondition extends ItemOnLayer{
   interact() {
     WA.onInit().then(() => {
       //console.log('Player : ', WA.player.name);
-      console.log('Item : ', WA.player.state);
-      if (this.condition == true)
+      let result = this.condition();
+      console.log('Item : ', result);
+      if (result)
       {
+        console.log('CACACACA');
         if (WA.player.state[this.item] == null)
         {
           //console.log("Le joueur ne possède pas d'arme");
@@ -455,6 +457,7 @@ class ItemPickUpOnCondition extends ItemOnLayer{
           this.alreadyHaveItem = 1;
         }
       }
+      console.log('OUTTTTT');
       this.open();
       this.track();
     });
@@ -464,7 +467,7 @@ class ItemPickUpOnCondition extends ItemOnLayer{
     // ouvre le popup avec le texte correspondant au state actuel
     // bouton change de label si c'est le dernier popup
     this.dialog = this.alreadyHaveItem == 0 ? this.dialog : ["Vous possédez déjà l'objet"];
-    if (this.condition == false)
+    if (result)
     {
       this.dialog = this.dialog_condition;
     }
