@@ -1081,7 +1081,7 @@ function trapLayer(_layer, _posX, _posY)
   WA.room.onEnterLayer(_layer).subscribe(() => {
     WA.room.showLayer(_layer);
     WA.onInit().then(() => {
-      WA.player.teleport(_posX, _posY);
+      WA.nav.goToRoom('#Depart');
     });
   });
 }
