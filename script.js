@@ -1240,7 +1240,7 @@ let YumiTrappedBot = new ModalAction(
   () => {
     WA.onInit().then(() => {
       console.log('Item : ', "YESS");
-      if (WA.player.state["TalkToYumiTrappedRoom"] == false)
+      if (WA.player.state["TalkToYumiTrappedRoom_1"] == false)
       {
         console.log("Variable Recup");
         WA.player.state.saveVariable(this.variable, true, {
@@ -1267,7 +1267,7 @@ let cardAccess = new ItemPickUpOnCondition(
   "cardAccess",
   () => {
     let consol = WA.onInit().then(() => {
-      return  WA.player.state["TalkToYumiTrappedRoom"] != null ? true : false;
+      return  WA.player.state["TalkToYumiTrappedRoom_1"] != null ? true : false;
     });
     console.log('TALLKKKKKTOYUMIIII :', consol);
     return consol;
