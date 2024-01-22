@@ -1277,13 +1277,12 @@ let doorTrappedRoom = new InteractAction(
   ["Vous devez avoir la carte d'accès"],
   'doorTrappedRoomText',
   () => {
-    if (WA.player.state["cardAccess"] != null)
+    if (WA.player.state["cardAccess"] != null && WA.player.state["cardAccess"] == true)
     {
       WA.room.hideLayer('beforePlayer/TrappedRoom/DoorFinal');
       WA.room.hideLayer('beforePlayer/TrappedRoom/CollideDoorFinal');
-      WA.room.hideLayer('InteractAction/TrappedRoom/FinalDoor');
+      WA.room.showLayer('beforePlayer/TrappedRoom/DoorFinalOpen');
       console.log('OK_3');
-      doorTrappedRoom = null;
       return true;
     }
     else
@@ -1295,4 +1294,93 @@ let doorTrappedRoom = new InteractAction(
   "interract",
   "InteractAction",
   "Object_doorTrappedRoom"
-)
+);
+
+
+// ---- Lab de l'industrie ---- 
+
+let coatRackHint = new ItemOnLayer(
+  "Items/LabIndustry/CoatRackHint",
+  "Appuyez sur espace pour ramasser l'indice",
+  ["Vous avez récuperé l'indice"],
+  "coatRackText",
+  "coatRackHint",
+  "interract",
+  "Object",
+  "Object_coatRackItem"
+);
+
+let cafetHint = new ItemOnLayer(
+  "Items/LabIndustry/CafetHint",
+  "Appuyez sur espace pour ramasser l'indice",
+  ["Vous avez récuperé l'indice"],
+  "cafetText",
+  "cafetHint",
+  "interract",
+  "Object",
+  "Object_keyItem",
+);
+
+let keyItem = new ItemOnLayer(
+  "Items/LabIndustry/Key",
+  "Appuyez sur espace pour prendre la clef",
+  ["Vous avez récuperé la clef du coffre"],
+  "keyText",
+  "keyItem",
+  "interract",
+  "Object",
+  "Object_keyItem",
+);
+
+let BinHint = new ItemOnLayer(
+  "Items/LabIndustry/BinHint",
+  "Appuyez sur espace pour ramasser l'indice",
+  ["Vous avez récuperé l'indice"],
+  "binText",
+  "binHint",
+  "interract",
+  "Object",
+  "Object_binItem",
+);
+
+let chestHint = new ItemPickUpOnCondition(
+  "Items/LabIndustry/ChestHint",
+  "Appuyez sur espace pour ouvrir le coffre",
+  ["Vous avez récuperé l'indice"],
+  ["Vous n'avez pas la clef du coffre"],
+  "chestText",
+  "chestHint",
+  () => {
+    return  WA.player.state["keyItem"] != null && WA.player.state["keyItem"] == true ? true : false;
+  },
+  "interract",
+  "Object",
+  "Object_chestItem",
+);
+
+//Open trapDoor if all hint is gathered
+let trapDoor = new InteractAction(
+  "InteractAction/LabIndustry/TrapDoor",
+  "Appuyez sur espace pour ouvrir la trappe",
+  ["Vous entrez dans la trappe"],
+  ["Vous devez rassemblé les 4 indices avant de pouvoir d'ouvrir la trappe"],
+  'trapDoorText',
+  () => {
+    if (WA.player.state["CafetHint"] != null && WA.player.state["CafetHint"] == true
+      && WA.player.state["ChestHint"] != null && WA.player.state["ChestHint"] == true
+      && WA.player.state["CoatRackHint"] != null && WA.player.state["CoatRackHint"] == true
+      && WA.player.state["BinHint"] != null && WA.player.state["BinHint"] == true)
+    {
+      console.log('Vous entrez dans la room');
+      return true;
+    }
+    else
+    {
+      console.log('KO_2');
+      return false;
+    }
+  },
+  "interract",
+  "InteractAction",
+  "Object_trapDoor"
+);
