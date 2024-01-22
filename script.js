@@ -321,11 +321,12 @@ class ModalAction extends Modal {
   }
   interact() {
 
-      WA.onInit().then(() => {
-        console.log(this.function_action());
-      });
-      this.open();
-      this.track();
+    console.log('TEST REUSSI');
+    WA.onInit().then(() => {
+      console.log(this.function_action());
+    });
+    this.open();
+    this.track();
   }
 
 }
