@@ -321,7 +321,9 @@ class ModalAction extends Modal {
   }
   interact() {
 
-      this.function_action();
+      WA.onInit().then(() => {
+        console.log(this.function_action());
+      });
       this.open();
       this.track();
   }
@@ -426,7 +428,7 @@ class ItemPickUpOnCondition extends ItemOnLayer{
   {
     super(_layer, _message, _dialog, _object, _item, _category_tracker, _type_tracker, _name_tracker);
     this.dialog_condition = _dialog_condition;
-    this.condition = _condition();
+    this.condition = _condition;
     this.state = 0;
     this.alreadyHaveItem = 0;
   }
@@ -435,8 +437,7 @@ class ItemPickUpOnCondition extends ItemOnLayer{
   interact() {
     WA.onInit().then(() => {
       //console.log('Player : ', WA.player.name);
-      console.log('Item : ', this.condition);
-      if (this.condition == true)
+      if (this.condition() == true)
       {
         if (WA.player.state[this.item] == null)
         {
@@ -455,7 +456,6 @@ class ItemPickUpOnCondition extends ItemOnLayer{
           this.alreadyHaveItem = 1;
         }
       }
-      console.log('OUTTTTT');
       this.open();
       this.track();
     });
@@ -1239,19 +1239,18 @@ let YumiTrappedBot = new ModalAction(
   YumiLabBotLink,
   "right",
   () => {
-    WA.onInit().then(() => {
-      console.log('Item : ', "YESS");
-      if (WA.player.state["TalkToYumiTrappedRoom_1"] == false)
+      var variable = "TalkToYumiTrappedRoom";
+      if (WA.player.state[variable] == null)
       {
         console.log("Variable Recup");
-        WA.player.state.saveVariable(this.variable, true, {
+        WA.player.state.saveVariable(variable, true, {
           public: true,
           persist: true,
           ttl: 24 * 3600,
           scope: "world"
         })
       }
-    });
+      return true;
   },
   "interact",
   "PNJ",
@@ -1267,7 +1266,7 @@ let cardAccess = new ItemPickUpOnCondition(
   "cardAccessText",
   "cardAccess",
   () => {
-      return  WA.player.state["TalkToYumiTrappedRoom_2"] != null ? true : false;
+      return  WA.player.state["TalkToYumiTrappedRoom"] != null ? true : false;
   },
   "interract",
   "Object",
