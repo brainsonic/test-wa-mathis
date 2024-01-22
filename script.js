@@ -1282,7 +1282,7 @@ let doorTrappedRoom = new InteractAction(
       WA.room.hideLayer('beforePlayer/TrappedRoom/DoorFinal');
       WA.room.hideLayer('beforePlayer/TrappedRoom/CollideDoorFinal');
       WA.room.hideLayer('InteractAction/TrappedRoom/FinalDoor');
-      console.log('OK_1');
+      console.log('OK_3');
       doorTrappedRoom = null;
       return true;
     }
