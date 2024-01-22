@@ -256,6 +256,35 @@ class Modal extends Interaction {
     WA.ui.modal.closeModal();
   }
 }
+
+// class ModalVariable : Ouvrir une fenetre modale en set la variable
+class ModalVariable extends Modal {
+  //par defaut, position à droite
+  constructor(_layer, _message, _modal, _position, _variable, _category_tracker, _type_tracker, _name_tracker) {
+    super(_layer, _message, _modal, _position, _category_tracker, _type_tracker, _name_tracker);
+    this.variable = _variable;
+  }
+  interact() {
+    WA.onInit().then(() => {
+      //console.log('Player : ', WA.player.name);
+      //console.log('Item : ', this.item);
+      if (WA.player.state[this.variable == null])
+      {
+        //console.log("Le joueur ne possède pas d'arme");
+        WA.player.state.saveVariable(this.variable, true, {
+          public: true,
+          persist: true,
+          ttl: 24 * 3600,
+          scope: "world"
+        })
+      }
+      this.open();
+      this.track();
+    });
+  }
+
+}
+
 // class PopUpVideo : Popup qui ouvre un site web à la sortie
 class PopUpVideo extends Dialog {
   constructor(_layer, _message, _dialog, _object, _video, _category_tracker, _type_tracker, _name_tracker) {
@@ -272,6 +301,8 @@ class PopUpVideo extends Dialog {
 }
 
 //Class to pickup an item
+//_dialog : array[string] : Text dans le popup
+//_item : string : Nom de la variable que le joueur aura
 class ItemOnLayer extends Interaction{
   constructor(_layer, _message, _dialog, _object, _item, _category_tracker, _type_tracker, _name_tracker)
   {
@@ -343,6 +374,73 @@ class ItemOnLayer extends Interaction{
       this.currentState.close();
     this.currentState = undefined;
   }
+}
+//Class to pickup an item only if certain condition is respected
+//_dialog_condition : array[string] : Texte si le joueur n'a pas la condition requise
+//_item_condition :  string : Variable (item) à avoir pour valider la condition (PS : ça peut être une variable de validation boolean)
+class ItemPickUpOnCondition extends ItemOnLayer{
+  constructor(_layer, _message, _dialog, _dialog_condition, _object, _item, _item_condition, _category_tracker, _type_tracker, _name_tracker)
+  {
+    super(_layer, _message, _dialog, _object, _item, _category_tracker, _type_tracker, _name_tracker);
+    this.dialog_condition = _dialog_condition;
+    this.item_condition = _item_condition;
+    this.state = 0;
+    this.alreadyHaveItem = 0;
+  }
+
+  //Set l'objet au joueur
+  interact() {
+    WA.onInit().then(() => {
+      //console.log('Player : ', WA.player.name);
+      //console.log('Item : ', this.item);
+      if (WA.player.state[this.item] == null)
+      {
+        //console.log("Le joueur ne possède pas d'arme");
+        if (WA.player.state[this.item_condition] != null)
+        {
+          WA.player.state.saveVariable(this.item, true, {
+            public: true,
+            persist: true,
+            ttl: 24 * 3600,
+            scope: "world"
+          });
+        }
+
+      }
+      else
+      {
+        //console.log("Le joueur possède ", WA.player.state[this.item]);
+        this.alreadyHaveItem = 1;
+      }
+      this.open();
+      this.track();
+    });
+  }
+
+  open() {
+    // ouvre le popup avec le texte correspondant au state actuel
+    // bouton change de label si c'est le dernier popup
+    this.dialog = this.alreadyHaveItem == 0 ? this.dialog : ["Vous possédez déjà l'objet"];
+    if (this.item_condition != null)
+    {
+      this.currentState = WA.ui.openPopup(this.object, this.dialog[this.state] , [
+        {
+          label: this.state < this.dialog.length - 1 ? "Suivant" : "Fermer",
+          className: "primary",
+          callback: (popup) => {
+            // appel de la fonction next qui gère le changement de state et d'autres choses
+            this.next();
+          },
+        },
+      ]);
+      this.finished = false;
+    }
+    else
+    {
+      this.dialog = this.dialog_condition;
+    }
+  }
+
 }
 
 // END CLASS ///////////////////////////////////////////////
@@ -1073,6 +1171,7 @@ let Apprenti_6 = new PopUpVideo(
 
 //Phase 3 Item and hidden layer
 
+//TRAPPED ROOM STEP 2
 /* Function to tp the player in the departure
 * You have to hide the layer in the Tiled
 */
@@ -1091,12 +1190,28 @@ for (let index = 1; index < nb_hole + 1; index++)
 {
   trapLayer('HideTile/TrappedRoom/Hole_' + index, 52, 13); 
 }
-let ItemSword = new ItemOnLayer(
-  "Items/Sword",
-  "Appuyez sur espace pour ramasser l'épée de la muerte",
-  ["Vous avez récuperé l'épée de la muerte"],
-  "swordText",
-  "sword",
+
+
+let YumiTrappedBot = new ModalVariable(
+  "Pnjs/TrappedRoom/YumiDepart_1",
+  "Appuyez sur espace pour discuter avec Yumi !",
+  YumiLabBotLink,
+  "right",
+  "TalkToYumiTrappedRoom",
+  "interact",
+  "PNJ",
+  "PNJ_YumiDepartTrappedRoom",
+);
+
+//Card of the trapped Room
+let cardAccess = new ItemPickUpOnCondition(
+  "Items/TrappedRoom/CardAccess",
+  "Appuyez sur espace pour ramasser la carte d'accès",
+  ["Vous avez récuperé la carte d'accès"],
+  ["Vous devez d'abord parler à Yumi avant de le ramasser"],
+  "cardAccessText",
+  "cardAccess",
+  "TalkToYumiTrappedRoom",
   "interract",
   "Object",
   "Object_sword"
