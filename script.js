@@ -1285,7 +1285,7 @@ let doorTrappedRoom = new InteractAction(
     if (WA.player.state["cardAccess"] != null)
     {
       WA.room.hideLayer('beforePlayer/TrappedRoom/DoorFinal');
-      WA.room.setProperty('beforePlayer/TrappedRoom/CollideDoorFinal', collides, false);
+      WA.room.hideLayer('beforePlayer/TrappedRoom/CollideDoorFinal');
       console.log('OK');
       return true;
     }
