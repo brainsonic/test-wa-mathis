@@ -248,6 +248,7 @@ class InteractAction extends Dialog {
   open() {
     // ouvre le popup avec le texte correspondant au state actuel
     // bouton change de label si c'est le dernier popup
+    var old_dialog = this.dialog;
     if (this.function_action() == false)
     {
       this.dialog = this.dialog_condition;
@@ -262,25 +263,11 @@ class InteractAction extends Dialog {
         },
       },
     ]);
+    this.dialog = old_dialog;
     this.finished = false;
   }
-  next() {
-    this.state++;
-    // ferme le popup actuel, set en undefined pour éviter les bugs
-    if (this.currentState !== undefined) this.currentState.close();
-    this.currentState = undefined;
-    // check si fini, sinon ouvre le popup suivant
-    if (this.state >= this.dialog.length) {
-      this.finished = true;
-      this.state = 0;
-    } else this.open();
-  }
-  exit() {
-    if (!this.finished && this.currentState !== undefined)
-      this.currentState.close();
-    this.currentState = undefined;
-  }
 }
+
 // class Modal : Ouvrir une fenetre modale
 // layer : string : nom de la couche sur laquelle l'interaction est possible
 // message : string : message affiché au joueur pour l'inviter à intéragir
@@ -389,6 +376,7 @@ class ItemOnLayer extends Interaction{
   open() {
     // ouvre le popup avec le texte correspondant au state actuel
     // bouton change de label si c'est le dernier popup
+    var old_dialog = this.dialog;
     this.dialog = this.alreadyHaveItem == 0 ? this.dialog : ["Vous possédez déjà l'objet"];
     this.currentState = WA.ui.openPopup(this.object, this.dialog[this.state] , [
       {
@@ -400,6 +388,8 @@ class ItemOnLayer extends Interaction{
         },
       },
     ]);
+    this.alreadyHaveItem = 0;
+    this.dialog = old_dialog;
     this.finished = false;
   }
 
@@ -439,6 +429,7 @@ class ItemPickUpOnCondition extends ItemOnLayer{
   interact() {
     WA.onInit().then(() => {
       //console.log('Player : ', WA.player.name);
+      console.log('GIHIHI', this.condition());
       if (this.condition() == true)
       {
         if (WA.player.state[this.item] == null)
@@ -466,6 +457,7 @@ class ItemPickUpOnCondition extends ItemOnLayer{
   open() {
     // ouvre le popup avec le texte correspondant au state actuel
     // bouton change de label si c'est le dernier popup
+    var old_dialog = this.dialog;
     this.dialog = this.alreadyHaveItem == 0 ? this.dialog : ["Vous possédez déjà l'objet"];
     if (this.condition() == false)
     {
@@ -481,6 +473,8 @@ class ItemPickUpOnCondition extends ItemOnLayer{
         },
       },
     ]);
+    this.dialog = old_dialog;
+    this.alreadyHaveItem = 0;
     this.finished = false;
   }
 
@@ -1244,6 +1238,7 @@ let YumiTrappedBot = new ModalAction(
       var variable = "TalkToYumiTrappedRoom";
       if (WA.player.state[variable] == null)
       {
+        console.log('VARIABLE YUMMI');
         WA.player.state.saveVariable(variable, true, {
           public: true,
           persist: true,
@@ -1286,12 +1281,13 @@ let doorTrappedRoom = new InteractAction(
     {
       WA.room.hideLayer('beforePlayer/TrappedRoom/DoorFinal');
       WA.room.hideLayer('beforePlayer/TrappedRoom/CollideDoorFinal');
-      console.log('OK');
+      WA.room.hideLayer('InteractAction/TrappedRoom/FinalDoor');
+      console.log('OK_1');
       return true;
     }
     else
     {
-      console.log('KO');
+      console.log('KO_2');
       return false;
     }
   },
