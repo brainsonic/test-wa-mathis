@@ -435,7 +435,7 @@ class ItemPickUpOnCondition extends ItemOnLayer{
   interact() {
     WA.onInit().then(() => {
       //console.log('Player : ', WA.player.name);
-      //console.log('Item : ', this.item);
+      console.log('Item : ', this.condition);
       if (this.condition == true)
       {
         if (WA.player.state[this.item] == null)
