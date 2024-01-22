@@ -426,7 +426,7 @@ class ItemPickUpOnCondition extends ItemOnLayer{
   {
     super(_layer, _message, _dialog, _object, _item, _category_tracker, _type_tracker, _name_tracker);
     this.dialog_condition = _dialog_condition;
-    this.condition = _condition;
+    this.condition = _condition();
     this.state = 0;
     this.alreadyHaveItem = 0;
   }
@@ -435,11 +435,10 @@ class ItemPickUpOnCondition extends ItemOnLayer{
   interact() {
     WA.onInit().then(() => {
       //console.log('Player : ', WA.player.name);
-      let result = this.condition();
-      console.log('Item : ', result);
-      if (result)
+      console.log('Item : ', this.condition);
+      if (this.condition == true)
       {
-        console.log('CACACACA');
+        console.log('CACACACA2');
         if (WA.player.state[this.item] == null)
         {
           //console.log("Le joueur ne possède pas d'arme");
@@ -467,7 +466,7 @@ class ItemPickUpOnCondition extends ItemOnLayer{
     // ouvre le popup avec le texte correspondant au state actuel
     // bouton change de label si c'est le dernier popup
     this.dialog = this.alreadyHaveItem == 0 ? this.dialog : ["Vous possédez déjà l'objet"];
-    if (result)
+    if (this.condition == false)
     {
       this.dialog = this.dialog_condition;
     }
