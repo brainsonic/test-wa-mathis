@@ -438,7 +438,6 @@ class ItemPickUpOnCondition extends ItemOnLayer{
       console.log('Item : ', this.condition);
       if (this.condition == true)
       {
-        console.log('CACACACA2');
         if (WA.player.state[this.item] == null)
         {
           //console.log("Le joueur ne possède pas d'arme");
@@ -1268,9 +1267,7 @@ let cardAccess = new ItemPickUpOnCondition(
   "cardAccessText",
   "cardAccess",
   () => {
-    return WA.onInit().then(() => {
       return  WA.player.state["TalkToYumiTrappedRoom_2"] != null ? true : false;
-    });
   },
   "interract",
   "Object",
