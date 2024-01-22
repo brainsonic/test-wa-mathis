@@ -223,6 +223,61 @@ class Dialog extends Interaction {
     this.currentState = undefined;
   }
 }
+
+// class InteractionAction => Permet d'ouvrir un dialog avec une action derrière
+// _dialog_condition : array[string] : Dialog qui s'affiche si la condition n'est pas rempli
+// _function_action  : bool : True si l'action est effectué sinon false
+class InteractAction extends Dialog {
+  constructor(_layer, _message, _dialog, _dialog_condition, _object, _function_action, _category_tracker, _type_tracker, _name_tracker) {
+    super(_layer, _message, _dialog, _object, _category_tracker, _type_tracker, _name_tracker);
+    this.state = 0;
+    this.dialog_condition = _dialog_condition;
+    this.function_action = _function_action;
+  }
+  //fonction d'intéraction, ouvre le popup
+  interact() {
+
+    this.track();
+    this.open();
+
+  }
+  //fonction d'ouverture du popup en fonction du state du dialogue
+  open() {
+    // ouvre le popup avec le texte correspondant au state actuel
+    // bouton change de label si c'est le dernier popup
+    if (this.function_action == false)
+    {
+      this.dialog = this.dialog_condition;
+    }
+    this.currentState = WA.ui.openPopup(this.object, this.dialog[this.state], [
+      {
+        label: this.state < this.dialog.length - 1 ? "Suivant" : "Fermer",
+        className: "primary",
+        callback: (popup) => {
+          // appel de la fonction next qui gère le changement de state et d'autres choses
+          this.next();
+        },
+      },
+    ]);
+    this.finished = false;
+  }
+  next() {
+    this.state++;
+    // ferme le popup actuel, set en undefined pour éviter les bugs
+    if (this.currentState !== undefined) this.currentState.close();
+    this.currentState = undefined;
+    // check si fini, sinon ouvre le popup suivant
+    if (this.state >= this.dialog.length) {
+      this.finished = true;
+      this.state = 0;
+    } else this.open();
+  }
+  exit() {
+    if (!this.finished && this.currentState !== undefined)
+      this.currentState.close();
+    this.currentState = undefined;
+  }
+}
 // class Modal : Ouvrir une fenetre modale
 // layer : string : nom de la couche sur laquelle l'interaction est possible
 // message : string : message affiché au joueur pour l'inviter à intéragir
@@ -257,30 +312,18 @@ class Modal extends Interaction {
   }
 }
 
-// class ModalVariable : Ouvrir une fenetre modale en set la variable
-class ModalVariable extends Modal {
+// class ModalAction : Ouvrir une fenetre modale en set une action derrière
+class ModalAction extends Modal {
   //par defaut, position à droite
-  constructor(_layer, _message, _modal, _position, _variable, _category_tracker, _type_tracker, _name_tracker) {
+  constructor(_layer, _message, _modal, _position, _function_action, _category_tracker, _type_tracker, _name_tracker) {
     super(_layer, _message, _modal, _position, _category_tracker, _type_tracker, _name_tracker);
-    this.variable = _variable;
+    this.function_action = _function_action;
   }
   interact() {
-    WA.onInit().then(() => {
-      //console.log('Player : ', WA.player.name);
-      //console.log('Item : ', this.item);
-      if (WA.player.state[this.variable == null])
-      {
-        //console.log("Le joueur ne possède pas d'arme");
-        WA.player.state.saveVariable(this.variable, true, {
-          public: true,
-          persist: true,
-          ttl: 24 * 3600,
-          scope: "world"
-        })
-      }
+
+      this.function_action;
       this.open();
       this.track();
-    });
   }
 
 }
@@ -379,11 +422,11 @@ class ItemOnLayer extends Interaction{
 //_dialog_condition : array[string] : Texte si le joueur n'a pas la condition requise
 //_item_condition :  string : Variable (item) à avoir pour valider la condition (PS : ça peut être une variable de validation boolean)
 class ItemPickUpOnCondition extends ItemOnLayer{
-  constructor(_layer, _message, _dialog, _dialog_condition, _object, _item, _item_condition, _category_tracker, _type_tracker, _name_tracker)
+  constructor(_layer, _message, _dialog, _dialog_condition, _object, _item, _condition, _category_tracker, _type_tracker, _name_tracker)
   {
     super(_layer, _message, _dialog, _object, _item, _category_tracker, _type_tracker, _name_tracker);
     this.dialog_condition = _dialog_condition;
-    this.item_condition = _item_condition;
+    this.condition = _condition;
     this.state = 0;
     this.alreadyHaveItem = 0;
   }
@@ -393,24 +436,24 @@ class ItemPickUpOnCondition extends ItemOnLayer{
     WA.onInit().then(() => {
       //console.log('Player : ', WA.player.name);
       //console.log('Item : ', this.item);
-      if (WA.player.state[this.item] == null)
+      if (this.condition == true)
       {
-        //console.log("Le joueur ne possède pas d'arme");
-        if (WA.player.state[this.item_condition] != null)
+        if (WA.player.state[this.item] == null)
         {
+          //console.log("Le joueur ne possède pas d'arme");
           WA.player.state.saveVariable(this.item, true, {
             public: true,
             persist: true,
             ttl: 24 * 3600,
             scope: "world"
           });
-        }
 
-      }
-      else
-      {
-        //console.log("Le joueur possède ", WA.player.state[this.item]);
-        this.alreadyHaveItem = 1;
+        }
+        else
+        {
+          //console.log("Le joueur possède ", WA.player.state[this.item]);
+          this.alreadyHaveItem = 1;
+        }
       }
       this.open();
       this.track();
@@ -421,24 +464,21 @@ class ItemPickUpOnCondition extends ItemOnLayer{
     // ouvre le popup avec le texte correspondant au state actuel
     // bouton change de label si c'est le dernier popup
     this.dialog = this.alreadyHaveItem == 0 ? this.dialog : ["Vous possédez déjà l'objet"];
-    if (this.item_condition != null)
-    {
-      this.currentState = WA.ui.openPopup(this.object, this.dialog[this.state] , [
-        {
-          label: this.state < this.dialog.length - 1 ? "Suivant" : "Fermer",
-          className: "primary",
-          callback: (popup) => {
-            // appel de la fonction next qui gère le changement de state et d'autres choses
-            this.next();
-          },
-        },
-      ]);
-      this.finished = false;
-    }
-    else
+    if (this.condition == false)
     {
       this.dialog = this.dialog_condition;
     }
+    this.currentState = WA.ui.openPopup(this.object, this.dialog[this.state] , [
+      {
+        label: this.state < this.dialog.length - 1 ? "Suivant" : "Fermer",
+        className: "primary",
+        callback: (popup) => {
+          // appel de la fonction next qui gère le changement de state et d'autres choses
+          this.next();
+        },
+      },
+    ]);
+    this.finished = false;
   }
 
 }
@@ -1192,12 +1232,26 @@ for (let index = 1; index < nb_hole + 1; index++)
 }
 
 
-let YumiTrappedBot = new ModalVariable(
+let YumiTrappedBot = new ModalAction(
   "Pnjs/TrappedRoom/YumiDepart_1",
   "Appuyez sur espace pour discuter avec Yumi !",
   YumiLabBotLink,
   "right",
-  "TalkToYumiTrappedRoom",
+  () => {
+    WA.onInit().then(() => {
+      console.log('Item : ', "YESS");
+      if (WA.player.state["TalkToYumiTrappedRoom"] == false)
+      {
+        console.log("Variable Recup");
+        WA.player.state.saveVariable(this.variable, true, {
+          public: true,
+          persist: true,
+          ttl: 24 * 3600,
+          scope: "world"
+        })
+      }
+    });
+  },
   "interact",
   "PNJ",
   "PNJ_YumiDepartTrappedRoom",
@@ -1211,8 +1265,14 @@ let cardAccess = new ItemPickUpOnCondition(
   ["Vous devez d'abord parler à Yumi avant de le ramasser"],
   "cardAccessText",
   "cardAccess",
-  "TalkToYumiTrappedRoom",
+  () => {
+    let consol = WA.onInit().then(() => {
+      return  WA.player.state["TalkToYumiTrappedRoom"] != null ? true : false;
+    });
+    console.log('TALLKKKKKTOYUMIIII :', consol);
+    return consol;
+  },
   "interract",
   "Object",
-  "Object_sword"
+  "Object_cardAccess"
 );
