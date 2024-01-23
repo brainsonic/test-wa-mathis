@@ -7029,7 +7029,7 @@
           "name": "start",
           "opacity": 1,
           "type": "tilelayer",
-          "visible": true,
+          "visible": false,
           "width": 32,
           "properties": [
             {
@@ -9811,9 +9811,9 @@
           "width": 24,
           "properties": [
             {
-              "name": "startLayer",
-              "type": "bool",
-              "value": true
+              "name": "exitUrl",
+              "type": "string",
+              "value": "map.tmj#TrapDoor"
             }
           ],
           "x": 0,
@@ -11801,7 +11801,7 @@
     {
       "columns": 11,
       "firstgid": 1,
-      "image": "map2-chunk-1-e43da1b4.png",
+      "image": "map2-chunk-1-7f1f004e.png",
       "imageheight": 352,
       "imagewidth": 352,
       "margin": 0,
