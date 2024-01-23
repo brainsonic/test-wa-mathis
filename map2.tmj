@@ -214,6 +214,12 @@
                  "id":23,
                  "name":"silent",
                  "opacity":1,
+                 "properties":[
+                        {
+                         "name":"silent",
+                         "type":"bool",
+                         "value":true
+                        }],
                  "type":"tilelayer",
                  "visible":false,
                  "width":16,
@@ -377,6 +383,12 @@
  "nextlayerid":24,
  "nextobjectid":1,
  "orientation":"orthogonal",
+ "properties":[
+        {
+         "name":"script",
+         "type":"string",
+         "value":"src\/js\/script_map2.js"
+        }],
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
  "tileheight":32,
