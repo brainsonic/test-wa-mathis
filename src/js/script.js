@@ -845,7 +845,7 @@ let YumiTrappedBot = new ModalAction(
         WA.player.state.saveVariable(variable, true, {
           public: true,
           persist: true,
-          ttl: 24 * 3600,
+          ttl: 48 * 3600,
           scope: "world"
         })
       }

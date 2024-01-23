@@ -8,7 +8,7 @@ import {} from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 // category_tracker : string : catégorie du tracker (hit, interact, ....)
 // type_tracker : string : type du tracker (bot, video, formulaire, ....)
 // name_tracker : string : nom du tracker - permet de chercher précisément une interaction si besoin
-export class Interaction {
+class Interaction {
     constructor(_layer, _message, _category_tracker, _type_tracker, _name_tracker) {
       //setup des variables
       this.layer = _layer;
@@ -275,8 +275,7 @@ class ItemOnLayer extends Interaction{
           WA.player.state.saveVariable(this.item, true, {
             public: true,
             persist: true,
-            ttl: 24 * 3600,
-            scope: "world"
+            ttl: 48 * 3600,
           })
         }
         else

@@ -5,6 +5,6 @@ WA.onInit().then(() => {
     console.log("Indice : ", WA.player.state["cafetHint"]);
     if (WA.player.state["cafetHint"] == null)
     {
-        WA.nav.goToRoom('/map.tmj');
+        WA.nav.goToRoom("/_/global/map.tmj");
     }
 });
