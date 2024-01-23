@@ -321,7 +321,7 @@
                          "value":true
                         }],
                  "type":"tilelayer",
-                 "visible":true,
+                 "visible":false,
                  "width":32,
                  "x":0,
                  "y":0
@@ -477,9 +477,9 @@
                  "opacity":1,
                  "properties":[
                         {
-                         "name":"startLayer",
-                         "type":"bool",
-                         "value":true
+                         "name":"exitUrl",
+                         "type":"string",
+                         "value":"map.tmj#TrapDoor"
                         }],
                  "type":"tilelayer",
                  "visible":false,
