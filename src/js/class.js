@@ -8,6 +8,7 @@ import {} from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 // category_tracker : string : catégorie du tracker (hit, interact, ....)
 // type_tracker : string : type du tracker (bot, video, formulaire, ....)
 // name_tracker : string : nom du tracker - permet de chercher précisément une interaction si besoin
+const url_api = "https://uimm-trackers-api-stg-0b60361e2cd1.herokuapp.com/api/tracker_events";
 class Interaction {
     constructor(_layer, _message, _category_tracker, _type_tracker, _name_tracker) {
       //setup des variables
