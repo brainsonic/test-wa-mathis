@@ -1369,7 +1369,7 @@ let trapDoor = new InteractAction(
     console.log("Indice : ", WA.player.state["cafetHint"]);
     console.log("Indice : ", WA.player.state["chestHint"]);
     console.log("Indice : ", WA.player.state["coatRackHint"]);
-    console.log("Indice : ", WA.player.state["cinHint"]);
+    console.log("Indice : ", WA.player.state["binHint"]);
     if (WA.player.state["cafetHint"] != null && WA.player.state["cafetHint"] == true
       && WA.player.state["chestHint"] != null && WA.player.state["chestHint"] == true
       && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
