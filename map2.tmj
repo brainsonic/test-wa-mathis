@@ -778,6 +778,13 @@
       "type": "tilelayer",
       "visible": true,
       "width": 32,
+      "properties": [
+        {
+          "name": "startLayer",
+          "type": "bool",
+          "value": true
+        }
+      ],
       "x": 0,
       "y": 0
     },
@@ -11794,7 +11801,7 @@
     {
       "columns": 11,
       "firstgid": 1,
-      "image": "map2-chunk-1-f4a5c89e.png",
+      "image": "map2-chunk-1-321bafca.png",
       "imageheight": 352,
       "imagewidth": 352,
       "margin": 0,
