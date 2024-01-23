@@ -978,7 +978,7 @@ let trapDoor = new InteractAction(
       && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
       && WA.player.state["binHint"] != null && WA.player.state["binHint"] == true)
     {
-      console.log('Vous entrez dans la room');
+      WA.nav.goToRoom("#EscalierIndustryA");
       return true;
     }
     else
