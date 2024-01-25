@@ -1118,44 +1118,44 @@ onTpCondition('Step4/FirstTP/Tp1-3', '#TpDepart_2', () => {
 
 //Zone de TP_2
 onEnterAuthorization(zoneSecondTP, ['cardAccessZoneSecondTP'], 'EscapeGameText');
-getVariableOnZone('Step4/FirstTP/Tp2-2', ['cardAccessZoneThirdTP']);
+getVariableOnZone('Step4/SecondTP/Tp2-2', ['cardAccessZoneThirdTP']);
 
-onTpCondition('Step4/FirstTP/Tp2-1', '#Reset', true, 'tpDepart2Step4');
-onTpCondition('Step4/FirstTP/Tp2-2', '#TpDepart_3', () => {
+onTpCondition('Step4/SecondTP/Tp2-1', '#Reset', true, 'tpDepart2Step4');
+onTpCondition('Step4/SecondTP/Tp2-2', '#TpDepart_3', () => {
   return WA.player.state['cardAccessZoneSecondTP'] != null ? true : false;
 }, 'tpDepart2Step4');
-onTpCondition('Step4/FirstTP/Tp2-3', '#Reset', true, 'tpDepart2Step4');
+onTpCondition('Step4/SecondTP/Tp2-3', '#Reset', true, 'tpDepart2Step4');
 
 //Zone de TP_3
 onEnterAuthorization(zoneThirdTP, ['cardAccessZoneThirdTP'], 'EscapeGameText');
-getVariableOnZone('Step4/FirstTP/Tp3-1', ['cardAccessZoneFourthTP']);
+getVariableOnZone('Step4/ThirdTP/Tp3-1', ['cardAccessZoneFourthTP']);
 
-onTpCondition('Step4/FirstTP/Tp3-1', '#TpDepart_4', () => {
+onTpCondition('Step4/ThirdTP/Tp3-1', '#TpDepart_4', () => {
   return WA.player.state['cardAccessZoneThirdTP'] != null ? true : false;
 }, 'tpDepart3Step4');
-onTpCondition('Step4/FirstTP/Tp3-2', '#Reset', true, 'tpDepart3Step4');
-onTpCondition('Step4/FirstTP/Tp3-3', '#Reset', true, 'tpDepart3Step4');
+onTpCondition('Step4/ThirdTP/Tp3-2', '#Reset', true, 'tpDepart3Step4');
+onTpCondition('Step4/ThirdTP/Tp3-3', '#Reset', true, 'tpDepart3Step4');
 
 //Zone de TP_4
 onEnterAuthorization(zoneFourthTP, ['cardAccessZoneFourthTP'], 'EscapeGameText');
-getVariableOnZone('Step4/FirstTP/Tp4-2', ['cardAccessZoneFifthTP']);
+getVariableOnZone('Step4/FourthTP/Tp4-2', ['cardAccessZoneFifthTP']);
 
-onTpCondition('Step4/FirstTP/Tp4-1', '#Reset', true, 'tpDepart2Step4');
-onTpCondition('Step4/FirstTP/Tp4-2', '#TpDepart_5', () => {
+onTpCondition('Step4/FourthTP/Tp4-1', '#Reset', true, 'tpDepart2Step4');
+onTpCondition('Step4/FourthTP/Tp4-2', '#TpDepart_5', () => {
   return WA.player.state['cardAccessZoneFourthTP'] != null ? true : false;
 }, 'tpDepart2Step4');
-onTpCondition('Step4/FirstTP/Tp4-3', '#Reset', true, 'tpDepart2Step4');
+onTpCondition('Step4/FourthTP/Tp4-3', '#Reset', true, 'tpDepart2Step4');
 
 //Zone de TP_5
 onEnterAuthorization(zoneFifthTP, ['cardAccessZoneFifthTP'], 'EscapeGameText');
-getVariableOnZone('Step4/FirstTP/Tp5-3', ['cardAccessZoneFinalStep4']);
+getVariableOnZone('Step4/FifthTP/Tp5-3', ['cardAccessZoneFinalStep4']);
 
-onTpCondition('Step4/FirstTP/Tp5-1', '#Reset', true, 'tpDepart2Step5');
-onTpCondition('Step4/FirstTP/Tp5-2', '#Reset', true, 'tpDepart2Step5');
-onTpCondition('Step4/FirstTP/Tp5-3', '#TpArrive', () => {
+onTpCondition('Step4/FifthTP/Tp5-1', '#Reset', true, 'tpDepart2Step5');
+onTpCondition('Step4/FifthTP/Tp5-2', '#Reset', true, 'tpDepart2Step5');
+onTpCondition('Step4/FifthTP/Tp5-3', '#TpArrive', () => {
   return WA.player.state['cardAccessZoneFifthTP'] != null ? true : false;
 }, 'tpDepart2Step5');
-onTpCondition('Step4/FirstTP/Tp5-4', '#Reset', true, 'tpDepart2Step5');
+onTpCondition('Step4/FifthTP/Tp5-4', '#Reset', true, 'tpDepart2Step5');
 
 //Zone d'arrivée
 onEnterAuthorization(zoneFinalStep4, ['cardAccessZoneFinalStep4'], 'EscapeGameText');
