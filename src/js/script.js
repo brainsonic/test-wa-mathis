@@ -1051,6 +1051,7 @@ let trapDoor = new InteractAction(
  * @param {array<string>} _variables Liste des variables à avoir pour être dans la zone
  */
 function getVariableOnZone(_layer, _variables) {
+  console.log('ENTERED VARIABLE ZONE');
   WA.room.onEnterLayer(_layer).subscribe(() => {
     WA.onInit().then(() => {
       for (var variable in _variables) {
@@ -1064,7 +1065,7 @@ function getVariableOnZone(_layer, _variables) {
             ttl: 720 * 3600,
             scope: "world"
           });
-          console.log("Variable obtained : ", WA.player.state[variable]);
+          console.log("Variable obtained", variable,":", WA.player.state[variable]);
         }
       }
     });
