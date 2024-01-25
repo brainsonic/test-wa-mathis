@@ -1036,7 +1036,7 @@ let trapDoor = new InteractAction(
  * @param {array<string>} _variables 
  */
 function getVariableOnZone(_layer, _variables) {
-  WA.onEnterLayer(_layer).subscribe(() => {
+  WA.room.onEnterLayer(_layer).subscribe(() => {
     WA.onInit().then(() => {
       for (var variable in _variables) {
         if (WA.player.state[variable] == null)

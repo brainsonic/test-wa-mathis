@@ -10,6 +10,6 @@ WA.onInit().then(() => {
 });
 
 WA.room.onEnterLayer("Tp/NextStep").subscribe(() => {
-    url_segments[url_segments.length - 1] = "map.tmj#Step4Depart";
+    url_segments[url_segments.length - 1] = "map.tmj#Reset";
     WA.nav.goToRoom(url_segments.join('/'));
 });
