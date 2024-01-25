@@ -829,7 +829,7 @@ function onEnterAuthorization(_layer, _variablesAccess, _dialogError) {
         }
       }
     }).catch((error) => {
-      console.error('Error TELEPORT in', _layer)
+      console.error('Error TELEPORT in :', _layer)
     }).then(() => {
       if (popUp)
       {
