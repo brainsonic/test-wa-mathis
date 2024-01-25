@@ -1093,49 +1093,63 @@ const zoneFinalStep4 = 'Step4/FirstTP/ZoneFirstTP';
 //Zone de départ
 
 onEnterAuthorization(zoneStep4, ['cardAccessStep4']);
-getVariableOnZone(zoneStep4, ['cardAccessZoneFirstTP']);
+getVariableOnZone('Step4/TpDepart', ['cardAccessZoneFirstTP']);
 
 onTpCondition('Step4/TpDepart', '#TpDepart_1', () => { 
   console.log('CACA', WA.player.state.hasVariable(['cardAccessStep4']));
-  return WA.player.state['cardAccessStep4'] == null || WA.player.state['cardAccessStep4'] == undefined ? true : false},
+  return WA.player.state['cardAccessStep4'] != null ? true : false},
   'tpDepartStep4');
 
 
 //Zone de TP_1
 onEnterAuthorization(zoneFirstTP, ['cardAccessZoneFirstTP']);
-getVariableOnZone(zoneFirstTP, ['cardAccessZoneSecondTP']);
+getVariableOnZone('Step4/FirstTP/Tp1-3', ['cardAccessZoneSecondTP']);
 
 onTpCondition('Step4/FirstTP/Tp1-1', '#Reset', true, 'tpDepart1Step4');
 onTpCondition('Step4/FirstTP/Tp1-2', '#Reset', true, 'tpDepart1Step4');
-onTpCondition('Step4/FirstTP/Tp1-3', '#TpDepart_2', true, 'tpDepart1Step4');
+onTpCondition('Step4/FirstTP/Tp1-3', '#TpDepart_2', () => {
+  return WA.player.state['cardAccessZoneFirstTP'] != null ? true : false;
+}, 'tpDepart1Step4');
 
 //Zone de TP_2
 onEnterAuthorization(zoneSecondTP, ['cardAccessZoneSecondTP']);
-getVariableOnZone(zoneSecondTP, ['cardAccessZoneThirdTP']);
+getVariableOnZone('Step4/FirstTP/Tp2-2', ['cardAccessZoneThirdTP']);
+
 onTpCondition('Step4/FirstTP/Tp2-1', '#Reset', true, 'tpDepart2Step4');
-onTpCondition('Step4/FirstTP/Tp2-2', '#TpDepart_3', true, 'tpDepart2Step4');
+onTpCondition('Step4/FirstTP/Tp2-2', '#TpDepart_3', () => {
+  return WA.player.state['cardAccessZoneSecondTP'] != null ? true : false;
+}, 'tpDepart2Step4');
 onTpCondition('Step4/FirstTP/Tp2-3', '#Reset', true, 'tpDepart2Step4');
 
 //Zone de TP_3
 onEnterAuthorization(zoneThirdTP, ['cardAccessZoneThirdTP']);
-getVariableOnZone(zoneThirdTP, ['cardAccessZoneFourthTP']);
-onTpCondition('Step4/FirstTP/Tp3-1', '#TpDepart_4', true, 'tpDepart3Step4');
+getVariableOnZone('Step4/FirstTP/Tp3-1', ['cardAccessZoneFourthTP']);
+
+onTpCondition('Step4/FirstTP/Tp3-1', '#TpDepart_4', () => {
+  return WA.player.state['cardAccessZoneThirdTP'] != null ? true : false;
+}, 'tpDepart3Step4');
 onTpCondition('Step4/FirstTP/Tp3-2', '#Reset', true, 'tpDepart3Step4');
 onTpCondition('Step4/FirstTP/Tp3-3', '#Reset', true, 'tpDepart3Step4');
 
 //Zone de TP_4
 onEnterAuthorization(zoneFourthTP, ['cardAccessZoneFourthTP']);
-getVariableOnZone(zoneFourthTP, ['cardAccessZoneFifthTP']);
+getVariableOnZone('Step4/FirstTP/Tp4-2', ['cardAccessZoneFifthTP']);
+
 onTpCondition('Step4/FirstTP/Tp4-1', '#Reset', true, 'tpDepart2Step4');
-onTpCondition('Step4/FirstTP/Tp4-2', '#TpDepart_5', true, 'tpDepart2Step4');
+onTpCondition('Step4/FirstTP/Tp4-2', '#TpDepart_5', () => {
+  return WA.player.state['cardAccessZoneFourthTP'] != null ? true : false;
+}, 'tpDepart2Step4');
 onTpCondition('Step4/FirstTP/Tp4-3', '#Reset', true, 'tpDepart2Step4');
 
 //Zone de TP_5
 onEnterAuthorization(zoneFifthTP, ['cardAccessZoneFifthTP']);
-getVariableOnZone(zoneFifthTP, ['cardAccessZoneFinalStep4']);
+getVariableOnZone('Step4/FirstTP/Tp5-3', ['cardAccessZoneFinalStep4']);
+
 onTpCondition('Step4/FirstTP/Tp5-1', '#Reset', true, 'tpDepart2Step5');
 onTpCondition('Step4/FirstTP/Tp5-2', '#Reset', true, 'tpDepart2Step5');
-onTpCondition('Step4/FirstTP/Tp5-3', '#TpArrive', true, 'tpDepart2Step5');
+onTpCondition('Step4/FirstTP/Tp5-3', '#TpArrive', () => {
+  return WA.player.state['cardAccessZoneFifthTP'] != null ? true : false;
+}, 'tpDepart2Step5');
 onTpCondition('Step4/FirstTP/Tp5-4', '#Reset', true, 'tpDepart2Step5');
 
 //Zone d'arrivée
