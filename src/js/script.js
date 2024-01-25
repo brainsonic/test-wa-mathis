@@ -1100,8 +1100,7 @@ onTpCondition('Step4/TpDepart', '#TpDepart_1', () => { return WA.player.state['c
 onEnterAuthorization(zoneFirstTP, ['cardAccessZoneFirstTP']);
 getVariableOnZone(zoneFirstTP, ['cardAccessZoneSecondTP']);
 
-onTpCondition('Step4/F', '#TpDepart_1', true, 'tpDepartStep4');
-onTpCondition('Step4/TpDepart', '#TpDepart_1', true, 'tpDepartStep4');
+
 
 //Zone de TP_2
 onEnterAuthorization(zoneSecondTP, ['cardAccessZoneSecondTP']);
