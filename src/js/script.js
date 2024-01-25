@@ -821,7 +821,7 @@ function onEnterAuthorization(_layer, _variablesAccess) {
       {
         console.log(access);
         console.log('You have the access ? :', WA.player.state[access]);
-        if (WA.player.state[access] == null){
+        if (WA.player.state[access] == null || WA.player.state[access] == undefined){
           WA.nav.goToRoom('#ZoneStep1');
         }
       }
@@ -1093,11 +1093,15 @@ const zoneFinalStep4 = 'Step4/FirstTP/ZoneFirstTP';
 onEnterAuthorization(zoneStep4, ['cardAccessStep4']);
 getVariableOnZone(zoneStep4, ['cardAccessZoneFirstTP']);
 
-onTpCondition('Step4/TpDepart', '#TpDepart_1', () => { return WA.player.state.hasVariable('cardAccesZoneFirstTP')}, 'tpDepartStep4');
+onTpCondition('Step4/TpDepart', '#TpDepart_1', () => { return WA.player.state['cardAccesZoneFirstTP'] != null ? true : false}, 'tpDepartStep4');
+
 
 //Zone de TP_1
 onEnterAuthorization(zoneFirstTP, ['cardAccessZoneFirstTP']);
 getVariableOnZone(zoneFirstTP, ['cardAccessZoneSecondTP']);
+
+onTpCondition('Step4/F', '#TpDepart_1', true, 'tpDepartStep4');
+onTpCondition('Step4/TpDepart', '#TpDepart_1', true, 'tpDepartStep4');
 
 //Zone de TP_2
 onEnterAuthorization(zoneSecondTP, ['cardAccessZoneSecondTP']);
