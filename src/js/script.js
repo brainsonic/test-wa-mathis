@@ -1054,7 +1054,7 @@ function getVariableOnZone(_layer, _variables) {
   console.log('ENTERED VARIABLE ZONE');
   WA.room.onEnterLayer(_layer).subscribe(() => {
     WA.onInit().then(() => {
-      for (var variable in _variables) {
+      for (var variable of _variables) {
         console.log(variable);
         if (WA.player.state[variable] == null || WA.player.state[variable] == undefined)
         {
@@ -1116,7 +1116,7 @@ onTpCondition('Step4/TpDepart', '#TpDepart_1', () => {
 
 
 //Zone de TP_1
-onEnterAuthorization(zoneFirstTP, ['cardAccessStep4'], 'EscapeGameText');
+onEnterAuthorization(zoneFirstTP, ['cardAccessZoneFirstTP'], 'EscapeGameText');
 getVariableOnZone('Step4/FirstTP/Tp1-3', ['cardAccessZoneSecondTP']);
 
 onTpCondition('Step4/FirstTP/Tp1-1', '#Reset', true, 'tpDepart1Step4');
