@@ -1129,14 +1129,14 @@ let YumiStep4 = new ModalAction(
   },
   "interact",
   "PNJ",
-  "PNJ_YumiDepartTrappedRoom",
+  "PNJ_YumiStep4",
 );
 
 onEnterAuthorization(zoneStep4, ['cardAccessStep4'], 'EscapeGameText');
-getVariableOnZone('Step4/TpDepart', ['cardAccessZoneFirstTP', 'TalkToYumiStep4']);
+getVariableOnZone('Step4/TpDepart', ['cardAccessZoneFirstTP']);
 
 onTpCondition('Step4/TpDepart', '#TpDepart_1', () => { 
-  return WA.player.state['cardAccessStep4'] != null ? true : false},
+  return WA.player.state['cardAccessStep4'] != null && WA.player.state['TalkToYumiStep4'] ? true : false},
   'tpDepartStep4', 'Vous devez parler à Yumi');
 
 
@@ -1193,3 +1193,15 @@ onTpCondition('Step4/FifthTP/Tp5-4', '#Reset', true, 'tpDepart2Step5');
 
 //Zone d'arrivée
 onEnterAuthorization(zoneFinalStep4, ['cardAccessZoneFinalStep4'], 'EscapeGameText');
+let redButton = new PopUpVideo(
+  "Step4/Last/RedButton",
+  "Appuyez sur espace pour actionner le bouton rouge !",
+  [
+    "Salut, moi c’est Mathis, j'ai 19 ans et je suis apprenti en conception industrielle. Vous connaissez ? Non ? Alors je vous invite à découvrir mon métier en vidéo !",
+  ],
+  "redButtonTxt",
+  apprenti_6VideoLink,
+  "interact",
+  "Object",
+  "Object_redButton",
+);
