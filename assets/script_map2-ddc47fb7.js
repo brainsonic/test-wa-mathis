@@ -1,1 +1,0 @@
-import"https://unpkg.com/@workadventure/scripting-api-extra@^1";WA.onInit().then(()=>{console.log("TEST SUCCESS"),console.log("Indice : ",WA.player.state.cafetHint);let o=window.location.href.split("/");console.log(o),o[o.length-1]="map.tmj",WA.player.state.cafetHint==null&&WA.nav.goToRoom(o.join("/"))});
