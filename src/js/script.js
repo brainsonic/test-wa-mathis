@@ -817,7 +817,7 @@ function onEnterAuthorization(_layer, _variablesAccess) {
 
   WA.room.onEnterLayer(_layer).subscribe(() => {
     WA.onInit().then(() => {
-      for(var access in _variablesAccess)
+      for(var access of _variablesAccess)
       {
         console.log(access);
         console.log('You have the access ? :', WA.player.state[access]);
