@@ -1077,8 +1077,10 @@ function getVariableOnZone(_layer, _variables) {
  * @param {string} _layer Zone
  * @param {string} _tpTo Zone to TP generallly the #Room Cf https://docs.workadventu.re/map-building/tiled-editor/entry-exit/
  * @param {bool} _condition Condition (Write a function that's the condition and return true/false)
+ * @param {string} _popUpDisplay Popup dans tiled floorLayer
+ * @param {string} _popUpMg Message du Popup
  */
-function onTpCondition(_layer, _tpTo, _condition, _popUpDisplay)
+function onTpCondition(_layer, _tpTo, _condition, _popUpDisplay, _popUpMsg = "")
 {
   WA.room.onEnterLayer(_layer).subscribe(() => {
     if(_condition)
@@ -1086,7 +1088,7 @@ function onTpCondition(_layer, _tpTo, _condition, _popUpDisplay)
       WA.nav.goToRoom(_tpTo);
     }else
     {
-      WA.ui.openPopup(_popUpDisplay, ["Vous n'avez pas les items requis pour accéder à la TP"], [{
+      WA.ui.openPopup(_popUpDisplay, _popUpMsg == "" ? ["Vous n'avez pas les items requis pour accéder à la TP"] : _popUpMsg, [{
         label: "Fermer",
         className: "primary",
         callback: (popup) => {
@@ -1107,12 +1109,35 @@ const zoneFinalStep4 = 'Step4/Last/TpArrive';
 
 //Zone de départ
 
+let YumiStep4 = new ModalAction(
+  "Step4/Yumi",
+  "Appuyez sur espace pour discuter avec Yumi !",
+  YumiLabBotLink,
+  "right",
+  () => {
+      var variable = "TalkToYumiStep4";
+      if (WA.player.state[variable] == null)
+      {
+        WA.player.state.saveVariable(variable, true, {
+          public: true,
+          persist: true,
+          ttl: 720 * 3600,
+          scope: "world"
+        })
+      }
+      return true;
+  },
+  "interact",
+  "PNJ",
+  "PNJ_YumiDepartTrappedRoom",
+);
+
 onEnterAuthorization(zoneStep4, ['cardAccessStep4'], 'EscapeGameText');
-getVariableOnZone('Step4/TpDepart', ['cardAccessZoneFirstTP']);
+getVariableOnZone('Step4/TpDepart', ['cardAccessZoneFirstTP', 'TalkToYumiStep4']);
 
 onTpCondition('Step4/TpDepart', '#TpDepart_1', () => { 
   return WA.player.state['cardAccessStep4'] != null ? true : false},
-  'tpDepartStep4');
+  'tpDepartStep4', 'Vous devez parler à Yumi');
 
 
 //Zone de TP_1
