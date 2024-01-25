@@ -1039,8 +1039,10 @@ function getVariableOnZone(_layer, _variables) {
   WA.room.onEnterLayer(_layer).subscribe(() => {
     WA.onInit().then(() => {
       for (var variable in _variables) {
+        console.log(variable);
         if (WA.player.state[variable] == null || WA.player.state[variable] == undefined)
         {
+          console.log('YES');
           WA.player.state.saveVariable(variable, true, {
             public: true,
             persist: true,
@@ -1094,8 +1096,8 @@ onEnterAuthorization(zoneStep4, ['cardAccessStep4']);
 getVariableOnZone(zoneStep4, ['cardAccessZoneFirstTP']);
 
 onTpCondition('Step4/TpDepart', '#TpDepart_1', () => { 
-  console.log('CACA', WA.player.state['cardAccesZoneFirstTP']);
-  return WA.player.state['cardAccesZoneFirstTP'] == null || WA.player.state['cardAccesZoneFirstTP'] == undefined ? true : false},
+  console.log('CACA', WA.player.state.hasVariable(['cardAccessStep4']));
+  return WA.player.state['cardAccessStep4'] == null || WA.player.state['cardAccessStep4'] == undefined ? true : false},
   'tpDepartStep4');
 
 
