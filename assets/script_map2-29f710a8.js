@@ -1,0 +1,1 @@
+import"https://unpkg.com/@workadventure/scripting-api-extra@^1";let e=window.location.href.split("/");WA.onInit().then(()=>{WA.player.state.cardAccessStep4!=null&&(e[e.length-1]="map.tmj",WA.nav.goToRoom(e.join("/")))});WA.room.onEnterLayer("Tp/NextStep").subscribe(()=>{e[e.length-1]="map.tmj#Reset",WA.nav.goToRoom(e.join("/"))});
