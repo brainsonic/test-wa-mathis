@@ -1,15 +1,15 @@
 import {} from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 
+let url_segments =  window.location.href.split('/');
 WA.onInit().then(() => {
-    console.log('TEST SUCCESS');
-    console.log("Indice : ", WA.player.state["cafetHint"]);
-    let url_segments =  window.location.href.split('/');
-
-    console.log(url_segments);
-    url_segments[url_segments.length - 1] = "map.tmj";
-
-    if (WA.player.state["cafetHint"] == null)
+    if (WA.player.state["cardAccessStep4"] != null)
     {
+        url_segments[url_segments.length - 1] = "map.tmj";
         WA.nav.goToRoom(url_segments.join('/'));
     }
+});
+
+WA.room.onEnterLayer("Tp/NextStep").subscribe(() => {
+    url_segments[url_segments.length - 1] = "map.tmj#Step4Depart";
+    WA.nav.goToRoom(url_segments.join('/'));
 });

@@ -276,7 +276,7 @@ class ItemOnLayer extends Interaction{
           WA.player.state.saveVariable(this.item, true, {
             public: true,
             persist: true,
-            ttl: 48 * 3600,
+            ttl: 720 * 3600,
           })
         }
         else
@@ -345,7 +345,6 @@ class ItemPickUpOnCondition extends ItemOnLayer{
     interact() {
       WA.onInit().then(() => {
         //console.log('Player : ', WA.player.name);
-        console.log('GIHIHI', this.condition());
         if (this.condition() == true)
         {
           if (WA.player.state[this.item] == null)
@@ -354,7 +353,7 @@ class ItemPickUpOnCondition extends ItemOnLayer{
             WA.player.state.saveVariable(this.item, true, {
               public: true,
               persist: true,
-              ttl: 24 * 3600,
+              ttl: 720 * 3600,
               scope: "world"
             });
   

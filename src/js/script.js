@@ -807,11 +807,34 @@ let Apprenti_6 = new PopUpVideo(
 
 //Phase 3 Item and hidden layer
 
+//FUNCTION
+/**
+ * Function to check if the player is allowed to access the zone of the escape Game
+ * @param {string} _layer 
+ * @param {Array<string>} _variablesAccess 
+ */
+function onEnterAuthorization(_layer, _variablesAccess) {
+
+  WA.room.onEnterLayer(_layer).subscribe(() => {
+    WA.onInit().then(() => {
+      for(var access in _variablesAccess)
+      {
+        if (WA.player.state[access] == null){
+          WA.nav.goToRoom('#ZoneStep1');
+        }
+      }
+    }).catch((error) => {
+      console.error('Error TELEPORT in', _layer)
+    });
+  });
+}
+
 //TRAPPED ROOM STEP 2
-/* Function to tp the player in the departure
-* You have to hide the layer in the Tiled
-*/
-function trapLayer(_layer, _posX, _posY)
+/**
+ * Function to add a trap to a layer
+ * @param {string} _layer 
+ */
+function trapLayer(_layer)
 {
   WA.room.onEnterLayer(_layer).subscribe(() => {
     WA.room.showLayer(_layer);
@@ -824,7 +847,7 @@ function trapLayer(_layer, _posX, _posY)
 let nb_hole = 23;
 for (let index = 1; index < nb_hole + 1; index++)
 {
-  trapLayer('HideTile/TrappedRoom/Hole_' + index, 52, 13); 
+  trapLayer('HideTile/TrappedRoom/Hole_' + index); 
 }
 
 
@@ -841,7 +864,7 @@ let YumiTrappedBot = new ModalAction(
         WA.player.state.saveVariable(variable, true, {
           public: true,
           persist: true,
-          ttl: 48 * 3600,
+          ttl: 720 * 3600,
           scope: "world"
         })
       }
@@ -881,7 +904,13 @@ let doorTrappedRoom = new InteractAction(
       WA.room.hideLayer('beforePlayer/TrappedRoom/DoorFinal');
       WA.room.hideLayer('beforePlayer/TrappedRoom/CollideDoorFinal');
       WA.room.showLayer('beforePlayer/TrappedRoom/DoorFinalOpen');
-      console.log('OK_3');
+      
+      WA.player.state.saveVariable("cardAccessStep3", true, {
+        public: true,
+        persist: true,
+        ttl: 720 * 3600,
+        scope: "world"
+      });
       return true;
     }
     else
@@ -896,7 +925,8 @@ let doorTrappedRoom = new InteractAction(
 );
 
 
-// ---- Lab de l'industrie ---- 
+// ---- Lab de l'industrie  STEP 3 ---- 
+onEnterAuthorization('Zones/ZoneStep3', ['cardAccessStep3']);
 
 let coatRackHint = new ItemOnLayer(
   "Items/LabIndustry/CoatRackHint",
@@ -974,7 +1004,15 @@ let trapDoor = new InteractAction(
       && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
       && WA.player.state["binHint"] != null && WA.player.state["binHint"] == true)
     {
-      WA.nav.goToRoom("#EscalierIndustryA");
+      WA.player.state.saveVariable("cardAccessStep4", true, {
+          public: true,
+          persist: true,
+          ttl: 720 * 3600,
+          scope: "world"
+      });
+      let url_segments =  window.location.href.split('/');
+      url_segments[url_segments.length - 1] = "map2.tmj";
+      WA.nav.goToRoom(url_segments.join('/'));
       return true;
     }
     else
@@ -987,3 +1025,63 @@ let trapDoor = new InteractAction(
   "InteractAction",
   "Object_trapDoor"
 );
+
+//STEP 4
+/**
+ * Function to get variables on certain Zone
+ * @param {string} _layer 
+ * @param {array<string>} _variables 
+ */
+function getVariableOnZone(_layer, _variables) {
+  WA.onEnterLayer(_layer).subscribe(() => {
+    WA.onInit().then(() => {
+      for (var variable in _variables) {
+        if (WA.player.state[variable] == null)
+        {
+          WA.player.state.saveVariable(variable, true, {
+            public: true,
+            persist: true,
+            ttl: 720 * 3600,
+            scope: "world"
+          });
+          console.log("Variable obtained : ", WA.player.state[variable]);
+        }
+      }
+    });
+  });
+}
+const zoneStep4 = 'Zones/ZoneStep4';
+const zoneFirstTP = 'Step4/FirstTP/ZoneFirstTP';
+const zoneSecondTP = 'Step4/SecondTP/ZoneSecondTP';
+const zoneThirdTP = 'Step4/ThirdTP/ZoneThirdTP';
+const zoneFourthTP = 'Step4/FourthTP/ZoneFourthTP';
+const zoneFifthTP = 'Step4/FifthTP/ZoneFifthTP';
+const zoneFinalStep4 = 'Step4/FirstTP/ZoneFirstTP';
+
+//Zone de départ
+
+onEnterAuthorization(zoneStep4, ['cardAccessStep4']);
+getVariableOnZone(zoneStep4, ['cardAccessZoneFirstTP']);
+
+//Zone de TP_1
+onEnterAuthorization(zoneFirstTP, ['cardAccessZoneFirstTP']);
+getVariableOnZone(zoneFirstTP, ['cardAccessZoneSecondTP']);
+
+//Zone de TP_2
+onEnterAuthorization(zoneSecondTP, ['cardAccessZoneSecondTP']);
+getVariableOnZone(zoneSecondTP, ['cardAccessZoneThirdTP']);
+
+//Zone de TP_3
+onEnterAuthorization(zoneThirdTP, ['cardAccessZoneThirdTP']);
+getVariableOnZone(zoneThirdTP, ['cardAccessZoneFourthTP']);
+
+//Zone de TP_4
+onEnterAuthorization(zoneFourthTP, ['cardAccessZoneFourthTP']);
+getVariableOnZone(zoneFourthTP, ['cardAccessZoneFifthTP']);
+
+//Zone de TP_5
+onEnterAuthorization(zoneFifthTP, ['cardAccessZoneFifthTP']);
+getVariableOnZone(zoneFifthTP, ['cardAccessZoneFinalStep4']);
+
+//Zone d'arrivée
+onEnterAuthorization(zoneFinalStep4, ['cardAccessZoneFinalStep4']);
