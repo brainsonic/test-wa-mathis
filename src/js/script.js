@@ -821,21 +821,24 @@ function onEnterAuthorization(_layer, _variablesAccess, _dialogError) {
       {
         console.log(access);
         console.log('You have the access ? :', WA.player.state[access]);
-        if (WA.player.state[access] == null || WA.player.state[access] == undefined){
+        if (WA.player.state[access] == null){
           WA.nav.goToRoom('#ZoneStep1');
-          WA.ui.openPopup(_dialogError, ["Zone interdit - Veuillez faire les étapes"], [{
-            label: "Fermer",
-            className: "primary",
-            callback: (popup) => {
-              popup.close();
-            }
-          }]);
         }
       }
     }).catch((error) => {
       console.error('Error TELEPORT in', _layer)
     });
   });
+  if (WA.player.state[access] == null)
+  {
+    WA.ui.openPopup(_dialogError, ["Zone interdit - Veuillez faire les étapes"], [{
+      label: "Fermer",
+      className: "primary",
+      callback: (popup) => {
+        popup.close();
+      }
+    }]);
+  }
 }
 
 //TRAPPED ROOM STEP 2
