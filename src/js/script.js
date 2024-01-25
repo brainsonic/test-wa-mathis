@@ -1194,7 +1194,7 @@ onTpCondition('Step4/FifthTP/Tp5-4', '#Reset', true, 'tpDepart2Step5');
 //Zone d'arrivée
 onEnterAuthorization(zoneFinalStep4, ['cardAccessZoneFinalStep4'], 'EscapeGameText');
 let redButton = new PopUpVideo(
-  "Step4/Last/RedButton",
+  "Step4/Last/Redbutton",
   "Appuyez sur espace pour actionner le bouton rouge !",
   [
     "Salut, moi c’est Mathis, j'ai 19 ans et je suis apprenti en conception industrielle. Vous connaissez ? Non ? Alors je vous invite à découvrir mon métier en vidéo !",
