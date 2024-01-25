@@ -819,6 +819,8 @@ function onEnterAuthorization(_layer, _variablesAccess) {
     WA.onInit().then(() => {
       for(var access in _variablesAccess)
       {
+        console.log(access);
+        console.log('You have the access ? :', WA.player.state[access]);
         if (WA.player.state[access] == null){
           WA.nav.goToRoom('#ZoneStep1');
         }
@@ -911,6 +913,7 @@ let doorTrappedRoom = new InteractAction(
         ttl: 720 * 3600,
         scope: "world"
       });
+      console.log('ACCESS STEP 3', WA.player.state["cardAccessStep3"]);
       return true;
     }
     else
