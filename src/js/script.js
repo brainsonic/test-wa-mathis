@@ -1093,7 +1093,7 @@ const zoneFinalStep4 = 'Step4/FirstTP/ZoneFirstTP';
 onEnterAuthorization(zoneStep4, ['cardAccessStep4']);
 getVariableOnZone(zoneStep4, ['cardAccessZoneFirstTP']);
 
-onTpCondition('Step4/TpDepart', '#TpDepart_1', () => { return WA.player.state.hasVariable('cardAccesZoneFirstTP')}, tp_departText);
+onTpCondition('Step4/TpDepart', '#TpDepart_1', () => { return WA.player.state.hasVariable('cardAccesZoneFirstTP')}, 'tpDepartStep4');
 
 //Zone de TP_1
 onEnterAuthorization(zoneFirstTP, ['cardAccessZoneFirstTP']);
