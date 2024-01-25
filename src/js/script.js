@@ -815,6 +815,7 @@ let Apprenti_6 = new PopUpVideo(
  */
 function onEnterAuthorization(_layer, _variablesAccess, _dialogError) {
 
+  let popUp = false;
   WA.room.onEnterLayer(_layer).subscribe(() => {
     WA.onInit().then(() => {
       for(var access of _variablesAccess)
@@ -823,22 +824,26 @@ function onEnterAuthorization(_layer, _variablesAccess, _dialogError) {
         console.log('You have the access ? :', WA.player.state[access]);
         if (WA.player.state[access] == null){
           WA.nav.goToRoom('#ZoneStep1');
+          popUp = true;
+          return;
         }
       }
     }).catch((error) => {
       console.error('Error TELEPORT in', _layer)
+    }).then(() => {
+      if (popUp)
+      {
+        WA.ui.openPopup(_dialogError, ["Zone interdit - Veuillez faire les étapes"], [{
+          label: "Fermer",
+          className: "primary",
+          callback: (popup) => {
+            popup.close();
+          }
+        }]);
+      }
     });
   });
-  if (WA.player.state[access] == null)
-  {
-    WA.ui.openPopup(_dialogError, ["Zone interdit - Veuillez faire les étapes"], [{
-      label: "Fermer",
-      className: "primary",
-      callback: (popup) => {
-        popup.close();
-      }
-    }]);
-  }
+
 }
 
 //TRAPPED ROOM STEP 2
