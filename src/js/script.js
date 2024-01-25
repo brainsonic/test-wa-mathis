@@ -810,8 +810,8 @@ let Apprenti_6 = new PopUpVideo(
 //FUNCTION
 /**
  * Function to check if the player is allowed to access the zone of the escape Game
- * @param {string} _layer 
- * @param {Array<string>} _variablesAccess 
+ * @param {string} _layer Zone tiled du layer
+ * @param {Array<string>} _variablesAccess List des variables à avoir pour accéder à la zone
  */
 function onEnterAuthorization(_layer, _variablesAccess) {
 
@@ -1032,8 +1032,8 @@ let trapDoor = new InteractAction(
 //STEP 4
 /**
  * Function to get variables on certain Zone
- * @param {string} _layer 
- * @param {array<string>} _variables 
+ * @param {string} _layer Zone correspondant au chemin du Tile
+ * @param {array<string>} _variables Liste des variables à avoir pour être dans la zone
  */
 function getVariableOnZone(_layer, _variables) {
   WA.room.onEnterLayer(_layer).subscribe(() => {
@@ -1053,6 +1053,33 @@ function getVariableOnZone(_layer, _variables) {
     });
   });
 }
+
+/**
+ * Function to tp depending on the condition
+ * @param {string} _layer Zone
+ * @param {string} _tpTo Zone to TP generallly the #Room Cf https://docs.workadventu.re/map-building/tiled-editor/entry-exit/
+ * @param {bool} _condition Condition (Write a function that's the condition and return true/false)
+ */
+function onTpCondition(_layer, _tpTo, _condition, _popUpDisplay)
+{
+  WA.room.onEnterLayer(_layer).subscribe(() => {
+    if(_condition)
+    {
+      WA.nav.goToRoom(_tpTo);
+    }else
+    {
+      WA.ui.openPopup(_popUpDisplay, ["Vous n'avez pas les items requis pour accéder à la TP"], [{
+        label: "Fermer",
+        className: "primary",
+        callback: (popup) => {
+          popup.close();
+        }
+      }]
+      );
+    }
+  });
+}
+
 const zoneStep4 = 'Zones/ZoneStep4';
 const zoneFirstTP = 'Step4/FirstTP/ZoneFirstTP';
 const zoneSecondTP = 'Step4/SecondTP/ZoneSecondTP';
@@ -1065,6 +1092,8 @@ const zoneFinalStep4 = 'Step4/FirstTP/ZoneFirstTP';
 
 onEnterAuthorization(zoneStep4, ['cardAccessStep4']);
 getVariableOnZone(zoneStep4, ['cardAccessZoneFirstTP']);
+
+onTpCondition('Step4/TpDepart', '#TpDepart_1', () => { return WA.player.state.hasVariable('cardAccesZoneFirstTP')}, tp_departText);
 
 //Zone de TP_1
 onEnterAuthorization(zoneFirstTP, ['cardAccessZoneFirstTP']);
