@@ -253,7 +253,7 @@ class PopUpVideo extends Dialog {
 
 class PopUpVideoAction extends InteractAction {
   constructor(_layer, _message, _dialog, _object, _video, _function_action, _category_tracker, _type_tracker, _name_tracker) {
-    super(_layer, _message, _dialog, _object, _function_action, _category_tracker, _type_tracker, _name_tracker);
+    super(_layer, _message, _dialog, "Erreur dialogue", _object, _function_action, _category_tracker, _type_tracker, _name_tracker);
     this.video = _video;
   }
 

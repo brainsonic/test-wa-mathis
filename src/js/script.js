@@ -1208,6 +1208,7 @@ let redButtonForm = new PopUpVideoAction(
     WA.room.hideLayer('Step4/Last/ButtonNotPressed_1');
     WA.room.hideLayer('Step4/Last/ButtonNotPressed_2');
     WA.room.hideLayer('Step4/Last/ButtonNotPressed');
+    return true;
   },
   "right",
   "interact",
