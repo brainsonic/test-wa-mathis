@@ -1083,19 +1083,21 @@ function getVariableOnZone(_layer, _variables) {
 function onTpCondition(_layer, _tpTo, _condition, _popUpDisplay, _popUpMsg = "")
 {
   WA.room.onEnterLayer(_layer).subscribe(() => {
-    if(_condition)
-    {
-      WA.nav.goToRoom(_tpTo);
-    }else
-    {
-      WA.ui.openPopup(_popUpDisplay, _popUpMsg == "" ? ["Vous n'avez pas les items requis pour accéder à la TP"] : _popUpMsg, [{
-        label: "Fermer",
-        className: "primary",
-        callback: (popup) => {
-          popup.close();
-        }
-      }]);
-    }
+    WA.onInit().then(() => {
+      if(_condition)
+      {
+        WA.nav.goToRoom(_tpTo);
+      }else
+      {
+        WA.ui.openPopup(_popUpDisplay, _popUpMsg == "" ? ["Vous n'avez pas les items requis pour accéder à la TP"] : _popUpMsg, [{
+          label: "Fermer",
+          className: "primary",
+          callback: (popup) => {
+            popup.close();
+          }
+        }]);
+      }
+    })
   });
 }
 
