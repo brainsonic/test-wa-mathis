@@ -1,6 +1,6 @@
 // Chargement de la lib JS de WA
 import {} from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
-import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, ItemOnLayer, ItemPickUpOnCondition } from './class';
+import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, ItemOnLayer, ItemPickUpOnCondition, PopUpVideoAction } from './class';
 
 // VARIABLES ///////////////////////////////////////////////
 const tutorialLink = "https://64ix.github.io/WA-Edited-Tutorial/tutorial.html";
@@ -1191,17 +1191,26 @@ onTpCondition('Step4/FifthTP/Tp5-3', '#TpArrive', () => {
 }, 'tpDepart2Step5');
 onTpCondition('Step4/FifthTP/Tp5-4', '#Reset', true, 'tpDepart2Step5');
 
+
 //Zone d'arrivée
 onEnterAuthorization(zoneFinalStep4, ['cardAccessZoneFinalStep4'], 'EscapeGameText');
-let redButton = new PopUpVideo(
+onTpCondition('Step4/Last/TpBack', '#start', true, 'tpBackFinal');
+
+let redButtonForm = new PopUpVideoAction(
   "Step4/Last/Redbutton",
-  "Appuyez sur espace pour actionner le bouton rouge !",
+  "Appuyez sur espace pour ouvrir le formulaire !",
   [
-    "Salut, moi c’est Mathis, j'ai 19 ans et je suis apprenti en conception industrielle. Vous connaissez ? Non ? Alors je vous invite à découvrir mon métier en vidéo !",
+    "Bravo ! Tu viens de sauver le monde Yumi !!"
   ],
   "redButtonTxt",
-  apprenti_6VideoLink,
+  formLink,
+  () => {
+    WA.room.hideLayer('Step4/Last/ButtonNotPressed_1');
+    WA.room.hideLayer('Step4/Last/ButtonNotPressed_2');
+    WA.room.hideLayer('Step4/Last/ButtonNotPressed');
+  },
+  "right",
   "interact",
-  "Object",
-  "Object_redButton",
+  "Form",
+  "Formulaire_final"
 );

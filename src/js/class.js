@@ -249,8 +249,23 @@ class PopUpVideo extends Dialog {
       this.currentState = undefined;
       await WA.nav.openCoWebSite(this.video, true, "", 50, 1, true, false);
     }
+}
+
+class PopUpVideoAction extends PopUpVideo {
+  constructor(_layer, _message, _dialog, _object, _video, _function_action, _category_tracker, _type_tracker, _name_tracker) {
+    super(_layer, _message, _dialog, _object,_video, _category_tracker, _type_tracker, _name_tracker);
+    this.function_action = _function_action;
   }
+  interact() {
   
+    WA.onInit().then(() => {
+      this.function_action();
+    });
+    this.track();
+    this.open();
+
+  }
+}  
   //Class to pickup an item
   //_dialog : array[string] : Text dans le popup
   //_item : string : Nom de la variable que le joueur aura
@@ -401,6 +416,7 @@ export {
     Modal,
     ModalAction,
     PopUpVideo,
+    PopUpVideoAction,
     ItemOnLayer,
     ItemPickUpOnCondition
 };
