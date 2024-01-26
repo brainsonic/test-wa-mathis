@@ -1116,7 +1116,7 @@ let YumiStep4 = new ModalAction(
   "right",
   () => {
       var variable = "TalkToYumiStep4";
-      console.log(WA.player.state[variable]);
+      console.log('CACACACA', WA.player.state[variable]);
       if (WA.player.state[variable] == null)
       {
         console.log('HEHEHEHE');
