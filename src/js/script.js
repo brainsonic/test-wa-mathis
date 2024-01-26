@@ -1116,8 +1116,10 @@ let YumiStep4 = new ModalAction(
   "right",
   () => {
       var variable = "TalkToYumiStep4";
+      console.log(WA.player.state[variable]);
       if (WA.player.state[variable] == null)
       {
+        console.log('HEHEHEHE');
         WA.player.state.saveVariable(variable, true, {
           public: true,
           persist: true,
@@ -1136,6 +1138,8 @@ onEnterAuthorization(zoneStep4, ['cardAccessStep4'], 'EscapeGameText');
 getVariableOnZone('Step4/TpDepart', ['cardAccessZoneFirstTP']);
 
 onTpCondition('Step4/TpDepart', '#TpDepart_1', () => { 
+  console.log('HAHAHAHA', WA.player.state['TalkToYumiStep4']);
+  console.log(WA.player.state['cardAccessStep4'] != null && WA.player.state['TalkToYumiStep4'] != null);
   return WA.player.state['cardAccessStep4'] != null && WA.player.state['TalkToYumiStep4'] != null ? true : false},
   'tpDepartStep4', 'Vous devez parler à Yumi');
 
