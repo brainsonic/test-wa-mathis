@@ -219,7 +219,7 @@ class Modal extends Interaction {
     }
   }
   
-  // class ModalAction : Ouvrir une fenetre modale en set une action derrière
+// class ModalAction : Ouvrir une fenetre modale en set une action derrière
 class ModalAction extends Modal {
     //par defaut, position à droite
     constructor(_layer, _message, _modal, _position, _function_action, _category_tracker, _type_tracker, _name_tracker) {
@@ -235,8 +235,9 @@ class ModalAction extends Modal {
     }
   
   }
-  
-  // class PopUpVideo : Popup qui ouvre un site web à la sortie
+
+// class PopUpVideo : Popup qui ouvre un site web à la sortie
+// _function_action  : bool : True si l'action est effectué sinon false
 class PopUpVideo extends Dialog {
     constructor(_layer, _message, _dialog, _object, _video, _category_tracker, _type_tracker, _name_tracker) {
       super(_layer, _message, _dialog, _object, _category_tracker, _type_tracker, _name_tracker);
@@ -251,12 +252,13 @@ class PopUpVideo extends Dialog {
     }
 }
 
+//Class PopUpVideoAction : Popup video avec un action quand il y a interaction
+// _function_action  : bool : True si l'action est effectué sinon false
 class PopUpVideoAction extends InteractAction {
   constructor(_layer, _message, _dialog, _object, _video, _function_action, _category_tracker, _type_tracker, _name_tracker) {
     super(_layer, _message, _dialog, "Erreur dialogue", _object, _function_action, _category_tracker, _type_tracker, _name_tracker);
     this.video = _video;
   }
-
       async next() {
       this.finished = true;
       this.currentState.close();
@@ -418,5 +420,4 @@ export {
     ItemOnLayer,
     ItemPickUpOnCondition
 };
-  // END CLASS ///////////////////////////////////////////////
-  
+  // END CLASS 

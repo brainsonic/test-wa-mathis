@@ -1084,7 +1084,7 @@ function onTpCondition(_layer, _tpTo, _condition, _popUpDisplay, _popUpMsg = "")
 {
   WA.room.onEnterLayer(_layer).subscribe(() => {
     WA.onInit().then(() => {
-      if(_condition)
+      if(_condition())
       {
         WA.nav.goToRoom(_tpTo);
       }else
