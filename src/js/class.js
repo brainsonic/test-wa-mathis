@@ -259,12 +259,19 @@ class PopUpVideoAction extends InteractAction {
     super(_layer, _message, _dialog, "Erreur dialogue", _object, _function_action, _category_tracker, _type_tracker, _name_tracker);
     this.video = _video;
   }
-  
+
   exit() {
     if (!this.finished && this.currentState !== undefined)
       this.currentState.close();
     this.currentState = undefined;
-    WA.nav.openCoWebSite(this.video, true, "", 50, 1, true, false);
+    //A.nav.openCoWebSite(this.video, true, "", 50, 1, true, false);
+    WA.ui.website.open({
+      url: this.video,
+      position: {
+        vertical: 'middle',
+        horizontal: 'middle',
+      }
+    })
   }
 }  
   //Class to pickup an item

@@ -796,7 +796,7 @@ let Apprenti_6 = new PopUpVideo(
 // END INTERACTIONS DIVERSES ///////////////////////////////////////////////
 
 //Phase 3 Item and hidden layer
-console.log("OKKKKK");
+console.log("OOKK");
 //TRAPPED ROOM STEP 2
 /**
  * Function to add a trap to a layer
