@@ -270,7 +270,11 @@ class PopUpVideoAction extends InteractAction {
       position: {
         vertical: 'middle',
         horizontal: 'middle',
-      }
+      },
+      size: {
+        height: "50vh",
+        width: "50vw",
+    },
     })
   }
 }  
