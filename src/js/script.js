@@ -1,6 +1,6 @@
 // Chargement de la lib JS de WA
 import {} from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
-import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, ItemOnLayer, ItemPickUpOnCondition, PopUpVideoAction } from './class';
+import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, ItemOnLayer, ItemPickUpOnCondition, PopUpVideoAction, onTpCondition } from './class';
 
 // VARIABLES ///////////////////////////////////////////////
 const tutorialLink = "https://64ix.github.io/WA-Edited-Tutorial/tutorial.html";
@@ -807,45 +807,6 @@ let Apprenti_6 = new PopUpVideo(
 
 //Phase 3 Item and hidden layer
 
-//FUNCTION
-/**
- * Function to check if the player is allowed to access the zone of the escape Game
- * @param {string} _layer Zone tiled du layer
- * @param {Array<string>} _variablesAccess List des variables à avoir pour accéder à la zone
- */
-function onEnterAuthorization(_layer, _variablesAccess, _dialogError) {
-
-  let popUp = false;
-  WA.room.onEnterLayer(_layer).subscribe(() => {
-    WA.onInit().then(() => {
-      for(var access of _variablesAccess)
-      {
-        console.log(access);
-        console.log('You have the access ? :', WA.player.state[access]);
-        if (WA.player.state[access] == null){
-          WA.nav.goToRoom('#ZoneStep1');
-          popUp = true;
-          return;
-        }
-      }
-    }).catch((error) => {
-      console.error('Error TELEPORT in :', _layer)
-    }).then(() => {
-      if (popUp)
-      {
-        WA.ui.openPopup(_dialogError, ["Zone interdit - Veuillez faire les étapes"], [{
-          label: "Fermer",
-          className: "primary",
-          callback: (popup) => {
-            popup.close();
-          }
-        }]);
-      }
-    });
-  });
-
-}
-
 //TRAPPED ROOM STEP 2
 /**
  * Function to add a trap to a layer
@@ -1045,61 +1006,6 @@ let trapDoor = new InteractAction(
 );
 
 //STEP 4
-/**
- * Function to get variables on certain Zone
- * @param {string} _layer Zone correspondant au chemin du Tile
- * @param {array<string>} _variables Liste des variables à avoir pour être dans la zone
- */
-function getVariableOnZone(_layer, _variables) {
-  console.log('ENTERED VARIABLE ZONE');
-  WA.room.onEnterLayer(_layer).subscribe(() => {
-    WA.onInit().then(() => {
-      for (var variable of _variables) {
-        console.log(variable);
-        if (WA.player.state[variable] == null || WA.player.state[variable] == undefined)
-        {
-          console.log('YES');
-          WA.player.state.saveVariable(variable, true, {
-            public: true,
-            persist: true,
-            ttl: 720 * 3600,
-            scope: "world"
-          });
-          console.log("Variable obtained", variable,":", WA.player.state[variable]);
-        }
-      }
-    });
-  });
-}
-
-/**
- * Function to tp depending on the condition
- * @param {string} _layer Zone
- * @param {string} _tpTo Zone to TP generallly the #Room Cf https://docs.workadventu.re/map-building/tiled-editor/entry-exit/
- * @param {bool} _condition Condition (Write a function that's the condition and return true/false)
- * @param {string} _popUpDisplay Popup dans tiled floorLayer
- * @param {string} _popUpMg Message du Popup
- */
-function onTpCondition(_layer, _tpTo, _condition, _popUpDisplay, _popUpMsg = "")
-{
-  WA.room.onEnterLayer(_layer).subscribe(() => {
-    WA.onInit().then(() => {
-      if(_condition())
-      {
-        WA.nav.goToRoom(_tpTo);
-      }else
-      {
-        WA.ui.openPopup(_popUpDisplay, _popUpMsg == "" ? ["Vous n'avez pas les items requis pour accéder à la TP"] : _popUpMsg, [{
-          label: "Fermer",
-          className: "primary",
-          callback: (popup) => {
-            popup.close();
-          }
-        }]);
-      }
-    })
-  });
-}
 
 const zoneStep4 = 'Zones/ZoneStep4';
 const zoneFirstTP = 'Step4/FirstTP/ZoneFirstTP';
@@ -1212,7 +1118,7 @@ let redButtonForm = new PopUpVideoAction(
     WA.room.hideLayer('Step4/Last/ButtonNotPressed_1');
     WA.room.hideLayer('Step4/Last/ButtonNotPressed_2');
     WA.room.hideLayer('Step4/Last/ButtonNotPressed');
-    WA.room.hideLayer('Step4/Last/RedButton');
+    WA.room.hideLayer('Step4/Last/Redbutton');
     return true;
   },
   "right",
