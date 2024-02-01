@@ -796,7 +796,7 @@ let Apprenti_6 = new PopUpVideo(
 // END INTERACTIONS DIVERSES ///////////////////////////////////////////////
 
 //Phase 3 Item and hidden layer
-
+console.log("OKKKKK");
 //TRAPPED ROOM STEP 2
 /**
  * Function to add a trap to a layer
@@ -892,7 +892,6 @@ let doorTrappedRoom = new InteractAction(
   "InteractAction",
   "Object_doorTrappedRoom"
 );
-
 
 // ---- Lab de l'industrie  STEP 3 ---- 
 onEnterAuthorization('Zones/ZoneStep3', ['cardAccessStep3'], 'EscapeGameText');
