@@ -1002,7 +1002,7 @@ const zoneSecondTP = 'Step4/SecondTP/ZoneSecondTP';
 const zoneThirdTP = 'Step4/ThirdTP/ZoneThirdTP';
 const zoneFourthTP = 'Step4/FourthTP/ZoneFourthTP';
 const zoneFifthTP = 'Step4/FifthTP/ZoneFifthTP';
-const zoneFinalStep4 = 'Step4/Last/TpArrive';
+const zoneFinalStep4 = 'Step4/Last/ZoneLast';
 
 //Zone de départ
 
