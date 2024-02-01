@@ -418,7 +418,7 @@ class ItemPickUpOnCondition extends ItemOnLayer{
 
 //FUNCTION
 
-export function tutorial() {
+function tutorial() {
   WA.ui.modal.openModal({
     title: "Tutorial",
     src: tutorialLink,
@@ -434,7 +434,7 @@ export function tutorial() {
  * @param {string} _layer Zone tiled du layer
  * @param {Array<string>} _variablesAccess List des variables à avoir pour accéder à la zone
  */
-export function onEnterAuthorization(_layer, _variablesAccess, _dialogError) {
+function onEnterAuthorization(_layer, _variablesAccess, _dialogError) {
 
   let popUp = false;
   WA.room.onEnterLayer(_layer).subscribe(() => {
@@ -474,7 +474,7 @@ export function onEnterAuthorization(_layer, _variablesAccess, _dialogError) {
  * @param {string} _popUpDisplay Popup dans tiled floorLayer
  * @param {string} _popUpMg Message du Popup
  */
-export function onTpCondition(_layer, _tpTo, _condition, _popUpDisplay, _popUpMsg = "")
+function onTpCondition(_layer, _tpTo, _condition, _popUpDisplay, _popUpMsg = "")
 {
   WA.room.onEnterLayer(_layer).subscribe(() => {
     WA.onInit().then(() => {
@@ -500,7 +500,7 @@ export function onTpCondition(_layer, _tpTo, _condition, _popUpDisplay, _popUpMs
  * @param {string} _layer Zone correspondant au chemin du Tile
  * @param {array<string>} _variables Liste des variables à avoir pour être dans la zone
  */
-export function getVariableOnZone(_layer, _variables) {
+function getVariableOnZone(_layer, _variables) {
   WA.room.onEnterLayer(_layer).subscribe(() => {
     WA.onInit().then(() => {
       for (var variable of _variables) {
@@ -529,5 +529,9 @@ export {
     PopUpVideoAction,
     ItemOnLayer,
     ItemPickUpOnCondition,
+    tutorial,
+    onEnterAuthorization,
+    onTpCondition,
+    getVariableOnZone,
 };
   // END CLASS 
