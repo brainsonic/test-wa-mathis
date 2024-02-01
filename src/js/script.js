@@ -119,16 +119,6 @@ WA.room.onLeaveLayer("Zones/OutGate").subscribe(() => {
   }
 });
 //BUTTON TUTORIAL
-function tutorial() {
-  WA.ui.modal.openModal({
-    title: "Tutorial",
-    src: tutorialLink,
-    allow: "fullscreen; clipboard-read; clipboard-write",
-    allowApi: !0,
-    position: "right",
-  });
-}
-
 WA.ui.actionBar.addButton({
   id: 'tutorial-btn',
   label: 'Tutoriel',

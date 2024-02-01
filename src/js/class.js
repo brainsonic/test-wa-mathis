@@ -411,6 +411,17 @@ class ItemPickUpOnCondition extends ItemOnLayer{
 
 
 //FUNCTION
+
+export function tutorial() {
+  WA.ui.modal.openModal({
+    title: "Tutorial",
+    src: tutorialLink,
+    allow: "fullscreen; clipboard-read; clipboard-write",
+    allowApi: !0,
+    position: "right",
+  });
+}
+
 /**
  * Function to check if a player is allowed to access the zone of the escape Game
  * Used for example when a user enters the zone with a link URL
@@ -512,8 +523,5 @@ export {
     PopUpVideoAction,
     ItemOnLayer,
     ItemPickUpOnCondition,
-    onTpCondition,
-    getVariableOnZone,
-    onEnterAuthorization,
 };
   // END CLASS 
