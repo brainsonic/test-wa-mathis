@@ -265,17 +265,11 @@ class PopUpVideoAction extends InteractAction {
       this.currentState.close();
     this.currentState = undefined;
     //A.nav.openCoWebSite(this.video, true, "", 50, 1, true, false);
-    WA.ui.website.open({
-      url: this.video,
-      position: {
-        vertical: 'middle',
-        horizontal: 'middle',
-      },
-      size: {
-        height: "50vh",
-        width: "50vw",
-    },
-    })
+    WA.ui.modal.openModal({
+      title: 'VideoModal',
+      src: this.video,
+      position: 'center'
+    });
   }
 }  
   //Class to pickup an item
