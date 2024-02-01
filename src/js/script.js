@@ -796,7 +796,7 @@ let Apprenti_6 = new PopUpVideo(
 // END INTERACTIONS DIVERSES ///////////////////////////////////////////////
 
 //Phase 3 Item and hidden layer
-console.log("CACACACA");
+console.log("CACACACA949494");
 //TRAPPED ROOM STEP 2
 /**
  * Function to add a trap to a layer
@@ -1105,7 +1105,6 @@ let redButtonForm = new PopUpVideoAction(
   formLink,
   () => {
     WA.room.hideLayer('Step4/Last/ButtonNotPressed');
-    WA.room.hideLayer('Step4/Last/Redbutton');
     return true;
   },
   "right",
