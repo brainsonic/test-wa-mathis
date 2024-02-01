@@ -1139,7 +1139,7 @@ let YumiStep4 = new ModalAction(
 onEnterAuthorization(zoneStep4, ['cardAccessStep4'], 'EscapeGameText');
 getVariableOnZone('Step4/TpDepart', ['cardAccessZoneFirstTP']);
 
-onTpCondition('Step4/TpDepart', '#TpDepart_1', () => { 
+onTpCondition('Step4/TpDepart', '#TpDepart_1', () => {
   return WA.player.state['cardAccessStep4'] != null && WA.player.state['TalkToYumiStep4'] != null ? true : false},
   'tpDepartStep4', 'Vous devez parler à Yumi');
 
@@ -1198,7 +1198,7 @@ onTpCondition('Step4/FifthTP/Tp5-4', '#Reset', () => { return true }, 'tpDepart2
 
 //Zone d'arrivée
 onEnterAuthorization(zoneFinalStep4, ['cardAccessZoneFinalStep4'], 'EscapeGameText');
-onTpCondition('Step4/Last/TpBack', '#start', true, 'tpBackFinal');
+onTpCondition('Step4/Last/TpBack', '#start', () => { return true }, 'tpBackFinal');
 
 let redButtonForm = new PopUpVideoAction(
   "Step4/Last/Redbutton",
@@ -1212,6 +1212,7 @@ let redButtonForm = new PopUpVideoAction(
     WA.room.hideLayer('Step4/Last/ButtonNotPressed_1');
     WA.room.hideLayer('Step4/Last/ButtonNotPressed_2');
     WA.room.hideLayer('Step4/Last/ButtonNotPressed');
+    WA.room.hideLayer('Step4/Last/RedButton');
     return true;
   },
   "right",

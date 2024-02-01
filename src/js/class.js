@@ -260,10 +260,10 @@ class PopUpVideoAction extends InteractAction {
     this.video = _video;
   }
       async next() {
-      this.finished = true;
-      this.currentState.close();
-      this.currentState = undefined;
-      await WA.nav.openCoWebSite(this.video, true, "", 50, 1, true, false);
+        this.finished = true;
+        this.currentState.close();
+        this.currentState = undefined;
+        await WA.nav.openCoWebSite(this.video, true, "", 50, 1, true, false);
     }
 }  
   //Class to pickup an item
