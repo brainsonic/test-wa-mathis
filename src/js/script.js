@@ -1104,8 +1104,6 @@ let redButtonForm = new PopUpVideoAction(
   "redButtonTxt",
   formLink,
   () => {
-    WA.room.hideLayer('Step4/Last/ButtonNotPressed_1');
-    WA.room.hideLayer('Step4/Last/ButtonNotPressed_2');
     WA.room.hideLayer('Step4/Last/ButtonNotPressed');
     WA.room.hideLayer('Step4/Last/Redbutton');
     return true;
