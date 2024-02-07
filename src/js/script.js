@@ -629,6 +629,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   //ParkInside
   
+  /*
   let Doigby = new PopUpVideo(
     "Pnjs/ParkInside/Doigby",
     "Appuyez sur espace pour parler à Doigby !",
@@ -641,6 +642,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ",
     "PNJ_Doigby",
   );
+  */
   
   let Tiboinshape = new PopUpVideo(
     "Pnjs/ParkInside/Tiboinshape",
@@ -676,7 +678,8 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   //Labo Yumi
-  
+
+  /*
   let DrNozman = new PopUpVideo(
     "Pnjs/LaboRoom/DrNozman",
     "Appuyez sur espace pour parler à DrNozman !",
@@ -689,6 +692,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ",
     "PNJ_Nozman",
   );
+  */
   
   let HiHacks = new PopUpVideo(
     "Pnjs/LaboRoom/Hihacks_labo",
