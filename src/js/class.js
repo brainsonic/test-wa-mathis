@@ -126,8 +126,11 @@ class Dialog extends Interaction {
     next() {
       this.state++;
       // ferme le popup actuel, set en undefined pour éviter les bugs
-      if (this.currentState !== undefined) this.currentState.close();
-      this.currentState = undefined;
+      if (this.currentState !== undefined)
+      {
+        this.currentState.close();
+        this.currentState = undefined;
+      }
       // check si fini, sinon ouvre le popup suivant
       if (this.state >= this.dialog.length) {
         this.finished = true;
