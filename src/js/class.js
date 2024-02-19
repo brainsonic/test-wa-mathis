@@ -135,7 +135,6 @@ class Dialog extends Interaction {
       if (this.state >= this.dialog.length) {
         this.finished = true;
         this.state = 0;
-        this.exit();
       } else this.open();
     }
     exit() {
@@ -264,6 +263,23 @@ class PopUpVideoAction extends InteractAction {
     this.video = _video;
   }
 
+  next() {
+    this.state++;
+    // ferme le popup actuel, set en undefined pour éviter les bugs
+    if (this.currentState !== undefined)
+    {
+      this.currentState.close();
+      this.currentState = undefined;
+    }
+    // check si fini, sinon ouvre le popup suivant
+    if (this.state >= this.dialog.length) {
+      this.finished = true;
+      this.state = 0;
+      console.log("OK");
+      this.exit();
+   
+    } else this.open();
+  }
   exit() {
     if (!this.finished && this.currentState !== undefined)
     {
