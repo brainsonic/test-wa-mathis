@@ -1196,6 +1196,7 @@ let chestDidier = new InteractAction(
   "Appuyez sur espace pour ouvrir le coffre !",
   ["Vous avez récupéré une mystérieuse séquence !"],
   ["Vous n'avez pas l'autorisation d'ouvrir le coffre !"],
+  "ChestDidierText",
   () => {
     if (WA.player.state["allowOpenChest"] == true ) {
       return true;
