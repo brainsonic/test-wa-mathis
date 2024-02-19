@@ -135,6 +135,7 @@ class Dialog extends Interaction {
       if (this.state >= this.dialog.length) {
         this.finished = true;
         this.state = 0;
+        this.exit();
       } else this.open();
     }
     exit() {
