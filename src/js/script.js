@@ -445,14 +445,27 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ_Cari"
   )
   
-  let IngProd = new PopUpVideo(
-    "Pnjs/MetierRoom/IngProd",
+  let Alexandra = new PopUpVideoAction(
+    "Pnjs/MetierRoom/Alexandra",
     "Appuyez sur espace pour parler à Alexandra !",
+    [
+      "Bonjour, moi c’est Alexandra et je suis ingénieur de production. Je vous invite à découvrir mon parcours et mon quotidien dans cette vidéo.",
+      "Avant ça, si tu cherches une personne qui possèderait une clef",
+      "Il est parti vers le parc et avait du orange sur lui"
+    ],
     [
       "Bonjour, moi c’est Alexandra et je suis ingénieur de production. Je vous invite à découvrir mon parcours et mon quotidien dans cette vidéo.",
     ],
     "IngProd",
     ingProdVideoLink,
+    () => {
+      if (WA.player.state["startSideQuestStep4"] == true)
+      {
+        WA.player.state["TalkHint_1"] = true;
+        return true;
+      }
+      return false;
+    },
     "interact",
     "PNJ",
     "PNJ_Alexandra"
@@ -496,11 +509,11 @@ document.addEventListener('DOMContentLoaded', () => {
   
   //ShowRoom
   
-  let Emma = new PopUpVideo(
+  let Anais = new PopUpVideo(
     "Pnjs/ShowRoom/Anais",
     "Appuyez sur espace pour parler à Anaïs !",
     [
-      "Salut, moi c’est Anaïs et je suis technicienne méthodes. Si vous ne savez pas en quoi ça consiste : venez, je vous montre ! ",
+      "Salut, moi c’est Anaïs et je suis technicienne méthodes. Si vous ne savez pas en quoi ça consiste : venez, je vous montre !",
     ],
     "Anais",
     anaisVideoLink,
@@ -644,14 +657,27 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   */
   
-  let Tiboinshape = new PopUpVideo(
-    "Pnjs/ParkInside/Tiboinshape",
+  let Maeva = new PopUpVideoAction(
+    "Pnjs/ParkInside/Maeva",
     "Appuyez sur espace pour parler à Maëva !",
     [
       "Hello, moi c’est Maëva : le vidéaste Tibo InShape est revenu en Bac Pro pour découvrir mon métier d’ajusteur-monteur, ainsi que les autres métiers de l'industrie aéronautique. Regardez ce que ça donne !",
+      "Avant ça, si tu cherches une personne possédant une clef.",
+      "Je l'ai vu partir vers la cafeteria, il avait du bleu sur lui",
     ],
-    "Tiboinshape",
+    [
+      "Hello, moi c’est Maëva : le vidéaste Tibo InShape est revenu en Bac Pro pour découvrir mon métier d’ajusteur-monteur, ainsi que les autres métiers de l'industrie aéronautique. Regardez ce que ça donne !",
+    ],
+    "MaevaText",
     tiboInShapeVideoLink,
+    () => {
+      if (WA.player.state["startSideQuestStep4"] == true)
+      {
+        WA.player.state["TalkHint_2"] = true;
+        return true;
+      }
+      return false;
+    },
     "interact",
     "PNJ",
     "PNJ_Maeva",
@@ -770,14 +796,27 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ_Fanny",
   );
   
-  let Apprenti_5 = new PopUpVideo(
+  let Apprenti_5 = new PopUpVideoAction(
     "Pnjs/DinningRoom/Apprenti_5",
     "Appuyez sur espace pour parler à Nassredine !",
+    [
+      "Bonjour, je m’appelle Nasreddine et ce que j'aime dans mon métier c'est le côté à la fois pointu et technique. Regardez cette vidéo pour mieux comprendre !",
+      "Avant ça, si tu cherches une personne possédant une clef.",
+      "Il est parti vers le hub des métiers avec le ventre bien rempli."
+    ],
     [
       "Bonjour, je m’appelle Nasreddine et ce que j'aime dans mon métier c'est le côté à la fois pointu et technique. Regardez cette vidéo pour mieux comprendre !",
     ],
     "Apprenti_5",
     apprenti_5VideoLink,
+    () => {
+      if (WA.player.state["startSideQuestStep4"] == true)
+      {
+        WA.player.state["TalkHint_3"] = true;
+        return true;
+      }
+      return false;
+    },
     "interact",
     "PNJ",
     "PNJ_Nassredine",
@@ -1017,7 +1056,6 @@ document.addEventListener('DOMContentLoaded', () => {
     "right",
     () => {
         var variable = "TalkToYumiStep4";
-        console.log('CACACACA', WA.player.state[variable]);
         if (WA.player.state[variable] == null)
         {
           console.log('HEHEHEHE');
@@ -1105,6 +1143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     [
       "Bravo ! Tu viens de sauver le monde Yumi !!"
     ],
+    ["Erreur dialogue"],
     "redButtonTxt",
     formLink,
     () => {
@@ -1117,3 +1156,95 @@ document.addEventListener('DOMContentLoaded', () => {
     "Formulaire_final"
   );
 });
+
+
+//Step 4 bis
+
+let Didier = new InteractAction(
+  "Step4bis/Didier",
+  "Appuyez sur espace pour parler à Didier !",
+  [
+    "Excellent travail ! Vous avez vraiment le sens du devoir.",
+    "Vous avez vraiment sauvé la mise. En signe de ma gratitude, n'hésitez pas à prendre l'un des artefacts à l'intérieur du coffre. Considérez-le comme une récompense pour vos services."
+  ],
+  [
+    "Bonjour, aventurier. J'ai besoin de votre aide. Mon coffre a été volé, et je suis sûr que ce fourbe en est responsable.",
+    "Nous avons eu une dispute récente, et il a juré de se venger. Aujourd'hui, je me suis rendu compte que la clé de mon coffre avait disparu. Il doit l'avoir prise pour me nuire.",
+    "À l'intérieur se trouvent des artefacts rares que j'ai collectés au fil des ans. Ils ont une grande valeur pour moi, et je ne peux pas laisser ce vaurien s'en tirer ainsi.",
+    "Trouvez cette clé et ramenez-la-moi, s'il vous plaît."
+  ],
+  "DidierText",
+  () => {
+    if (WA.player.state["startSideQuestStep4"] == true 
+    && WA.player.state["chestKeyFound"] == true) {
+      WA.player.state["allowOpenChest"] = true;
+      return true;
+    }
+    else {
+      WA.player.state["startSideQuestStep4"] = true;
+      return false;
+    }
+  },
+  "interact",
+  "PNJ",
+  "Didier"
+);
+
+
+let chestDidier = new InteractAction(
+  "Step4bis/ChestDidier",
+  "Appuyez sur espace pour ouvrir le coffre !",
+  ["Vous avez récupéré une mystérieuse séquence !"],
+  ["Vous n'avez pas l'autorisation d'ouvrir le coffre !"],
+  () => {
+    if (WA.player.state["allowOpenChest"] == true ) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  },
+  "interact",
+  "Object",
+  "Object_sequence"
+);
+
+let Arnaud = new InteractAction(
+  "Step4bis/Arnaud",
+  "Appuyez sur espace pour parler à Arnaud !",
+  [
+    "Que me veux-tu ?",
+    "Arnaud semble un peu nerveux, mais essaie de paraître décontracté.",
+    "Cherches-tu quelque chose en particulier, ou c'est juste une visite impromptue ?",
+    "Vous remarquez que Arnaud évite le regard et semble mal à l'aise.",
+    "Bon, ok, j'avoue. J'ai pris la clé du coffre de l'autre gars.",
+    "J'étais fâché, tu vois. Mais maintenant que tu es là, je suppose que tu veux la clé, n'est-ce pas ?",
+    "Tiens, prends-la. Je ne veux pas de problèmes. J'espère juste que ça ne va pas empirer avec l'autre type.",
+    "Vous avez récupérez la clef, allez parler à Didier",
+  ],
+  [
+    "Cette chaise est vraiment confortable !",
+    "Tu cherches quelques choses ?"
+  ],
+  "ArnaudText",
+  () => {
+    if (WA.player.state["startSideQuestStep4"] == true 
+    && WA.player.state["TalkHint_1"] == true
+    && WA.player.state["TalkHint_2"] == true
+    && WA.player.state["TalkHint_3"] == true
+    && WA.player.state["ThiefArnaudFound"] != true) {
+      
+      //Variable pour revenir au dialogue de départ quand arnaud a été démasqué
+      WA.player.state["ThiefArnaudFound"] = true;
+      return true;
+    }
+    else {
+      return false;
+    }
+  },
+  "interact",
+  "PNJ",
+  "Arnaud"
+);
+
+console.log("HAAHAHAHAHAHAHA");
