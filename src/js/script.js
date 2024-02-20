@@ -459,7 +459,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "IngProd",
     ingProdVideoLink,
     () => {
-      if (WA.player.state["startSideQuestStep4"] == true)
+      if (WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true)
       {
         WA.player.state["TalkHint_1"] = true;
         return true;
@@ -671,7 +671,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "MaevaText",
     tiboInShapeVideoLink,
     () => {
-      if (WA.player.state["startSideQuestStep4"] == true)
+      if (WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true)
       {
         WA.player.state["TalkHint_2"] = true;
         return true;
@@ -810,7 +810,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "Apprenti_5",
     apprenti_5VideoLink,
     () => {
-      if (WA.player.state["startSideQuestStep4"] == true)
+      if (WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true)
       {
         WA.player.state["TalkHint_3"] = true;
         return true;
@@ -1175,13 +1175,16 @@ let Didier = new InteractAction(
   ],
   "DidierText",
   () => {
-    if (WA.player.state["startSideQuestStep4"] == true 
-    && WA.player.state["chestKeyFound"] == true) {
+    console.log("KEY: ", WA.player.state["chestDidierKey"]);
+    if (WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true
+        && WA.player.state["chestDidierKey"] != null && WA.player.state["chestDidierKey"] == true) 
+    {
       WA.player.state["allowOpenChest"] = true;
       return true;
     }
     else {
       WA.player.state["startSideQuestStep4"] = true;
+      console.log("Player must find the key first");
       return false;
     }
   },
@@ -1229,14 +1232,15 @@ let Arnaud = new InteractAction(
   ],
   "ArnaudText",
   () => {
-    if (WA.player.state["startSideQuestStep4"] == true 
-    && WA.player.state["TalkHint_1"] == true
-    && WA.player.state["TalkHint_2"] == true
-    && WA.player.state["TalkHint_3"] == true
-    && WA.player.state["ThiefArnaudFound"] != true) {
+    if (WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true 
+    && WA.player.state["TalkHint_1"] != null && WA.player.state["TalkHint_1"] == true
+    && WA.player.state["TalkHint_2"] != null && WA.player.state["TalkHint_2"] == true
+    && WA.player.state["TalkHint_3"] != null && WA.player.state["TalkHint_3"] == true
+    && WA.player.state["ThiefArnaudFound"] == null) {
       
       //Variable pour revenir au dialogue de départ quand arnaud a été démasqué
       WA.player.state["ThiefArnaudFound"] = true;
+      WA.player.state["chestDidierKey"] = true;
       return true;
     }
     else {
@@ -1248,4 +1252,4 @@ let Arnaud = new InteractAction(
   "Arnaud"
 );
 
-console.log("MARMds5454454");
+console.log("PPOOOOO5454454");
