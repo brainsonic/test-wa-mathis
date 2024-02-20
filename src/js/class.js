@@ -284,7 +284,7 @@ class PopUpVideoAction extends InteractAction {
       WA.ui.modal.openModal({
         title: 'VideoModal',
         src: this.video,
-        position: 'right'
+        position: 'center'
       });
     } else this.open();
   }
