@@ -173,7 +173,7 @@ class InteractAction extends Dialog {
       {
         this.dialog = this.dialog_condition;
       }
-      else (this.function_action() == true)
+      else
       {
         this.dialog = this.old_dialog;
       }
