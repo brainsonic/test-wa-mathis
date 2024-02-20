@@ -132,7 +132,6 @@ class Dialog extends Interaction {
         this.currentState = undefined;
       }
       // check si fini, sinon ouvre le popup suivant
-      console.log(this.state >= this.dialog.length);
       if (this.state >= this.dialog.length) {
         this.finished = true;
         this.state = 0;
@@ -142,6 +141,7 @@ class Dialog extends Interaction {
       if (!this.finished && this.currentState !== undefined)
         this.currentState.close();
       this.currentState = undefined;
+      this.state = 0;
     }
   }
   
@@ -298,6 +298,7 @@ class PopUpVideoAction extends InteractAction {
         position: 'center'
       });
     }
+    this.state = 0;
     this.open_modal = false;
     this.currentState = undefined;
   }
