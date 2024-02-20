@@ -153,7 +153,7 @@ class InteractAction extends Dialog {
       this.state = 0;
       this.dialog_condition = _dialog_condition;
       this.function_action = _function_action;
-      this.old_dialog = [];
+      this.old_dialog = this.dialog;
     }
     //fonction d'intéraction, ouvre le popup
     interact() {
@@ -169,12 +169,15 @@ class InteractAction extends Dialog {
     open() {
       // ouvre le popup avec le texte correspondant au state actuel
       // bouton change de label si c'est le dernier popup
-      var dialogue = this.dialog;
       if (this.function_action() == false)
       {
-        dialogue = this.dialog_condition;
+        this.dialog = this.dialog_condition;
       }
-      this.currentState = WA.ui.openPopup(this.object, dialogue[this.state], [
+      else (this.function_action() == true)
+      {
+        this.dialog = this.old_dialog;
+      }
+      this.currentState = WA.ui.openPopup(this.object, this.dialog[this.state], [
         {
           label: this.state < this.dialog.length - 1 ? "Suivant" : "Fermer",
           className: "primary",
@@ -184,6 +187,11 @@ class InteractAction extends Dialog {
           },
         },
       ]);
+      console.log('Page :', this.state < this.dialog.length - 1);
+      if (!(this.state < this.dialog.length - 1))
+      {
+        this.dialog = this.old_dialog;
+      }
       this.finished = false;
     }
   }
