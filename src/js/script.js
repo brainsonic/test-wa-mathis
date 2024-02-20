@@ -1235,11 +1235,9 @@ let Arnaud = new InteractAction(
     if (WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true 
     && WA.player.state["TalkHint_1"] != null && WA.player.state["TalkHint_1"] == true
     && WA.player.state["TalkHint_2"] != null && WA.player.state["TalkHint_2"] == true
-    && WA.player.state["TalkHint_3"] != null && WA.player.state["TalkHint_3"] == true
-    && WA.player.state["ThiefArnaudFound"] == null) {
+    && WA.player.state["TalkHint_3"] != null && WA.player.state["TalkHint_3"] == true) {
       
       //Variable pour revenir au dialogue de départ quand arnaud a été démasqué
-      WA.player.state["ThiefArnaudFound"] = true;
       WA.player.state["chestDidierKey"] = true;
       return true;
     }
