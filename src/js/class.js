@@ -184,9 +184,10 @@ class InteractAction extends Dialog {
           },
         },
       ]);
+      console.log('Page :', this.state >= this.dialog.length)
       if (this.state >= this.dialog.length)
       {
-        this.dialog = old_dialog;
+        this.dialog = this.old_dialog;
       }
       this.finished = false;
     }
@@ -279,24 +280,20 @@ class PopUpVideoAction extends InteractAction {
     if (this.state >= this.dialog.length) {
       this.finished = true;
       this.state = 0;
-      console.log("OK");
       this.exit();
    
     } else this.open();
   }
   exit() {
-    console.log("HJAHAHAHAHA", (!this.finished && this.currentState !== undefined));
-    console.log("AHAHAHAHAHAHAA", this.state >= this.dialog.length);
-
-    if ((!this.finished && this.currentState !== undefined) || this.state >= this.dialog.length)
+    if ((!this.finished && this.currentState !== undefined))
     {
       this.currentState.close();
-      WA.ui.modal.openModal({
-        title: 'VideoModal',
-        src: this.video,
-        position: 'center'
-      });
     }
+    WA.ui.modal.openModal({
+      title: 'VideoModal',
+      src: this.video,
+      position: 'center'
+    });
     this.currentState = undefined;
   }
 }  

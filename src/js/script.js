@@ -1248,4 +1248,4 @@ let Arnaud = new InteractAction(
   "Arnaud"
 );
 
-console.log("HAAHAHAHAHAHAHA56454555");
+console.log("PANDA5454454");
