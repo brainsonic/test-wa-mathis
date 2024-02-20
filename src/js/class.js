@@ -285,6 +285,9 @@ class PopUpVideoAction extends InteractAction {
     } else this.open();
   }
   exit() {
+    console.log("HJAHAHAHAHA", (!this.finished && this.currentState !== undefined));
+    console.log("AHAHAHAHAHAHAA", this.state >= this.dialog.length);
+
     if ((!this.finished && this.currentState !== undefined) || this.state >= this.dialog.length)
     {
       this.currentState.close();
