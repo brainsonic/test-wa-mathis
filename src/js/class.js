@@ -153,6 +153,7 @@ class InteractAction extends Dialog {
       this.state = 0;
       this.dialog_condition = _dialog_condition;
       this.function_action = _function_action;
+      this.old_dialog = [];
     }
     //fonction d'intéraction, ouvre le popup
     interact() {
@@ -168,7 +169,7 @@ class InteractAction extends Dialog {
     open() {
       // ouvre le popup avec le texte correspondant au state actuel
       // bouton change de label si c'est le dernier popup
-      var old_dialog = this.dialog;
+      this.old_dialog = this.dialog;
       if (this.function_action() == false)
       {
         this.dialog = this.dialog_condition;
@@ -183,7 +184,10 @@ class InteractAction extends Dialog {
           },
         },
       ]);
-      this.dialog = old_dialog;
+      if (this.state >= this.dialog.length)
+      {
+        this.dialog = old_dialog;
+      }
       this.finished = false;
     }
   }
@@ -281,7 +285,7 @@ class PopUpVideoAction extends InteractAction {
     } else this.open();
   }
   exit() {
-    if (!this.finished && this.currentState !== undefined)
+    if ((!this.finished && this.currentState !== undefined) || this.state >= this.dialog.length)
     {
       this.currentState.close();
       WA.ui.modal.openModal({
