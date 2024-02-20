@@ -169,12 +169,12 @@ class InteractAction extends Dialog {
     open() {
       // ouvre le popup avec le texte correspondant au state actuel
       // bouton change de label si c'est le dernier popup
-      this.old_dialog = this.dialog;
+      var dialogue = this.dialog;
       if (this.function_action() == false)
       {
-        this.dialog = this.dialog_condition;
+        dialogue = this.dialog_condition;
       }
-      this.currentState = WA.ui.openPopup(this.object, this.dialog[this.state], [
+      this.currentState = WA.ui.openPopup(this.object, dialogue[this.state], [
         {
           label: this.state < this.dialog.length - 1 ? "Suivant" : "Fermer",
           className: "primary",
@@ -184,11 +184,6 @@ class InteractAction extends Dialog {
           },
         },
       ]);
-      console.log('Page :', this.state >= this.dialog.length)
-      if (this.state >= this.dialog.length)
-      {
-        this.dialog = this.old_dialog;
-      }
       this.finished = false;
     }
   }
@@ -266,6 +261,7 @@ class PopUpVideoAction extends InteractAction {
   constructor(_layer, _message, _dialog, _dialog_condition, _object, _video, _function_action, _category_tracker, _type_tracker, _name_tracker) {
     super(_layer, _message, _dialog, _dialog_condition, _object, _function_action, _category_tracker, _type_tracker, _name_tracker);
     this.video = _video;
+    this.open_modal = false;
   }
 
   next() {
@@ -280,20 +276,25 @@ class PopUpVideoAction extends InteractAction {
     if (this.state >= this.dialog.length) {
       this.finished = true;
       this.state = 0;
-      this.exit();
-   
+      this.open_modal = true;
+      WA.ui.modal.openModal({
+        title: 'VideoModal',
+        src: this.video,
+        position: 'center'
+      });
     } else this.open();
   }
   exit() {
-    if ((!this.finished && this.currentState !== undefined))
+    if (!this.finished && this.currentState !== undefined && this.open_modal == false)
     {
       this.currentState.close();
+      WA.ui.modal.openModal({
+        title: 'VideoModal',
+        src: this.video,
+        position: 'center'
+      });
     }
-    WA.ui.modal.openModal({
-      title: 'VideoModal',
-      src: this.video,
-      position: 'center'
-    });
+    this.open_modal = false;
     this.currentState = undefined;
   }
 }  
