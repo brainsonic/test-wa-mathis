@@ -132,6 +132,7 @@ class Dialog extends Interaction {
         this.currentState = undefined;
       }
       // check si fini, sinon ouvre le popup suivant
+      console.log(this.state >= this.dialog.length);
       if (this.state >= this.dialog.length) {
         this.finished = true;
         this.state = 0;
@@ -187,11 +188,6 @@ class InteractAction extends Dialog {
           },
         },
       ]);
-      console.log('Page :', this.state < this.dialog.length - 1);
-      if (!(this.state < this.dialog.length - 1))
-      {
-        this.dialog = this.old_dialog;
-      }
       this.finished = false;
     }
   }
