@@ -1197,7 +1197,10 @@ let Didier = new InteractAction(
 let chestDidier = new InteractAction(
   "Step4bis/ChestDidier",
   "Appuyez sur espace pour ouvrir le coffre !",
-  ["Vous avez récupéré une mystérieuse séquence !"],
+  [
+    "Vous avez récupéré une mystérieuse séquence !",
+    "Gardez-la précieusement, elle vous servira pour les prochaines quêtes"
+  ],
   ["Vous n'avez pas l'autorisation d'ouvrir le coffre !"],
   "ChestDidierText",
   () => {
@@ -1223,7 +1226,7 @@ let Arnaud = new InteractAction(
     "Vous remarquez que Arnaud évite le regard et semble mal à l'aise.",
     "Bon, ok, j'avoue. J'ai pris la clé du coffre de l'autre gars.",
     "J'étais fâché, tu vois. Mais maintenant que tu es là, je suppose que tu veux la clé, n'est-ce pas ?",
-    "Tiens, prends-la. Je ne veux pas de problèmes. J'espère juste que ça ne va pas empirer avec l'autre type.",
+    "Tiens, prends-la. Je ne veux pas de problèmes.",
     "Vous avez récupérez la clef, allez parler à Didier",
   ],
   [
