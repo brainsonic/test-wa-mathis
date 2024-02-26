@@ -1224,7 +1224,7 @@ let Arnaud = new InteractAction(
     "Arnaud semble un peu nerveux, mais essaie de paraître décontracté.",
     "Cherches-tu quelque chose en particulier, ou c'est juste une visite impromptue ?",
     "Vous remarquez que Arnaud évite le regard et semble mal à l'aise.",
-    "Bon, ok, j'avoue. J'ai pris la clé du coffre de l'autre gars.",
+    "Bon, ok, j'avoue. J'ai pris la clé du coffre.",
     "J'étais fâché, tu vois. Mais maintenant que tu es là, je suppose que tu veux la clé, n'est-ce pas ?",
     "Tiens, prends-la. Je ne veux pas de problèmes.",
     "Vous avez récupérez la clef, allez parler à Didier",
