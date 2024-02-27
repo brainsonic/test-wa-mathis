@@ -1205,6 +1205,7 @@ let chestDidier = new InteractAction(
   "ChestDidierText",
   () => {
     if (WA.player.state["allowOpenChest"] == true ) {
+      WA.player.state[ "sequenceObtained" ] = true;
       return true;
     }
     else {
@@ -1253,4 +1254,16 @@ let Arnaud = new InteractAction(
   "Arnaud"
 );
 
-console.log("48SHHH");
+const express = require('express');
+const app = express();
+
+// Allow the system to assign a random available port
+const server = app.listen(0, () => {
+  const port = server.address().port;
+  console.log(`Server is running on port ${port}`);
+});
+
+// Define your routes or middleware here
+app.get('/chat', (req, res) => {
+  res.send('Hello, World!');
+});
