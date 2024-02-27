@@ -1253,17 +1253,3 @@ let Arnaud = new InteractAction(
   "PNJ",
   "Arnaud"
 );
-
-const express = require('express');
-const app = express();
-
-// Allow the system to assign a random available port
-const server = app.listen(0, () => {
-  const port = server.address().port;
-  console.log(`Server is running on port ${port}`);
-});
-
-// Define your routes or middleware here
-app.get('/chat', (req, res) => {
-  res.send('Hello, World!');
-});
