@@ -448,7 +448,9 @@ class ItemPickUpOnCondition extends ItemOnLayer{
 
 
 //FUNCTION
-
+/**
+ * Function to have the tutorial when appearing in the map
+ */
 function tutorial() {
   WA.ui.modal.openModal({
     title: "Tutorial",

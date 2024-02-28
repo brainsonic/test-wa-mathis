@@ -1058,7 +1058,6 @@ document.addEventListener('DOMContentLoaded', () => {
         var variable = "TalkToYumiStep4";
         if (WA.player.state[variable] == null)
         {
-          console.log('HEHEHEHE');
           WA.player.state.saveVariable(variable, true, {
             public: true,
             persist: true,
@@ -1216,6 +1215,42 @@ let chestDidier = new InteractAction(
   "Object",
   "Object_sequence"
 );
+
+if (WA.player.state['sequenceObtained'] == null)
+{
+  WA.ui.actionBar.addButton({
+    id: 'sequence-btn',
+    label: 'Sequence',
+    callback: (event) => {
+      WA.ui.modal.openModal({
+        title: 'Sequence',
+        src: '../../public/img/sequence.png',
+        allow: "fullscreen; clipboard-read;",
+        allowApi: !0,
+        position: "center",
+      })
+    }
+  })
+}
+//Variable if player has obtained the sequence
+WA.player.state.onVariableChange('sequenceObtained').subscribe(() => {
+  if (WA.player.state['sequenceObtained'] != null && WA.player.state['sequenceObtained'] == true)
+  {
+    WA.ui.actionBar.addButton({
+      id: 'sequence-btn',
+      label: 'Sequence',
+      callback: (event) => {
+        WA.ui.modal.openModal({
+          title: 'Sequence',
+          src: '../../public/img/sequence.png',
+          allow: "fullscreen; clipboard-read;",
+          allowApi: !0,
+          position: "center",
+        })
+      }
+    });
+  }
+})
 
 let Arnaud = new InteractAction(
   "Step4bis/Arnaud",
