@@ -1291,3 +1291,5 @@ let Arnaud = new InteractAction(
   "PNJ",
   "Arnaud"
 );
+
+console.log('VERSION 4.0');
