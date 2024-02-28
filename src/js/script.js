@@ -1148,99 +1148,17 @@ document.addEventListener('DOMContentLoaded', () => {
     "Formulaire_final"
   );
   console.log("Sequence obtained AFTER DOM :", WA.player.state['sequenceObtained']);
-});
-
-
-//Step 4 bis
-
-let Didier = new InteractAction(
-  "Step4bis/Didier",
-  "Appuyez sur espace pour parler à Didier !",
-  [
-    "Excellent travail ! Vous avez vraiment le sens du devoir.",
-    "Vous avez vraiment sauvé la mise. En signe de ma gratitude, n'hésitez pas à prendre l'un des artefacts à l'intérieur du coffre. Considérez-le comme une récompense pour vos services."
-  ],
-  [
-    "Bonjour, aventurier. J'ai besoin de votre aide. Mon coffre a été volé, et je suis sûr que ce fourbe en est responsable.",
-    "Nous avons eu une dispute récente, et il a juré de se venger. Aujourd'hui, je me suis rendu compte que la clé de mon coffre avait disparu. Il doit l'avoir prise pour me nuire.",
-    "À l'intérieur se trouvent des artefacts rares que j'ai collectés au fil des ans. Ils ont une grande valeur pour moi, et je ne peux pas laisser ce vaurien s'en tirer ainsi.",
-    "Trouvez cette clé et ramenez-la-moi, s'il vous plaît."
-  ],
-  "DidierText",
-  () => {
-    console.log("KEY: ", WA.player.state["chestDidierKey"]);
-    if (WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true
-        && WA.player.state["chestDidierKey"] != null && WA.player.state["chestDidierKey"] == true) 
-    {
-      WA.player.state["allowOpenChest"] = true;
-      return true;
-    }
-    else {
-      WA.player.state["startSideQuestStep4"] = true;
-      console.log("Player must find the key first");
-      return false;
-    }
-  },
-  "interact",
-  "PNJ",
-  "Didier"
-);
-
-
-let chestDidier = new InteractAction(
-  "Step4bis/ChestDidier",
-  "Appuyez sur espace pour ouvrir le coffre !",
-  [
-    "Vous avez récupéré une mystérieuse séquence !",
-    "Gardez-la précieusement, elle vous servira pour les prochaines quêtes"
-  ],
-  ["Vous n'avez pas l'autorisation d'ouvrir le coffre !"],
-  "ChestDidierText",
-  () => {
-    if (WA.player.state["allowOpenChest"] == true ) {
-      console.log('CHECK SEQUENCE CHEST :', WA.player.state['sequenceObtained'])
-      createVariableWA("sequenceObtained");
-      return true;
-    }
-    else {
-      return false;
-    }
-  },
-  "interact",
-  "Object",
-  "Object_sequence"
-);
-
-WA.onInit().then(() => {
-  console.log("Sequence obtained :", WA.player.state['sequenceObtained']);
-  if (WA.player.state['sequenceObtained'] != null && WA.player.state['sequenceObtained'] == true)
-  {
-    WA.ui.actionBar.addButton({
-      id: 'sequence-btn',
-      label: 'Carte Secrète',
-      callback: (event) => {
-        WA.player.state['sequenceButtonDisplayed'] = true;
-        WA.ui.modal.openModal({
-          title: 'Sequence',
-          src: 'https://brainsonic.github.io/UIMM-WA-Extras/sequence.html',
-          allow: "fullscreen; clipboard-read;",
-          allowApi: !0,
-          position: "center",
-        })
-      }
-    })
-  }
-
-  //Variable if player has obtained the sequence
-  WA.player.state.onVariableChange('sequenceObtained').subscribe(() => {
-    if (WA.player.state['sequenceObtained'] != null && WA.player.state['sequenceObtained'] == true
-      && WA.player.state['sequenceButtonDisplayed'] != true)
+  //Step 4 bis
+  //Button for the Secret Card
+  WA.onInit().then(() => {
+    console.log("Sequence obtained :", WA.player.state['sequenceObtained']);
+    if (WA.player.state['sequenceObtained'] != null && WA.player.state['sequenceObtained'] == true)
     {
       WA.ui.actionBar.addButton({
         id: 'sequence-btn',
-        label: 'Sequence',
+        label: 'Carte Secrète',
         callback: (event) => {
-          createVariableWA("sequenceButtonDisplayed");
+          WA.player.state['sequenceButtonDisplayed'] = true;
           WA.ui.modal.openModal({
             title: 'Sequence',
             src: 'https://brainsonic.github.io/UIMM-WA-Extras/sequence.html',
@@ -1249,46 +1167,126 @@ WA.onInit().then(() => {
             position: "center",
           })
         }
-      });
+      })
     }
-  })
+
+    //Variable if player has obtained the sequence
+    WA.player.state.onVariableChange('sequenceObtained').subscribe(() => {
+      if (WA.player.state['sequenceObtained'] != null && WA.player.state['sequenceObtained'] == true
+        && WA.player.state['sequenceButtonDisplayed'] != true)
+      {
+        WA.ui.actionBar.addButton({
+          id: 'sequence-btn',
+          label: 'Carte Secrète',
+          callback: (event) => {
+            createVariableWA("sequenceButtonDisplayed");
+            WA.ui.modal.openModal({
+              title: 'Sequence',
+              src: 'https://brainsonic.github.io/UIMM-WA-Extras/sequence.html',
+              allow: "fullscreen; clipboard-read;",
+              allowApi: !0,
+              position: "center",
+            })
+          }
+        });
+      }
+    })
+  });
+
+  let Didier = new InteractAction(
+    "Step4bis/Didier",
+    "Appuyez sur espace pour parler à Didier !",
+    [
+      "Excellent travail ! Vous avez vraiment le sens du devoir.",
+      "Vous avez vraiment sauvé la mise. En signe de ma gratitude, n'hésitez pas à prendre l'un des artefacts à l'intérieur du coffre. Considérez-le comme une récompense pour vos services."
+    ],
+    [
+      "Bonjour, aventurier. J'ai besoin de votre aide. Mon coffre a été volé, et je suis sûr que ce fourbe en est responsable.",
+      "Nous avons eu une dispute récente, et il a juré de se venger. Aujourd'hui, je me suis rendu compte que la clé de mon coffre avait disparu. Il doit l'avoir prise pour me nuire.",
+      "À l'intérieur se trouvent des artefacts rares que j'ai collectés au fil des ans. Ils ont une grande valeur pour moi, et je ne peux pas laisser ce vaurien s'en tirer ainsi.",
+      "Trouvez cette clé et ramenez-la-moi, s'il vous plaît."
+    ],
+    "DidierText",
+    () => {
+      console.log("KEY: ", WA.player.state["chestDidierKey"]);
+      if (WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true
+          && WA.player.state["chestDidierKey"] != null && WA.player.state["chestDidierKey"] == true) 
+      {
+        WA.player.state["allowOpenChest"] = true;
+        return true;
+      }
+      else {
+        WA.player.state["startSideQuestStep4"] = true;
+        console.log("Player must find the key first");
+        return false;
+      }
+    },
+    "interact",
+    "PNJ",
+    "Didier"
+  );
+
+
+  let chestDidier = new InteractAction(
+    "Step4bis/ChestDidier",
+    "Appuyez sur espace pour ouvrir le coffre !",
+    [
+      "Vous avez récupéré une mystérieuse séquence !",
+      "Gardez-la précieusement, elle vous servira pour les prochaines quêtes"
+    ],
+    ["Vous n'avez pas l'autorisation d'ouvrir le coffre !"],
+    "ChestDidierText",
+    () => {
+      if (WA.player.state["allowOpenChest"] == true ) {
+        console.log('CHECK SEQUENCE CHEST :', WA.player.state['sequenceObtained'])
+        createVariableWA("sequenceObtained");
+        return true;
+      }
+      else {
+        return false;
+      }
+    },
+    "interact",
+    "Object",
+    "Object_sequence"
+  );
+
+  let Arnaud = new InteractAction(
+    "Step4bis/Arnaud",
+    "Appuyez sur espace pour parler à Arnaud !",
+    [
+      "Que me veux-tu ?",
+      "Arnaud semble un peu nerveux, mais essaie de paraître décontracté.",
+      "Cherches-tu quelque chose en particulier, ou c'est juste une visite impromptue ?",
+      "Vous remarquez que Arnaud évite le regard et semble mal à l'aise.",
+      "Bon, ok, j'avoue. J'ai pris la clé du coffre de l'autre gars.",
+      "J'étais fâché, tu vois. Mais maintenant que tu es là, je suppose que tu veux la clé, n'est-ce pas ?",
+      "Tiens, prends-la. Je ne veux pas de problèmes.",
+      "Vous avez récupérez la clef, allez parler à Didier",
+    ],
+    [
+      "Cette chaise est vraiment confortable !",
+      "Tu cherches quelques choses ?"
+    ],
+    "ArnaudText",
+    () => {
+      if (WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true 
+      && WA.player.state["TalkHint_1"] != null && WA.player.state["TalkHint_1"] == true
+      && WA.player.state["TalkHint_2"] != null && WA.player.state["TalkHint_2"] == true
+      && WA.player.state["TalkHint_3"] != null && WA.player.state["TalkHint_3"] == true) {
+        
+        //Variable pour revenir au dialogue de départ quand arnaud a été démasqué
+        createVariableWA("chestDidierKey");
+        return true;
+      }
+      else {
+        return false;
+      }
+    },
+    "interact",
+    "PNJ",
+    "Arnaud"
+  );
 });
 
-let Arnaud = new InteractAction(
-  "Step4bis/Arnaud",
-  "Appuyez sur espace pour parler à Arnaud !",
-  [
-    "Que me veux-tu ?",
-    "Arnaud semble un peu nerveux, mais essaie de paraître décontracté.",
-    "Cherches-tu quelque chose en particulier, ou c'est juste une visite impromptue ?",
-    "Vous remarquez que Arnaud évite le regard et semble mal à l'aise.",
-    "Bon, ok, j'avoue. J'ai pris la clé du coffre de l'autre gars.",
-    "J'étais fâché, tu vois. Mais maintenant que tu es là, je suppose que tu veux la clé, n'est-ce pas ?",
-    "Tiens, prends-la. Je ne veux pas de problèmes.",
-    "Vous avez récupérez la clef, allez parler à Didier",
-  ],
-  [
-    "Cette chaise est vraiment confortable !",
-    "Tu cherches quelques choses ?"
-  ],
-  "ArnaudText",
-  () => {
-    if (WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true 
-    && WA.player.state["TalkHint_1"] != null && WA.player.state["TalkHint_1"] == true
-    && WA.player.state["TalkHint_2"] != null && WA.player.state["TalkHint_2"] == true
-    && WA.player.state["TalkHint_3"] != null && WA.player.state["TalkHint_3"] == true) {
-      
-      //Variable pour revenir au dialogue de départ quand arnaud a été démasqué
-      createVariableWA("chestDidierKey");
-      return true;
-    }
-    else {
-      return false;
-    }
-  },
-  "interact",
-  "PNJ",
-  "Arnaud"
-);
-
-console.log('VERSION 4.2');
+console.log('VERSION 4.3');
