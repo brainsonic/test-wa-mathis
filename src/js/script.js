@@ -832,7 +832,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // END INTERACTIONS DIVERSES ///////////////////////////////////////////////
   
   //Phase 3 Item and hidden layer
-  console.log("CACACACA949494");
   //TRAPPED ROOM STEP 2
   /**
    * Function to add a trap to a layer
@@ -864,7 +863,6 @@ document.addEventListener('DOMContentLoaded', () => {
         var variable = "TalkToYumiTrappedRoom";
         if (WA.player.state[variable] == null)
         {
-          console.log('VARIABLE YUMMI');
           WA.player.state.saveVariable(variable, true, {
             public: true,
             persist: true,
@@ -915,12 +913,10 @@ document.addEventListener('DOMContentLoaded', () => {
           ttl: 720 * 3600,
           scope: "world"
         });
-        console.log('ACCESS STEP 3', WA.player.state["cardAccessStep3"]);
         return true;
       }
       else
       {
-        console.log('KO_2');
         return false;
       }
     },
@@ -999,10 +995,12 @@ document.addEventListener('DOMContentLoaded', () => {
     ["Vous devez rassemblé les 4 indices avant de pouvoir d'ouvrir la trappe"],
     'trapDoorText',
     () => {
+      /*
       console.log("Indice : ", WA.player.state["cafetHint"]);
       console.log("Indice : ", WA.player.state["chestHint"]);
       console.log("Indice : ", WA.player.state["coatRackHint"]);
       console.log("Indice : ", WA.player.state["binHint"]);
+      */
       if (WA.player.state["cafetHint"] != null && WA.player.state["cafetHint"] == true
         && WA.player.state["chestHint"] != null && WA.player.state["chestHint"] == true
         && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
@@ -1021,7 +1019,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       else
       {
-        console.log('KO_2');
         return false;
       }
     },
@@ -1147,11 +1144,9 @@ document.addEventListener('DOMContentLoaded', () => {
     "Form",
     "Formulaire_final"
   );
-  console.log("Sequence obtained AFTER DOM :", WA.player.state['sequenceObtained']);
   //Step 4 bis
   //Button for the Secret Card
   WA.onInit().then(() => {
-    console.log("Sequence obtained :", WA.player.state['sequenceObtained']);
     if (WA.player.state['sequenceObtained'] != null && WA.player.state['sequenceObtained'] == true)
     {
       WA.ui.actionBar.addButton({
@@ -1208,7 +1203,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ],
     "DidierText",
     () => {
-      console.log("KEY: ", WA.player.state["chestDidierKey"]);
       if (WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true
           && WA.player.state["chestDidierKey"] != null && WA.player.state["chestDidierKey"] == true) 
       {
@@ -1217,7 +1211,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       else {
         WA.player.state["startSideQuestStep4"] = true;
-        console.log("Player must find the key first");
         return false;
       }
     },
@@ -1238,7 +1231,6 @@ document.addEventListener('DOMContentLoaded', () => {
     "ChestDidierText",
     () => {
       if (WA.player.state["allowOpenChest"] == true ) {
-        console.log('CHECK SEQUENCE CHEST :', WA.player.state['sequenceObtained'])
         createVariableWA("sequenceObtained");
         return true;
       }
@@ -1259,10 +1251,10 @@ document.addEventListener('DOMContentLoaded', () => {
       "Arnaud semble un peu nerveux, mais essaie de paraître décontracté.",
       "Cherches-tu quelque chose en particulier, ou c'est juste une visite impromptue ?",
       "Vous remarquez que Arnaud évite le regard et semble mal à l'aise.",
-      "Bon, ok, j'avoue. J'ai pris la clé du coffre de l'autre gars.",
+      "Bon, ok, j'avoue. J'ai pris la clé du coffre",
       "J'étais fâché, tu vois. Mais maintenant que tu es là, je suppose que tu veux la clé, n'est-ce pas ?",
       "Tiens, prends-la. Je ne veux pas de problèmes.",
-      "Vous avez récupérez la clef, allez parler à Didier",
+      "Vous avez récupéré la clef, allez parler à Didier",
     ],
     [
       "Cette chaise est vraiment confortable !",
@@ -1270,12 +1262,14 @@ document.addEventListener('DOMContentLoaded', () => {
     ],
     "ArnaudText",
     () => {
-      if (WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true 
+      if (WA.player.state["arnaudRevealed"] != true
+      && WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true 
       && WA.player.state["TalkHint_1"] != null && WA.player.state["TalkHint_1"] == true
       && WA.player.state["TalkHint_2"] != null && WA.player.state["TalkHint_2"] == true
       && WA.player.state["TalkHint_3"] != null && WA.player.state["TalkHint_3"] == true) {
         
         //Variable pour revenir au dialogue de départ quand arnaud a été démasqué
+        createVariableWA('arnaudRevealed');
         createVariableWA("chestDidierKey");
         return true;
       }
@@ -1289,4 +1283,5 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 });
 
-console.log('VERSION 4.3');
+//Log to check in the WA that the script has passed
+console.log('VERSION 4.4');
