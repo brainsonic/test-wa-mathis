@@ -1,6 +1,6 @@
 // Chargement de la lib JS de WA
 import {} from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
-import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, ItemOnLayer, ItemPickUpOnCondition, PopUpVideoAction, onTpCondition, tutorial, onEnterAuthorization, getVariableOnZone } from './class';
+import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, ItemOnLayer, ItemPickUpOnCondition, PopUpVideoAction, onTpCondition, tutorial, onEnterAuthorization, getVariableOnZone, createVariableWA} from './class';
 
 // VARIABLES ///////////////////////////////////////////////
 const tutorialLink = "https://64ix.github.io/WA-Edited-Tutorial/tutorial.html";
@@ -1197,7 +1197,7 @@ let chestDidier = new InteractAction(
   "ChestDidierText",
   () => {
     if (WA.player.state["allowOpenChest"] == true ) {
-      WA.player.state[ "sequenceObtained" ] = true;
+      createVariableWA("sequenceObtained");
       return true;
     }
     else {
@@ -1209,6 +1209,7 @@ let chestDidier = new InteractAction(
   "Object_sequence"
 );
 
+console.log("Sequence obtained :", WA.player.state['sequenceObtained']);
 if (WA.player.state['sequenceObtained'] != null && WA.player.state['sequenceObtained'] == true)
 {
   WA.ui.actionBar.addButton({
@@ -1236,7 +1237,8 @@ WA.player.state.onVariableChange('sequenceObtained').subscribe(() => {
       id: 'sequence-btn',
       label: 'Sequence',
       callback: (event) => {
-        WA.player.state['sequenceButtonDisplayed'] = true;
+
+        createVariableWA("sequenceButtonDisplayed");
         WA.ui.modal.openModal({
           title: 'Sequence',
           src: 'https://brainsonic.github.io/UIMM-WA-Extras/sequence.html',
@@ -1274,7 +1276,7 @@ let Arnaud = new InteractAction(
     && WA.player.state["TalkHint_3"] != null && WA.player.state["TalkHint_3"] == true) {
       
       //Variable pour revenir au dialogue de départ quand arnaud a été démasqué
-      WA.player.state["chestDidierKey"] = true;
+      createVariableWA("chestDidierKey");
       return true;
     }
     else {

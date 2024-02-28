@@ -551,6 +551,19 @@ function getVariableOnZone(_layer, _variables) {
   });
 }
 
+/**
+ * Function to create variable in workadventurer with persist for 1 months
+ * @param {string} variable 
+ */
+function createVariableWA(variable) {
+  WA.player.state.saveVariable(variable, true, {
+    public: true,
+    persist: true,
+    ttl: 720 * 3600,
+    scope: "world"
+  });
+}
+
 export {
     Interaction,
     InteractAction,
@@ -565,5 +578,6 @@ export {
     onEnterAuthorization,
     onTpCondition,
     getVariableOnZone,
+    createVariableWA,
 };
   // END CLASS 
