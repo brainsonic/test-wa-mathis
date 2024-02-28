@@ -446,7 +446,6 @@ class ItemPickUpOnCondition extends ItemOnLayer{
     }  
 }
 
-const tutorialLink = "https://64ix.github.io/WA-Edited-Tutorial/tutorial.html";
 //FUNCTION
 /**
  * Function to have the tutorial when appearing in the map
@@ -454,7 +453,7 @@ const tutorialLink = "https://64ix.github.io/WA-Edited-Tutorial/tutorial.html";
 function tutorial() {
   WA.ui.modal.openModal({
     title: "Tutorial",
-    src: tutorialLink,
+    src: "https://64ix.github.io/WA-Edited-Tutorial/tutorial.html",
     allow: "fullscreen; clipboard-read; clipboard-write",
     allowApi: !0,
     position: "right",
