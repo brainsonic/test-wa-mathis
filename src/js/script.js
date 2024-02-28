@@ -1286,4 +1286,4 @@ let Arnaud = new InteractAction(
   "Arnaud"
 );
 
-console.log('VERSION 4.1');
+console.log('VERSION 4.2');
