@@ -1147,6 +1147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "Form",
     "Formulaire_final"
   );
+  console.log("Sequence obtained AFTER DOM :", WA.player.state['sequenceObtained']);
 });
 
 
@@ -1214,7 +1215,7 @@ if (WA.player.state['sequenceObtained'] != null && WA.player.state['sequenceObta
 {
   WA.ui.actionBar.addButton({
     id: 'sequence-btn',
-    label: 'Sequence',
+    label: 'Carte Secrète',
     callback: (event) => {
       WA.player.state['sequenceButtonDisplayed'] = true;
       WA.ui.modal.openModal({
