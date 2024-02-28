@@ -1198,6 +1198,7 @@ let chestDidier = new InteractAction(
   "ChestDidierText",
   () => {
     if (WA.player.state["allowOpenChest"] == true ) {
+      console.log('CHECK SEQUENCE CHEST :', WA.player.state['sequenceObtained'])
       createVariableWA("sequenceObtained");
       return true;
     }
@@ -1210,36 +1211,15 @@ let chestDidier = new InteractAction(
   "Object_sequence"
 );
 
-console.log("Sequence obtained :", WA.player.state['sequenceObtained']);
-if (WA.player.state['sequenceObtained'] != null && WA.player.state['sequenceObtained'] == true)
-{
-  WA.ui.actionBar.addButton({
-    id: 'sequence-btn',
-    label: 'Carte Secrète',
-    callback: (event) => {
-      WA.player.state['sequenceButtonDisplayed'] = true;
-      WA.ui.modal.openModal({
-        title: 'Sequence',
-        src: 'https://brainsonic.github.io/UIMM-WA-Extras/sequence.html',
-        allow: "fullscreen; clipboard-read;",
-        allowApi: !0,
-        position: "center",
-      })
-    }
-  })
-}
-
-//Variable if player has obtained the sequence
-WA.player.state.onVariableChange('sequenceObtained').subscribe(() => {
-  if (WA.player.state['sequenceObtained'] != null && WA.player.state['sequenceObtained'] == true
-    && WA.player.state['sequenceButtonDisplayed'] != true)
+WA.onInit().then(() => {
+  console.log("Sequence obtained :", WA.player.state['sequenceObtained']);
+  if (WA.player.state['sequenceObtained'] != null && WA.player.state['sequenceObtained'] == true)
   {
     WA.ui.actionBar.addButton({
       id: 'sequence-btn',
-      label: 'Sequence',
+      label: 'Carte Secrète',
       callback: (event) => {
-
-        createVariableWA("sequenceButtonDisplayed");
+        WA.player.state['sequenceButtonDisplayed'] = true;
         WA.ui.modal.openModal({
           title: 'Sequence',
           src: 'https://brainsonic.github.io/UIMM-WA-Extras/sequence.html',
@@ -1248,9 +1228,31 @@ WA.player.state.onVariableChange('sequenceObtained').subscribe(() => {
           position: "center",
         })
       }
-    });
+    })
   }
-})
+
+  //Variable if player has obtained the sequence
+  WA.player.state.onVariableChange('sequenceObtained').subscribe(() => {
+    if (WA.player.state['sequenceObtained'] != null && WA.player.state['sequenceObtained'] == true
+      && WA.player.state['sequenceButtonDisplayed'] != true)
+    {
+      WA.ui.actionBar.addButton({
+        id: 'sequence-btn',
+        label: 'Sequence',
+        callback: (event) => {
+          createVariableWA("sequenceButtonDisplayed");
+          WA.ui.modal.openModal({
+            title: 'Sequence',
+            src: 'https://brainsonic.github.io/UIMM-WA-Extras/sequence.html',
+            allow: "fullscreen; clipboard-read;",
+            allowApi: !0,
+            position: "center",
+          })
+        }
+      });
+    }
+  })
+});
 
 let Arnaud = new InteractAction(
   "Step4bis/Arnaud",
