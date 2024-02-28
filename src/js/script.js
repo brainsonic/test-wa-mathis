@@ -3,7 +3,6 @@ import {} from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, ItemOnLayer, ItemPickUpOnCondition, PopUpVideoAction, onTpCondition, tutorial, onEnterAuthorization, getVariableOnZone } from './class';
 
 // VARIABLES ///////////////////////////////////////////////
-const tutorialLink = "https://64ix.github.io/WA-Edited-Tutorial/tutorial.html";
 const pongLink = "https://64ix.github.io/WA-Edited-Tutorial/pong.html";
 const basketLink =
   "https://64ix.github.io/WA-Edited-Tutorial/shooting-hoops/dist/index.html";
@@ -1216,15 +1215,16 @@ let chestDidier = new InteractAction(
   "Object_sequence"
 );
 
-if (WA.player.state['sequenceObtained'] == null)
+if (WA.player.state['sequenceObtained'] != null && WA.player.state['sequenceObtained'] == true)
 {
   WA.ui.actionBar.addButton({
     id: 'sequence-btn',
     label: 'Sequence',
     callback: (event) => {
+      WA.player.state['sequenceButtonDisplayed'] = true;
       WA.ui.modal.openModal({
         title: 'Sequence',
-        src: '../../public/img/sequence.png',
+        src: 'https://brainsonic.github.io/UIMM-WA-Extras/sequence.html',
         allow: "fullscreen; clipboard-read;",
         allowApi: !0,
         position: "center",
@@ -1232,17 +1232,20 @@ if (WA.player.state['sequenceObtained'] == null)
     }
   })
 }
+
 //Variable if player has obtained the sequence
 WA.player.state.onVariableChange('sequenceObtained').subscribe(() => {
-  if (WA.player.state['sequenceObtained'] != null && WA.player.state['sequenceObtained'] == true)
+  if (WA.player.state['sequenceObtained'] != null && WA.player.state['sequenceObtained'] == true
+    && WA.player.state['sequenceButtonDisplayed'] != true)
   {
     WA.ui.actionBar.addButton({
       id: 'sequence-btn',
       label: 'Sequence',
       callback: (event) => {
+        WA.player.state['sequenceButtonDisplayed'] = true;
         WA.ui.modal.openModal({
           title: 'Sequence',
-          src: '../../public/img/sequence.png',
+          src: 'https://brainsonic.github.io/UIMM-WA-Extras/sequence.html',
           allow: "fullscreen; clipboard-read;",
           allowApi: !0,
           position: "center",

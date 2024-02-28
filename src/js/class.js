@@ -446,7 +446,7 @@ class ItemPickUpOnCondition extends ItemOnLayer{
     }  
 }
 
-
+const tutorialLink = "https://64ix.github.io/WA-Edited-Tutorial/tutorial.html";
 //FUNCTION
 /**
  * Function to have the tutorial when appearing in the map
