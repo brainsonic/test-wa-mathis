@@ -3,21 +3,15 @@ import {} from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, ItemOnLayer, ItemPickUpOnCondition, PopUpVideoAction, onTpCondition, tutorial, onEnterAuthorization, getVariableOnZone } from './class';
 
 // VARIABLES ///////////////////////////////////////////////
+const tutorialLink = "https://64ix.github.io/WA-Edited-Tutorial/tutorial.html";
 const pongLink = "https://64ix.github.io/WA-Edited-Tutorial/pong.html";
-const basketLink =
-  "https://64ix.github.io/WA-Edited-Tutorial/shooting-hoops/dist/index.html";
-const pianoLink =
-  "https://64ix.github.io/WA-Edited-Tutorial/piano/dist/index.html";
-
+const basketLink = "https://64ix.github.io/WA-Edited-Tutorial/shooting-hoops/dist/index.html";
+const pianoLink = "https://64ix.github.io/WA-Edited-Tutorial/piano/dist/index.html";
 const scribbleLink = "https://brainsonic.github.io/WA-Misc-EasterEggs/scribble/index.html";
 const poolLink = "https://brainsonic.github.io/WA-Misc-EasterEggs/pool/index.html";
+const formLink = "https://0eb89b36.sibforms.com/serve/MUIFAAOmzgE4ndFT9kNM-uBs4YlJeU3A1QwPa7YPDBm_4l4UD0FQQoYC0ux_H4XuTeKySpVQcQo2jya0tZpk6_txstHp_WI3cITYRWoILzlf-gvw2SzeYepvtFGVDghH2mm6NG1VZcxRV5fW8C1xa1Gn_UECrK-eMhv0SmFNOVo54fmNEHLNrJIUlBtQw9H96pu0IPmE-xMcxnvn";
 
-const formLink =
-  "https://0eb89b36.sibforms.com/serve/MUIFAAOmzgE4ndFT9kNM-uBs4YlJeU3A1QwPa7YPDBm_4l4UD0FQQoYC0ux_H4XuTeKySpVQcQo2jya0tZpk6_txstHp_WI3cITYRWoILzlf-gvw2SzeYepvtFGVDghH2mm6NG1VZcxRV5fW8C1xa1Gn_UECrK-eMhv0SmFNOVo54fmNEHLNrJIUlBtQw9H96pu0IPmE-xMcxnvn";
-
-const linkChatBotAccueil =
-  "https://chat.csml.dev/s/39iezvakvlqapvdwnakm2gjw6f1czgdp";
-
+const linkChatBotAccueil = "https://chat.csml.dev/s/39iezvakvlqapvdwnakm2gjw6f1czgdp";
 const linkChatBotIngénieure = "https://chat.csml.dev/s/modkshn4koeqaqdjiaj5pa7hfxah6s57";
 const linkVideoJeune1 = "https://www.youtube.com/embed/9QDd6dH0-Xc";
 const linkVideoJeune2 = "https://www.youtube.com/embed/pDMzhgu_Qbo";
@@ -1292,4 +1286,4 @@ let Arnaud = new InteractAction(
   "Arnaud"
 );
 
-console.log('VERSION 4.0');
+console.log('VERSION 4.1');
