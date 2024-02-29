@@ -136,6 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "Voilà pour un petit aperçu de l’industrie marine, tu veux découvrir d’autres industries ?",
     "Alors n’hésite pas à parler aux autres Yumi, bon vent !​",
   ];
+
   const textSkieuse = [
     "Hello !",
     "Vous voulez faire un tour de MoonBike ?",
@@ -146,6 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "Le MoonBike en est un bel exemple ! C’est le premier snowbike 100% électrique du marché : un mode de déplacement beaucoup plus écologique.​",
     "Allez maintenant vous pouvez aller le découvrir, tout schuss.    ",
   ];
+
   const textScientifique = [
     "Bonjour à vous",
     "Je suis la scientifique de la bande et ce que j’adore c’est trouver des solutions pour améliorer la vie de chacun.​",
@@ -168,6 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "Yumi_accueil"
   
   );
+
   let Captain = new Dialog(
     "Pnjs/pnj2",
     "Appuyez sur espace pour discuter avec le Capitaine !",
@@ -177,6 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ",
     "PNJ_Capitaine"
   );
+
   let Skieuse = new Dialog(
     "Pnjs/pnj3",
     "Appuyez sur espace pour discuter avec la Skieuse !",
@@ -196,6 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ",
     "PNJ_Scientifique"
   );
+
   let Ingénieure = new Modal(
     "Pnjs/pnj6",
     "Appuyez sur espace pour discuter avec l'Ingénieure !",
@@ -205,6 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ",
     "PNJ_Ingénieure"
   );
+
   let Moonbike = new PopUpVideo(
     "Pnjs/MoonbikePNJ",
     "Appuyez sur espace pour parler à Anthony !",
@@ -229,6 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ",
     "PNJ_Antonin"
   );
+
   let Jeune2 = new PopUpVideo(
     "Pnjs/Jeune2",
     "Appuyez sur espace pour parler à Killian !",
@@ -241,6 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ",
     "PNJ_Killian"
   );
+
   let Jeune3 = new PopUpVideo(
     "Pnjs/Jeune3",
     "Appuyez sur espace pour parler à Manon !",
@@ -280,6 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "Video",
     "Video_Statue"
   );
+
   //salle vidéo
   let Vidéo = new Modal(
     "Zones/Vidéo",
@@ -301,6 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "Panel",
     "Panneau_Pont"
   );
+
   let PanneauGare = new Dialog(
     "Pnjs/Panneau Gare",
     "Appuyez sur espace pour intéragir avec le panneau !",
@@ -310,6 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "Panel",
     "Panneau_Gare"
   );
+
   let PanneauChemin = new Dialog(
     "Pnjs/Panneau Chemin",
     "Appuyez sur espace pour intéragir avec le panneau !",
@@ -319,6 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "Panel",
     "Panneau_Chemin"
   );
+
   let PanneauQuai = new Dialog(
     "Pnjs/Panneau Quai",
     "Appuyez sur espace pour intéragir avec le panneau !",
@@ -370,6 +382,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "Game",
     "Game_Pong"
   );
+
   let Basket = new Modal(
     "Pnjs/Basket",
     "Appuyez sur espace pour jouer au Basket !",
@@ -379,6 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "Game",
     "Game_Basket"
   );
+
   let Piano = new Modal(
     "Pnjs/Piano",
     "Appuyez sur espace pour jouer du piano !",
@@ -397,7 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "interact",
     "Game",
     "Game_Scribble"
-  )
+  );
   
   let Pool = new Modal(
     "Pnjs/ShowRoom/Pool",
@@ -407,7 +421,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "interact",
     "Game",
     "Game_Pool"
-  )
+  );
   
   //Phase 2
   
@@ -462,7 +476,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "interact",
     "PNJ",
     "PNJ_Alexandra"
-  )
+  );
   
   let ApprentiRobotVideo = new PopUpVideo(
     "Pnjs/MetierRoom/ApprentiRobot",
@@ -475,7 +489,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "interact",
     "Video",
     "Video_Thomas"
-  )
+  );
   
   let ApprentiChaudronniereVideo = new PopUpVideo(
     "Pnjs/MetierRoom/ApprentiChaudron",
@@ -514,23 +528,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ",
     "PNJ_Anais"
   );
-  
-  /*
-  let Liebherr_aerospace = new Modal(
-    "Pnjs/ShowRoom/Liebherr_aerospace",
-    "Appuyez sur espace pour regarder la vidéo !",
-    Liebherr_aerospaceVideoLink,
-    "center",
-  );
-  
-  let Otech = new Modal(
-    "Pnjs/ShowRoom/Otech",
-    "Appuyez sur espace pour regarder la vidéo !",
-    OtechVideoLink,
-    "center",
-  );
-  */
-  
+    
   let DessinateurIndu = new PopUpVideo(
     "Pnjs/ShowRoom/DessinateurIndu",
     "Appuyez sur espace pour regarder la vidéo !",
@@ -634,21 +632,6 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   //ParkInside
-  
-  /*
-  let Doigby = new PopUpVideo(
-    "Pnjs/ParkInside/Doigby",
-    "Appuyez sur espace pour parler à Doigby !",
-    [
-      "Hello, moi c’est Doigby ! Je suis vidéaste et Yumi m’a mis au défi de construire une fusée dans Minecraft avec l'aide des internautes. Pensez-vous que j'ai réussi ? Je vous laisse la surprise...",
-    ],
-    "Doigby",
-    doigbyVideoLink,
-    "interact",
-    "PNJ",
-    "PNJ_Doigby",
-  );
-  */
   
   let Maeva = new PopUpVideoAction(
     "Pnjs/ParkInside/Maeva",
@@ -831,29 +814,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // END INTERACTIONS DIVERSES ///////////////////////////////////////////////
   
-  //Phase 3 Item and hidden layer
-  //TRAPPED ROOM STEP 2
-  /**
-   * Function to add a trap to a layer
-   * @param {string} _layer 
-   */
-  function trapLayer(_layer)
-  {
-    WA.room.onEnterLayer(_layer).subscribe(() => {
-      WA.room.showLayer(_layer);
-      WA.onInit().then(() => {
-        WA.nav.goToRoom('#Depart');
-      });
-    });
-  }
-  
-  let nb_hole = 23;
-  for (let index = 1; index < nb_hole + 1; index++)
-  {
-    trapLayer('HideTile/TrappedRoom/Hole_' + index); 
-  }
-  
-  
+  /* ----- STEP 2 ----- */
+
   let YumiTrappedBot = new ModalAction(
     "Pnjs/TrappedRoom/YumiDepart_1",
     "Appuyez sur espace pour discuter avec Yumi !",
@@ -924,9 +886,30 @@ document.addEventListener('DOMContentLoaded', () => {
     "InteractAction",
     "Object_doorTrappedRoom"
   );
-  
-  // ---- Lab de l'industrie  STEP 3 ---- 
-  onEnterAuthorization('Zones/ZoneStep3', ['cardAccessStep3'], 'EscapeGameText');
+
+  /**
+   * Function to add a trap to a layer
+   * @param {string} _layer 
+   */
+    function trapLayer(_layer)
+    {
+      WA.room.onEnterLayer(_layer).subscribe(() => {
+        WA.room.showLayer(_layer);
+        WA.onInit().then(() => {
+          WA.nav.goToRoom('#Depart');
+        });
+      });
+    }
+    
+    let nb_hole = 23;
+    for (let index = 1; index < nb_hole + 1; index++)
+    {
+      trapLayer('HideTile/TrappedRoom/Hole_' + index); 
+    }
+
+
+
+  /* ----- STEP 3 ----- */
   
   let coatRackHint = new ItemOnLayer(
     "Items/LabIndustry/CoatRackHint",
@@ -1026,8 +1009,9 @@ document.addEventListener('DOMContentLoaded', () => {
     "InteractAction",
     "Object_trapDoor"
   );
+  onEnterAuthorization('Zones/ZoneStep3', ['cardAccessStep3'], 'EscapeGameText');
   
-  //STEP 4
+  /* ----- STEP 4 ----- */
   
   const zoneStep4 = 'Zones/ZoneStep4';
   const zoneFirstTP = 'Step4/FirstTP/ZoneFirstTP';
@@ -1061,71 +1045,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ",
     "PNJ_YumiStep4",
   );
-  
-  onEnterAuthorization(zoneStep4, ['cardAccessStep4'], 'EscapeGameText');
-  getVariableOnZone('Step4/TpDepart', ['cardAccessZoneFirstTP']);
-  
-  onTpCondition('Step4/TpDepart', '#TpDepart_1', () => {
-    return WA.player.state['cardAccessStep4'] != null && WA.player.state['TalkToYumiStep4'] != null ? true : false},
-    'tpDepartStep4', 'Vous devez parler à Yumi');
-  
-  
-  //Zone de TP_1
-  onEnterAuthorization(zoneFirstTP, ['cardAccessZoneFirstTP'], 'EscapeGameText');
-  getVariableOnZone('Step4/FirstTP/Tp1-3', ['cardAccessZoneSecondTP']);
-  
-  onTpCondition('Step4/FirstTP/Tp1-1', '#Reset', () => { return true }, 'tpDepart1Step4');
-  onTpCondition('Step4/FirstTP/Tp1-2', '#Reset', () => { return true }, 'tpDepart1Step4');
-  onTpCondition('Step4/FirstTP/Tp1-3', '#TpDepart_2', () => {
-    return WA.player.state['cardAccessZoneFirstTP'] != null ? true : false;
-  }, 'tpDepart1Step4');
-  
-  //Zone de TP_2
-  onEnterAuthorization(zoneSecondTP, ['cardAccessZoneSecondTP'], 'EscapeGameText');
-  getVariableOnZone('Step4/SecondTP/Tp2-2', ['cardAccessZoneThirdTP']);
-  
-  onTpCondition('Step4/SecondTP/Tp2-1', '#Reset', () => { return true }, 'tpDepart2Step4');
-  onTpCondition('Step4/SecondTP/Tp2-2', '#TpDepart_3', () => {
-    return WA.player.state['cardAccessZoneSecondTP'] != null ? true : false;
-  }, 'tpDepart2Step4');
-  onTpCondition('Step4/SecondTP/Tp2-3', '#Reset', () => { return true }, 'tpDepart2Step4');
-  
-  //Zone de TP_3
-  onEnterAuthorization(zoneThirdTP, ['cardAccessZoneThirdTP'], 'EscapeGameText');
-  getVariableOnZone('Step4/ThirdTP/Tp3-1', ['cardAccessZoneFourthTP']);
-  
-  onTpCondition('Step4/ThirdTP/Tp3-1', '#TpDepart_4', () => {
-    return WA.player.state['cardAccessZoneThirdTP'] != null ? true : false;
-  }, 'tpDepart3Step4');
-  onTpCondition('Step4/ThirdTP/Tp3-2', '#Reset', () => { return true }, 'tpDepart3Step4');
-  onTpCondition('Step4/ThirdTP/Tp3-3', '#Reset', () => { return true }, 'tpDepart3Step4');
-  
-  //Zone de TP_4
-  onEnterAuthorization(zoneFourthTP, ['cardAccessZoneFourthTP'], 'EscapeGameText');
-  getVariableOnZone('Step4/FourthTP/Tp4-2', ['cardAccessZoneFifthTP']);
-  
-  onTpCondition('Step4/FourthTP/Tp4-1', '#Reset', () => { return true }, 'tpDepart2Step4');
-  onTpCondition('Step4/FourthTP/Tp4-2', '#TpDepart_5', () => {
-    return WA.player.state['cardAccessZoneFourthTP'] != null ? true : false;
-  }, 'tpDepart2Step4');
-  onTpCondition('Step4/FourthTP/Tp4-3', '#Reset', () => { return true }, 'tpDepart2Step4');
-  
-  //Zone de TP_5
-  onEnterAuthorization(zoneFifthTP, ['cardAccessZoneFifthTP'], 'EscapeGameText');
-  getVariableOnZone('Step4/FifthTP/Tp5-3', ['cardAccessZoneFinalStep4']);
-  
-  onTpCondition('Step4/FifthTP/Tp5-1', '#Reset', () => { return true }, 'tpDepart2Step5');
-  onTpCondition('Step4/FifthTP/Tp5-2', '#Reset', () => { return true }, 'tpDepart2Step5');
-  onTpCondition('Step4/FifthTP/Tp5-3', '#TpArrive', () => {
-    return WA.player.state['cardAccessZoneFifthTP'] != null ? true : false;
-  }, 'tpDepart2Step5');
-  onTpCondition('Step4/FifthTP/Tp5-4', '#Reset', () => { return true }, 'tpDepart2Step5');
-  
-  
-  //Zone d'arrivée
-  onEnterAuthorization(zoneFinalStep4, ['cardAccessZoneFinalStep4'], 'EscapeGameText');
-  onTpCondition('Step4/Last/TpBack', '#start', () => { return true }, 'tpBackFinal');
-  
+
   let redButtonForm = new PopUpVideoAction(
     "Step4/Last/Redbutton",
     "Appuyez sur espace pour ouvrir le formulaire !",
@@ -1144,49 +1064,83 @@ document.addEventListener('DOMContentLoaded', () => {
     "Form",
     "Formulaire_final"
   );
-  //Step 4 bis
-  //Button for the Secret Card
-  WA.onInit().then(() => {
-    if (WA.player.state['sequenceObtained'] != null && WA.player.state['sequenceObtained'] == true)
-    {
-      WA.ui.actionBar.addButton({
-        id: 'sequence-btn',
-        label: 'Carte Secrète',
-        callback: (event) => {
-          WA.player.state['sequenceButtonDisplayed'] = true;
-          WA.ui.modal.openModal({
-            title: 'Sequence',
-            src: 'https://brainsonic.github.io/UIMM-WA-Extras/sequence.html',
-            allow: "fullscreen; clipboard-read;",
-            allowApi: !0,
-            position: "center",
-          })
-        }
-      })
-    }
+  /*
+  * The code below is to check if the player has the access to certain zone of the TP
+  * It permits to avoid player to cheat by using the URL to access in a certain zone
+  */
 
-    //Variable if player has obtained the sequence
-    WA.player.state.onVariableChange('sequenceObtained').subscribe(() => {
-      if (WA.player.state['sequenceObtained'] != null && WA.player.state['sequenceObtained'] == true
-        && WA.player.state['sequenceButtonDisplayed'] != true)
-      {
-        WA.ui.actionBar.addButton({
-          id: 'sequence-btn',
-          label: 'Carte Secrète',
-          callback: (event) => {
-            createVariableWA("sequenceButtonDisplayed");
-            WA.ui.modal.openModal({
-              title: 'Sequence',
-              src: 'https://brainsonic.github.io/UIMM-WA-Extras/sequence.html',
-              allow: "fullscreen; clipboard-read;",
-              allowApi: !0,
-              position: "center",
-            })
-          }
-        });
-      }
-    })
-  });
+  //Zone de Départ
+  onEnterAuthorization(zoneStep4, ['cardAccessStep4'], 'EscapeGameText');
+  getVariableOnZone('Step4/TpDepart', ['cardAccessZoneFirstTP']);
+  onTpCondition('Step4/TpDepart', '#TpDepart_1', () => {
+    return WA.player.state['cardAccessStep4'] != null && WA.player.state['TalkToYumiStep4'] != null ? true : false},
+    'tpDepartStep4', 'Vous devez parler à Yumi');
+  
+  
+  //Zone de TP_1
+  onEnterAuthorization(zoneFirstTP, ['cardAccessZoneFirstTP'], 'EscapeGameText');
+  getVariableOnZone('Step4/FirstTP/Tp1-3', ['cardAccessZoneSecondTP']);
+  onTpCondition('Step4/FirstTP/Tp1-1', '#Reset', () => { return true }, 'tpDepart1Step4');
+  onTpCondition('Step4/FirstTP/Tp1-2', '#Reset', () => { return true }, 'tpDepart1Step4');
+  onTpCondition('Step4/FirstTP/Tp1-3', '#TpDepart_2', () => {
+    return WA.player.state['cardAccessZoneFirstTP'] != null ? true : false;
+  }, 'tpDepart1Step4');
+
+
+
+  //Zone de TP_2
+  onEnterAuthorization(zoneSecondTP, ['cardAccessZoneSecondTP'], 'EscapeGameText');
+  getVariableOnZone('Step4/SecondTP/Tp2-2', ['cardAccessZoneThirdTP']);
+  onTpCondition('Step4/SecondTP/Tp2-1', '#Reset', () => { return true }, 'tpDepart2Step4');
+  onTpCondition('Step4/SecondTP/Tp2-2', '#TpDepart_3', () => {
+    return WA.player.state['cardAccessZoneSecondTP'] != null ? true : false;
+  }, 'tpDepart2Step4');
+  onTpCondition('Step4/SecondTP/Tp2-3', '#Reset', () => { return true }, 'tpDepart2Step4');
+  
+
+
+  //Zone de TP_3
+  onEnterAuthorization(zoneThirdTP, ['cardAccessZoneThirdTP'], 'EscapeGameText');
+  getVariableOnZone('Step4/ThirdTP/Tp3-1', ['cardAccessZoneFourthTP']);
+  onTpCondition('Step4/ThirdTP/Tp3-1', '#TpDepart_4', () => {
+    return WA.player.state['cardAccessZoneThirdTP'] != null ? true : false;
+  }, 'tpDepart3Step4');
+  onTpCondition('Step4/ThirdTP/Tp3-2', '#Reset', () => { return true }, 'tpDepart3Step4');
+  onTpCondition('Step4/ThirdTP/Tp3-3', '#Reset', () => { return true }, 'tpDepart3Step4');
+  
+
+
+  //Zone de TP_4
+  onEnterAuthorization(zoneFourthTP, ['cardAccessZoneFourthTP'], 'EscapeGameText');
+  getVariableOnZone('Step4/FourthTP/Tp4-2', ['cardAccessZoneFifthTP']);
+  onTpCondition('Step4/FourthTP/Tp4-1', '#Reset', () => { return true }, 'tpDepart2Step4');
+  onTpCondition('Step4/FourthTP/Tp4-2', '#TpDepart_5', () => {
+    return WA.player.state['cardAccessZoneFourthTP'] != null ? true : false;
+  }, 'tpDepart2Step4');
+  onTpCondition('Step4/FourthTP/Tp4-3', '#Reset', () => { return true }, 'tpDepart2Step4');
+  
+
+
+  //Zone de TP_5
+  onEnterAuthorization(zoneFifthTP, ['cardAccessZoneFifthTP'], 'EscapeGameText');
+  getVariableOnZone('Step4/FifthTP/Tp5-3', ['cardAccessZoneFinalStep4']);
+  onTpCondition('Step4/FifthTP/Tp5-1', '#Reset', () => { return true }, 'tpDepart2Step5');
+  onTpCondition('Step4/FifthTP/Tp5-2', '#Reset', () => { return true }, 'tpDepart2Step5');
+  onTpCondition('Step4/FifthTP/Tp5-3', '#TpArrive', () => {
+    return WA.player.state['cardAccessZoneFifthTP'] != null ? true : false;
+  }, 'tpDepart2Step5');
+  onTpCondition('Step4/FifthTP/Tp5-4', '#Reset', () => { return true }, 'tpDepart2Step5');
+  
+  
+
+  //Zone d'arrivée
+  onEnterAuthorization(zoneFinalStep4, ['cardAccessZoneFinalStep4'], 'EscapeGameText');
+  onTpCondition('Step4/Last/TpBack', '#start', () => { return true }, 'tpBackFinal');
+  
+
+
+
+  /* ----- Step 4 bis ----- */
 
   let Didier = new InteractAction(
     "Step4bis/Didier",
@@ -1218,7 +1172,6 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ",
     "Didier"
   );
-
 
   let chestDidier = new InteractAction(
     "Step4bis/ChestDidier",
@@ -1281,6 +1234,49 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ",
     "Arnaud"
   );
+
+  WA.onInit().then(() => {
+    if (WA.player.state['sequenceObtained'] != null && WA.player.state['sequenceObtained'] == true)
+    {
+      WA.ui.actionBar.addButton({
+        id: 'sequence-btn',
+        label: 'Carte Secrète',
+        callback: (event) => {
+          WA.player.state['sequenceButtonDisplayed'] = true;
+          WA.ui.modal.openModal({
+            title: 'Sequence',
+            src: 'https://brainsonic.github.io/UIMM-WA-Extras/sequence.html',
+            allow: "fullscreen; clipboard-read;",
+            allowApi: !0,
+            position: "center",
+          })
+        }
+      })
+    }
+
+    //Variable if player has obtained the sequence
+    WA.player.state.onVariableChange('sequenceObtained').subscribe(() => {
+      if (WA.player.state['sequenceObtained'] != null && WA.player.state['sequenceObtained'] == true
+        && WA.player.state['sequenceButtonDisplayed'] != true)
+      {
+        WA.ui.actionBar.addButton({
+          id: 'sequence-btn',
+          label: 'Carte Secrète',
+          callback: (event) => {
+            createVariableWA("sequenceButtonDisplayed");
+            WA.ui.modal.openModal({
+              title: 'Sequence',
+              src: 'https://brainsonic.github.io/UIMM-WA-Extras/sequence.html',
+              allow: "fullscreen; clipboard-read;",
+              allowApi: !0,
+              position: "center",
+            })
+          }
+        });
+      }
+    })
+  });
+
 });
 
 //Log to check in the WA that the script has passed
