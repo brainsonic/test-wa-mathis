@@ -717,15 +717,15 @@ document.addEventListener('DOMContentLoaded', () => {
   
   let HiHacks = new PopUpVideo(
     "Pnjs/LaboRoom/Hihacks_labo",
-    "Appuyez sur espace pour parler à Henry !",
+    "Appuyez sur espace pour parler à Henri !",
     [
-      "Salut ! Moi c’est Henry Hihacks et grâce à Thiaifène, apprenti en BTS Maintenance des Systèmes, j’ai réalisé un projet complètement fou... Vous êtes curieux de le découvrir ? Alors regardez ma vidéo !",
+      "Salut ! Moi c’est Henri Hihacks et grâce à Thiaifène, apprenti en BTS Maintenance des Systèmes, j’ai réalisé un projet complètement fou... Vous êtes curieux de le découvrir ? Alors regardez ma vidéo !",
     ],
     "Hihacks_labo",
     hiHacksVideoLink,
     "interact",
     "PNJ",
-    "PNJ_HenryHihacks",
+    "PNJ_HenriHihacks",
   );
   
   let YumiLabBot = new Modal(
@@ -916,6 +916,13 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ_YumiStep2Final",
   );
 
+  //Digicode Door infinite exit 
+  WA.room.onEnterLayer('Step2/exitDoorZone').subscribe(() => {
+    WA.room.hideLayer('closed_lab_door');
+  });
+  WA.room.onLeaveLayer('Step2/exitDoorZone').subscribe(() => {
+    WA.room.showLayer('closed_lab_door');
+  });
   /**
    * Function to add a trap to a layer
    * @param {string} _layer 
@@ -1314,4 +1321,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //Log to check in the WA that the script has passed
-console.log('VERSION 4.5');
+console.log('VERSION 4.6');
