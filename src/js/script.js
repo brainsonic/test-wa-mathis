@@ -1,6 +1,7 @@
 // Chargement de la lib JS de WA
 import {} from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, ItemOnLayer, ItemPickUpOnCondition, PopUpVideoAction, onTpCondition, tutorial, onEnterAuthorization, getVariableOnZone, createVariableWA} from './class';
+import { statfsSync } from "fs";
 
 // VARIABLES ///////////////////////////////////////////////
 const tutorialLink = "https://64ix.github.io/WA-Edited-Tutorial/tutorial.html";
@@ -65,25 +66,32 @@ const apprenti_4VideoLink = "https://www.youtube.com/embed/DU7kScvKs6w?si=4eaGA7
 const apprenti_5VideoLink = "https://www.youtube.com/embed/G4lEOWcPYv4?si=wa9eJCX3TbsLQZS2";
 const apprenti_6VideoLink = "https://www.youtube.com/embed/Y35a-PeWnCY?si=ssJEvtuE8AQ5yQ43";
 
-/* ------------ Phase ?? ------------ */
+/* ------------ Phase 3 ------------ */
+
+const linkYumiStep2Depart = "https://chat.csml.dev/s/whhzgtl5bjd4tm9uky1ruy19dwhevoww";
+const linkYumiStep2Final = "https://chat.csml.dev/s/04fl66mlrmgxggs6vcsc2wsgc9e2cr3s";
 
 // SETUP ///////////////////////////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
+
+ if (WA.player.state['TutorialRead'] != true)
+ {
+    WA.ui.modal.openModal({
+      title: "Tutorial",
+      src: tutorialLink,
+      allow: "fullscreen; clipboard-read; clipboard-write",
+      allowApi: !0,
+      position: "right",
+    });
+ }
+
+
   WA.onInit().then(() => {
     // désactiver les proximity meeting parceque peu utile
     WA.controls.disablePlayerProximityMeeting();
+    createVariableWA('TutorialRead');
   });
-  
-  // tutorial
-  // pourquoi pas faire un truc qui se souvient si le joueur a déjà fait le tuto et qui ne l'affiche pas si c'est le cas
-  WA.ui.modal.openModal({
-    title: "Tutorial",
-    src: tutorialLink,
-    allow: "fullscreen; clipboard-read; clipboard-write",
-    allowApi: !0,
-    position: "right",
-  });
-  
+
   //ZONE HELP ///////////////////////////////////////////////
   WA.room.onEnterLayer("Zones/Help").subscribe(() => {
     WA.controls.restorePlayerProximityMeeting();
@@ -139,8 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const textSkieuse = [
     "Hello !",
-    "Vous voulez faire un tour de MoonBike ?",
-    "D’accord, mais d’abord, laissez-moi vous parler un peu de l’innovation dans l’industrie.",
+    "Laissez-moi vous parler un peu de l’innovation dans l’industrie.",
     "L’industrie, c'est le secteur qui innove le plus en France, elle représente 72% des dépenses de R&D françaises.",
     "Industrie 4.0, industrie connectée, industrie du futur : le secteur se transforme en profondeur grâce à des technologies comme la fabrication additive, la cobotique ou encore les objets connectés – autant d’innovations qui améliorent la production et le quotidien de celles et ceux qui y travaillent.​    ",
     "Et tout cela crée de nouveaux métiers (data scientist, programmeur industriel, ingénieur cobot…) et transforme les modes d’organisation du travail. Sans oublier que de nombreuses innovations industrielles vont dans le sens d’une société plus durable.    ",
@@ -393,11 +400,20 @@ document.addEventListener('DOMContentLoaded', () => {
     "Game_Basket"
   );
 
-  let Piano = new Modal(
+  let Piano = new PopUpVideoAction(
     "Pnjs/Piano",
     "Appuyez sur espace pour jouer du piano !",
+    [
+      "Appuyez sur les touches du clavier pour jouer du piano"
+    ],
+    [
+      "Appuyez sur les touches du clavier pour jouer du piano"
+    ],
+    "pianoTxt",
     pianoLink,
-    "center",
+    () => {
+      return true;
+    },
     "interact",
     "Game",
     "Game_Piano"
@@ -816,10 +832,10 @@ document.addEventListener('DOMContentLoaded', () => {
   
   /* ----- STEP 2 ----- */
 
-  let YumiTrappedBot = new ModalAction(
-    "Pnjs/TrappedRoom/YumiDepart_1",
+  let YumiStep2Depart = new ModalAction(
+    "Step2/YumiStep2Depart",
     "Appuyez sur espace pour discuter avec Yumi !",
-    YumiLabBotLink,
+    linkYumiStep2Depart,
     "right",
     () => {
         var variable = "TalkToYumiTrappedRoom";
@@ -885,6 +901,16 @@ document.addEventListener('DOMContentLoaded', () => {
     "interract",
     "InteractAction",
     "Object_doorTrappedRoom"
+  );
+
+  let YumiStep2Final = new Modal(
+    "Step2/YumiStep2Final",
+    "Appuyez sur espace pour discuter avec Yumi !",
+    linkYumiStep2Final,
+    "right",
+    "interact",
+    "PNJ",
+    "PNJ_YumiStep2Final",
   );
 
   /**
@@ -1207,7 +1233,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "Bon, ok, j'avoue. J'ai pris la clé du coffre",
       "J'étais fâché, tu vois. Mais maintenant que tu es là, je suppose que tu veux la clé, n'est-ce pas ?",
       "Tiens, prends-la. Je ne veux pas de problèmes.",
-      "Vous avez récupéré la clef, allez parler à Didier",
+      "Arnaud vous a donné la clé du coffre, allez parler à Didier",
     ],
     [
       "Cette chaise est vraiment confortable !",
@@ -1279,5 +1305,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+/** --- TOUCHPOINT EPREUVE --- */
+
+/** STEP 2 */
+
+
 //Log to check in the WA that the script has passed
-console.log('VERSION 4.4');
+console.log('VERSION 4.5');
