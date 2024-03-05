@@ -2,11 +2,12 @@
 import {} from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, ItemOnLayer, ItemPickUpOnCondition, PopUpVideoAction, onTpCondition, tutorial, onEnterAuthorization, getVariableOnZone, createVariableWA} from './class';
 import { statfsSync } from "fs";
+import { Console } from "console";
 
 // VARIABLES ///////////////////////////////////////////////
 const tutorialLink = "https://64ix.github.io/WA-Edited-Tutorial/tutorial.html";
 const pongLink = "https://64ix.github.io/WA-Edited-Tutorial/pong.html";
-const basketLink = "https://64ix.github.io/WA-Edited-Tutorial/shooting-hoops/dist/index.html";
+const basketLink = "https://brainsonic.github.io/UIMM-WA-Extras/shooting-hoops.html";
 const pianoLink = "https://64ix.github.io/WA-Edited-Tutorial/piano/dist/index.html";
 const scribbleLink = "https://brainsonic.github.io/WA-Misc-EasterEggs/scribble/index.html";
 const poolLink = "https://brainsonic.github.io/WA-Misc-EasterEggs/pool/index.html";
@@ -74,6 +75,7 @@ const linkYumiStep2Final = "https://chat.csml.dev/s/04fl66mlrmgxggs6vcsc2wsgc9e2
 // SETUP ///////////////////////////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
 
+  console.log("DEBUT :",WA.player.state['TutorialRead']);
  if (WA.player.state['TutorialRead'] != true)
  {
     WA.ui.modal.openModal({
@@ -90,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // désactiver les proximity meeting parceque peu utile
     WA.controls.disablePlayerProximityMeeting();
     createVariableWA('TutorialRead');
+    console.log("APRES :",WA.player.state['TutorialRead']);
   });
 
   //ZONE HELP ///////////////////////////////////////////////
