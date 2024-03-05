@@ -917,10 +917,10 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   //Digicode Door infinite exit 
-  WA.room.onEnterLayer('Step2/exitDoorZone').subscribe(() => {
+  WA.room.onEnterLayer('Step2/exitZoneDoor').subscribe(() => {
     WA.room.hideLayer('closed_lab_door');
   });
-  WA.room.onLeaveLayer('Step2/exitDoorZone').subscribe(() => {
+  WA.room.onLeaveLayer('Step2/exitZoneDoor').subscribe(() => {
     WA.room.showLayer('closed_lab_door');
   });
   /**
