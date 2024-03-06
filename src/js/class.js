@@ -252,10 +252,24 @@ class PopUpVideo extends Dialog {
     }
     // override de la fonction next pour ouvrir le site web, async car cowebsite est une fonction asynchrone
     async next() {
-      this.finished = true;
-      this.currentState.close();
-      this.currentState = undefined;
-      await WA.nav.openCoWebSite(this.video, true, "", 50, 1, true, false);
+      this.state++;
+      // ferme le popup actuel, set en undefined pour éviter les bugs
+      if (this.currentState !== undefined)
+      {
+        this.currentState.close();
+        this.currentState = undefined;
+      }
+      // check si fini, sinon ouvre le popup suivant
+      if (this.state >= this.dialog.length) {
+        this.finished = true;
+        this.state = 0;
+        await WA.nav.openCoWebSite(this.video, true, "", 50, 1, true, false);
+      } 
+      else
+      {
+        this.open();
+      } 
+
     }
 }
 

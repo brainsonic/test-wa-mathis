@@ -19,7 +19,7 @@ const linkVideoJeune1 = "https://www.youtube.com/embed/9QDd6dH0-Xc?si=nVcJ4ryPrm
 const linkVideoJeune2 = "https://www.youtube.com/embed/pDMzhgu_Qbo?si=VKqmGCg01AkfOIQJ";
 const linkVideoJeune3 = "https://www.youtube.com/embed/mgX4eHVDlTc";
 const linkVideoMoonbike = "https://www.youtube.com/embed/eE3kWcMZsuE";
-const linkVideo = "https://www.youtube.com/embed/mW2iuVGsnMs?si=tww4FLSz-ta7zjIT";
+const linkVideo = "https://www.youtube.com/embed/videoseries?si=wKcics6QWpDWdVob&amp;list=PLEe-8ZKtOy6Oxx1qU_qRhdcBmy-lXBtqQ";
 const linkVideoMagaly = "https://www.youtube.com/embed/bIG_XU7XRbw?si=ADidl-gwJ42Jh5kB";
 
 /* ------------ Phase 2 ------------ */
@@ -35,17 +35,18 @@ const MelodyVideoLink = "https://www.youtube.com/embed/Oxo69n0aoTo?si=jJ7e6AM-wA
 
 //ShowRoom
 
-const anaisVideoLink = "https://www.youtube.com/embed/eBuPRPSBXlc?si=r_3zCqDW0qUB3d8K";
-const Liebherr_aerospaceVideoLink = "https://www.youtube.com/embed/eBuPRPSBXlc?si=iMw0riL5KJyYjfIe"; //TO CHANGE
+const anaisVideoLink = "https://www.youtube.com/embed/DE_sTYDs4rg?si=EvU29NiQVEYlUMBs";
+const Liebherr_aerospaceVideoLink = "https://www.youtube.com/embed/unodEN9Xwls?si=xgK0E-M33XjEG1kz";
+const LucieVideoLink = "https://www.youtube.com/embed/7mUgmZgLrxM?si=MIFAXrMjrElzpuI9";
 const OtechVideoLink = "https://www.youtube.com/embed/eBuPRPSBXlc?si=iMw0riL5KJyYjfIe"; //TO CHANGE
-const dessinateurInduVideoLink = "https://www.youtube.com/embed/IEtX1_vx98g?si=wt_aAReOPxkrhaAO";
+const FrankVideoLink = "https://www.youtube.com/embed/hCydgXRsT_s?si=n075VkCZefobeWDY";
 const respRDVideoLink = "https://www.youtube.com/embed/dFBHOiedwkQ?si=3CJQ8h6MYL10nkSg";
 const ajustMonteurVideoLink = "https://www.youtube.com/embed/oJQcLWtGmDY?si=wcUwCbNc-Yw7bSS-";
-const dataScientistVideoLink = "https://www.youtube.com/embed/ixlo9WwbvuE?si=hhiUylKLOuW5i-Dj";
-const chargeAffVideoLink = "https://www.youtube.com/embed/vVhIHuG0dgI?si=APRxPS1Q6Ws3Vs40";
+const GalvanoplasteVideoLink = "https://www.youtube.com/embed/QFpgqyR30Lw?si=YbXrJHJ5YnFtyqm6";
+const RafaelVideoLink = "https://www.youtube.com/embed/jIVCWY2mxjs?si=3MTDTHHaeCGGYpeN";
 const respBureauVideoLink = "https://www.youtube.com/embed/YzXnbdKdbwY?si=5Jt9ZcvzwENDE7nA";
 const YumiITWBot = "https://chat.csml.dev/s/bpzoedzc279smw2i649rwhtst9rguvva";
-const worldSkillsVideoLink = "https://www.youtube.com/embed/videoseries?si=wKcics6QWpDWdVob&amp;list=PLEe-8ZKtOy6Oxx1qU_qRhdcBmy-lXBtqQ";
+const MaximeVideoLink = "https://www.youtube.com/embed/RV-WS11CLTk?si=RUVpvBUxVXbagXU4";
 
 //ParkInside
 
@@ -575,17 +576,18 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ_Anais"
   );
     
-  let DessinateurIndu = new PopUpVideo(
-    "Pnjs/ShowRoom/DessinateurIndu",
+  let FrankVideo = new PopUpVideo(
+    "Pnjs/ShowRoom/FrankVideo",
     "Appuyez sur espace pour regarder la vidéo !",
     [
-      "Ronan est dessinateur industriel. Découvrez son métier en vidéo !"
+      "Franck est responsable d'un atelier de montage chez SOFINOR.",
+      "Découvrez son témoignage en vidéo !"
     ],
     "DessinateurIndu",
-    dessinateurInduVideoLink,
+    FrankVideoLink,
     "interact",
     "Video",
-    "Video_Ronan"
+    "Video_Frank"
   );
   
   let RespRD = new PopUpVideo(
@@ -615,30 +617,33 @@ document.addEventListener('DOMContentLoaded', () => {
     "Video_Nicolas"
   );
   
-  let DataScientist = new PopUpVideo(
-    "Pnjs/ShowRoom/DataScientist",
+  let XavierVideo = new PopUpVideo(
+    "Pnjs/ShowRoom/GalvanoplasteVideo",
     "Appuyez sur espace pour regarder la vidéo !",
     [
-      "C'est quoi le métier de data scientist ? Pour le découvrir c'est ici."
+      "Galvanoplaste, mais qu'est-ce que c'est ?",
+      "La réponse en vidéo !"
     ],
     "DataScientist",
-    dataScientistVideoLink,
+    GalvanoplasteVideoLink,
     "interact",
     "Video",
-    "Video_DataScientist",
+    "Video_Galvanoplaste",
   );
   
-  let ChargAff = new PopUpVideo(
-    "Pnjs/ShowRoom/ChargeAff",
+  let RafaelVideo = new PopUpVideo(
+    "Pnjs/ShowRoom/RafaelVideo",
     "Appuyez sur espace pour regarder la vidéo !",
     [
-      "Quel est le rôle du chargé d'affaires ? Réponse en vidéo !"
+      "Raphaël a géré le remplacement de la télécabine de Font-Romeu.",
+      "Un projet gigantesque et ambitieux.",
+      "Regardez !"
     ],
     "ChargAff",
-    chargeAffVideoLink,
+    RafaelVideoLink,
     "interact",
     "Video",
-    "Video_ChargeAff",
+    "Video_Rafael",
   );
   
   let RespBureau = new PopUpVideo(
@@ -664,17 +669,47 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ_YumiJournaliste",
   );
   
-  let WorldSkills = new PopUpVideo(
-    "Pnjs/ShowRoom/WorldSkills",
+  let MaximeVideo = new PopUpVideo(
+    "Pnjs/ShowRoom/Maxime",
     "Appuyez sur espace pour regarder la vidéo !",
     [
-      "Connaissez-vous les WorldSkills, la grande compétition des métiers ? Et bien c'est le moment de les découvrir en visionnant la saison 1 de 'WorldSkills, La Série', réalisée avec les apprentis de l'industrie ! Accrochez-vous, sensations fortes garanties."
+      "Quelqu'un peut me dire ce qu'est la mécatronique ?",
+      "Écoutez bien Maxime, responsable de la R&D chez Otech, il vous dit tout."
     ],
     "WorldSkills",
-    worldSkillsVideoLink,
+    MaximeVideoLink,
     "interact",
     "Video",
-    "Video_WorldSkills",
+    "Video_Maxime",
+  );
+
+  let Liebherr_aerospace = new PopUpVideo(
+    "Pnjs/ShowRoom/Liebherr_aerospace",
+    "Appuyez sur espace pour regarder la vidéo !",
+    [
+      "Quel est le point commun entre l'aéronautique et l'automobile ?",
+      "Capucine, ingénieure système chez Liebherr-Aerospace Toulouse, vous donne la réponse.",
+      "Soyez attentif."
+    ],
+    "LiebherrAerospaceText",
+    Liebherr_aerospaceVideoLink,
+    "interact",
+    "Video",
+    "Video_LiebherrAerospace",
+  );
+
+  let LucieVideo = new PopUpVideo(
+    "Pnjs/ShowRoom/LucieVideo",
+    "Appuyez sur espace pour regarder la vidéo !",
+    [
+      "La robotique mobile, qu'est-ce que c'est ?",
+      "Lucie, ingénieure d'application chez Meanwhile, vous explique tout.",
+    ],
+    "LucieVideoText",
+    LucieVideoLink,
+    "interact",
+    "Video",
+    "Video_LucieVideo",
   );
   
   //ParkInside
@@ -1269,18 +1304,16 @@ document.addEventListener('DOMContentLoaded', () => {
     "Step4bis/Arnaud",
     "Appuyez sur espace pour parler à Arnaud !",
     [
-      "Que me veux-tu ?",
-      "Arnaud semble un peu nerveux, mais essaie de paraître décontracté.",
-      "Cherches-tu quelque chose en particulier, ou c'est juste une visite impromptue ?",
-      "Vous remarquez que Arnaud évite le regard et semble mal à l'aise.",
-      "Bon, ok, j'avoue. J'ai pris la clé du coffre",
-      "J'étais fâché, tu vois. Mais maintenant que tu es là, je suppose que tu veux la clé, n'est-ce pas ?",
-      "Tiens, prends-la. Je ne veux pas de problèmes.",
-      "Arnaud vous a donné la clé du coffre, allez parler à Didier",
+      "Cette chaise est vraiment confortable !",
+      "Vous cherchez quelque chose ?",
+      "À me regarder comme ça, vous me rendez nerveux.",
+      "Ok, c'est moi qui ai volé la clef d'Anton.",
+      "La voici !",
+      "Vous pouvez lui rapporter sa précieuse clef."
     ],
     [
       "Cette chaise est vraiment confortable !",
-      "Tu cherches quelques choses ?"
+      "Vous cherchez quelque chose ?"
     ],
     "ArnaudText",
     () => {
