@@ -15,22 +15,23 @@ const formLink = "https://0eb89b36.sibforms.com/serve/MUIFAAOmzgE4ndFT9kNM-uBs4Y
 
 const linkChatBotAccueil = " https://chat.csml.dev/s/klex5ttuh9bmpen8gyo4tssus4liqxgb";
 const linkChatBotIngénieure = "https://chat.csml.dev/s/modkshn4koeqaqdjiaj5pa7hfxah6s57";
-const linkVideoJeune1 = "https://www.youtube.com/watch?v=9QDd6dH0-Xc&embeds_referring_euri=https%3A%2F%2Fplay.workadventu.re%2F&source_ve_path=Mjg2NjY&feature=emb_logo";
-const linkVideoJeune2 = "https://www.youtube.com/watch?v=pDMzhgu_Qbo&embeds_referring_euri=https%3A%2F%2Fplay.workadventu.re%2F&source_ve_path=OTY3MTQ&feature=emb_imp_woyt";
+const linkVideoJeune1 = "https://www.youtube.com/embed/9QDd6dH0-Xc?si=nVcJ4ryPrmNZ8c7u";
+const linkVideoJeune2 = "https://www.youtube.com/embed/pDMzhgu_Qbo?si=VKqmGCg01AkfOIQJ";
 const linkVideoJeune3 = "https://www.youtube.com/embed/mgX4eHVDlTc";
 const linkVideoMoonbike = "https://www.youtube.com/embed/eE3kWcMZsuE";
-const linkVideo = "https://youtube.com/playlist?list=PLEe-8ZKtOy6Oxx1qU_qRhdcBmy-lXBtqQ&si=FsyhpQZkGZAgR0rC";
-const linkVideoMagaly = "https://www.youtube.com/watch?v=bIG_XU7XRbw&list=PLFysjt-P1QCMGkyhGiYfkTfj2D0IZBcja&index=5";
+const linkVideo = "https://www.youtube.com/embed/mW2iuVGsnMs?si=tww4FLSz-ta7zjIT";
+const linkVideoMagaly = "https://www.youtube.com/embed/bIG_XU7XRbw?si=ADidl-gwJ42Jh5kB";
 
 /* ------------ Phase 2 ------------ */
 
 //MétierRoom
 const nicolasVideoLink = "https://www.youtube.com/embed/dO4SjOcNDTk?si=3i_0ivZqE0k4L9HS";
 const cariVideoLink = "https://www.youtube.com/embed/cM2U-uKXzts?si=HSPzO1A938ei964m";
-const ingProdVideoLink = "https://www.youtube.com/embed/8HlmZkJX_UQ?si=l0-8bOC_kMy2YYvv";
+const FannyVideoLink = "https://youtu.be/DU7kScvKs6w?si=J8XvFyFqqSJfRQNk";
 const apprentiRobotLink = "https://www.youtube.com/embed/CZae_izqWiw?si=QQiQ9J4Pc7s2gUk8";
-const apprentiChaudronniereVideoLink = "https://www.youtube.com/embed/5zDXk6J0hHo?si=DQ3jPiXhQLJgWTOH";
-const YumiMetierBot = "https://chat.csml.dev/s/klex5ttuh9bmpen8gyo4tssus4liqxgb";
+const apprentiChaudronniereVideoLink = "https://www.youtube.com/embed/Oxo69n0aoTo?si=jJ7e6AM-wAx4Gw6K";
+const YumiMetierBot = "https://chat.csml.dev/s/39iezvakvlqapvdwnakm2gjw6f1czgdp";
+const MelodyVideoLink = "https://www.youtube.com/embed/Oxo69n0aoTo?si=jJ7e6AM-wAx4Gw6K";
 
 //ShowRoom
 
@@ -481,19 +482,19 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ_Cari"
   )
   
-  let Alexandra = new PopUpVideoAction(
-    "Pnjs/MetierRoom/Alexandra",
-    "Appuyez sur espace pour parler à Alexandra !",
+  let Fanny = new PopUpVideoAction(
+    "Pnjs/MetierRoom/Fanny",
+    "Appuyez sur espace pour parler à Fanny !",
     [
       "Bonjour, moi c’est Alexandra et je suis ingénieur de production. Je vous invite à découvrir mon parcours et mon quotidien dans cette vidéo.",
-      "Avant ça, si tu cherches une personne qui possèderait une clef",
-      "Il est parti vers le parc et avait du orange sur lui"
+      "Avant de vous en dire plus, si vous cherchez quelqu'un avec une clé, je l'ai vu partir vers le jardin.",
+      "Mais ne partez pas tout de suite et découvrez mon parcours !"
     ],
     [
-      "Bonjour, moi c’est Alexandra et je suis ingénieur de production. Je vous invite à découvrir mon parcours et mon quotidien dans cette vidéo.",
+      "Moi, c’est Fanny, et grâce à l'apprentissage, j'ai pu effectuer un semestre universitaire à l'étranger."
     ],
     "IngProd",
-    ingProdVideoLink,
+    FannyVideoLink,
     () => {
       if (WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true)
       {
@@ -504,7 +505,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     "interact",
     "PNJ",
-    "PNJ_Alexandra"
+    "PNJ_Fanny"
   );
   
   let ApprentiRobotVideo = new PopUpVideo(
@@ -541,6 +542,22 @@ document.addEventListener('DOMContentLoaded', () => {
     "interact",
     "PNJ",
     "PNJ_YumiMetier"
+  );
+
+  let Melody = new PopUpVideo(
+    "Pnjs/MetierRoom/Melody",
+    "Appuyez sur espace pour parler à Melody",
+    [
+      "Melody est rigoureuse, minutieuse même.",
+      "C'est normal, elle s'occupe de la conformité de pièces complexes",
+      "Car dans le nucléaire, on ne rigole pas avec la sécurité.",
+      "Regardez."
+    ],
+    "MelodyText",
+    MelodyVideoLink,
+    "interact",
+    "PNJ",
+    "PNJ_Melody"
   );
   
   //ShowRoom
@@ -790,15 +807,15 @@ document.addEventListener('DOMContentLoaded', () => {
   
   let Apprenti_4 = new PopUpVideo(
     "Pnjs/DinningRoom/Apprenti_4",
-    "Appuyez sur espace pour parler à Fanny !",
+    "Appuyez sur espace pour parler à Alexandra !",
     [
-      "Moi c’est Fanny, et grâce à l'alternance j'ai pu effectuer un semestre universitaire à l'étranger. Ça vous intéresse ? Alors venez découvrir mon parcours !",
+      "Bonjour, moi c’est Alexandra et je suis ingénieur de production. Je vous invite à découvrir mon parcours et mon quotidien dans cette vidéo.",
     ],
     "Apprenti_4",
-    apprenti_4VideoLink,
+    ingProdVideoLink,
     "interact",
     "PNJ",
-    "PNJ_Fanny",
+    "PNJ_Alexandra",
   );
   
   let Apprenti_5 = new PopUpVideoAction(
