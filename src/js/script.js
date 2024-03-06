@@ -95,15 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("APRES :",WA.player.state['TutorialRead']);
   });
 
-  //ZONE HELP ///////////////////////////////////////////////
-  WA.room.onEnterLayer("Zones/Help").subscribe(() => {
-    WA.controls.restorePlayerProximityMeeting();
-  });
-  
-  WA.room.onLeaveLayer("Zones/Help").subscribe(() => {
-    WA.controls.disablePlayerProximityMeeting();
-  });
-  
   //ZONE OUTGATE INFO
   const popupLink = "https://brainsonic.github.io/UIMM-WA-Extras/popup.html";
   const textOutGate = "Vous êtes sorti de la gare";
@@ -135,27 +126,31 @@ document.addEventListener('DOMContentLoaded', () => {
   // texte des pnj sous format de tableau de string, chaque string est un nouveau popup
   const textCaptain = [
     "Ahoy !",
-    "Ça vous dit d’embarquer avec moi pour un petit tour d’horizon de l’industrie navale ?    ",
+    "Me revoilà !",
+    "Ne pouvant pas être partout à la fois, Yumi a eu la bonne idée de se cloner, vous allez rencontrer beaucoup de Yumi différentes dans mon monde.",
+    "Je suis Yumi Capitaine, ça vous dit d’embarquer avec moi pour un petit tour d’horizon de l’industrie navale ?",
     "Allez, on met les voiles !",
-    "La France possède le deuxième domaine maritime mondial, juste derrière les États-Unis. Alors forcément, la mer compte beaucoup dans l’économie !​",
+    "La France possède le deuxième domaine maritime mondial, juste derrière les États-Unis.",
+    "Alors forcément, la mer compte beaucoup dans l’économie !​",
     "Dans l’industrie navale, on fabrique des porte-avions, des sous-marins nucléaires, des frégates, des bateaux de pêche, mais aussi des hydroliennes et des éoliennes flottantes.",
     "En France, on est très fort pour les constructions complexes, comme les paquebots, les navires passagers et les navires militaires.",
     "Donc on a besoin de compétences techniques pointues pour concevoir, produire et entretenir des navires de plus en plus performants et écologiques.",
-    "Cela concerne une grande diversité de métiers (plus de 300 !) qui sont en pleine évolution en raison des mutations technologiques et de l’émergence de nouveaux marchés. ",
+    "Cela concerne une grande diversité de métiers (plus de 300 !) qui sont en pleine évolution en raison des mutations technologiques et de l’émergence de nouveaux marchés.",
     "Bref l’horizon est prometteur avec de grosses perspectives de développement dans les énergies renouvelables, les ressources maritimes et les biocarburants.​",
     "Les océans sont un des enjeux stratégiques de notre siècle, matelot !​",
     "Voilà pour un petit aperçu de l’industrie marine, tu veux découvrir d’autres industries ?",
-    "Alors n’hésite pas à parler aux autres Yumi, bon vent !​",
+    "Alors n’hésite pas à parler aux autres Yumi, bon vent !​"
   ];
 
   const textSkieuse = [
     "Hello !",
-    "Laissez-moi vous parler un peu de l’innovation dans l’industrie.",
-    "L’industrie, c'est le secteur qui innove le plus en France, elle représente 72% des dépenses de R&D françaises.",
-    "Industrie 4.0, industrie connectée, industrie du futur : le secteur se transforme en profondeur grâce à des technologies comme la fabrication additive, la cobotique ou encore les objets connectés – autant d’innovations qui améliorent la production et le quotidien de celles et ceux qui y travaillent.​    ",
-    "Et tout cela crée de nouveaux métiers (data scientist, programmeur industriel, ingénieur cobot…) et transforme les modes d’organisation du travail. Sans oublier que de nombreuses innovations industrielles vont dans le sens d’une société plus durable.    ",
-    "Le MoonBike en est un bel exemple ! C’est le premier snowbike 100% électrique du marché : un mode de déplacement beaucoup plus écologique.​",
-    "Allez maintenant vous pouvez aller le découvrir, tout schuss.    ",
+    "Saviez-vous que l’industrie est le secteur qui innove le plus en France, elle représente 72% de dépenses de R&D françaises.",
+    "Industrie 4.0, industrie connectée, industrie du futur : le secteur se transforme en profondeur grâce à des technologies comme la fabrication additive, la cobotique ou encore les objets connectés – autant d’innovations qui améliorent la production et le quotidien de celles et ceux qui y travaillent.",
+    "Et tout cela crée de nouveaux métiers (data scientist, programmeur industriel, ingénieur cobot…) et transforme les modes d’organisation du travail.",
+    "Sans oublier que de nombreuses innovations industrielles vont dans le sens d’une société plus durable.",
+    "Le MoonBike en est un bel exemple !",
+    "C’est le premier snowbike 100% électrique du marché : un mode de déplacement beaucoup plus écologique.​",
+    "Vous pouvez aller le découvrir tout schuss avec Anthony."
   ];
 
   const textScientifique = [
@@ -1178,20 +1173,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ----- Step 4 bis ----- */
 
-  let Didier = new InteractAction(
-    "Step4bis/Didier",
-    "Appuyez sur espace pour parler à Didier !",
+  let Anton = new InteractAction(
+    "Step4bis/Anton",
+    "Appuyez sur espace pour parler à Anton !",
     [
-      "Excellent travail ! Vous avez vraiment le sens du devoir.",
-      "Vous avez vraiment sauvé la mise. En signe de ma gratitude, n'hésitez pas à prendre l'un des artefacts à l'intérieur du coffre. Considérez-le comme une récompense pour vos services."
+      "Vous avez retrouvé ma clef.",
+      "Vous avez ma gratitude éternelle !",
+      "Voilà ce que je craignais tant de perdre",
+      "Je ne suis pas sûr de sa signification, mais j'ai le sentiment que c'est très important pour vous.",
+      "Concervez-la ou mémorisez-la, cela pourra vous être utile.",
+      "*Une mystérieuse séquence apparait en capture sous le texte*"
     ],
     [
-      "Bonjour, aventurier. J'ai besoin de votre aide. Mon coffre a été volé, et je suis sûr que ce fourbe en est responsable.",
-      "Nous avons eu une dispute récente, et il a juré de se venger. Aujourd'hui, je me suis rendu compte que la clé de mon coffre avait disparu. Il doit l'avoir prise pour me nuire.",
-      "À l'intérieur se trouvent des artefacts rares que j'ai collectés au fil des ans. Ils ont une grande valeur pour moi, et je ne peux pas laisser ce vaurien s'en tirer ainsi.",
-      "Trouvez cette clé et ramenez-la-moi, s'il vous plaît."
+      "Ah, vous voilà enfin !",
+      "Je suis dans une situation désespérée...",
+      "Un habitant, avec qui j'ai eu une dispute récente, a volé la clef de mon coffre par vengeance.",
+      "Le contenu de ce coffre est essentiel, il ne doit pas tomber entre de mauvaises mains.",
+      "Je vous en prie, pouvez-vous m'aider à retrouver la clef et me la ramener ?",
+      " Je ne peux pas quitter le coffre, mais je suis certain que les habitants du Monde de Yumi pourront vous aider à retrouver le voleur."
     ],
-    "DidierText",
+    "AntonText",
     () => {
       if (WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true
           && WA.player.state["chestDidierKey"] != null && WA.player.state["chestDidierKey"] == true) 
