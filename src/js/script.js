@@ -13,13 +13,14 @@ const scribbleLink = "https://brainsonic.github.io/WA-Misc-EasterEggs/scribble/i
 const poolLink = "https://brainsonic.github.io/WA-Misc-EasterEggs/pool/index.html";
 const formLink = "https://0eb89b36.sibforms.com/serve/MUIFAAOmzgE4ndFT9kNM-uBs4YlJeU3A1QwPa7YPDBm_4l4UD0FQQoYC0ux_H4XuTeKySpVQcQo2jya0tZpk6_txstHp_WI3cITYRWoILzlf-gvw2SzeYepvtFGVDghH2mm6NG1VZcxRV5fW8C1xa1Gn_UECrK-eMhv0SmFNOVo54fmNEHLNrJIUlBtQw9H96pu0IPmE-xMcxnvn";
 
-const linkChatBotAccueil = "https://chat.csml.dev/s/39iezvakvlqapvdwnakm2gjw6f1czgdp";
+const linkChatBotAccueil = " https://chat.csml.dev/s/klex5ttuh9bmpen8gyo4tssus4liqxgb";
 const linkChatBotIngénieure = "https://chat.csml.dev/s/modkshn4koeqaqdjiaj5pa7hfxah6s57";
-const linkVideoJeune1 = "https://www.youtube.com/embed/9QDd6dH0-Xc";
-const linkVideoJeune2 = "https://www.youtube.com/embed/pDMzhgu_Qbo";
+const linkVideoJeune1 = "https://www.youtube.com/watch?v=9QDd6dH0-Xc&embeds_referring_euri=https%3A%2F%2Fplay.workadventu.re%2F&source_ve_path=Mjg2NjY&feature=emb_logo";
+const linkVideoJeune2 = "https://www.youtube.com/watch?v=pDMzhgu_Qbo&embeds_referring_euri=https%3A%2F%2Fplay.workadventu.re%2F&source_ve_path=OTY3MTQ&feature=emb_imp_woyt";
 const linkVideoJeune3 = "https://www.youtube.com/embed/mgX4eHVDlTc";
 const linkVideoMoonbike = "https://www.youtube.com/embed/eE3kWcMZsuE";
-const linkVideo = "https://www.youtube.com/embed/7Xe-xnqLoBI?rel=0";
+const linkVideo = "https://youtube.com/playlist?list=PLEe-8ZKtOy6Oxx1qU_qRhdcBmy-lXBtqQ&si=FsyhpQZkGZAgR0rC";
+const linkVideoMagaly = "https://www.youtube.com/watch?v=bIG_XU7XRbw&list=PLFysjt-P1QCMGkyhGiYfkTfj2D0IZBcja&index=5";
 
 /* ------------ Phase 2 ------------ */
 
@@ -154,12 +155,11 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   const textScientifique = [
-    "Bonjour à vous",
-    "Je suis la scientifique de la bande et ce que j’adore c’est trouver des solutions pour améliorer la vie de chacun.​",
-    "Par exemple, j'ai pris part au projet AGV, automotrice à grande vitesse ! C'est un train à grande vitesse construit par Alstom et qui ressemble au TGV. La différence est que le moteur est réparti le long de la rame et plus seulement aux extrémités.",
-    "Grâce à cette innovation, il y a plus d’espace pour les voyageurs et le poids du train est réduit, ce qui permet de réduire la consommation d’énergie. Cela permet de parcourir 1000 km en 3 heures ! Impressionnant non ?",
-    "J’ai aussi mis au point les téléporteurs que vous verrez un peu partout sur l’île, et que je vous invite à essayer. Il suffit de se placer dessus afin de se téléporter d’une pièce à l’autre.​",
-    "Bonne visite !",
+    "Bienvenue à vous, je suis la scientifique de la bande.",
+    "Ce que j’adore c’est trouver des solutions pour améliorer la vie de chacun.",
+    "J’ai mis au point les transporteurs que vous verrez un peu partout sur l’île.",
+    "Pour les essayer, il suffit de se placer dessus afin de se téléporter d’une pièce à l’autre.",
+    "C'est très pratique, vous verrez."
   ];
   
   // PNJ ///////////////////////////////////////////////
@@ -266,21 +266,22 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ",
     "PNJ_Manon"
   );
-  
-  // END PNJ ///////////////////////////////////////////////
-  
-  // INTERACTIONS DIVERSES ///////////////////////////////////////////////
-  
-  let Formulaire = new Modal(
-    "Pnjs/Formulaire",
-    "Appuyez sur espace pour ouvrir le formulaire !",
-    formLink,
-    "right",
+
+  let Magaly = new PopUpVideo(
+    "Pnjs/Magaly",
+    "Appuyer sur espace pour parler à Magaly",
+    [
+      "Bonjour, moi c’est Magaly, et grâce à l’industrie j’ai réussi à combiner ma passion et mon métier.",
+      "Vous voulez savoir comment ?",
+      "Allez, j'enfile mon casque et je vous montre !",
+    ],
+    "MagalyText",
+    linkVideoMagaly,
     "interact",
-    "Form",
-    "Formulaire_debut"
+    "PNJ",
+    "PNJ_Magaly"
   );
-  
+
   let Statue = new PopUpVideo(
     "Pnjs/Statue",
     "Appuyez sur espace pour intéragir avec la statue !",
@@ -295,11 +296,24 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   //salle vidéo
-  let Vidéo = new Modal(
+  let Vidéo = new PopUpVideoAction(
     "Zones/Vidéo",
     "Appuyez sur espace pour regarder la vidéo !",
+    [
+      "Connaissez-vous les WorldSkills, la grande compétition des métiers ?",
+      "Et bien c'est le moment de les découvrir en visionnant la saison 1 de 'WorldSkills, La Série', réalisée avec les apprentis de l'industrie !",
+      "Accrochez-vous, sensations fortes garanties."
+    ],
+    [
+      "Connaissez-vous les WorldSkills, la grande compétition des métiers ?",
+      "Et bien c'est le moment de les découvrir en visionnant la saison 1 de 'WorldSkills, La Série', réalisée avec les apprentis de l'industrie !",
+      "Accrochez-vous, sensations fortes garanties."
+    ],
+    "VidéoText",
     linkVideo,
-    "center",
+    () => {
+      return true;
+    },
     "interact",
     "Video",
     "Video_Salle_Conf"
@@ -349,7 +363,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let PanneauTerrasse = new Dialog(
     "Pnjs/Panneau Terrasse",
     "Appuyez sur espace pour intéragir avec le panneau !",
-    ["Vous vous trouvez sur la place principale"],
+    [
+      "Partez à la rencontre des habitants du Monde de Yumi, les femmes et les hommes qui font l'Industrie",
+    ],
     "Panneau Terrasse",
     "interact",
     "Panel",
@@ -375,8 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "Panel",
     "Panneau_ParcHaut"
   );
-  //Phase 2
-  
+
   // Mini Jeux
   let Pong = new Modal(
     "Pnjs/Pong",
