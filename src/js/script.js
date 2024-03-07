@@ -72,7 +72,7 @@ const apprenti_6VideoLink = "https://www.youtube.com/embed/Y35a-PeWnCY?si=ssJEvt
 
 /* ------------ Phase 3 ------------ */
 
-const linkYumiStep2Depart = "https://chat.csml.dev/s/whhzgtl5bjd4tm9uky1ruy19dwhevoww";
+const linkYumiStep2Depart = "https://chat.csml.dev/s/ufpg8pzg8tkimx0n67c88gzayopoizr2";
 const linkYumiStep2Final = "https://chat.csml.dev/s/04fl66mlrmgxggs6vcsc2wsgc9e2cr3s";
 
 // SETUP ///////////////////////////////////////////////
@@ -902,15 +902,9 @@ document.addEventListener('DOMContentLoaded', () => {
     linkYumiStep2Depart,
     "right",
     () => {
-        var variable = "TalkToYumiTrappedRoom";
-        if (WA.player.state[variable] == null)
+        if (WA.player.state["TalkToYumiDepartTrappedRoom"] == null)
         {
-          WA.player.state.saveVariable(variable, true, {
-            public: true,
-            persist: true,
-            ttl: 720 * 3600,
-            scope: "world"
-          })
+          createVariableWA("TalkYumiDepartTrappedRoom");
         }
         return true;
     },
@@ -928,7 +922,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "cardAccessText",
     "cardAccess",
     () => {
-        return  WA.player.state["TalkToYumiTrappedRoom"] != null ? true : false;
+        return  WA.player.state["TalkToYumiDepartTrappedRoom"] != null ? true : false;
     },
     "interract",
     "Object",
@@ -940,10 +934,11 @@ document.addEventListener('DOMContentLoaded', () => {
     "InteractAction/TrappedRoom/FinalDoor",
     "Appuyez sur espace pour insérer la carte d'accès",
     ["La porte est ouverte"],
-    ["Vous devez avoir la carte d'accès"],
+    ["Vous devez avoir la carte d'accès et avoir parler à Yumi"],
     'doorTrappedRoomText',
     () => {
-      if (WA.player.state["cardAccess"] != null && WA.player.state["cardAccess"] == true)
+      if (WA.player.state["cardAccess"] != null && WA.player.state["cardAccess"] == true &&
+        WA.player.state["TalkToYumiFinalTrappedRoom"] != null && WA.player.state["TalkYumiFinalTrappedRoom"] == true) 
       {
         WA.room.hideLayer('beforePlayer/TrappedRoom/DoorFinal');
         WA.room.hideLayer('beforePlayer/TrappedRoom/CollideDoorFinal');
@@ -967,11 +962,36 @@ document.addEventListener('DOMContentLoaded', () => {
     "Object_doorTrappedRoom"
   );
 
-  let YumiStep2Final = new Modal(
+  let YumiStep2Final = new InteractAction(
     "Step2/YumiStep2Final",
     "Appuyez sur espace pour discuter avec Yumi !",
-    linkYumiStep2Final,
-    "right",
+    [
+      "Bonjour, dépéchez-vous les saboteurs sont à votre poursuite",
+      "Pour sortir d'ici, vous devez fabriquer un transporteur.",
+      "C'est le seul moyen pour échapper aux Technophoby.",
+      "Dans le labo, il y a en tout 4 éléments à récupérer pour le fabriquer.",
+      "Mais attention, la mission se complique.",
+      "Car un des objets est bloqué dans une caisse.",
+      "Pour l'obtenir, il faudra d'abord trouver la clé, puis ouvrir la caisse.",
+      "Ensuite, quand vous aurez les quatre objets en votre possession, cherchez une trappe secrète.",
+      "Elle donnera accès à un sous-sol. Dans cet atelier, vous serrez tranquille pour assembler le transporteur.",
+      "Allez-y maintenant, ils arrivent."
+    ],
+    [
+      "Salut !",
+      "Avez-vous bien le badge d'accès ?",
+      "Sans lui, vous ne pouvez pas rentrer dans le lab de l'industrie.",
+      "Retournez dans le couloir piégé pour le récupérer."
+    ],
+    "YumiStep2FinalText",
+    () => {
+      if (WA.player.state["cardAccess"] != null && WA.player.state["cardAccess"] == true)
+      {
+        createVariableWA("TalkToYumiFinalTrappedRoom");
+        return true;
+      }
+      return false;
+    },
     "interact",
     "PNJ",
     "PNJ_YumiStep2Final",
