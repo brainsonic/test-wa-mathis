@@ -1,6 +1,6 @@
 // Chargement de la lib JS de WA
 import {} from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
-import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, ItemOnLayer, ItemPickUpOnCondition, PopUpVideoAction, onTpCondition, tutorial, onEnterAuthorization, getVariableOnZone, createVariableWA} from './class';
+import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, ItemOnLayer, ItemPickUpOnCondition, PopUpVideoAction, onTpCondition, tutorial, onEnterAuthorization, getVariableOnZone, createVariableWA, trapLayer} from './class';
 import { statfsSync } from "fs";
 import { Console } from "console";
 
@@ -81,6 +81,14 @@ const PaulygonesIndustrieVideoLink = "https://www.youtube.com/shorts/R3GFX6387Hw
 const LucieIndustrieVideoLink = "https://www.youtube.com/shorts/jDIfPsnb5LI";
 const JadeIndustrieVideoLink = "https://www.youtube.com/embed/aH12YYBDZc8?si=bU2SA6-xTgUG8L0q";
 const ArnaudIndustrieVideoLink = "https://www.youtube.com/shorts/yULRqI_KGb4";
+
+// Final Room
+
+const WorldUIMMYTBVideoLink = "https://www.youtube.com/embed/hyvQJcSSkJo?si=RR6Mxpi1NnNHpapM";
+const UIMMInstaLink = "https://www.instagram.com/uimm.lafabriquedelavenir/https://www.instagram.com/uimm.lafabriquedelavenir/";
+const ForIndustrieLink = "https://univers.forindustrie.fr/";
+const IndustrizLink = "https://ajir.industriz.fr/Application/";
+const WorldSkillsStatuesLink = "https://www.worldskills-laserie.fr";
 
 // SETUP ///////////////////////////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
@@ -936,39 +944,6 @@ document.addEventListener('DOMContentLoaded', () => {
     "Object_cardAccess"
   );
   
-  //Open Door TrappedRoom
-  let doorTrappedRoom = new InteractAction(
-    "InteractAction/TrappedRoom/FinalDoor",
-    "Appuyez sur espace pour insérer la carte d'accès",
-    ["La porte est ouverte"],
-    ["Vous devez avoir la carte d'accès et avoir parler à Yumi"],
-    'doorTrappedRoomText',
-    () => {
-      if (WA.player.state["cardAccess"] != null && WA.player.state["cardAccess"] == true &&
-        WA.player.state["TalkToYumiFinalTrappedRoom"] != null && WA.player.state["TalkYumiFinalTrappedRoom"] == true) 
-      {
-        WA.room.hideLayer('beforePlayer/TrappedRoom/DoorFinal');
-        WA.room.hideLayer('beforePlayer/TrappedRoom/CollideDoorFinal');
-        WA.room.showLayer('beforePlayer/TrappedRoom/DoorFinalOpen');
-        
-        WA.player.state.saveVariable("cardAccessStep3", true, {
-          public: true,
-          persist: true,
-          ttl: 720 * 3600,
-          scope: "world"
-        });
-        return true;
-      }
-      else
-      {
-        return false;
-      }
-    },
-    "interract",
-    "InteractAction",
-    "Object_doorTrappedRoom"
-  );
-
   let YumiStep2Final = new InteractAction(
     "Step2/YumiStep2Final",
     "Appuyez sur espace pour discuter avec Yumi !",
@@ -995,6 +970,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (WA.player.state["cardAccess"] != null && WA.player.state["cardAccess"] == true)
       {
         createVariableWA("TalkToYumiFinalTrappedRoom");
+        console.log("CARTE ACCES :", WA.player.state["TalkToYumiFinalTrappedRoom"]);
         return true;
       }
       return false;
@@ -1004,6 +980,33 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ_YumiStep2Final",
   );
 
+    //Open Door TrappedRoom
+    let doorTrappedRoom = new InteractAction(
+      "InteractAction/TrappedRoom/FinalDoor",
+      "Appuyez sur espace pour insérer la carte d'accès",
+      ["La porte est ouverte"],
+      ["Vous devez avoir la carte d'accès et avoir parler à Yumi"],
+      'doorTrappedRoomText',
+      () => {
+        if (WA.player.state["cardAccess"] != null && WA.player.state["cardAccess"] == true &&
+          WA.player.state["TalkToYumiFinalTrappedRoom"] != null && WA.player.state["TalkToYumiFinalTrappedRoom"] == true) 
+        {
+          WA.room.hideLayer('beforePlayer/TrappedRoom/DoorFinal');
+          WA.room.hideLayer('beforePlayer/TrappedRoom/CollideDoorFinal');
+          WA.room.showLayer('beforePlayer/TrappedRoom/DoorFinalOpen');
+          createVariableWA("cardAccessStep3");
+          return true;
+        }
+        else
+        {
+          return false;
+        }
+      },
+      "interract",
+      "InteractAction",
+      "Object_doorTrappedRoom"
+    );
+
   //Digicode Door infinite exit 
   WA.room.onEnterLayer('Step2/exitZoneDoor').subscribe(() => {
     WA.room.hideLayer('closed_lab_door');
@@ -1011,27 +1014,12 @@ document.addEventListener('DOMContentLoaded', () => {
   WA.room.onLeaveLayer('Step2/exitZoneDoor').subscribe(() => {
     WA.room.showLayer('closed_lab_door');
   });
-  /**
-   * Function to add a trap to a layer
-   * @param {string} _layer 
-   */
-    function trapLayer(_layer)
-    {
-      WA.room.onEnterLayer(_layer).subscribe(() => {
-        WA.room.showLayer(_layer);
-        WA.onInit().then(() => {
-          WA.nav.goToRoom('#Depart');
-        });
-      });
-    }
-    
-    let nb_hole = 23;
-    for (let index = 1; index < nb_hole + 1; index++)
-    {
-      trapLayer('HideTile/TrappedRoom/Hole_' + index); 
-    }
 
-
+  let nb_hole = 23;
+  for (let index = 1; index < nb_hole + 1; index++)
+  {
+    trapLayer('HideTile/TrappedRoom/Hole_' + index, '#Depart'); 
+  }
 
   /* ----- STEP 3 LABINDUSTRY----- */
 
@@ -1256,12 +1244,99 @@ document.addEventListener('DOMContentLoaded', () => {
     "Formulaire_final"
   );
 
+  /**---- FinalRoom ----**/
+
+  let WorldUIMMYTB = new PopUpVideo(
+    "Interactions/FinalRoom/WorldUIMMYTB",
+    "Appuyez sur espace pour regarder les vidéos",
+    [
+      "Sur la page Youtube de l'UIMM, la fabrique de l'avenir, vous pourrez décrouvrir tous les métiers de l'industrie."
+    ],
+    "WorldUIMMYTBText",
+    WorldUIMMYTBVideoLink,
+    "interact",
+    "Video",
+    "Video_WorldUIMMYTB"
+  );
+
+  let UIMMInsta = new PopUpVideo(
+    "Interactions/FinalRoom/UIMMInsta",
+    "Appuyez sur espace pour regarder l'affiche",
+    [
+      "Plus d'un million de postes à pourvoir d'ici 2030.",
+      "N'hésitez plus et rejoignez-nous."
+    ],
+    "UIMMInstaText",
+    UIMMInstaLink,
+    "interact",
+    "Link",
+    "Link_UIMMInsta"
+  );
+
+  let ForIndustrie = new PopUpVideo(
+    "Interactions/FinalRoom/ForIndustrie",
+    "Appuyez sur espace pour regarder l'affiche",
+    [
+      "Entrez dans le monde de 'Forindustrie, l'Univers Extraordinaire', un métavers qui présente de manière ludique et innovante les métiers et les entreprises de l’industrie !"
+    ],
+    "ForIndustrieText",
+    ForIndustrieLink,
+    "interact",
+    "Link",
+    "Link_ForIndustrie"
+  );
+
+  let Industriz = new PopUpVideo(
+    "Interactions/FinalRoom/Industriz",
+    "Appuyez sur espace pour regarder l'affiche",
+    [
+      "Visitez sans tarder 'Industriz', une plateforme 3D sur laquelle vous pourrez en apprendre plus sur le monde de l'industrie, rencontrer des professionnels, participer à des rencontres ou encore tester vos connaissances !"
+    ],
+    "IndustrizText",
+    IndustrizLink,
+    "interact",
+    "Link",
+    "Link_Industriz"
+  );
+
+  let WorldSkillsStatues = new PopUpVideo(
+    "Interactions/FinalRoom/WorldSkillsStatues",
+    "Appuyez sur espace pour lire les statues",
+    [
+      "Visitez sans tarder 'Industriz', une plateforme 3D sur laquelle vous pourrez en apprendre plus sur le monde de l'industrie, rencontrer des professionnels, participer à des rencontres ou encore tester vos connaissances !"
+    ],
+    "WorldSkillsStatuesText",
+    WorldSkillsStatuesLink,
+    "interact",
+    "Link",
+    "Link_WorldSkillsStatues"
+  );
+
+  let TeleporteurFinalRoom = new InteractAction(
+    "Interaction/FinalRoom/TeleporteurFinalRoom",
+    "Appuyez sur espace pour actionner le levier de téléportation et revenir dans le hub des métiers",
+    [
+      "Merci encore pour ton aide, tu as sauvé le Monde de Yumi."    
+    ],
+    [
+      "Merci encore pour ton aide, tu as sauvé le Monde de Yumi."    
+    ],
+    "TeleporteurFinalRoomText",
+    () => {
+      WA.nav.goToRoom("#tpShowRoom");
+      return true;
+    },
+    "interact",
+    "Teleport",
+    "Teleport_FinalRoom"
+  )
+
   //Condition si le joueur a déjà fait le jeu on ouvre la porte
   if (WA.player.state["GameFinished"] == true)
   {
     WA.room.hideLayer('Step4/Last/ButtonNotPressed');
   }
-  
+
   /*
   * The code below is to check if the player has the access to certain zone of the TP
   * It permits to avoid player to cheat by using the URL to access in a certain zone
@@ -1487,4 +1562,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //Log to check in the WA that the script has passed
-console.log('VERSION 4.7');
+console.log('VERSION 4.8');

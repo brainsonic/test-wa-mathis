@@ -578,6 +578,20 @@ function createVariableWA(variable) {
   });
 }
 
+/**
+* Function to add a trap to a layer
+* @param {string} _layer 
+*/
+function trapLayer(_layer, _reset_layer)
+{
+  WA.room.onEnterLayer(_layer).subscribe(() => {
+    WA.room.showLayer(_layer);
+    WA.onInit().then(() => {
+      WA.nav.goToRoom(_reset_layer);
+    });
+  });
+}
+
 export {
     Interaction,
     InteractAction,
@@ -593,5 +607,6 @@ export {
     onTpCondition,
     getVariableOnZone,
     createVariableWA,
+    trapLayer,
 };
   // END CLASS 
