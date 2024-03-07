@@ -57,7 +57,7 @@ const InfluenceBotLink = "https://chat.csml.dev/s/2yh4lfxd7nba5zevmybgseb41bcn6h
 
 //Labo Yumi
 
-const drNozmanVideoLink = "https://www.youtube.com/embed/zZL1SjBGkNc?si=_z_dfadNSmzm-qOr";
+const PaulygonesVideoLink = "https://www.youtube.com/embed/vqbbGDkOG30?si=0iaVf_eClMnZ0qRH";
 const hiHacksVideoLink = "https://www.youtube.com/embed/BChzaJv_JzQ?si=K1G9ZNtbFTiTO3AA";
 const YumiLabBotLink = "https://chat.csml.dev/s/fb5kvplgaqoxlqfq9c2solxxt5jbyfh5";
 
@@ -758,21 +758,24 @@ document.addEventListener('DOMContentLoaded', () => {
   
   //Labo Yumi
 
-  /*
-  let DrNozman = new PopUpVideo(
-    "Pnjs/LaboRoom/DrNozman",
-    "Appuyez sur espace pour parler à DrNozman !",
+  
+  let Paulygones = new PopUpVideo(
+    "Pnjs/LaboRoom/Paulygones",
+    "Appuyez sur espace pour parler à Paulygones !",
     [
-      "Bonjour, moi c’est Dr Nozman et comme je suis un grand curieux, j’ai voulu découvrir comment étaient faites les prothèses d’aujourd’hui. Venez, je vous explique tout.",
+      "Je m'appelle Paulygones.",
+      "Bon en vrai, c'est Paul Guillotel.",
+      "Mais ce qui est sûr, c'est que j'aime fabriquer des trucs.",
+      "Ça tombe bien car ici, tout le monde aime créer de nouvelles choses !",
+      "Dans cette vidéo, vous apprendrez à fabriquer un aspirateur à vêtements géant."
     ],
     "DrNozman",
-    drNozmanVideoLink,
+    PaulygonesVideoLink,
     "interact",
     "PNJ",
-    "PNJ_Nozman",
+    "PNJ_Paulygones",
   );
-  */
-  
+
   let HiHacks = new PopUpVideo(
     "Pnjs/LaboRoom/Hihacks_labo",
     "Appuyez sur espace pour parler à Henri !",
