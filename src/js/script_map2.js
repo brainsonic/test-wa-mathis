@@ -19,15 +19,60 @@ document.addEventListener('DOMContentLoaded', () => {
     
     /** ----- TRAPMAP TOUCHPOINT ----- **/
     const linkYumiTrap = "https://chat.csml.dev/s/fcm79jpseev46kfx05r03r2mhzybz518";
+    const SamathanVideoLink = "https://www.youtube.com/embed/5O2_m8PPMPQ?si=Vw-yhO1et_9fr3ic";
+    const LeoVideoLink = "https://www.youtube.com/embed/CmloVJf5rg4?si=0p90cKSxPGMIUxns";
+    const BenjaminVideoLink = "https://www.youtube.com/embed/bBCP2glQtC0?si=xBqubYQwaMkuWq7m";
     
     let YumiTrap = new Modal(
-        "Zones/TouchPoint/YumiTrap",
+        "Interactions/YumiTrap",
         "Appuyez sur espace pour discuter avec Yumi !",
         linkYumiTrap,
         "right",
         "interact",
         "PNJ",
-        "Yumi_TrapMap"
-      
-      );
+        "PNJ_YumiTrapMap"
+    );
+
+    let SamathanVideo = new PopUpVideo(
+        "Interactions/SamathanVideo",
+        "Appuyez sur espace pour regarder la vidéo",
+        [
+            "Hey, Yumi aime découvrir l’industrie, ses métiers et celles et ceux qui les exercent.",
+            "Elle a appelé Samatha pour découvrir son métier et son parcours."
+        ],
+        "SamathanVideoText",
+        SamathanVideoLink,
+        "interact",
+        "Video",
+        "Video_SamathanTrapMap",
+    );
+
+    let LeoVideo = new PopUpVideo(
+        "Interactions/LeoVideo",
+        "Appuyez sur espace pour regarder la vidéo",
+        [
+            "Léo a été interviewé par Yumi !",
+            "Découvrez son métier et son parcours."
+        ],
+        "LeoVideoText",
+        LeoVideoLink,
+        "interact",
+        "Video",
+        "Video_LeoTrapMap",
+    );
+
+    let BenjaminVideo = new PopUpVideo(
+        "Interactions/BenjaminVideo",
+        "Appuyez sur espace pour regarder la vidéo",
+        [
+            "Yumi ne s'est pas arrêtée là, elle a également appelé Benjamin, regardez son témoignage !"
+        ],
+        "BenjaminVideoText",
+        BenjaminVideoLink,
+        "interact",
+        "Video",
+        "Video_BenjaminTrapMap",
+    );
+
+
 });

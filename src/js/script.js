@@ -911,7 +911,7 @@ document.addEventListener('DOMContentLoaded', () => {
     () => {
         if (WA.player.state["TalkToYumiDepartTrappedRoom"] == null)
         {
-          createVariableWA("TalkYumiDepartTrappedRoom");
+          createVariableWA("TalkToYumiDepartTrappedRoom");
         }
         return true;
     },
