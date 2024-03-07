@@ -84,7 +84,7 @@ const ArnaudIndustrieVideoLink = "https://www.youtube.com/shorts/yULRqI_KGb4";
 
 // Final Room
 
-const WorldUIMMYTBVideoLink = "https://www.youtube.com/embed/hyvQJcSSkJo?si=RR6Mxpi1NnNHpapM";
+const WorldUIMMYTBVideoLink = "https://www.youtube.com/embed/videoseries?si=lxOwHdwG2RZNgqBo&amp;list=PLFysjt-P1QCMOaJCY_jCO1HF7IXOoo8hO";
 const UIMMInstaLink = "https://www.instagram.com/uimm.lafabriquedelavenir/https://www.instagram.com/uimm.lafabriquedelavenir/";
 const ForIndustrieLink = "https://univers.forindustrie.fr/";
 const IndustrizLink = "https://ajir.industriz.fr/Application/";
@@ -1313,7 +1313,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   let TeleporteurFinalRoom = new InteractAction(
-    "Interaction/FinalRoom/TeleporteurFinalRoom",
+    "Interactions/FinalRoom/TeleporteurFinalRoom",
     "Appuyez sur espace pour actionner le levier de téléportation et revenir dans le hub des métiers",
     [
       "Merci encore pour ton aide, tu as sauvé le Monde de Yumi."    
