@@ -1233,12 +1233,20 @@ document.addEventListener('DOMContentLoaded', () => {
     "Step4/Last/Redbutton",
     "Appuyez sur espace pour ouvrir le formulaire !",
     [
-      "Bravo ! Tu viens de sauver le monde Yumi !!"
+      "Bravo !!!",
+      "Vous avez réussi.",
+      "Rayonance est en sécurité et notre monde est sauvé.",
+      "Vous êtes notre héros.",
+      "Pour vous remercier, n'hésitez pas à remplir ce formulaire pour participer à notre jeu concours et tenter de gagner une playstation 5 slim, un iphone 15 et plein d'autres cadeaux bien stylés.",
+      "L'aventure dans le Monde de Yumi ne s'arrête pas là.",
+      "Continuez à vous balader dans les différentes salles grâce au transporteur situé dans la prochaine pièce.",
+      "Les professionnels de l'industrie qui peuplent ce monde vous attendent pour vous parler de leurs métiers et de leurs projets passionnants !"
     ],
     ["Erreur dialogue"],
     "redButtonTxt",
     formLink,
     () => {
+      createVariableWA("GameFinished");
       WA.room.hideLayer('Step4/Last/ButtonNotPressed');
       return true;
     },
@@ -1247,6 +1255,13 @@ document.addEventListener('DOMContentLoaded', () => {
     "Form",
     "Formulaire_final"
   );
+
+  //Condition si le joueur a déjà fait le jeu on ouvre la porte
+  if (WA.player.state["GameFinished"] == true)
+  {
+    WA.room.hideLayer('Step4/Last/ButtonNotPressed');
+  }
+  
   /*
   * The code below is to check if the player has the access to certain zone of the TP
   * It permits to avoid player to cheat by using the URL to access in a certain zone
