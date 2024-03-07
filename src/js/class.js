@@ -263,7 +263,11 @@ class PopUpVideo extends Dialog {
       if (this.state >= this.dialog.length) {
         this.finished = true;
         this.state = 0;
-        await WA.nav.openCoWebSite(this.video, true, "", 50, 1, true, false);
+        WA.ui.modal.openModal({
+          title: 'VideoModal',
+          src: this.video,
+          position: 'center'
+        });
       } 
       else
       {

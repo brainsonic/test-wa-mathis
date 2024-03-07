@@ -981,31 +981,31 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
     //Open Door TrappedRoom
-    let doorTrappedRoom = new InteractAction(
-      "InteractAction/TrappedRoom/FinalDoor",
-      "Appuyez sur espace pour insérer la carte d'accès",
-      ["La porte est ouverte"],
-      ["Vous devez avoir la carte d'accès et avoir parler à Yumi"],
-      'doorTrappedRoomText',
-      () => {
-        if (WA.player.state["cardAccess"] != null && WA.player.state["cardAccess"] == true &&
-          WA.player.state["TalkToYumiFinalTrappedRoom"] != null && WA.player.state["TalkToYumiFinalTrappedRoom"] == true) 
-        {
-          WA.room.hideLayer('beforePlayer/TrappedRoom/DoorFinal');
-          WA.room.hideLayer('beforePlayer/TrappedRoom/CollideDoorFinal');
-          WA.room.showLayer('beforePlayer/TrappedRoom/DoorFinalOpen');
-          createVariableWA("cardAccessStep3");
-          return true;
-        }
-        else
-        {
-          return false;
-        }
-      },
-      "interract",
-      "InteractAction",
-      "Object_doorTrappedRoom"
-    );
+  let doorTrappedRoom = new InteractAction(
+    "InteractAction/TrappedRoom/FinalDoor",
+    "Appuyez sur espace pour insérer la carte d'accès",
+    ["La porte est ouverte"],
+    ["Vous devez avoir la carte d'accès et avoir parler à Yumi"],
+    'doorTrappedRoomText',
+    () => {
+      if (WA.player.state["cardAccess"] != null && WA.player.state["cardAccess"] == true &&
+        WA.player.state["TalkToYumiFinalTrappedRoom"] != null && WA.player.state["TalkToYumiFinalTrappedRoom"] == true) 
+      {
+        WA.room.hideLayer('beforePlayer/TrappedRoom/DoorFinal');
+        WA.room.hideLayer('beforePlayer/TrappedRoom/CollideDoorFinal');
+        WA.room.showLayer('beforePlayer/TrappedRoom/DoorFinalOpen');
+        createVariableWA("cardAccessStep3");
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    },
+    "interract",
+    "InteractAction",
+    "Object_doorTrappedRoom"
+  );
 
   //Digicode Door infinite exit 
   WA.room.onEnterLayer('Step2/exitZoneDoor').subscribe(() => {
