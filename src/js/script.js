@@ -17,7 +17,7 @@ const linkChatBotAccueil = " https://chat.csml.dev/s/klex5ttuh9bmpen8gyo4tssus4l
 const linkChatBotIngénieure = "https://chat.csml.dev/s/modkshn4koeqaqdjiaj5pa7hfxah6s57";
 const linkVideoJeune1 = "https://www.youtube.com/embed/9QDd6dH0-Xc?si=nVcJ4ryPrmNZ8c7u";
 const linkVideoJeune2 = "https://www.youtube.com/embed/pDMzhgu_Qbo?si=VKqmGCg01AkfOIQJ";
-const linkVideoJeune3 = "https://www.youtube.com/embed/mgX4eHVDlTc";
+const linkVideoJeune3 = "https://www.youtube.com/embed/mgX4eHVDlTc?si=DIfTDwIU92KX9KWg";
 const linkVideoMoonbike = "https://www.youtube.com/embed/eE3kWcMZsuE";
 const linkVideo = "https://www.youtube.com/embed/videoseries?si=wKcics6QWpDWdVob&amp;list=PLEe-8ZKtOy6Oxx1qU_qRhdcBmy-lXBtqQ";
 const linkVideoMagaly = "https://www.youtube.com/embed/bIG_XU7XRbw?si=ADidl-gwJ42Jh5kB";
@@ -27,7 +27,7 @@ const linkVideoMagaly = "https://www.youtube.com/embed/bIG_XU7XRbw?si=ADidl-gwJ4
 //MétierRoom
 const nicolasVideoLink = "https://www.youtube.com/embed/dO4SjOcNDTk?si=3i_0ivZqE0k4L9HS";
 const cariVideoLink = "https://www.youtube.com/embed/cM2U-uKXzts?si=HSPzO1A938ei964m";
-const FannyVideoLink = "https://youtu.be/DU7kScvKs6w?si=J8XvFyFqqSJfRQNk";
+const FannyVideoLink = "https://www.youtube.com/embed/DU7kScvKs6w?si=FIRpu9XituPJ3gMf";
 const apprentiRobotLink = "https://www.youtube.com/embed/CZae_izqWiw?si=QQiQ9J4Pc7s2gUk8";
 const apprentiChaudronniereVideoLink = "https://www.youtube.com/embed/Oxo69n0aoTo?si=jJ7e6AM-wAx4Gw6K";
 const YumiMetierBot = "https://chat.csml.dev/s/39iezvakvlqapvdwnakm2gjw6f1czgdp";
@@ -52,7 +52,7 @@ const MaximeVideoLink = "https://www.youtube.com/embed/RV-WS11CLTk?si=RUVpvBUxVX
 
 const doigbyVideoLink = "https://www.youtube.com/embed/3An5XwFbKgM?si=Sm7VNc1OKJpUxyQz";
 const tiboInShapeVideoLink = "https://www.youtube.com/embed/3yAL-w1U-6s?si=EBabp9OWFY4KbO8s";
-const HiHacksBotLink = "https://chat.csml.dev/s/imk4tlho3spmxlis9e1ejs3wlita2aco";
+const RomaneBotLink = "https://chat.csml.dev/s/qhij8orytimyritlrayvf8fasphdijzv";
 const InfluenceBotLink = "https://chat.csml.dev/s/2yh4lfxd7nba5zevmybgseb41bcn6h9b";
 
 //Labo Yumi
@@ -66,7 +66,7 @@ const YumiLabBotLink = "https://chat.csml.dev/s/fb5kvplgaqoxlqfq9c2solxxt5jbyfh5
 const apprenti_1VideoLink = "https://www.youtube.com/embed/bIG_XU7XRbw?si=TmzUGmFJ11DA-Mhz";
 const apprenti_2VideoLink = "https://www.youtube.com/embed/gxCuiA3-L4Q?si=15Pm8Vsp_im5XbLO";
 const apprenti_3VideoLink = "https://www.youtube.com/embed/XZlUUGS7qng?si=L9sT1Pkp2bRlEUVV";
-const apprenti_4VideoLink = "https://www.youtube.com/embed/DU7kScvKs6w?si=4eaGA75dDZP0dIxT";
+const ingProdVideoLink = "https://www.youtube.com/embed/8HlmZkJX_UQ?si=UtR-dDF2PR8lzDof";
 const apprenti_5VideoLink = "https://www.youtube.com/embed/G4lEOWcPYv4?si=wa9eJCX3TbsLQZS2";
 const apprenti_6VideoLink = "https://www.youtube.com/embed/Y35a-PeWnCY?si=ssJEvtuE8AQ5yQ43";
 
@@ -254,19 +254,6 @@ document.addEventListener('DOMContentLoaded', () => {
     "interact",
     "PNJ",
     "PNJ_Killian"
-  );
-
-  let Jeune3 = new PopUpVideo(
-    "Pnjs/Jeune3",
-    "Appuyez sur espace pour parler à Manon !",
-    [
-      "Bonjour, moi c'est Manon et pour découvrir sur quel super projet j'ai travaillé c'est ici :",
-    ],
-    "Jeune3",
-    linkVideoJeune3,
-    "interact",
-    "PNJ",
-    "PNJ_Manon"
   );
 
   let Magaly = new PopUpVideo(
@@ -487,7 +474,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "Pnjs/MetierRoom/Fanny",
     "Appuyez sur espace pour parler à Fanny !",
     [
-      "Bonjour, moi c’est Alexandra et je suis ingénieur de production. Je vous invite à découvrir mon parcours et mon quotidien dans cette vidéo.",
+      "Moi, c’est Fanny, et grâce à l'apprentissage, j'ai pu effectuer un semestre universitaire à l'étranger.",
       "Avant de vous en dire plus, si vous cherchez quelqu'un avec une clé, je l'ai vu partir vers le jardin.",
       "Mais ne partez pas tout de suite et découvrez mon parcours !"
     ],
@@ -740,25 +727,34 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ_Maeva",
   );
   
-  let HiHacksBot = new Modal(
+  let RomaneBot = new Modal(
     "Pnjs/ParkInside/Hihacks",
     "Appuyez sur espace pour discuter avec Romane !",
-    HiHacksBotLink,
+    RomaneBotLink,
     "right",
     "interact",
     "PNJ",
     "PNJ_Romane",
   );
-  
-  let InfluenceBot = new Modal(
-    "Pnjs/ParkInside/Influence",
-    "Appuyez sur espace pour discuter avec Yumi Créatrice !",
-    InfluenceBotLink,
-    "right",
+
+  let Jeune3 = new PopUpVideo(
+    "Pnjs/ParkInside/Manon",
+    "Appuyez sur espace pour parler à Manon !",
+    [
+      "J'ai 22 ans.",
+      "Je crée des objets de A à Z.",
+      "Je dessine beaucoup.",
+      "J'adore la mécanique.",
+      "Je m'appelle Manon et je suis spécialisée en Conception 3D et Fabrication Additive.",
+      "Venez décrouvrir ma passion !"
+    ],
+    "Manon",
+    linkVideoJeune3,
     "interact",
     "PNJ",
-    "PNJ_YumiCreatrice",
+    "PNJ_Manon"
   );
+  
   
   //Labo Yumi
 
