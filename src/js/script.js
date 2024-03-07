@@ -70,10 +70,17 @@ const ingProdVideoLink = "https://www.youtube.com/embed/8HlmZkJX_UQ?si=UtR-dDF2P
 const apprenti_5VideoLink = "https://www.youtube.com/embed/G4lEOWcPYv4?si=wa9eJCX3TbsLQZS2";
 const apprenti_6VideoLink = "https://www.youtube.com/embed/Y35a-PeWnCY?si=ssJEvtuE8AQ5yQ43";
 
+
 /* ------------ Phase 3 ------------ */
 
 const linkYumiStep2Depart = "https://chat.csml.dev/s/ufpg8pzg8tkimx0n67c88gzayopoizr2";
 const linkYumiStep2Final = "https://chat.csml.dev/s/04fl66mlrmgxggs6vcsc2wsgc9e2cr3s";
+
+// Lab Industrie
+const PaulygonesIndustrieVideoLink = "https://www.youtube.com/shorts/R3GFX6387Hw";
+const LucieIndustrieVideoLink = "https://www.youtube.com/shorts/jDIfPsnb5LI";
+const JadeIndustrieVideoLink = "https://www.youtube.com/embed/aH12YYBDZc8?si=bU2SA6-xTgUG8L0q";
+const ArnaudIndustrieVideoLink = "https://www.youtube.com/shorts/yULRqI_KGb4";
 
 // SETUP ///////////////////////////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
@@ -168,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // instanciation des pnj, stockage dans des variables au cas où on voudrait les supprimer ou autre
   let Accueil = new Modal(
-    "Pnjs/pnj1",
+    "Interactions/pnj1",
     "Appuyez sur espace pour discuter avec Yumi !",
     linkChatBotAccueil,
     "right",
@@ -179,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   let Captain = new Dialog(
-    "Pnjs/pnj2",
+    "Interactions/pnj2",
     "Appuyez sur espace pour discuter avec le Capitaine !",
     textCaptain,
     "pnj2text",
@@ -189,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   let Skieuse = new Dialog(
-    "Pnjs/pnj3",
+    "Interactions/pnj3",
     "Appuyez sur espace pour discuter avec la Skieuse !",
     textSkieuse,
     "pnj3text",
@@ -199,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let Scientifique = new Dialog(
-    "Pnjs/pnj5",
+    "Interactions/pnj5",
     "Appuyez sur espace pour discuter avec la Scientifique !",
     textScientifique,
     "pnj5text",
@@ -209,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   let Ingénieure = new Modal(
-    "Pnjs/pnj6",
+    "Interactions/pnj6",
     "Appuyez sur espace pour discuter avec l'Ingénieure !",
     linkChatBotIngénieure,
     "right",
@@ -219,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   let Moonbike = new PopUpVideo(
-    "Pnjs/MoonbikePNJ",
+    "Interactions/MoonbikePNJ",
     "Appuyez sur espace pour parler à Anthony !",
     [
       "Bonjour, moi c’est Anthony, je suis en charge de la production des MoonBikes. Je vous laisse découvrir mon projet.",
@@ -231,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ_Anthony",
   );
   let Jeune1 = new PopUpVideo(
-    "Pnjs/Jeune1",
+    "Interactions/Jeune1",
     "Appuyez sur espace pour parler à Antonin !",
     [
       "Salut moi c'est Antonin ! Pour découvrir sur quel super projet j'ai travaillé c'est ici :",
@@ -244,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   let Jeune2 = new PopUpVideo(
-    "Pnjs/Jeune2",
+    "Interactions/Jeune2",
     "Appuyez sur espace pour parler à Killian !",
     [
       "Salut moi c'est Killian ! Pour découvrir sur quel super projet j'ai travaillé c'est ici :",
@@ -257,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   let Magaly = new PopUpVideo(
-    "Pnjs/Magaly",
+    "Interactions/Magaly",
     "Appuyer sur espace pour parler à Magaly",
     [
       "Bonjour, moi c’est Magaly, et grâce à l’industrie j’ai réussi à combiner ma passion et mon métier.",
@@ -272,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   let Statue = new PopUpVideo(
-    "Pnjs/Statue",
+    "Interactions/Statue",
     "Appuyez sur espace pour intéragir avec la statue !",
     [
       "Cette tête de tigre géante a été réalisée l'année dernière, en collaboration avec l'influenceur HiHacks et les apprentis chaudronniers du Pôle formation UIMM Nouvelle-Aquitaine",
@@ -310,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Panneaux
   let PanneauPont = new Dialog(
-    "Pnjs/Panneau Pont",
+    "Interactions/Panneau Pont",
     "Appuyez sur espace pour intéragir avec le panneau !",
     ["Au Nord, la gare. Au Sud, la place principale."],
     "Panneau Pont",
@@ -320,7 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   let PanneauGare = new Dialog(
-    "Pnjs/Panneau Gare",
+    "Interactions/Panneau Gare",
     "Appuyez sur espace pour intéragir avec le panneau !",
     ["Vous vous trouvez à la Gare du Monde de Yumi"],
     "Panneau Gare",
@@ -330,7 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   let PanneauChemin = new Dialog(
-    "Pnjs/Panneau Chemin",
+    "Interactions/Panneau Chemin",
     "Appuyez sur espace pour intéragir avec le panneau !",
     ["À l'Ouest, la place principale. Au Sud, le port."],
     "Panneau Chemin",
@@ -340,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   let PanneauQuai = new Dialog(
-    "Pnjs/Panneau Quai",
+    "Interactions/Panneau Quai",
     "Appuyez sur espace pour intéragir avec le panneau !",
     ["Vous vous trouvez au Port du Monde de Yumi"],
     "Panneau Quai",
@@ -350,7 +357,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let PanneauTerrasse = new Dialog(
-    "Pnjs/Panneau Terrasse",
+    "Interactions/Panneau Terrasse",
     "Appuyez sur espace pour intéragir avec le panneau !",
     [
       "Partez à la rencontre des habitants du Monde de Yumi, les femmes et les hommes qui font l'Industrie",
@@ -362,7 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let PanneauParcCentre = new Dialog(
-    "Pnjs/Panneau Parc Centre",
+    "Interactions/Panneau Parc Centre",
     "Appuyez sur espace pour intéragir avec le panneau !",
     ["À gauche le hub des métiers - En haut à droite le lab de Yumi - En haut à gauche la cafet' des apprentis - En bas le salon des vocations"],
     "PanneauParcCentre",
@@ -372,7 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let PanneauParcHaut = new Dialog(
-    "Pnjs/Panneau Parc Haut",
+    "Interactions/Panneau Parc Haut",
     "Appuyez sur espace pour intéragir avec le panneau !",
     ["Le lab de Yumi"],
     "PanneauParcHaut",
@@ -383,7 +390,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mini Jeux
   let Pong = new Modal(
-    "Pnjs/Pong",
+    "Interactions/Pong",
     "Appuyez sur espace pour jouer au Pong !",
     pongLink,
     "center",
@@ -393,7 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   let Basket = new Modal(
-    "Pnjs/Basket",
+    "Interactions/Basket",
     "Appuyez sur espace pour jouer au Basket !",
     basketLink,
     "center",
@@ -403,7 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   let Piano = new PopUpVideoAction(
-    "Pnjs/Piano",
+    "Interactions/Piano",
     "Appuyez sur espace pour jouer du piano !",
     [
       "Appuyez sur les touches du clavier pour jouer du piano"
@@ -422,7 +429,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let Scribble = new Modal(
-    "Pnjs/MetierRoom/Scribble",
+    "Interactions/MetierRoom/Scribble",
     "Appuyez sur espace pour faire des dessins !",
     scribbleLink,
     "center",
@@ -432,7 +439,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let Pool = new Modal(
-    "Pnjs/ShowRoom/Pool",
+    "Interactions/ShowRoom/Pool",
     "Appuyer sur espace pour faire du billard !",
     poolLink,
     "center",
@@ -445,7 +452,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   //MetierRoom
   let Nicolas = new PopUpVideo(
-    "Pnjs/MetierRoom/Nicolas",
+    "Interactions/MetierRoom/Nicolas",
     "Appuyez sur espace pour parler à Nicolas !",
     [
       "Bonjour, moi c’est Nicolas et je suis soudeur dans l’industrie aéronautique. Venez découvrir mon métier !",
@@ -458,7 +465,7 @@ document.addEventListener('DOMContentLoaded', () => {
   )
   
   let Cari = new PopUpVideo(
-    "Pnjs/MetierRoom/Cari",
+    "Interactions/MetierRoom/Cari",
     "Appuyez sur espace pour parler à Jordan !",
     [
       "Bonjour, moi c’est Jordan et je suis concepteur de systèmes embarqués. Vous connaissez ? Non ? Alors venez découvrir mon métier !",
@@ -471,7 +478,7 @@ document.addEventListener('DOMContentLoaded', () => {
   )
   
   let Fanny = new PopUpVideoAction(
-    "Pnjs/MetierRoom/Fanny",
+    "Interactions/MetierRoom/Fanny",
     "Appuyez sur espace pour parler à Fanny !",
     [
       "Moi, c’est Fanny, et grâce à l'apprentissage, j'ai pu effectuer un semestre universitaire à l'étranger.",
@@ -497,7 +504,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let ApprentiRobotVideo = new PopUpVideo(
-    "Pnjs/MetierRoom/ApprentiRobot",
+    "Interactions/MetierRoom/ApprentiRobot",
     "Appuyez sur espace pour regarder la vidéo !",
     [
       "Thomas est apprenti dans la robotique. Découvrez son métier en vidéo ! "
@@ -510,7 +517,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let ApprentiChaudronniereVideo = new PopUpVideo(
-    "Pnjs/MetierRoom/ApprentiChaudron",
+    "Interactions/MetierRoom/ApprentiChaudron",
     "Appuyez sur espace pour regarder la vidéo !",
     [
       "Découvrez en vidéo le métier de Pauline, apprentie en chaudronnerie navale."
@@ -523,7 +530,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let yumiMetier = new Modal(
-    "Pnjs/MetierRoom/chatBot_1",
+    "Interactions/MetierRoom/chatBot_1",
     "Appuyez sur espace pour discuter avec Yumi !",
     YumiMetierBot,
     "right",
@@ -533,7 +540,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   let Melody = new PopUpVideo(
-    "Pnjs/MetierRoom/Melody",
+    "Interactions/MetierRoom/Melody",
     "Appuyez sur espace pour parler à Melody",
     [
       "Melody est rigoureuse, minutieuse même.",
@@ -551,7 +558,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //ShowRoom
   
   let Anais = new PopUpVideo(
-    "Pnjs/ShowRoom/Anais",
+    "Interactions/ShowRoom/Anais",
     "Appuyez sur espace pour parler à Anaïs !",
     [
       "Salut, moi c’est Anaïs et je suis technicienne méthodes. Si vous ne savez pas en quoi ça consiste : venez, je vous montre !",
@@ -564,7 +571,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
     
   let FrankVideo = new PopUpVideo(
-    "Pnjs/ShowRoom/FrankVideo",
+    "Interactions/ShowRoom/FrankVideo",
     "Appuyez sur espace pour regarder la vidéo !",
     [
       "Franck est responsable d'un atelier de montage chez SOFINOR.",
@@ -578,7 +585,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let RespRD = new PopUpVideo(
-    "Pnjs/ShowRoom/RespR&D",
+    "Interactions/ShowRoom/RespR&D",
     "Appuyez sur espace pour regarder la vidéo !",
     [
       "Isabelle est responsable R&D. Découvrez son métier en vidéo !"
@@ -592,7 +599,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let AjustMonteur = new PopUpVideo(
-    "Pnjs/ShowRoom/AjustMonteur",
+    "Interactions/ShowRoom/AjustMonteur",
     "Appuyez sur espace pour regarder la vidéo !",
     [
       "C'est quoi le métier d'ajusteur-monteur ? Pour le découvrir c'est ici."
@@ -605,7 +612,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let XavierVideo = new PopUpVideo(
-    "Pnjs/ShowRoom/GalvanoplasteVideo",
+    "Interactions/ShowRoom/GalvanoplasteVideo",
     "Appuyez sur espace pour regarder la vidéo !",
     [
       "Galvanoplaste, mais qu'est-ce que c'est ?",
@@ -619,7 +626,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let RafaelVideo = new PopUpVideo(
-    "Pnjs/ShowRoom/RafaelVideo",
+    "Interactions/ShowRoom/RafaelVideo",
     "Appuyez sur espace pour regarder la vidéo !",
     [
       "Raphaël a géré le remplacement de la télécabine de Font-Romeu.",
@@ -634,7 +641,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let RespBureau = new PopUpVideo(
-    "Pnjs/ShowRoom/RespBureau",
+    "Interactions/ShowRoom/RespBureau",
     "Appuyez sur espace pour regarder la vidéo !",
     [
       "Comment devenir responsable bureau d'études et méthodes ? Réponse en vidéo !"
@@ -647,7 +654,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let yumiITW = new Modal(
-    "Pnjs/ShowRoom/ITWBot",
+    "Interactions/ShowRoom/ITWBot",
     "Appuyez sur espace pour discuter avec Yumi Journaliste !",
     YumiITWBot,
     "right",
@@ -657,7 +664,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let MaximeVideo = new PopUpVideo(
-    "Pnjs/ShowRoom/Maxime",
+    "Interactions/ShowRoom/Maxime",
     "Appuyez sur espace pour regarder la vidéo !",
     [
       "Quelqu'un peut me dire ce qu'est la mécatronique ?",
@@ -671,7 +678,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   let Liebherr_aerospace = new PopUpVideo(
-    "Pnjs/ShowRoom/Liebherr_aerospace",
+    "Interactions/ShowRoom/Liebherr_aerospace",
     "Appuyez sur espace pour regarder la vidéo !",
     [
       "Quel est le point commun entre l'aéronautique et l'automobile ?",
@@ -686,7 +693,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   let LucieVideo = new PopUpVideo(
-    "Pnjs/ShowRoom/LucieVideo",
+    "Interactions/ShowRoom/LucieVideo",
     "Appuyez sur espace pour regarder la vidéo !",
     [
       "La robotique mobile, qu'est-ce que c'est ?",
@@ -702,7 +709,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //ParkInside
   
   let Maeva = new PopUpVideoAction(
-    "Pnjs/ParkInside/Maeva",
+    "Interactions/ParkInside/Maeva",
     "Appuyez sur espace pour parler à Maëva !",
     [
       "Hello, moi c’est Maëva : le vidéaste Tibo InShape est revenu en Bac Pro pour découvrir mon métier d’ajusteur-monteur, ainsi que les autres métiers de l'industrie aéronautique. Regardez ce que ça donne !",
@@ -728,7 +735,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let RomaneBot = new Modal(
-    "Pnjs/ParkInside/Hihacks",
+    "Interactions/ParkInside/Hihacks",
     "Appuyez sur espace pour discuter avec Romane !",
     RomaneBotLink,
     "right",
@@ -738,7 +745,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   let Jeune3 = new PopUpVideo(
-    "Pnjs/ParkInside/Manon",
+    "Interactions/ParkInside/Manon",
     "Appuyez sur espace pour parler à Manon !",
     [
       "J'ai 22 ans.",
@@ -748,7 +755,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "Je m'appelle Manon et je suis spécialisée en Conception 3D et Fabrication Additive.",
       "Venez décrouvrir ma passion !"
     ],
-    "Manon",
+    "ManonText",
     linkVideoJeune3,
     "interact",
     "PNJ",
@@ -760,7 +767,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   
   let Paulygones = new PopUpVideo(
-    "Pnjs/LaboRoom/Paulygones",
+    "Interactions/LaboRoom/Paulygones",
     "Appuyez sur espace pour parler à Paulygones !",
     [
       "Je m'appelle Paulygones.",
@@ -777,7 +784,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   let HiHacks = new PopUpVideo(
-    "Pnjs/LaboRoom/Hihacks_labo",
+    "Interactions/LaboRoom/Hihacks_labo",
     "Appuyez sur espace pour parler à Henri !",
     [
       "Salut ! Moi c’est Henri Hihacks et grâce à Thiaifène, apprenti en BTS Maintenance des Systèmes, j’ai réalisé un projet complètement fou... Vous êtes curieux de le découvrir ? Alors regardez ma vidéo !",
@@ -790,7 +797,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let YumiLabBot = new Modal(
-    "Pnjs/LaboRoom/YumiLab",
+    "Interactions/LaboRoom/YumiLab",
     "Appuyez sur espace pour discuter avec Yumi Scientifique !",
     YumiLabBotLink,
     "right",
@@ -801,7 +808,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //Dinning Room
   
   let Apprenti_1 = new PopUpVideo(
-    "Pnjs/DinningRoom/Apprenti_1",
+    "Interactions/DinningRoom/Apprenti_1",
     "Appuyez sur espace pour parler à Magaly !",
     [
       "Bonjour, moi c’est Magaly, et grâce à l’industrie j’ai réussi à combiner ma passion et mon métier. Vous voulez savoir comment ? Allez, j'enfile mon casque et je vous montre !",
@@ -814,7 +821,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let Apprenti_2 = new PopUpVideo(
-    "Pnjs/DinningRoom/Apprenti_2",
+    "Interactions/DinningRoom/Apprenti_2",
     "Appuyez sur espace pour parler à Joris !",
     [
       "Salut, moi c’est Joris. Le point commun entre ma passion et mon métier, c’est l’esprit d’équipe. Vous voulez en savoir plus ? Alors regardez cette vidéo !",
@@ -827,7 +834,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let Apprenti_3 = new PopUpVideo(
-    "Pnjs/DinningRoom/Apprenti_3",
+    "Interactions/DinningRoom/Apprenti_3",
     "Appuyez sur espace pour parler à Julien !",
     [
       "Bonjour, moi c’est Julien et je suis passionné d'informatique : j'en ai fait mon métier ! Découvrez mon parcours en vidéo."
@@ -840,7 +847,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let Apprenti_4 = new PopUpVideo(
-    "Pnjs/DinningRoom/Apprenti_4",
+    "Interactions/DinningRoom/Apprenti_4",
     "Appuyez sur espace pour parler à Alexandra !",
     [
       "Bonjour, moi c’est Alexandra et je suis ingénieur de production. Je vous invite à découvrir mon parcours et mon quotidien dans cette vidéo.",
@@ -853,7 +860,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let Apprenti_5 = new PopUpVideoAction(
-    "Pnjs/DinningRoom/Apprenti_5",
+    "Interactions/DinningRoom/Apprenti_5",
     "Appuyez sur espace pour parler à Nassredine !",
     [
       "Bonjour, je m’appelle Nasreddine et ce que j'aime dans mon métier c'est le côté à la fois pointu et technique. Regardez cette vidéo pour mieux comprendre !",
@@ -879,7 +886,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let Apprenti_6 = new PopUpVideo(
-    "Pnjs/DinningRoom/Apprenti_6",
+    "Interactions/DinningRoom/Apprenti_6",
     "Appuyez sur espace pour parler à Mathis !",
     [
       "Salut, moi c’est Mathis, j'ai 19 ans et je suis apprenti en conception industrielle. Vous connaissez ? Non ? Alors je vous invite à découvrir mon métier en vidéo !",
@@ -1026,7 +1033,66 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  /* ----- STEP 3 ----- */
+  /* ----- STEP 3 LABINDUSTRY----- */
+
+  let PaulygoneVideo = new PopUpVideo(
+    "Interactions/LabIndustrieRoom/PaulygoneVideo",
+    "Appuyez sur espace pour regarder la vidéo",
+    [
+      "Le youtubeur Paulygones cherche à comprendre comment Robin s'y prend pour concevoir des robots mobiles autonomes.",
+      "Regardez."
+    ],
+    "PaulygoneVideoText",
+    PaulygonesIndustrieVideoLink,
+    "interact",
+    "Video",
+    "Video_PaulygoneIndustrie",
+  );
+
+  let LucieIndustrieVideo = new PopUpVideo(
+    "Interactions/LabIndustrieRoom/LucieIndustrieVideo",
+    "Appuyez sur espace pour regarder la vidéo",
+    [
+      "Faut-il se former pour utiliser un robot mobile autonome ?",
+      "Et bien oui nous apprend Lucie, ingénieure d'application !",
+      "Découvrez pourquoi en vidéo."
+    ],
+    "LucieIndustrieVideoText",
+    LucieIndustrieVideoLink,
+    "interact",
+    "Video",
+    "Video_LucieIndustrie",
+  );
+
+  let JadeVideo = new PopUpVideo(
+    "Interactions/LabIndustrieRoom/JadeVideo",
+    "Appuyez sur espace pour regarder la vidéo",
+    [
+      "Jade a seulement 18 ans.",
+      "Pourtant, elle travaille déjà dans une centrale nucléaire.",
+      "Découvrez pourquoi en vidéo."
+    ],
+    "JadeVideoText",
+    JadeIndustrieVideoLink,
+    "interact",
+    "Video",
+    "Video_JadeIndustrie",
+  );
+
+  let ArnaudVideo = new PopUpVideo(
+    "Interactions/LabIndustrieRoom/ArnaudVideo",
+    "Appuyez sur espace pour regarder la vidéo",
+    [
+      "Tiens, on dirait... un extrait vidéo ?",
+      "'Arnaud explique son métier au vidéaste Paulygones'",
+      "Intéressant, regardons !"
+    ],
+    "ArnaudVideoText",
+    ArnaudIndustrieVideoLink,
+    "interact",
+    "Video",
+    "Video_ArnaudIndustrie",
+  );
   
   let coatRackHint = new ItemOnLayer(
     "Items/LabIndustry/CoatRackHint",
