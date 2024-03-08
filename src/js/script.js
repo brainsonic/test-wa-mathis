@@ -93,6 +93,7 @@ const UIMMInstaLink = "https://www.instagram.com/uimm.lafabriquedelavenir/https:
 const ForIndustrieLink = "https://univers.forindustrie.fr/";
 const IndustrizLink = "https://ajir.industriz.fr/Application/";
 const WorldSkillsStatuesLink = "https://www.worldskills-laserie.fr";
+const UIMMRecruteLink = "https://www.lindustrie-recrute.fr";
 
 // SETUP ///////////////////////////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
@@ -1327,6 +1328,20 @@ document.addEventListener('DOMContentLoaded', () => {
     "interact",
     "Link",
     "Link_WorldSkillsStatues"
+  );
+
+  let UIMMRecrute = new PopUpVideo(
+    "Interactions/FinalRoom/UIMMRecrute",
+    "Appuyez sur espace pour lire le livre",
+    [
+      "Plus d'un million de postes à pourvoir d'ici 2030.",
+      "N'hésitez plus et rejoignez-nous."
+    ],
+    "UIMMRecruteText",
+    UIMMRecruteLink,
+    "interact",
+    "Link",
+    "Link_UIMMRecrute"
   );
 
   let TeleporteurFinalRoom = new InteractAction(
