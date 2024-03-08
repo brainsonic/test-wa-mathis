@@ -160,10 +160,10 @@ class InteractAction extends Dialog {
     //fonction d'intéraction, ouvre le popup
     interact() {
   
-      this.open();
       WA.onInit().then(() => {
         this.condition = this.function_action();
       });
+      this.open();
       this.track();
 
   
