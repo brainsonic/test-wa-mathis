@@ -155,13 +155,14 @@ class InteractAction extends Dialog {
       this.dialog_condition = _dialog_condition;
       this.function_action = _function_action;
       this.old_dialog = this.dialog;
+      this.condition = true;
     }
     //fonction d'intéraction, ouvre le popup
     interact() {
   
       this.open();
       WA.onInit().then(() => {
-        this.function_action();
+        this.condition = this.function_action();
       });
       this.track();
 
@@ -171,7 +172,7 @@ class InteractAction extends Dialog {
     open() {
       // ouvre le popup avec le texte correspondant au state actuel
       // bouton change de label si c'est le dernier popup
-      if (this.function_action() == false)
+      if (this.condition == false)
       {
         this.dialog = this.dialog_condition;
       }
