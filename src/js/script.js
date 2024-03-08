@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
       WA.ui.modal.openModal({
         title: "Popup",
         src: popupLink,
-        allow: "fullscreen; clipboard-read; clipboard-write",
+        allow: "fullscreen; clipboard-read;",
         allowApi: !0,
         position: "center",
       });
@@ -1492,6 +1492,11 @@ document.addEventListener('DOMContentLoaded', () => {
     ],
     "ArnaudText",
     () => {
+      console.log("1: ", WA.player.state["arnaudRevealed"] );
+      console.log("2: ", WA.player.state["startSideQuestStep4"]);
+      console.log("3: ", WA.player.state["TalkHint_1"]);
+      console.log("4: ", WA.player.state["TalkHint_2"]);
+      console.log("5: ", WA.player.state["TalkHint_3"]);
       if (WA.player.state["arnaudRevealed"] != true
       && WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true 
       && WA.player.state["TalkHint_1"] != null && WA.player.state["TalkHint_1"] == true
