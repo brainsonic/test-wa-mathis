@@ -219,7 +219,7 @@ class Modal extends Interaction {
       WA.ui.modal.openModal({
         title: "Yumi",
         src: this.modal,
-        allow: "fullscreen; clipboard-read; clipboard-write",
+        allow: "fullscreen; clipboard-read;",
         allowApi: !0,
         position: this.position,
       });

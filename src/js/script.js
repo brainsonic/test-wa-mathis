@@ -11,7 +11,7 @@ const basketLink = "https://brainsonic.github.io/UIMM-WA-Extras/shooting-hoops.h
 const pianoLink = "https://64ix.github.io/WA-Edited-Tutorial/piano/dist/index.html";
 const scribbleLink = "https://brainsonic.github.io/WA-Misc-EasterEggs/scribble/index.html";
 const poolLink = "https://brainsonic.github.io/WA-Misc-EasterEggs/pool/index.html";
-const formLink = "https://0eb89b36.sibforms.com/serve/MUIFAAOmzgE4ndFT9kNM-uBs4YlJeU3A1QwPa7YPDBm_4l4UD0FQQoYC0ux_H4XuTeKySpVQcQo2jya0tZpk6_txstHp_WI3cITYRWoILzlf-gvw2SzeYepvtFGVDghH2mm6NG1VZcxRV5fW8C1xa1Gn_UECrK-eMhv0SmFNOVo54fmNEHLNrJIUlBtQw9H96pu0IPmE-xMcxnvn";
+const formLink = " https://0eb89b36.sibforms.com/serve/MUIFAHKlZAODTmYzcgaEXGHeBqhYFDvp0VI6v9I0MsxI-aOUM5m[…]thfKXb1YrT_yPV_b90PUWiAQYBMOvsK1BurFlGJ7KDMbPwk8mxoQevrOgp";
 
 const linkChatBotAccueil = " https://chat.csml.dev/s/klex5ttuh9bmpen8gyo4tssus4liqxgb";
 const linkChatBotIngénieure = "https://chat.csml.dev/s/modkshn4koeqaqdjiaj5pa7hfxah6s57";
@@ -70,6 +70,14 @@ const ingProdVideoLink = "https://www.youtube.com/embed/8HlmZkJX_UQ?si=UtR-dDF2P
 const apprenti_5VideoLink = "https://www.youtube.com/embed/G4lEOWcPYv4?si=wa9eJCX3TbsLQZS2";
 const apprenti_6VideoLink = "https://www.youtube.com/embed/Y35a-PeWnCY?si=ssJEvtuE8AQ5yQ43";
 
+const AurelienChatLink = "https://chat.csml.dev/s/lslr5k9pozam14w3xbqwsvsmddtsoyrn";
+const AdrienChatLink = "https://chat.csml.dev/s/xvkag7qgx5dift2nvwqvp5xkbqtryo3e";
+const AnneChatLink = "https://chat.csml.dev/s/u2ghlvuzfovrmtzhzfp4qvnlmx1mftgp";
+const AurelieChatLink = "https://chat.csml.dev/s/uyz9dzodq1tvba8ak68j0nqqajwlilpf";
+const LaureChatLink = "https://chat.csml.dev/s/hu75enlmb64ucc9ee39tovo6jgnwez0q";
+const LudivineChatLink = "https://chat.csml.dev/s/tong9qtkukrx5ivgixgujo3ibvoplgk8";
+const LudovicChatLink = "https://chat.csml.dev/s/82vo1evkzwr0rsfy783lb2om3k9abwva";
+const SeverineChatLink = "https://chat.csml.dev/s/juxizbbmraxjnwcopowd4slvr5nb9jw1";
 
 //Transporteur
 
@@ -89,7 +97,7 @@ const ArnaudIndustrieVideoLink = "https://www.youtube.com/shorts/yULRqI_KGb4";
 // Final Room
 
 const WorldUIMMYTBVideoLink = "https://www.youtube.com/embed/videoseries?si=lxOwHdwG2RZNgqBo&amp;list=PLFysjt-P1QCMOaJCY_jCO1HF7IXOoo8hO";
-const UIMMInstaLink = "https://www.instagram.com/uimm.lafabriquedelavenir/https://www.instagram.com/uimm.lafabriquedelavenir/";
+const UIMMInstaLink = "https://www.instagram.com/uimm.lafabriquedelavenir/";
 const ForIndustrieLink = "https://univers.forindustrie.fr/";
 const IndustrizLink = "https://ajir.industriz.fr/Application/";
 const WorldSkillsStatuesLink = "https://www.worldskills-laserie.fr";
@@ -820,56 +828,84 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   //Dinning Room
   
-  let Apprenti_1 = new PopUpVideo(
-    "Interactions/DinningRoom/Apprenti_1",
-    "Appuyez sur espace pour parler à Magaly !",
-    [
-      "Bonjour, moi c’est Magaly, et grâce à l’industrie j’ai réussi à combiner ma passion et mon métier. Vous voulez savoir comment ? Allez, j'enfile mon casque et je vous montre !",
-    ],
-    "Apprenti_1",
-    apprenti_1VideoLink,
+  let Adrien = new Modal(
+    "Interactions/DinningRoom/Adrien",
+    "Appuyez sur espace pour discuter avec Adrien !",
+    AdrienChatLink,
+    "right",
     "interact",
     "PNJ",
-    "PNJ_Magaly",
+    "PNJ_AdrienDinningRoom"
   );
-  
-  let Apprenti_2 = new PopUpVideo(
-    "Interactions/DinningRoom/Apprenti_2",
-    "Appuyez sur espace pour parler à Joris !",
-    [
-      "Salut, moi c’est Joris. Le point commun entre ma passion et mon métier, c’est l’esprit d’équipe. Vous voulez en savoir plus ? Alors regardez cette vidéo !",
-    ],
-    "Apprenti_2",
-    apprenti_2VideoLink,
+
+  let Aurelie = new Modal(
+    "Interactions/DinningRoom/Aurelie",
+    "Appuyez sur espace pour discuter avec Aurelie !",
+    AurelieChatLink,
+    "right",
     "interact",
     "PNJ",
-    "PNJ_Joris",
+    "PNJ_AurelieDinningRoom"
   );
-  
-  let Apprenti_3 = new PopUpVideo(
-    "Interactions/DinningRoom/Apprenti_3",
-    "Appuyez sur espace pour parler à Julien !",
-    [
-      "Bonjour, moi c’est Julien et je suis passionné d'informatique : j'en ai fait mon métier ! Découvrez mon parcours en vidéo."
-    ],
-    "Apprenti_3",
-    apprenti_3VideoLink,
+
+  let Anne = new Modal(
+    "Interactions/DinningRoom/Anne",
+    "Appuyez sur espace pour discuter avec Anne !",
+    AnneChatLink,
+    "right",
     "interact",
     "PNJ",
-    "PNJ_Julien",
+    "PNJ_AnneDinningRoom"
   );
-  
-  let Apprenti_4 = new PopUpVideo(
-    "Interactions/DinningRoom/Apprenti_4",
-    "Appuyez sur espace pour parler à Alexandra !",
-    [
-      "Bonjour, moi c’est Alexandra et je suis ingénieur de production. Je vous invite à découvrir mon parcours et mon quotidien dans cette vidéo.",
-    ],
-    "Apprenti_4",
-    ingProdVideoLink,
+
+  let Severine = new Modal(
+    "Interactions/DinningRoom/Severine",
+    "Appuyez sur espace pour discuter avec Severine !",
+    SeverineChatLink,
+    "right",
     "interact",
     "PNJ",
-    "PNJ_Alexandra",
+    "PNJ_SeverineDinningRoom"
+  );
+
+  let Ludovic = new Modal(
+    "Interactions/DinningRoom/Ludovic",
+    "Appuyez sur espace pour discuter avec Ludovic !",
+    LudovicChatLink,
+    "right",
+    "interact",
+    "PNJ",
+    "PNJ_LudovicDinningRoom"
+  );
+
+  let Laure = new Modal(
+    "Interactions/DinningRoom/Laure",
+    "Appuyez sur espace pour discuter avec Laure !",
+    LaureChatLink,
+    "right",
+    "interact",
+    "PNJ",
+    "PNJ_LaureDinningRoom"
+  );
+
+  let Aurelien = new Modal(
+    "Interactions/DinningRoom/Aurelien",
+    "Appuyez sur espace pour discuter avec Aurelien !",
+    AurelienChatLink,
+    "right",
+    "interact",
+    "PNJ",
+    "PNJ_AurelienDinningRoom"
+  );
+
+  let Ludivine = new Modal(
+    "Interactions/DinningRoom/Ludivine",
+    "Appuyez sur espace pour discuter avec Ludivine !",
+    LudivineChatLink,
+    "right",
+    "interact",
+    "PNJ",
+    "PNJ_LudivineDinningRoom"
   );
   
   let Apprenti_5 = new PopUpVideoAction(
@@ -897,20 +933,6 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ",
     "PNJ_Nassredine",
   );
-  
-  let Apprenti_6 = new PopUpVideo(
-    "Interactions/DinningRoom/Apprenti_6",
-    "Appuyez sur espace pour parler à Mathis !",
-    [
-      "Salut, moi c’est Mathis, j'ai 19 ans et je suis apprenti en conception industrielle. Vous connaissez ? Non ? Alors je vous invite à découvrir mon métier en vidéo !",
-    ],
-    "Apprenti_6",
-    apprenti_6VideoLink,
-    "interact",
-    "PNJ",
-    "PNJ_Mathis",
-  );
-  
   
   // END INTERACTIONS DIVERSES ///////////////////////////////////////////////
   
@@ -1281,8 +1303,8 @@ document.addEventListener('DOMContentLoaded', () => {
     "Interactions/FinalRoom/UIMMInsta",
     "Appuyez sur espace pour regarder l'affiche",
     [
-      "Plus d'un million de postes à pourvoir d'ici 2030.",
-      "N'hésitez plus et rejoignez-nous."
+      "Infos, témoignages, nouveautés, toutes nos actus sont sur Instagram.",
+      "Suivez-nous !"
     ],
     "UIMMInstaText",
     UIMMInstaLink,
