@@ -71,6 +71,10 @@ const apprenti_5VideoLink = "https://www.youtube.com/embed/G4lEOWcPYv4?si=wa9eJC
 const apprenti_6VideoLink = "https://www.youtube.com/embed/Y35a-PeWnCY?si=ssJEvtuE8AQ5yQ43";
 
 
+//Transporteur
+
+const YumiTransporteurBotLink = "https://chat.csml.dev/s/eqqjwhjjk8ami1hi0gecq6k3bm00nmqf";
+
 /* ------------ Phase 3 ------------ */
 
 const linkYumiStep2Depart = "https://chat.csml.dev/s/ufpg8pzg8tkimx0n67c88gzayopoizr2";
@@ -686,7 +690,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   let Liebherr_aerospace = new PopUpVideo(
-    "Interactions/ShowRoom/Liebherr_aerospace",
+    "Interactions/ShowRoom/LiebherrAerospace",
     "Appuyez sur espace pour regarder la vidéo !",
     [
       "Quel est le point commun entre l'aéronautique et l'automobile ?",
@@ -928,6 +932,11 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ_YumiDepartTrappedRoom",
   );
   
+  //Hide the card if the player already pick it
+  if (WA.player.state['cardAccess'] == true)
+  {
+    WA.room.hideLayer("Items/TrappedRoom/CardAccess");
+  }
   //Card of the trapped Room
   let cardAccess = new ItemPickUpOnCondition(
     "Items/TrappedRoom/CardAccess",
@@ -937,7 +946,15 @@ document.addEventListener('DOMContentLoaded', () => {
     "cardAccessText",
     "cardAccess",
     () => {
-        return  WA.player.state["TalkToYumiDepartTrappedRoom"] != null ? true : false;
+        if (WA.player.state["TalkToYumiDepartTrappedRoom"] != null)
+        {
+          WA.room.hideLayer("Items/TrappedRoom/CardAccess");
+          return true;
+        }
+        else
+        {
+          return false;
+        }
     },
     "interract",
     "Object",
@@ -1197,7 +1214,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let YumiStep4 = new ModalAction(
     "Step4/Yumi",
     "Appuyez sur espace pour discuter avec Yumi !",
-    YumiLabBotLink,
+    YumiTransporteurBotLink,
     "right",
     () => {
         var variable = "TalkToYumiStep4";
@@ -1424,7 +1441,6 @@ document.addEventListener('DOMContentLoaded', () => {
       "Voilà ce que je craignais tant de perdre",
       "Je ne suis pas sûr de sa signification, mais j'ai le sentiment que c'est très important pour vous.",
       "Concervez-la ou mémorisez-la, cela pourra vous être utile.",
-      "*Une mystérieuse séquence apparait en capture sous le texte*"
     ],
     [
       "Ah, vous voilà enfin !",
