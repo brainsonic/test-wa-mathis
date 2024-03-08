@@ -162,8 +162,9 @@ class InteractAction extends Dialog {
   
       WA.onInit().then(() => {
         this.condition = this.function_action();
+        this.open();
       });
-      this.open();
+      
       this.track();
 
   
