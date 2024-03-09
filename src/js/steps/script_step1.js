@@ -307,8 +307,6 @@ function step_1()
         "Game_Piano"
     );    
 }
-
-
 export {
     step_1,
 };
