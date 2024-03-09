@@ -1,15 +1,12 @@
 import {} from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, ItemOnLayer, ItemPickUpOnCondition, PopUpVideoAction, onTpCondition, tutorial, onEnterAuthorization, getVariableOnZone, createVariableWA, trapLayer} from './class';
-import { statfsSync } from "fs";
-import { Console } from "console";
-
 
 function step_1()
 {
     const pongLink = "https://64ix.github.io/WA-Edited-Tutorial/pong.html";
     const basketLink = "https://brainsonic.github.io/UIMM-WA-Extras/shooting-hoops.html";
     const pianoLink = "https://64ix.github.io/WA-Edited-Tutorial/piano/dist/index.html";
-    
+
     const linkChatBotAccueil = " https://chat.csml.dev/s/klex5ttuh9bmpen8gyo4tssus4liqxgb";
     const linkChatBotIngénieure = "https://chat.csml.dev/s/modkshn4koeqaqdjiaj5pa7hfxah6s57";
     const linkVideoJeune1 = "https://www.youtube.com/embed/9QDd6dH0-Xc?si=nVcJ4ryPrmNZ8c7u";
