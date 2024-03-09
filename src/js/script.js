@@ -3,6 +3,7 @@ import {} from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, ItemOnLayer, ItemPickUpOnCondition, PopUpVideoAction, onTpCondition, tutorial, onEnterAuthorization, getVariableOnZone, createVariableWA, trapLayer} from './class';
 import { statfsSync } from "fs";
 import { Console } from "console";
+import { step_1 } from "./steps/script_step1";
 
 // VARIABLES ///////////////////////////////////////////////
 const tutorialLink = "https://64ix.github.io/WA-Edited-Tutorial/tutorial.html";
@@ -195,6 +196,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // PNJ ///////////////////////////////////////////////
   
   // instanciation des pnj, stockage dans des variables au cas où on voudrait les supprimer ou autre
+  step_1();
+  /*
   let Accueil = new Modal(
     "Interactions/pnj1",
     "Appuyez sur espace pour discuter avec Yumi !",
@@ -448,27 +451,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "Game",
     "Game_Piano"
   );
-  
-  let Scribble = new Modal(
-    "Interactions/MetierRoom/Scribble",
-    "Appuyez sur espace pour faire des dessins !",
-    scribbleLink,
-    "center",
-    "interact",
-    "Game",
-    "Game_Scribble"
-  );
-  
-  let Pool = new Modal(
-    "Interactions/ShowRoom/Pool",
-    "Appuyer sur espace pour faire du billard !",
-    poolLink,
-    "center",
-    "interact",
-    "Game",
-    "Game_Pool"
-  );
-  
+  */
   //Phase 2
   
   //MetierRoom
@@ -574,6 +557,26 @@ document.addEventListener('DOMContentLoaded', () => {
     "interact",
     "PNJ",
     "PNJ_Melody"
+  );
+
+  let Scribble = new Modal(
+    "Interactions/MetierRoom/Scribble",
+    "Appuyez sur espace pour faire des dessins !",
+    scribbleLink,
+    "center",
+    "interact",
+    "Game",
+    "Game_Scribble"
+  );
+  
+  let Pool = new Modal(
+    "Interactions/ShowRoom/Pool",
+    "Appuyer sur espace pour faire du billard !",
+    poolLink,
+    "center",
+    "interact",
+    "Game",
+    "Game_Pool"
   );
   
   //ShowRoom
