@@ -1,8 +1,6 @@
 // Chargement de la lib JS de WA
 import {} from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, ItemOnLayer, ItemPickUpOnCondition, PopUpVideoAction, onTpCondition, tutorial, onEnterAuthorization, getVariableOnZone, createVariableWA, trapLayer} from './class';
-import { statfsSync } from "fs";
-import { Console } from "console";
 import { step_1 } from "./steps/script_step1";
 
 // VARIABLES ///////////////////////////////////////////////
