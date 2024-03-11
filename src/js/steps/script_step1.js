@@ -181,7 +181,7 @@ function step_1()
         ],
         [
             "Connaissez-vous les WorldSkills, la grande compétition des métiers ?",
-            "Et bien c'est le moment de les découvrir en visionnant la saison 1 de 'WorldSkills, La Série', réalisée avec les apprentis de l'industrie !",
+            "Et bien, c'est le moment de les découvrir en visionnant la saison 1 de 'WorldSkills La Série', réalisée avec les apprentis de l'industrie !",
             "Accrochez-vous, sensations fortes garanties."
         ],
         "VidéoText",

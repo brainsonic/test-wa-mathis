@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "Galvanoplaste, mais qu'est-ce que c'est ?",
       "La réponse en vidéo !"
     ],
-    "DataScientist",
+    "GalvanoplasteVideoText",
     GalvanoplasteVideoLink,
     "interact",
     "Video",
@@ -377,13 +377,13 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   let MaximeVideo = new PopUpVideo(
-    "Interactions/ShowRoom/Maxime",
+    "Interactions/ShowRoom/MaximeVideo",
     "Appuyez sur espace pour regarder la vidéo !",
     [
       "Quelqu'un peut me dire ce qu'est la mécatronique ?",
       "Écoutez bien Maxime, responsable de la R&D chez Otech, il vous dit tout."
     ],
-    "WorldSkills",
+    "MaximeVideoText",
     MaximeVideoLink,
     "interact",
     "Video",
@@ -392,7 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let Liebherr_aerospace = new PopUpVideo(
     "Interactions/ShowRoom/LiebherrAerospace",
-    "Appuyez sur espace pour regarder la vidéo !",
+    "Appuyez sur espace pour écouter le podcast !",
     [
       "Quel est le point commun entre l'aéronautique et l'automobile ?",
       "Capucine, ingénieure système chez Liebherr-Aerospace Toulouse, vous donne la réponse.",
@@ -407,7 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let LucieVideo = new PopUpVideo(
     "Interactions/ShowRoom/LucieVideo",
-    "Appuyez sur espace pour regarder la vidéo !",
+    "Appuyez sur espace pour écouter le podcast !",
     [
       "La robotique mobile, qu'est-ce que c'est ?",
       "Lucie, ingénieure d'application chez Meanwhile, vous explique tout.",
@@ -520,57 +520,86 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   //Dinning Room
   
-  let Adrien = new Modal(
+  let Adrien = new PopUpVideo(
     "Interactions/DinningRoom/Adrien",
     "Appuyez sur espace pour discuter avec Adrien !",
+    [
+      "Non, le chaudronnier ne fait pas de magie.",
+      "Ou peut-être que si finalement.",
+      "La réponse avec Adrien."
+    ],
+    "Adrientext",
     AdrienChatLink,
-    "right",
     "interact",
     "PNJ",
-    "PNJ_AdrienDinningRoom"
+    "PNJ_AdrienDinningRoom",
+    "right",
   );
 
-  let Aurelie = new Modal(
+  let Aurelie = new PopUpVideo(
     "Interactions/DinningRoom/Aurelie",
     "Appuyez sur espace pour discuter avec Aurelie !",
+    [
+      "Connaissez-vous l'automatisme ?",
+      "Aurélie vous explique tout.",
+      "Suivez le guide."
+    ],
+    "AurelieText",
     AurelieChatLink,
-    "right",
     "interact",
     "PNJ",
-    "PNJ_AurelieDinningRoom"
+    "PNJ_AurelieDinningRoom",
+    "right",
   );
 
-  let Anne = new Modal(
+  let Anne = new PopUpVideo(
     "Interactions/DinningRoom/Anne",
     "Appuyez sur espace pour discuter avec Anne !",
+    [
+      "Anne est technicienne QHSE.",
+      "Quésaco ?",
+      "Elle vous dit tout."
+    ],
+    "AnneText",
     AnneChatLink,
-    "right",
     "interact",
     "PNJ",
-    "PNJ_AnneDinningRoom"
+    "PNJ_AnneDinningRoom",
+    "right",
   );
 
-  let Severine = new Modal(
+  let Severine = new PopUpVideo(
     "Interactions/DinningRoom/Severine",
     "Appuyez sur espace pour discuter avec Severine !",
+    [
+      "Je dessine des compresseurs, des condenseurs, des détendeurs, des évaporateurs…",
+      "Je suis dessinatrice industrielle.",
+      "Venez découvrir mon métier."
+    ],
+    "SeverineText",
     SeverineChatLink,
-    "right",
     "interact",
     "PNJ",
-    "PNJ_SeverineDinningRoom"
+    "PNJ_SeverineDinningRoom",
+    "right",
   );
 
-  let Ludovic = new Modal(
+  let Ludovic = new PopUpVideo(
     "Interactions/DinningRoom/Ludovic",
     "Appuyez sur espace pour discuter avec Ludovic !",
+    [
+      "Savez-vous ce qu'est l'usinage ?",
+      "Pour en savoir plus, écoutez Ludovic !"
+    ],
+    "LudovicText",
     LudovicChatLink,
-    "right",
     "interact",
     "PNJ",
-    "PNJ_LudovicDinningRoom"
+    "PNJ_LudovicDinningRoom",
+    "right",
   );
 
-  let Laure = new Modal(
+  let Laure = new PopUpVideo(
     "Interactions/DinningRoom/Laure",
     "Appuyez sur espace pour discuter avec Laure !",
     LaureChatLink,
@@ -580,50 +609,36 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ_LaureDinningRoom"
   );
 
-  let Aurelien = new Modal(
+  let Aurelien = new PopUpVideo(
     "Interactions/DinningRoom/Aurelien",
     "Appuyez sur espace pour discuter avec Aurelien !",
+    [
+      "Moi, c'est Aurélien.",
+      "Je travaille le titane, l'inox ou l'inconel.",
+      "J'aime jouer des coudes.",
+      "Je suis …"
+    ],
+    "AurelienText",
     AurelienChatLink,
-    "right",
     "interact",
     "PNJ",
-    "PNJ_AurelienDinningRoom"
+    "PNJ_AurelienDinningRoom",
+    "right"
   );
 
-  let Ludivine = new Modal(
+  let Ludivine = new PopUpVideo(
     "Interactions/DinningRoom/Ludivine",
     "Appuyez sur espace pour discuter avec Ludivine !",
+    [
+      "Réparer des moteurs d'avions, un rêve de gosse ?!",
+      "Pour Ludivine, c'est son quotidien."
+    ],
+    "LudivineText",
     LudivineChatLink,
-    "right",
     "interact",
     "PNJ",
-    "PNJ_LudivineDinningRoom"
-  );
-  
-  let Apprenti_5 = new PopUpVideoAction(
-    "Interactions/DinningRoom/Apprenti_5",
-    "Appuyez sur espace pour parler à Nassredine !",
-    [
-      "Bonjour, je m’appelle Nasreddine et ce que j'aime dans mon métier c'est le côté à la fois pointu et technique. Regardez cette vidéo pour mieux comprendre !",
-      "Avant ça, si tu cherches une personne possédant une clef.",
-      "Il est parti vers le hub des métiers avec le ventre bien rempli."
-    ],
-    [
-      "Bonjour, je m’appelle Nasreddine et ce que j'aime dans mon métier c'est le côté à la fois pointu et technique. Regardez cette vidéo pour mieux comprendre !",
-    ],
-    "Apprenti_5",
-    apprenti_5VideoLink,
-    () => {
-      if (WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true)
-      {
-        WA.player.state["TalkHint_3"] = true;
-        return true;
-      }
-      return false;
-    },
-    "interact",
-    "PNJ",
-    "PNJ_Nassredine",
+    "PNJ_LudivineDinningRoom",
+    "right"
   );
   
   // END INTERACTIONS DIVERSES ///////////////////////////////////////////////
@@ -878,7 +893,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "InteractAction/LabIndustry/TrapDoor",
     "Appuyez sur espace pour ouvrir la trappe",
     ["Vous entrez dans la trappe"],
-    ["Vous devez rassemblé les 4 indices avant de pouvoir d'ouvrir la trappe"],
+    ["Vous devez rassembler les 4 indices avant de pouvoir d'ouvrir la trappe"],
     'trapDoorText',
     () => {
       /*
@@ -951,13 +966,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let redButtonForm = new PopUpVideoAction(
     "Step4/Last/Redbutton",
-    "Appuyez sur espace pour ouvrir le formulaire !",
+    "Appuyez sur espace pour sauver Rayonance!",
     [
       "Bravo !!!",
       "Vous avez réussi.",
       "Rayonance est en sécurité et notre monde est sauvé.",
       "Vous êtes notre héros.",
-      "Pour vous remercier, n'hésitez pas à remplir ce formulaire pour participer à notre jeu concours et tenter de gagner une playstation 5 slim, un iphone 15 et plein d'autres cadeaux bien stylés.",
+      "Pour vous remercier, n'hésitez pas à remplir ce formulaire pour participer à notre jeu concours et tenter de gagner une playstation 5 slim et plein d'autres cadeaux bien stylés.",
       "L'aventure dans le Monde de Yumi ne s'arrête pas là.",
       "Continuez à vous balader dans les différentes salles grâce au transporteur situé dans la prochaine pièce.",
       "Les professionnels de l'industrie qui peuplent ce monde vous attendent pour vous parler de leurs métiers et de leurs projets passionnants !"
@@ -1059,7 +1074,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let TeleporteurFinalRoom = new InteractAction(
     "Interactions/FinalRoom/TeleporteurFinalRoom",
-    "Appuyez sur espace pour actionner le levier de téléportation et revenir dans le hub des métiers",
+    "Merci encore pour ton aide, tu as sauvé le Monde de Yumi. Si tu prends ce transporteur, tu iras directement dans le hub des métiers. Ce sera l'occasion pour toi de décrouvrir des femmes et des hommes passionants qui travailent dans l'industrie.",
     [
       "Merci encore pour ton aide, tu as sauvé le Monde de Yumi."    
     ],
@@ -1228,7 +1243,8 @@ document.addEventListener('DOMContentLoaded', () => {
       "À me regarder comme ça, vous me rendez nerveux.",
       "Ok, c'est moi qui ai volé la clef d'Anton.",
       "La voici !",
-      "Vous pouvez lui rapporter sa précieuse clef."
+      "Vous pouvez lui rapporter sa précieuse clef.",
+      "*Vous avez récupéré la clef*"
     ],
     [
       "Cette chaise est vraiment confortable !",

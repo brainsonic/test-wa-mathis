@@ -249,9 +249,10 @@ class ModalAction extends Modal {
 // class PopUpVideo : Popup qui ouvre un site web à la sortie
 // _function_action  : bool : True si l'action est effectué sinon false
 class PopUpVideo extends Dialog {
-    constructor(_layer, _message, _dialog, _object, _video, _category_tracker, _type_tracker, _name_tracker) {
+    constructor(_layer, _message, _dialog, _object, _video, _category_tracker, _type_tracker, _name_tracker, _position = 'center') {
       super(_layer, _message, _dialog, _object, _category_tracker, _type_tracker, _name_tracker);
       this.video = _video;
+      this.position = _position;
     }
     // override de la fonction next pour ouvrir le site web, async car cowebsite est une fonction asynchrone
     async next() {
@@ -269,7 +270,7 @@ class PopUpVideo extends Dialog {
         WA.ui.modal.openModal({
           title: 'VideoModal',
           src: this.video,
-          position: 'center'
+          position: this.position
         });
       } 
       else
