@@ -893,7 +893,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "InteractAction/LabIndustry/TrapDoor",
     "Appuyez sur espace pour ouvrir la trappe",
     ["Vous entrez dans la trappe"],
-    ["Vous devez rassembler les 4 indices avant de pouvoir d'ouvrir la trappe"],
+    ["Vous devez rassembler les 4 indices avant de pouvoir ouvrir la trappe"],
     'trapDoorText',
     () => {
       /*
