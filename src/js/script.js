@@ -76,10 +76,10 @@ const linkYumiStep2Depart = "https://chat.csml.dev/s/ufpg8pzg8tkimx0n67c88gzayop
 const linkYumiStep2Final = "https://chat.csml.dev/s/04fl66mlrmgxggs6vcsc2wsgc9e2cr3s";
 
 // Lab Industrie
-const PaulygonesIndustrieVideoLink = "https://www.youtube.com/shorts/R3GFX6387Hw";
-const LucieIndustrieVideoLink = "https://www.youtube.com/shorts/jDIfPsnb5LI";
+const PaulygonesIndustrieVideoLink = "https://www.youtube.com/embed/R3GFX6387Hw";
+const LucieIndustrieVideoLink = "https://www.youtube.com/embed/jDIfPsnb5LI";
 const JadeIndustrieVideoLink = "https://www.youtube.com/embed/aH12YYBDZc8?si=bU2SA6-xTgUG8L0q";
-const ArnaudIndustrieVideoLink = "https://www.youtube.com/shorts/yULRqI_KGb4";
+const ArnaudIndustrieVideoLink = "https://www.youtube.com/embed/yULRqI_KGb4";
 
 // Final Room
 
