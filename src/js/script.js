@@ -1311,4 +1311,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //Log to check in the WA that the script has passed
-console.log('VERSION 6.3');
+console.log('VERSION 6.4');
