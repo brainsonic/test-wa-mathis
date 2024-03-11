@@ -94,21 +94,19 @@ const UIMMRecruteLink = "https://www.lindustrie-recrute.fr";
 // SETUP ///////////////////////////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
 
-  console.log("DEBUT :",WA.player.state['TutorialRead']);
- if (WA.player.state['TutorialRead'] != true)
- {
-    WA.ui.modal.openModal({
-      title: "Tutorial",
-      src: tutorialLink,
-      allow: "fullscreen; clipboard-read; clipboard-write",
-      allowApi: !0,
-      position: "right",
-    });
- }
-
-
   WA.onInit().then(() => {
     // désactiver les proximity meeting parceque peu utile
+    console.log("DEBUT :",WA.player.state['TutorialRead']);
+    if (WA.player.state['TutorialRead'] != true)
+    {
+       WA.ui.modal.openModal({
+         title: "Tutorial",
+         src: tutorialLink,
+         allow: "fullscreen; clipboard-read; clipboard-write",
+         allowApi: !0,
+         position: "right",
+       });
+    }
     WA.controls.disablePlayerProximityMeeting();
     createVariableWA('TutorialRead');
     console.log("APRES :",WA.player.state['TutorialRead']);
@@ -993,15 +991,14 @@ document.addEventListener('DOMContentLoaded', () => {
     "Video_WorldUIMMYTB"
   );
 
-  let UIMMInsta = new PopUpVideo(
+  let UIMMInsta = new Dialog(
     "Interactions/FinalRoom/UIMMInsta",
     "Appuyez sur espace pour regarder l'affiche",
     [
       "Infos, témoignages, nouveautés, toutes nos actus sont sur Instagram.",
-      "Suivez-nous !"
+      "Suivez-nous ! https://www.instagram.com/uimm.lafabriquedelavenir/"
     ],
     "UIMMInstaText",
-    UIMMInstaLink,
     "interact",
     "Link",
     "Link_UIMMInsta"
@@ -1314,4 +1311,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //Log to check in the WA that the script has passed
-console.log('VERSION 6.1');
+console.log('VERSION 6.3');
