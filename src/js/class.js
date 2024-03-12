@@ -246,8 +246,7 @@ class ModalAction extends Modal {
   
   }
 
-// class PopUpVideo : Popup qui ouvre un site web à la sortie
-// _function_action  : bool : True si l'action est effectué sinon false
+// class PopUpVideo : Ouverture d'un popup puis d'une modale
 class PopUpVideo extends Dialog {
     constructor(_layer, _message, _dialog, _object, _video, _category_tracker, _type_tracker, _name_tracker, _position = 'center') {
       super(_layer, _message, _dialog, _object, _category_tracker, _type_tracker, _name_tracker);

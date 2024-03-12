@@ -2,6 +2,7 @@
 import {} from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, ItemOnLayer, ItemPickUpOnCondition, PopUpVideoAction, onTpCondition, tutorial, onEnterAuthorization, getVariableOnZone, createVariableWA, trapLayer} from './class';
 import { step_1 } from "./steps/script_step1";
+import { step_2 } from "./steps/script_step2";
 
 // VARIABLES ///////////////////////////////////////////////
 const tutorialLink = "https://64ix.github.io/WA-Edited-Tutorial/tutorial.html";
@@ -133,7 +134,8 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   step_1();
-
+  step_2();
+  /*
   //Phase 2
   
   //MetierRoom
@@ -633,7 +635,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "PNJ_LudivineDinningRoom",
     "right"
   );
-  
+  */
   // END INTERACTIONS DIVERSES ///////////////////////////////////////////////
   
   /* ----- STEP 2 ----- */
@@ -1320,4 +1322,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //Log to check in the WA that the script has passed
-console.log('VERSION 6.5');
+console.log('VERSION 7');
