@@ -554,7 +554,151 @@ function phase_3()
     onEnterAuthorization(zoneFinalStep4, ['cardAccessZoneFinalStep4'], 'EscapeGameText');
     onTpCondition('Step4/Last/TpBack', '#start', () => { return true }, 'tpBackFinal');
 
-    
+    /* ----- Step 4 bis ----- */
+
+    let Anton = new InteractAction(
+        "Step4bis/Anton",
+        "Appuyez sur espace pour parler à Anton !",
+        [
+        "Vous avez retrouvé ma clef.",
+        "Vous avez ma gratitude éternelle !",
+        "Voilà ce que je craignais tant de perdre",
+        "Je ne suis pas sûr de sa signification, mais j'ai le sentiment que c'est très important pour vous.",
+        "Concervez-la ou mémorisez-la, cela pourra vous être utile.",
+        ],
+        [
+        "Ah, vous voilà enfin !",
+        "Je suis dans une situation désespérée...",
+        "Un habitant, avec qui j'ai eu une dispute récente, a volé la clef de mon coffre par vengeance.",
+        "Le contenu de ce coffre est essentiel, il ne doit pas tomber entre de mauvaises mains.",
+        "Je vous en prie, pouvez-vous m'aider à retrouver la clef et me la ramener ?",
+        " Je ne peux pas quitter le coffre, mais je suis certain que les habitants du Monde de Yumi pourront vous aider à retrouver le voleur."
+        ],
+        "AntonText",
+        () => {
+        if (WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true
+            && WA.player.state["chestDidierKey"] != null && WA.player.state["chestDidierKey"] == true) 
+        {
+            WA.player.state["allowOpenChest"] = true;
+            return true;
+        }
+        else {
+            WA.player.state["startSideQuestStep4"] = true;
+            return false;
+        }
+        },
+        "interact",
+        "PNJ",
+        "Didier"
+    );
+
+    let chestDidier = new InteractAction(
+        "Step4bis/ChestDidier",
+        "Appuyez sur espace pour ouvrir le coffre !",
+        [
+        "Vous avez récupéré une mystérieuse séquence !",
+        "Gardez-la précieusement, elle vous servira pour les prochaines quêtes"
+        ],
+        ["Vous n'avez pas l'autorisation d'ouvrir le coffre !"],
+        "ChestDidierText",
+        () => {
+        if (WA.player.state["allowOpenChest"] == true ) {
+            createVariableWA("sequenceObtained");
+            return true;
+        }
+        else {
+            return false;
+        }
+        },
+        "interact",
+        "Object",
+        "Object_sequence"
+    );
+
+    let Arnaud = new InteractAction(
+        "Step4bis/Arnaud",
+        "Appuyez sur espace pour parler à Arnaud !",
+        [
+        "Cette chaise est vraiment confortable !",
+        "Vous cherchez quelque chose ?",
+        "À me regarder comme ça, vous me rendez nerveux.",
+        "Ok, c'est moi qui ai volé la clef d'Anton.",
+        "La voici !",
+        "Vous pouvez lui rapporter sa précieuse clef.",
+        "*Vous avez récupéré la clef*"
+        ],
+        [
+        "Cette chaise est vraiment confortable !",
+        "Vous cherchez quelque chose ?"
+        ],
+        "ArnaudText",
+        () => {
+        console.log("1: ", WA.player.state["arnaudRevealed"] );
+        console.log("2: ", WA.player.state["startSideQuestStep4"]);
+        console.log("3: ", WA.player.state["TalkHint_1"]);
+        console.log("4: ", WA.player.state["TalkHint_2"]);
+        console.log("5: ", WA.player.state["TalkHint_3"]);
+        if (WA.player.state["arnaudRevealed"] != true
+        && WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true 
+        && WA.player.state["TalkHint_1"] != null && WA.player.state["TalkHint_1"] == true
+        && WA.player.state["TalkHint_2"] != null && WA.player.state["TalkHint_2"] == true
+        && WA.player.state["TalkHint_3"] != null && WA.player.state["TalkHint_3"] == true) {
+            
+            //Variable pour revenir au dialogue de départ quand arnaud a été démasqué
+            createVariableWA('arnaudRevealed');
+            createVariableWA("chestDidierKey");
+            return true;
+        }
+        else {
+            return false;
+        }
+        },
+        "interact",
+        "PNJ",
+        "Arnaud"
+    );
+
+    WA.onInit().then(() => {
+        if (WA.player.state['sequenceObtained'] != null && WA.player.state['sequenceObtained'] == true)
+        {
+        WA.ui.actionBar.addButton({
+            id: 'sequence-btn',
+            label: 'Carte Secrète',
+            callback: (event) => {
+            WA.player.state['sequenceButtonDisplayed'] = true;
+            WA.ui.modal.openModal({
+                title: 'Sequence',
+                src: 'https://brainsonic.github.io/UIMM-WA-Extras/sequence.html',
+                allow: "fullscreen; clipboard-read;",
+                allowApi: !0,
+                position: "center",
+            })
+            }
+        })
+        }
+
+        //Variable if player has obtained the sequence
+        WA.player.state.onVariableChange('sequenceObtained').subscribe(() => {
+        if (WA.player.state['sequenceObtained'] != null && WA.player.state['sequenceObtained'] == true
+            && WA.player.state['sequenceButtonDisplayed'] != true)
+        {
+            WA.ui.actionBar.addButton({
+            id: 'sequence-btn',
+            label: 'Carte Secrète',
+            callback: (event) => {
+                createVariableWA("sequenceButtonDisplayed");
+                WA.ui.modal.openModal({
+                title: 'Sequence',
+                src: 'https://brainsonic.github.io/UIMM-WA-Extras/sequence.html',
+                allow: "fullscreen; clipboard-read;",
+                allowApi: !0,
+                position: "center",
+                })
+            }
+            });
+        }
+        })
+    });
 }
 
 export {
