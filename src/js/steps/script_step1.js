@@ -7,8 +7,8 @@ function step_1()
     const basketLink = "https://brainsonic.github.io/UIMM-WA-Extras/shooting-hoops.html";
     const pianoLink = "https://64ix.github.io/WA-Edited-Tutorial/piano/dist/index.html";
 
-    const linkChatBotAccueil = " https://chat.csml.dev/s/klex5ttuh9bmpen8gyo4tssus4liqxgb";
-    const linkChatBotIngénieure = "https://chat.csml.dev/s/modkshn4koeqaqdjiaj5pa7hfxah6s57";
+    const linkChatBotAccueil = "https://chat.csml.dev/s/qqr2rsopfpb7do1mhvqhu5wtmezc0qzg"; //
+    const linkChatBotIngénieure = "https://chat.csml.dev/s/cveg2t5ddnfrdlelb9vmzvpqvpzdlhew"; //
     const linkVideoJeune1 = "https://www.youtube.com/embed/9QDd6dH0-Xc?si=nVcJ4ryPrmNZ8c7u";
     const linkVideoJeune2 = "https://www.youtube.com/embed/pDMzhgu_Qbo?si=VKqmGCg01AkfOIQJ";
     const linkVideoJeune3 = "https://www.youtube.com/embed/mgX4eHVDlTc?si=DIfTDwIU92KX9KWg";

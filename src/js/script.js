@@ -16,7 +16,7 @@ const cariVideoLink = "https://www.youtube.com/embed/cM2U-uKXzts?si=HSPzO1A938ei
 const FannyVideoLink = "https://www.youtube.com/embed/DU7kScvKs6w?si=FIRpu9XituPJ3gMf";
 const apprentiRobotLink = "https://www.youtube.com/embed/CZae_izqWiw?si=QQiQ9J4Pc7s2gUk8";
 const apprentiChaudronniereVideoLink = "https://www.youtube.com/embed/Oxo69n0aoTo?si=jJ7e6AM-wAx4Gw6K";
-const YumiMetierBot = "https://chat.csml.dev/s/39iezvakvlqapvdwnakm2gjw6f1czgdp";
+const YumiMetierBot = "https://chat.csml.dev/s/y8l6b6nctclj5edykh5uig5furqheumt"; //
 const MelodyVideoLink = "https://www.youtube.com/embed/Oxo69n0aoTo?si=jJ7e6AM-wAx4Gw6K";
 
 //ShowRoom
@@ -31,14 +31,14 @@ const ajustMonteurVideoLink = "https://www.youtube.com/embed/oJQcLWtGmDY?si=wcUw
 const GalvanoplasteVideoLink = "https://www.youtube.com/embed/QFpgqyR30Lw?si=YbXrJHJ5YnFtyqm6";
 const RafaelVideoLink = "https://www.youtube.com/embed/jIVCWY2mxjs?si=3MTDTHHaeCGGYpeN";
 const respBureauVideoLink = "https://www.youtube.com/embed/YzXnbdKdbwY?si=5Jt9ZcvzwENDE7nA";
-const YumiITWBot = "https://chat.csml.dev/s/bpzoedzc279smw2i649rwhtst9rguvva";
+const YumiITWBot = "https://chat.csml.dev/s/hbw8pdiu5ok2a7iyycx0vxix0ujwnrbm";
 const MaximeVideoLink = "https://www.youtube.com/embed/RV-WS11CLTk?si=RUVpvBUxVXbagXU4";
 
 //ParkInside
 
 const doigbyVideoLink = "https://www.youtube.com/embed/3An5XwFbKgM?si=Sm7VNc1OKJpUxyQz";
 const tiboInShapeVideoLink = "https://www.youtube.com/embed/3yAL-w1U-6s?si=EBabp9OWFY4KbO8s";
-const RomaneBotLink = "https://chat.csml.dev/s/qhij8orytimyritlrayvf8fasphdijzv";
+const RomaneBotLink = "https://chat.csml.dev/s/dwszjr5yty6xglcsycmtcts4p0xmvjid"; //
 const InfluenceBotLink = "https://chat.csml.dev/s/2yh4lfxd7nba5zevmybgseb41bcn6h9b";
 const linkVideoJeune3 = "https://www.youtube.com/embed/mgX4eHVDlTc?si=DIfTDwIU92KX9KWg";
 
@@ -46,34 +46,27 @@ const linkVideoJeune3 = "https://www.youtube.com/embed/mgX4eHVDlTc?si=DIfTDwIU92
 
 const PaulygonesVideoLink = "https://www.youtube.com/embed/vqbbGDkOG30?si=0iaVf_eClMnZ0qRH";
 const hiHacksVideoLink = "https://www.youtube.com/embed/BChzaJv_JzQ?si=K1G9ZNtbFTiTO3AA";
-const YumiLabBotLink = "https://chat.csml.dev/s/fb5kvplgaqoxlqfq9c2solxxt5jbyfh5";
+const YumiLabBotLink = "https://chat.csml.dev/s/klxfbaancmfkzzwaxqge99dx3ayvksex";
 
 //DinningRoom
 
-const apprenti_1VideoLink = "https://www.youtube.com/embed/bIG_XU7XRbw?si=TmzUGmFJ11DA-Mhz";
-const apprenti_2VideoLink = "https://www.youtube.com/embed/gxCuiA3-L4Q?si=15Pm8Vsp_im5XbLO";
-const apprenti_3VideoLink = "https://www.youtube.com/embed/XZlUUGS7qng?si=L9sT1Pkp2bRlEUVV";
-const ingProdVideoLink = "https://www.youtube.com/embed/8HlmZkJX_UQ?si=UtR-dDF2PR8lzDof";
-const apprenti_5VideoLink = "https://www.youtube.com/embed/G4lEOWcPYv4?si=wa9eJCX3TbsLQZS2";
-const apprenti_6VideoLink = "https://www.youtube.com/embed/Y35a-PeWnCY?si=ssJEvtuE8AQ5yQ43";
-
-const AurelienChatLink = "https://chat.csml.dev/s/lslr5k9pozam14w3xbqwsvsmddtsoyrn";
-const AdrienChatLink = "https://chat.csml.dev/s/xvkag7qgx5dift2nvwqvp5xkbqtryo3e";
-const AnneChatLink = "https://chat.csml.dev/s/u2ghlvuzfovrmtzhzfp4qvnlmx1mftgp";
-const AurelieChatLink = "https://chat.csml.dev/s/uyz9dzodq1tvba8ak68j0nqqajwlilpf";
-const LaureChatLink = "https://chat.csml.dev/s/hu75enlmb64ucc9ee39tovo6jgnwez0q";
-const LudivineChatLink = "https://chat.csml.dev/s/tong9qtkukrx5ivgixgujo3ibvoplgk8";
-const LudovicChatLink = "https://chat.csml.dev/s/82vo1evkzwr0rsfy783lb2om3k9abwva";
-const SeverineChatLink = "https://chat.csml.dev/s/juxizbbmraxjnwcopowd4slvr5nb9jw1";
+const AurelienChatLink = "https://chat.csml.dev/s/mdpagk2kgwff7cjjjlqxfbkmtaegcc8z"; //
+const AdrienChatLink = "https://chat.csml.dev/s/eimrkwagnizsgkt2exfyzpqikxvsiqok"; //
+const AnneChatLink = "https://chat.csml.dev/s/urfgrirj0fzedjnkgdtc8pndlybbirja"; //
+const AurelieChatLink = "https://chat.csml.dev/s/nzulmz6enql33he6f7ghqv6vmw9iyqai"; //
+const LaureChatLink = "https://chat.csml.dev/s/cjue6rorfvlktkzitr71bdjrxchv8rg9"; //
+const LudivineChatLink = "https://chat.csml.dev/s/oegmltlziitgfljossd3gdvstkoggde7"; //
+const LudovicChatLink = " https://chat.csml.dev/s/5swwzc2ho5ldzer5orwie8uksvsymrjj"; //
+const SeverineChatLink = "https://chat.csml.dev/s/iofny0f6wdowp8avygfofsqg5lm5hmx8"; //
 
 //Transporteur
 
-const YumiTransporteurBotLink = "https://chat.csml.dev/s/eqqjwhjjk8ami1hi0gecq6k3bm00nmqf";
+const YumiTransporteurBotLink = "https://chat.csml.dev/s/tgepml6az4lsuucyz4tr8ujisrxmxmb4";
 
 /* ------------ Phase 3 ------------ */
 
-const linkYumiStep2Depart = "https://chat.csml.dev/s/ufpg8pzg8tkimx0n67c88gzayopoizr2";
-const linkYumiStep2Final = "https://chat.csml.dev/s/04fl66mlrmgxggs6vcsc2wsgc9e2cr3s";
+const linkYumiStep2Depart = "https://chat.csml.dev/s/kdcybqjeewfai4itensots5rud2mg4cj";
+const linkYumiStep2Final = "https://chat.csml.dev/s/dkhsdz2acozjcammiextxvgmqr6bi6al";
 
 // Lab Industrie
 const PaulygonesIndustrieVideoLink = "https://www.youtube.com/embed/R3GFX6387Hw";

@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
     /** ----- TRAPMAP TOUCHPOINT ----- **/
-    const linkYumiTrap = "https://chat.csml.dev/s/fcm79jpseev46kfx05r03r2mhzybz518";
+    const linkYumiTrap = "https://chat.csml.dev/s/cmsr1lnyziuo9jaf9ojhn16p8itwoi6y";
     const SamathanVideoLink = "https://www.youtube.com/embed/5O2_m8PPMPQ?si=Vw-yhO1et_9fr3ic";
     const LeoVideoLink = "https://www.youtube.com/embed/CmloVJf5rg4?si=0p90cKSxPGMIUxns";
     const BenjaminVideoLink = "https://www.youtube.com/embed/bBCP2glQtC0?si=xBqubYQwaMkuWq7m";
