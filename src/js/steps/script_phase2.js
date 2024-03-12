@@ -1,7 +1,7 @@
 import {} from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, ItemOnLayer, ItemPickUpOnCondition, PopUpVideoAction, onTpCondition, tutorial, onEnterAuthorization, getVariableOnZone, createVariableWA, trapLayer} from '../class';
 
-function step_2()
+function phase_2()
 {    
     //MétierRoom
     const poolLink = "https://brainsonic.github.io/WA-Misc-EasterEggs/pool/index.html";
@@ -555,5 +555,5 @@ function step_2()
 }
 
 export {
-    step_2
+    phase_2
 };

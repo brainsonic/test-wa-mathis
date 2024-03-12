@@ -1,7 +1,7 @@
 import {} from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, ItemOnLayer, ItemPickUpOnCondition, PopUpVideoAction, onTpCondition, tutorial, onEnterAuthorization, getVariableOnZone, createVariableWA, trapLayer} from '../class';
 
-function step_1()
+function phase_1()
 {
     const pongLink = "https://64ix.github.io/WA-Edited-Tutorial/pong.html";
     const basketLink = "https://brainsonic.github.io/UIMM-WA-Extras/shooting-hoops.html";
@@ -308,5 +308,5 @@ function step_1()
     );    
 }
 export {
-    step_1,
+    phase_1,
 };

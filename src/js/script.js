@@ -1,8 +1,9 @@
 // Chargement de la lib JS de WA
 import {} from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, ItemOnLayer, ItemPickUpOnCondition, PopUpVideoAction, onTpCondition, tutorial, onEnterAuthorization, getVariableOnZone, createVariableWA, trapLayer} from './class';
-import { step_1 } from "./steps/script_step1";
-import { step_2 } from "./steps/script_step2";
+import { phase_1 } from "./steps/script_phase1";
+import { phase_2 } from "./steps/script_phase2";
+import { phase_3 } from "./steps/script_phase3";
 
 // VARIABLES ///////////////////////////////////////////////
 const tutorialLink = "https://64ix.github.io/WA-Edited-Tutorial/tutorial.html";
@@ -133,513 +134,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  step_1();
-  step_2();
-  /*
-  //Phase 2
-  
-  //MetierRoom
-  let Nicolas = new PopUpVideo(
-    "Interactions/MetierRoom/Nicolas",
-    "Appuyez sur espace pour parler à Nicolas !",
-    [
-      "Bonjour, moi c’est Nicolas et je suis soudeur dans l’industrie aéronautique. Venez découvrir mon métier !",
-    ],
-    "Nicolas",
-    nicolasVideoLink,
-    "interact",
-    "PNJ",
-    "PNJ_Nicolas"
-  )
-  
-  let Cari = new PopUpVideo(
-    "Interactions/MetierRoom/Cari",
-    "Appuyez sur espace pour parler à Jordan !",
-    [
-      "Bonjour, moi c’est Jordan et je suis concepteur de systèmes embarqués. Vous connaissez ? Non ? Alors venez découvrir mon métier !",
-    ],
-    "Cari",
-    cariVideoLink,
-    "interact",
-    "PNJ",
-    "PNJ_Cari"
-  )
-  
-  let Fanny = new PopUpVideoAction(
-    "Interactions/MetierRoom/Fanny",
-    "Appuyez sur espace pour parler à Fanny !",
-    [
-      "Moi, c’est Fanny, et grâce à l'apprentissage, j'ai pu effectuer un semestre universitaire à l'étranger.",
-      "Avant de vous en dire plus, si vous cherchez quelqu'un avec une clé, je l'ai vu partir vers le jardin.",
-      "Mais ne partez pas tout de suite et découvrez mon parcours !"
-    ],
-    [
-      "Moi, c’est Fanny, et grâce à l'apprentissage, j'ai pu effectuer un semestre universitaire à l'étranger."
-    ],
-    "IngProd",
-    FannyVideoLink,
-    () => {
-      if (WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true)
-      {
-        WA.player.state["TalkHint_1"] = true;
-        return true;
-      }
-      return false;
-    },
-    "interact",
-    "PNJ",
-    "PNJ_Fanny"
-  );
-  
-  let ApprentiRobotVideo = new PopUpVideo(
-    "Interactions/MetierRoom/ApprentiRobot",
-    "Appuyez sur espace pour regarder la vidéo !",
-    [
-      "Thomas est apprenti dans la robotique. Découvrez son métier en vidéo ! "
-    ],
-    "ApprentiRobot",
-    apprentiRobotLink,
-    "interact",
-    "Video",
-    "Video_Thomas"
-  );
-  
-  let ApprentiChaudronniereVideo = new PopUpVideo(
-    "Interactions/MetierRoom/ApprentiChaudron",
-    "Appuyez sur espace pour regarder la vidéo !",
-    [
-      "Découvrez en vidéo le métier de Pauline, apprentie en chaudronnerie navale."
-    ],
-    "ApprentiChaudronniere",
-    apprentiChaudronniereVideoLink,
-    "interact",
-    "Video",
-    "Video_Pauline"
-  );
-  
-  let yumiMetier = new Modal(
-    "Interactions/MetierRoom/chatBot_1",
-    "Appuyez sur espace pour discuter avec Yumi !",
-    YumiMetierBot,
-    "right",
-    "interact",
-    "PNJ",
-    "PNJ_YumiMetier"
-  );
-
-  let Melody = new PopUpVideo(
-    "Interactions/MetierRoom/Melody",
-    "Appuyez sur espace pour parler à Melody",
-    [
-      "Melody est rigoureuse, minutieuse même.",
-      "C'est normal, elle s'occupe de la conformité de pièces complexes",
-      "Car dans le nucléaire, on ne rigole pas avec la sécurité.",
-      "Regardez."
-    ],
-    "MelodyText",
-    MelodyVideoLink,
-    "interact",
-    "PNJ",
-    "PNJ_Melody"
-  );
-
-  let Scribble = new Modal(
-    "Interactions/MetierRoom/Scribble",
-    "Appuyez sur espace pour faire des dessins !",
-    scribbleLink,
-    "center",
-    "interact",
-    "Game",
-    "Game_Scribble"
-  );
-  
-  let Pool = new Modal(
-    "Interactions/ShowRoom/Pool",
-    "Appuyer sur espace pour faire du billard !",
-    poolLink,
-    "center",
-    "interact",
-    "Game",
-    "Game_Pool"
-  );
-  
-  //ShowRoom
-  
-  let Anais = new PopUpVideo(
-    "Interactions/ShowRoom/Anais",
-    "Appuyez sur espace pour parler à Anaïs !",
-    [
-      "Salut, moi c’est Anaïs et je suis technicienne méthodes. Si vous ne savez pas en quoi ça consiste : venez, je vous montre !",
-    ],
-    "Anais",
-    anaisVideoLink,
-    "interact",
-    "PNJ",
-    "PNJ_Anais"
-  );
-    
-  let FrankVideo = new PopUpVideo(
-    "Interactions/ShowRoom/FrankVideo",
-    "Appuyez sur espace pour regarder la vidéo !",
-    [
-      "Franck est responsable d'un atelier de montage chez SOFINOR.",
-      "Découvrez son témoignage en vidéo !"
-    ],
-    "DessinateurIndu",
-    FrankVideoLink,
-    "interact",
-    "Video",
-    "Video_Frank"
-  );
-  
-  let RespRD = new PopUpVideo(
-    "Interactions/ShowRoom/RespR&D",
-    "Appuyez sur espace pour regarder la vidéo !",
-    [
-      "Isabelle est responsable R&D. Découvrez son métier en vidéo !"
-    ],
-    "RespRD",
-    respRDVideoLink,
-    "interact",
-    "Video",
-    "Video_Isabelle"
-  
-  );
-  
-  let AjustMonteur = new PopUpVideo(
-    "Interactions/ShowRoom/AjustMonteur",
-    "Appuyez sur espace pour regarder la vidéo !",
-    [
-      "C'est quoi le métier d'ajusteur-monteur ? Pour le découvrir c'est ici."
-    ],
-    "AjustMonteur",
-    ajustMonteurVideoLink,
-    "interact",
-    "Video",
-    "Video_Nicolas"
-  );
-  
-  let XavierVideo = new PopUpVideo(
-    "Interactions/ShowRoom/GalvanoplasteVideo",
-    "Appuyez sur espace pour regarder la vidéo !",
-    [
-      "Galvanoplaste, mais qu'est-ce que c'est ?",
-      "La réponse en vidéo !"
-    ],
-    "GalvanoplasteVideoText",
-    GalvanoplasteVideoLink,
-    "interact",
-    "Video",
-    "Video_Galvanoplaste",
-  );
-  
-  let RafaelVideo = new PopUpVideo(
-    "Interactions/ShowRoom/RafaelVideo",
-    "Appuyez sur espace pour regarder la vidéo !",
-    [
-      "Raphaël a géré le remplacement de la télécabine de Font-Romeu.",
-      "Un projet gigantesque et ambitieux.",
-      "Regardez !"
-    ],
-    "ChargAff",
-    RafaelVideoLink,
-    "interact",
-    "Video",
-    "Video_Rafael",
-  );
-  
-  let RespBureau = new PopUpVideo(
-    "Interactions/ShowRoom/RespBureau",
-    "Appuyez sur espace pour regarder la vidéo !",
-    [
-      "Comment devenir responsable bureau d'études et méthodes ? Réponse en vidéo !"
-    ],
-    "RespBureau",
-    respBureauVideoLink,
-    "interact",
-    "Video",
-    "Video_RespBureau",
-  );
-  
-  let yumiITW = new Modal(
-    "Interactions/ShowRoom/ITWBot",
-    "Appuyez sur espace pour discuter avec Yumi Journaliste !",
-    YumiITWBot,
-    "right",
-    "interact",
-    "PNJ",
-    "PNJ_YumiJournaliste",
-  );
-  
-  let MaximeVideo = new PopUpVideo(
-    "Interactions/ShowRoom/MaximeVideo",
-    "Appuyez sur espace pour regarder la vidéo !",
-    [
-      "Quelqu'un peut me dire ce qu'est la mécatronique ?",
-      "Écoutez bien Maxime, responsable de la R&D chez Otech, il vous dit tout."
-    ],
-    "MaximeVideoText",
-    MaximeVideoLink,
-    "interact",
-    "Video",
-    "Video_Maxime",
-  );
-
-  let Liebherr_aerospace = new PopUpVideo(
-    "Interactions/ShowRoom/LiebherrAerospace",
-    "Appuyez sur espace pour écouter le podcast !",
-    [
-      "Quel est le point commun entre l'aéronautique et l'automobile ?",
-      "Capucine, ingénieure système chez Liebherr-Aerospace Toulouse, vous donne la réponse.",
-      "Soyez attentif."
-    ],
-    "LiebherrAerospaceText",
-    Liebherr_aerospaceVideoLink,
-    "interact",
-    "Video",
-    "Video_LiebherrAerospace",
-  );
-
-  let LucieVideo = new PopUpVideo(
-    "Interactions/ShowRoom/LucieVideo",
-    "Appuyez sur espace pour écouter le podcast !",
-    [
-      "La robotique mobile, qu'est-ce que c'est ?",
-      "Lucie, ingénieure d'application chez Meanwhile, vous explique tout.",
-    ],
-    "LucieVideoText",
-    LucieVideoLink,
-    "interact",
-    "Video",
-    "Video_LucieVideo",
-  );
-  
-  //ParkInside
-  
-  let Maeva = new PopUpVideoAction(
-    "Interactions/ParkInside/Maeva",
-    "Appuyez sur espace pour parler à Maëva !",
-    [
-      "Hello, moi c’est Maëva : le vidéaste Tibo InShape est revenu en Bac Pro pour découvrir mon métier d’ajusteur-monteur, ainsi que les autres métiers de l'industrie aéronautique. Regardez ce que ça donne !",
-      "Avant ça, si tu cherches une personne possédant une clef.",
-      "Je l'ai vu partir vers la cafeteria, il avait du bleu sur lui",
-    ],
-    [
-      "Hello, moi c’est Maëva : le vidéaste Tibo InShape est revenu en Bac Pro pour découvrir mon métier d’ajusteur-monteur, ainsi que les autres métiers de l'industrie aéronautique. Regardez ce que ça donne !",
-    ],
-    "MaevaText",
-    tiboInShapeVideoLink,
-    () => {
-      if (WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true)
-      {
-        WA.player.state["TalkHint_2"] = true;
-        return true;
-      }
-      return false;
-    },
-    "interact",
-    "PNJ",
-    "PNJ_Maeva",
-  );
-  
-  let RomaneBot = new Modal(
-    "Interactions/ParkInside/Hihacks",
-    "Appuyez sur espace pour discuter avec Romane !",
-    RomaneBotLink,
-    "right",
-    "interact",
-    "PNJ",
-    "PNJ_Romane",
-  );
-
-  let Jeune3 = new PopUpVideo(
-    "Interactions/ParkInside/Manon",
-    "Appuyez sur espace pour parler à Manon !",
-    [
-      "J'ai 22 ans.",
-      "Je crée des objets de A à Z.",
-      "Je dessine beaucoup.",
-      "J'adore la mécanique.",
-      "Je m'appelle Manon et je suis spécialisée en Conception 3D et Fabrication Additive.",
-      "Venez décrouvrir ma passion !"
-    ],
-    "ManonText",
-    linkVideoJeune3,
-    "interact",
-    "PNJ",
-    "PNJ_Manon"
-  );
-  
-  
-  //Labo Yumi
-
-  
-  let Paulygones = new PopUpVideo(
-    "Interactions/LaboRoom/Paulygones",
-    "Appuyez sur espace pour parler à Paulygones !",
-    [
-      "Je m'appelle Paulygones.",
-      "Bon en vrai, c'est Paul Guillotel.",
-      "Mais ce qui est sûr, c'est que j'aime fabriquer des trucs.",
-      "Ça tombe bien car ici, tout le monde aime créer de nouvelles choses !",
-      "Dans cette vidéo, vous apprendrez à fabriquer un aspirateur à vêtements géant."
-    ],
-    "DrNozman",
-    PaulygonesVideoLink,
-    "interact",
-    "PNJ",
-    "PNJ_Paulygones",
-  );
-
-  let HiHacks = new PopUpVideo(
-    "Interactions/LaboRoom/Hihacks_labo",
-    "Appuyez sur espace pour parler à Henri !",
-    [
-      "Salut ! Moi c’est Henri Hihacks et grâce à Thiaifène, apprenti en BTS Maintenance des Systèmes, j’ai réalisé un projet complètement fou... Vous êtes curieux de le découvrir ? Alors regardez ma vidéo !",
-    ],
-    "Hihacks_labo",
-    hiHacksVideoLink,
-    "interact",
-    "PNJ",
-    "PNJ_HenriHihacks",
-  );
-  
-  let YumiLabBot = new Modal(
-    "Interactions/LaboRoom/YumiLab",
-    "Appuyez sur espace pour discuter avec Yumi Scientifique !",
-    YumiLabBotLink,
-    "right",
-    "interact",
-    "PNJ",
-    "PNJ_YumiScientifique",
-  );
-  //Dinning Room
-  
-  let Adrien = new PopUpVideo(
-    "Interactions/DinningRoom/Adrien",
-    "Appuyez sur espace pour discuter avec Adrien !",
-    [
-      "Non, le chaudronnier ne fait pas de magie.",
-      "Ou peut-être que si finalement.",
-      "La réponse avec Adrien."
-    ],
-    "Adrientext",
-    AdrienChatLink,
-    "interact",
-    "PNJ",
-    "PNJ_AdrienDinningRoom",
-    "right",
-  );
-
-  let Aurelie = new PopUpVideo(
-    "Interactions/DinningRoom/Aurelie",
-    "Appuyez sur espace pour discuter avec Aurelie !",
-    [
-      "Connaissez-vous l'automatisme ?",
-      "Aurélie vous explique tout.",
-      "Suivez le guide."
-    ],
-    "AurelieText",
-    AurelieChatLink,
-    "interact",
-    "PNJ",
-    "PNJ_AurelieDinningRoom",
-    "right",
-  );
-
-  let Anne = new PopUpVideo(
-    "Interactions/DinningRoom/Anne",
-    "Appuyez sur espace pour discuter avec Anne !",
-    [
-      "Anne est technicienne QHSE.",
-      "Quésaco ?",
-      "Elle vous dit tout."
-    ],
-    "AnneText",
-    AnneChatLink,
-    "interact",
-    "PNJ",
-    "PNJ_AnneDinningRoom",
-    "right",
-  );
-
-  let Severine = new PopUpVideo(
-    "Interactions/DinningRoom/Severine",
-    "Appuyez sur espace pour discuter avec Severine !",
-    [
-      "Je dessine des compresseurs, des condenseurs, des détendeurs, des évaporateurs…",
-      "Je suis dessinatrice industrielle.",
-      "Venez découvrir mon métier."
-    ],
-    "SeverineText",
-    SeverineChatLink,
-    "interact",
-    "PNJ",
-    "PNJ_SeverineDinningRoom",
-    "right",
-  );
-
-  let Ludovic = new PopUpVideo(
-    "Interactions/DinningRoom/Ludovic",
-    "Appuyez sur espace pour discuter avec Ludovic !",
-    [
-      "Savez-vous ce qu'est l'usinage ?",
-      "Pour en savoir plus, écoutez Ludovic !"
-    ],
-    "LudovicText",
-    LudovicChatLink,
-    "interact",
-    "PNJ",
-    "PNJ_LudovicDinningRoom",
-    "right",
-  );
-
-  let Laure = new PopUpVideo(
-    "Interactions/DinningRoom/Laure",
-    "Appuyez sur espace pour discuter avec Laure !",
-    LaureChatLink,
-    "right",
-    "interact",
-    "PNJ",
-    "PNJ_LaureDinningRoom"
-  );
-
-  let Aurelien = new PopUpVideo(
-    "Interactions/DinningRoom/Aurelien",
-    "Appuyez sur espace pour discuter avec Aurelien !",
-    [
-      "Moi, c'est Aurélien.",
-      "Je travaille le titane, l'inox ou l'inconel.",
-      "J'aime jouer des coudes.",
-      "Je suis …"
-    ],
-    "AurelienText",
-    AurelienChatLink,
-    "interact",
-    "PNJ",
-    "PNJ_AurelienDinningRoom",
-    "right"
-  );
-
-  let Ludivine = new PopUpVideo(
-    "Interactions/DinningRoom/Ludivine",
-    "Appuyez sur espace pour discuter avec Ludivine !",
-    [
-      "Réparer des moteurs d'avions, un rêve de gosse ?!",
-      "Pour Ludivine, c'est son quotidien."
-    ],
-    "LudivineText",
-    LudivineChatLink,
-    "interact",
-    "PNJ",
-    "PNJ_LudivineDinningRoom",
-    "right"
-  );
-  */
-  // END INTERACTIONS DIVERSES ///////////////////////////////////////////////
+  phase_1();
+  phase_2();
+  phase_3();
   
   /* ----- STEP 2 ----- */
-
+  /*
   let YumiStep2Depart = new ModalAction(
     "Step2/YumiStep2Depart",
     "Appuyez sur espace pour discuter avec Yumi !",
@@ -762,9 +262,9 @@ document.addEventListener('DOMContentLoaded', () => {
   {
     trapLayer('HideTile/TrappedRoom/Hole_' + index, '#Depart'); 
   }
-
+  */
   /* ----- STEP 3 LABINDUSTRY----- */
-
+  /*
   let PaulygoneVideo = new PopUpVideo(
     "Interactions/LabIndustrieRoom/PaulygoneVideo",
     "Appuyez sur espace pour regarder la vidéo",
@@ -891,12 +391,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ["Vous devez rassembler les 4 indices avant de pouvoir ouvrir la trappe"],
     'trapDoorText',
     () => {
-      /*
-      console.log("Indice : ", WA.player.state["cafetHint"]);
-      console.log("Indice : ", WA.player.state["chestHint"]);
-      console.log("Indice : ", WA.player.state["coatRackHint"]);
-      console.log("Indice : ", WA.player.state["binHint"]);
-      */
       if (WA.player.state["cafetHint"] != null && WA.player.state["cafetHint"] == true
         && WA.player.state["chestHint"] != null && WA.player.state["chestHint"] == true
         && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
@@ -923,9 +417,9 @@ document.addEventListener('DOMContentLoaded', () => {
     "Object_trapDoor"
   );
   onEnterAuthorization('Zones/ZoneStep3', ['cardAccessStep3'], 'EscapeGameText');
-  
+  */
   /* ----- STEP 4 ----- */
-  
+  /*
   const zoneStep4 = 'Zones/ZoneStep4';
   const zoneFirstTP = 'Step4/FirstTP/ZoneFirstTP';
   const zoneSecondTP = 'Step4/SecondTP/ZoneSecondTP';
@@ -985,9 +479,9 @@ document.addEventListener('DOMContentLoaded', () => {
     "Form",
     "Formulaire_final"
   );
-
+  */
   /**---- FinalRoom ----**/
-
+  /*
   let WorldUIMMYTB = new PopUpVideo(
     "Interactions/FinalRoom/WorldUIMMYTB",
     "Appuyez sur espace pour regarder les vidéos",
@@ -1091,12 +585,12 @@ document.addEventListener('DOMContentLoaded', () => {
   {
     WA.room.hideLayer('Step4/Last/ButtonNotPressed');
   }
-
+  */
   /*
   * The code below is to check if the player has the access to certain zone of the TP
   * It permits to avoid player to cheat by using the URL to access in a certain zone
   */
-
+  /*
   //Zone de Départ
   onEnterAuthorization(zoneStep4, ['cardAccessStep4'], 'EscapeGameText');
   getVariableOnZone('Step4/TpDepart', ['cardAccessZoneFirstTP']);
@@ -1165,9 +659,7 @@ document.addEventListener('DOMContentLoaded', () => {
   onEnterAuthorization(zoneFinalStep4, ['cardAccessZoneFinalStep4'], 'EscapeGameText');
   onTpCondition('Step4/Last/TpBack', '#start', () => { return true }, 'tpBackFinal');
   
-
-
-
+  */
   /* ----- Step 4 bis ----- */
 
   let Anton = new InteractAction(
@@ -1322,4 +814,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //Log to check in the WA that the script has passed
-console.log('VERSION 7');
+console.log('VERSION 8');
