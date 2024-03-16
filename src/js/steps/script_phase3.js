@@ -3,11 +3,8 @@ import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, It
 
 function phase_3()
 {
-    //Transporteur
-    const YumiTransporteurBotLink = "https://chat.csml.dev/s/tgepml6az4lsuucyz4tr8ujisrxmxmb4";
 
-    /* ------------ Phase 3 ------------ */
-
+    // Corridor trapped
     const linkYumiStep2Depart = "https://chat.csml.dev/s/kdcybqjeewfai4itensots5rud2mg4cj";
     const linkYumiStep2Final = "https://chat.csml.dev/s/dkhsdz2acozjcammiextxvgmqr6bi6al";
 
@@ -17,8 +14,10 @@ function phase_3()
     const JadeIndustrieVideoLink = "https://www.youtube.com/embed/aH12YYBDZc8?si=bU2SA6-xTgUG8L0q";
     const ArnaudIndustrieVideoLink = "https://www.youtube.com/embed/yULRqI_KGb4";
 
-    // Final Room
+    // Transporteur
+    const YumiTransporteurBotLink = "https://chat.csml.dev/s/tgepml6az4lsuucyz4tr8ujisrxmxmb4";
 
+    // Final Room
     const formLink = "https://0eb89b36.sibforms.com/serve/MUIFAMTWQq_m3rCQrgfnBO8-HUshniX2rebB99OuvGmVKli0cw-cqIAuuXmPLAf59d5fr3da55Y6I8vGYtYzUJYlP7Y1Fyqerb7hzo1g46RIoDQctc_3J1eAnLxeaf9_TDTFVFtxgL-yPG4vYXJyDTYTY91roQ8Dc_iPWu5Mk4jex5m-RA-4UEf_3X7zhPuKy2UIZmyYxyp7AEPK";
     const WorldUIMMYTBVideoLink = "https://www.youtube.com/embed/videoseries?si=lxOwHdwG2RZNgqBo&amp;list=PLFysjt-P1QCMOaJCY_jCO1HF7IXOoo8hO";
     const UIMMInstaLink = "https://www.instagram.com/uimm.lafabriquedelavenir/";
@@ -26,8 +25,6 @@ function phase_3()
     const IndustrizLink = "https://ajir.industriz.fr/Application/";
     const WorldSkillsStatuesLink = "https://www.worldskills-laserie.fr";
     const UIMMRecruteLink = "https://www.lindustrie-recrute.fr";
-
-    /* ----- STEP 2 ----- */
 
     let YumiStep2Depart = new ModalAction(
         "Step2/YumiStep2Depart",
@@ -45,12 +42,7 @@ function phase_3()
         "PNJ",
         "PNJ_YumiDepartTrappedRoom",
     );
-    
-    //Hide the card if the player already pick it
-    if (WA.player.state['cardAccess'] == true)
-    {
-        WA.room.hideLayer("Items/TrappedRoom/CardAccess");
-    }
+
     //Card of the trapped Room
     let cardAccess = new ItemPickUpOnCondition(
         "Items/TrappedRoom/CardAccess",
@@ -74,7 +66,7 @@ function phase_3()
         "Object",
         "Object_cardAccess"
     );
-    
+        
     let YumiStep2Final = new InteractAction(
         "Step2/YumiStep2Final",
         "Appuyez sur espace pour discuter avec Yumi !",
@@ -111,7 +103,7 @@ function phase_3()
         "PNJ_YumiStep2Final",
     );
 
-        //Open Door TrappedRoom
+    //Open Door TrappedRoom
     let doorTrappedRoom = new InteractAction(
         "InteractAction/TrappedRoom/FinalDoor",
         "Appuyez sur espace pour insérer la carte d'accès",
@@ -151,6 +143,14 @@ function phase_3()
     {
         trapLayer('HideTile/TrappedRoom/Hole_' + index, '#Depart'); 
     }
+
+    //Hide the card if the player already pick it
+    WA.onInit().then(() => {
+        if (WA.player.state['cardAccess'] == true)
+        {
+            WA.room.hideLayer("Items/TrappedRoom/CardAccess");
+        }
+    });
 
     /* ----- STEP 3 LABINDUSTRY----- */
 
@@ -280,12 +280,6 @@ function phase_3()
         ["Vous devez rassembler les 4 indices avant de pouvoir ouvrir la trappe"],
         'trapDoorText',
         () => {
-        /*
-        console.log("Indice : ", WA.player.state["cafetHint"]);
-        console.log("Indice : ", WA.player.state["chestHint"]);
-        console.log("Indice : ", WA.player.state["coatRackHint"]);
-        console.log("Indice : ", WA.player.state["binHint"]);
-        */
         if (WA.player.state["cafetHint"] != null && WA.player.state["cafetHint"] == true
             && WA.player.state["chestHint"] != null && WA.player.state["chestHint"] == true
             && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
@@ -633,11 +627,6 @@ function phase_3()
         ],
         "ArnaudText",
         () => {
-        console.log("1: ", WA.player.state["arnaudRevealed"] );
-        console.log("2: ", WA.player.state["startSideQuestStep4"]);
-        console.log("3: ", WA.player.state["TalkHint_1"]);
-        console.log("4: ", WA.player.state["TalkHint_2"]);
-        console.log("5: ", WA.player.state["TalkHint_3"]);
         if (WA.player.state["arnaudRevealed"] != true
         && WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true 
         && WA.player.state["TalkHint_1"] != null && WA.player.state["TalkHint_1"] == true
