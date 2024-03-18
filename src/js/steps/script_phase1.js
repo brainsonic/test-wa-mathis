@@ -31,7 +31,7 @@ function phase_1()
         "Bref l’horizon est prometteur avec de grosses perspectives de développement dans les énergies renouvelables, les ressources maritimes et les biocarburants.​",
         "Les océans sont un des enjeux stratégiques de notre siècle, matelot !​",
         "Voilà pour un petit aperçu de l’industrie marine, tu veux découvrir d’autres industries ?",
-        "Alors n’hésite pas à parler aux autres Yumi, bon vent !​"
+        "Alors n'hésite pas à aller parler aux habitants de ce monde, bon vent !​"
       ];
     
     const textSkieuse = [
@@ -47,7 +47,7 @@ function phase_1()
     
     const textScientifique = [
         "Bienvenue à vous, je suis la scientifique de la bande.",
-        "Ce que j’adore c’est trouver des solutions pour améliorer la vie de chacun.",
+        "Ce que j’adore, c’est trouver des solutions pour améliorer la vie de chacun.",
         "J’ai mis au point les transporteurs que vous verrez un peu partout sur l’île.",
         "Pour les essayer, il suffit de se placer dessus afin de se téléporter d’une pièce à l’autre.",
         "C'est très pratique, vous verrez."
@@ -176,7 +176,7 @@ function phase_1()
         "Appuyez sur espace pour regarder la vidéo !",
         [
             "Connaissez-vous les WorldSkills, la grande compétition des métiers ?",
-            "Et bien c'est le moment de les découvrir en visionnant la saison 1 de 'WorldSkills, La Série', réalisée avec les apprentis de l'industrie !",
+            'Et bien c\'est le moment de les découvrir en visionnant la saison 1 de "WorldSkills, La Série", réalisée avec les apprentis de l\'industrie !',
             "Accrochez-vous, sensations fortes garanties."
         ],
         [

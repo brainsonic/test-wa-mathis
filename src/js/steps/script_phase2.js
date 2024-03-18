@@ -146,12 +146,11 @@ function phase_2()
 
     let Melody = new PopUpVideo(
         "Interactions/MetierRoom/Melody",
-        "Appuyez sur espace pour parler à Melody",
+        "Appuyez sur espace pour parler à Mélody",
         [
-        "Melody est rigoureuse, minutieuse même.",
-        "C'est normal, elle s'occupe de la conformité de pièces complexes",
-        "Car dans le nucléaire, on ne rigole pas avec la sécurité.",
-        "Regardez."
+        "Salut, moi c'est Mélody ! Au quotidien, je suis très rigoureuse, minutieuse même.",
+        "C'est important, car je suis est en charge de la conformité de pièces complexes ! Et dans le nucléaire, on ne rigole pas avec la sécurité.",
+        "Laissez-moi vous en dire plus !",
         ],
         "MelodyText",
         MelodyVideoLink,

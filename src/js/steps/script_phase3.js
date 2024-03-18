@@ -385,7 +385,7 @@ function phase_3()
 
     let UIMMInsta = new Dialog(
         "Interactions/FinalRoom/UIMMInsta",
-        "Appuyez sur espace pour regarder l'affiche",
+        "Appuyez sur espace pour lire l'affiche",
         [
         "Infos, témoignages, nouveautés, toutes nos actus sont sur Instagram.",
         "Suivez-nous ! https://www.instagram.com/uimm.lafabriquedelavenir/"
@@ -437,9 +437,9 @@ function phase_3()
 
     let UIMMRecrute = new PopUpVideo(
         "Interactions/FinalRoom/UIMMRecrute",
-        "Appuyez sur espace pour lire le livre",
+        "Appuyez sur espace pour lire la pancarte",
         [
-        "Plus d'un million de postes à pourvoir d'ici 2030.",
+        'Vous êtes à la recherche d\'un stage, d\'une alternance ou d\'un emploi ? De nombreuses opportunités vous attendent sur le site "L\'Industrie Recrute" !',
         "N'hésitez plus et rejoignez-nous."
         ],
         "UIMMRecruteText",
