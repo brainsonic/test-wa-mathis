@@ -400,7 +400,7 @@ function phase_3()
         "Interactions/FinalRoom/ForIndustrie",
         "Appuyez sur espace pour allumer l'écran",
         [
-        "Entrez dans le monde de 'Forindustrie, l'Univers Extraordinaire', un métavers qui présente de manière ludique et innovante les métiers et les entreprises de l’industrie !"
+        'Entrez dans le monde de "Forindustrie, l\'Univers Extraordinaire", un métavers qui présente de manière ludique et innovante les métiers et les entreprises de l’industrie !'
         ],
         "ForIndustrieText",
         ForIndustrieLink,
@@ -413,7 +413,7 @@ function phase_3()
         "Interactions/FinalRoom/Industriz",
         "Appuyez sur espace pour allumer l'écran",
         [
-        "Visitez sans tarder 'Industriz', une plateforme 3D sur laquelle vous pourrez en apprendre plus sur le monde de l'industrie, rencontrer des professionnels, participer à des événements ou encore tester vos connaissances !"
+        'Visitez sans tarder "Industriz", une plateforme 3D sur laquelle vous pourrez en apprendre plus sur le monde de l\'industrie, rencontrer des professionnels, participer à des événements ou encore tester vos connaissances !'
         ],
         "IndustrizText",
         IndustrizLink,
@@ -426,7 +426,7 @@ function phase_3()
         "Interactions/FinalRoom/WorldSkillsStatues",
         "Appuyez sur espace pour lire les statues",
         [
-        "Visitez sans tarder 'Industriz', une plateforme 3D sur laquelle vous pourrez en apprendre plus sur le monde de l'industrie, rencontrer des professionnels, participer à des événements ou encore tester vos connaissances !"
+        'Visitez sans tarder "Industriz", une plateforme 3D sur laquelle vous pourrez en apprendre plus sur le monde de l\'industrie, rencontrer des professionnels, participer à des événements ou encore tester vos connaissances !'
         ],
         "WorldSkillsStatuesText",
         WorldSkillsStatuesLink,
