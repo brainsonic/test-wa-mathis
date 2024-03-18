@@ -45,14 +45,14 @@ function phase_2()
 
     //DinningRoom
 
-    const AurelienChatLink = "https://chat.csml.dev/s/mdpagk2kgwff7cjjjlqxfbkmtaegcc8z"; //
+    const AurélienChatLink = "https://chat.csml.dev/s/mdpagk2kgwff7cjjjlqxfbkmtaegcc8z"; //
     const AdrienChatLink = "https://chat.csml.dev/s/eimrkwagnizsgkt2exfyzpqikxvsiqok"; //
     const AnneChatLink = "https://chat.csml.dev/s/urfgrirj0fzedjnkgdtc8pndlybbirja"; //
-    const AurelieChatLink = "https://chat.csml.dev/s/nzulmz6enql33he6f7ghqv6vmw9iyqai"; //
+    const AurélieChatLink = "https://chat.csml.dev/s/nzulmz6enql33he6f7ghqv6vmw9iyqai"; //
     const LaureChatLink = "https://chat.csml.dev/s/cjue6rorfvlktkzitr71bdjrxchv8rg9"; //
     const LudivineChatLink = "https://chat.csml.dev/s/oegmltlziitgfljossd3gdvstkoggde7"; //
     const LudovicChatLink = " https://chat.csml.dev/s/5swwzc2ho5ldzer5orwie8uksvsymrjj"; //
-    const SeverineChatLink = "https://chat.csml.dev/s/iofny0f6wdowp8avygfofsqg5lm5hmx8"; //
+    const SéverineChatLink = "https://chat.csml.dev/s/iofny0f6wdowp8avygfofsqg5lm5hmx8"; //
 
     //Phase 2
     //MetierRoom
@@ -255,8 +255,7 @@ function phase_2()
         "Appuyez sur espace pour regarder la vidéo !",
         [
         "Raphaël a géré le remplacement de la télécabine de Font-Romeu.",
-        "Un projet gigantesque et ambitieux.",
-        "Regardez !"
+        "Un projet gigantesque et ambitieux. Regardez !"
         ],
         "ChargAff",
         RafaelVideoLink,
@@ -307,8 +306,7 @@ function phase_2()
         "Appuyez sur espace pour écouter le podcast !",
         [
         "Quel est le point commun entre l'aéronautique et l'automobile ?",
-        "Capucine, ingénieure système chez Liebherr-Aerospace Toulouse, vous donne la réponse.",
-        "Soyez attentif."
+        "Capucine, ingénieure système chez Liebherr-Aerospace Toulouse, vous donne la réponse."
         ],
         "LiebherrAerospaceText",
         Liebherr_aerospaceVideoLink,
@@ -338,8 +336,8 @@ function phase_2()
         "Appuyez sur espace pour parler à Maëva !",
         [
         "Hello, moi c’est Maëva : le vidéaste Tibo InShape est revenu en Bac Pro pour découvrir mon métier d’ajusteur-monteur, ainsi que les autres métiers de l'industrie aéronautique. Regardez ce que ça donne !",
-        "Avant ça, si tu cherches une personne possédant une clef.",
-        "Je l'ai vu partir vers la cafeteria, il avait du bleu sur lui",
+        "Avant ça, si vous cherchez une personne avec une clé...",
+        "Je l'ai vu partir vers la cafétéria, il avait du bleu sur lui",
         ],
         [
         "Hello, moi c’est Maëva : le vidéaste Tibo InShape est revenu en Bac Pro pour découvrir mon métier d’ajusteur-monteur, ainsi que les autres métiers de l'industrie aéronautique. Regardez ce que ça donne !",
@@ -373,12 +371,8 @@ function phase_2()
         "Interactions/ParkInside/Manon",
         "Appuyez sur espace pour parler à Manon !",
         [
-        "J'ai 22 ans.",
-        "Je crée des objets de A à Z.",
-        "Je dessine beaucoup.",
-        "J'adore la mécanique.",
-        "Je m'appelle Manon et je suis spécialisée en Conception 3D et Fabrication Additive.",
-        "Venez décrouvrir ma passion !"
+        "J'ai 22 ans. Je créé des objets de A à Z. Je dessine beaucoup. J'adore la mécanique.",
+        "Je m'appelle Manon et je suis spécialisée en Conception 3D et Fabrication Additive. Venez découvrir ma passion !"
         ],
         "ManonText",
         linkVideoJeune3,
@@ -410,7 +404,7 @@ function phase_2()
 
     let HiHacks = new PopUpVideo(
         "Interactions/LaboRoom/Hihacks_labo",
-        "Appuyez sur espace pour parler à Henri !",
+        "Appuyez sur espace pour parler à Henri Hihacks !",
         [
         "Salut ! Moi c’est Henri Hihacks et grâce à Thiaifène, apprenti en BTS Maintenance des Systèmes, j’ai réalisé un projet complètement fou... Vous êtes curieux de le découvrir ? Alors regardez ma vidéo !",
         ],
@@ -448,19 +442,19 @@ function phase_2()
         "right",
     );
 
-    let Aurelie = new PopUpVideo(
-        "Interactions/DinningRoom/Aurelie",
-        "Appuyez sur espace pour discuter avec Aurelie !",
+    let Aurélie = new PopUpVideo(
+        "Interactions/DinningRoom/Aurélie",
+        "Appuyez sur espace pour discuter avec Aurélie !",
         [
         "Connaissez-vous l'automatisme ?",
         "Aurélie vous explique tout.",
         "Suivez le guide."
         ],
-        "AurelieText",
-        AurelieChatLink,
+        "AurélieText",
+        AurélieChatLink,
         "interact",
         "PNJ",
-        "PNJ_AurelieDinningRoom",
+        "PNJ_AurélieDinningRoom",
         "right",
     );
 
@@ -480,19 +474,19 @@ function phase_2()
         "right",
     );
 
-    let Severine = new PopUpVideo(
-        "Interactions/DinningRoom/Severine",
-        "Appuyez sur espace pour discuter avec Severine !",
+    let Séverine = new PopUpVideo(
+        "Interactions/DinningRoom/Séverine",
+        "Appuyez sur espace pour discuter avec Séverine !",
         [
         "Je dessine des compresseurs, des condenseurs, des détendeurs, des évaporateurs…",
         "Je suis dessinatrice industrielle.",
         "Venez découvrir mon métier."
         ],
-        "SeverineText",
-        SeverineChatLink,
+        "SéverineText",
+        SéverineChatLink,
         "interact",
         "PNJ",
-        "PNJ_SeverineDinningRoom",
+        "PNJ_SéverineDinningRoom",
         "right",
     );
 
@@ -501,7 +495,7 @@ function phase_2()
         "Appuyez sur espace pour discuter avec Ludovic !",
         [
         "Savez-vous ce qu'est l'usinage ?",
-        "Pour en savoir plus, écoutez Ludovic !"
+        "Pour en savoir plus, discutez avec Yumi et Ludovic !"
         ],
         "LudovicText",
         LudovicChatLink,
@@ -521,20 +515,20 @@ function phase_2()
         "PNJ_LaureDinningRoom"
     );
 
-    let Aurelien = new PopUpVideo(
-        "Interactions/DinningRoom/Aurelien",
-        "Appuyez sur espace pour discuter avec Aurelien !",
+    let Aurélien = new PopUpVideo(
+        "Interactions/DinningRoom/Aurélien",
+        "Appuyez sur espace pour discuter avec Aurélien !",
         [
         "Moi, c'est Aurélien.",
         "Je travaille le titane, l'inox ou l'inconel.",
         "J'aime jouer des coudes.",
         "Je suis …"
         ],
-        "AurelienText",
-        AurelienChatLink,
+        "AurélienText",
+        AurélienChatLink,
         "interact",
         "PNJ",
-        "PNJ_AurelienDinningRoom",
+        "PNJ_AurélienDinningRoom",
         "right"
     );
 

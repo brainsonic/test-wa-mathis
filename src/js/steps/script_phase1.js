@@ -120,7 +120,7 @@ function phase_1()
         "Interactions/Jeune1",
         "Appuyez sur espace pour parler à Antonin !",
         [
-            "Salut moi c'est Antonin ! Pour découvrir sur quel super projet j'ai travaillé c'est ici :",
+            "Salut, moi c'est Antonin ! Pour découvrir sur quel super projet j'ai travaillé, c'est ici :",
         ],
         "Jeune1",
         linkVideoJeune1,
@@ -133,7 +133,7 @@ function phase_1()
         "Interactions/Jeune2",
         "Appuyez sur espace pour parler à Killian !",
         [
-            "Salut moi c'est Killian ! Pour découvrir sur quel super projet j'ai travaillé c'est ici :",
+            "Salut, moi c'est Killian ! Pour découvrir sur quel super projet j'ai travaillé, c'est ici :",
         ],
         "Jeune2",
         linkVideoJeune2,

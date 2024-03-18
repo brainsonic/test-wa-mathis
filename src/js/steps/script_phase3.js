@@ -46,8 +46,8 @@ function phase_3()
     //Card of the trapped Room
     let cardAccess = new ItemPickUpOnCondition(
         "Items/TrappedRoom/CardAccess",
-        "Appuyez sur espace pour ramasser la carte d'accès",
-        ["Vous avez récuperé la carte d'accès"],
+        "Appuyez sur espace pour ramasser le badge d'accès",
+        ["Vous avez récuperé le badge d'accès"],
         ["Vous devez d'abord parler à Yumi avant de le ramasser"],
         "cardAccessText",
         "cardAccess",
@@ -71,13 +71,13 @@ function phase_3()
         "Step2/YumiStep2Final",
         "Appuyez sur espace pour discuter avec Yumi !",
         [
-        "Bonjour, dépéchez-vous les saboteurs sont à votre poursuite",
+        "Bonjour, dépêchez-vous les saboteurs sont à votre poursuite !",
         "Pour sortir d'ici, vous devez fabriquer un transporteur.",
-        "C'est le seul moyen pour échapper aux Technophoby.",
+        'C\'est le seul moyen pour échapper aux "Technophoby".',
         "Dans le labo, il y a en tout 4 éléments à récupérer pour le fabriquer.",
         "Mais attention, la mission se complique.",
         "Car un des objets est bloqué dans une caisse.",
-        "Pour l'obtenir, il faudra d'abord trouver la clé, puis ouvrir la caisse.",
+        "Pour l'obtenir, il faudra d'abord trouver la clé de la caisse, puis l'ouvrir.",
         "Ensuite, quand vous aurez les quatre objets en votre possession, cherchez une trappe secrète.",
         "Elle donnera accès à un sous-sol. Dans cet atelier, vous serrez tranquille pour assembler le transporteur.",
         "Allez-y maintenant, ils arrivent."
@@ -106,9 +106,9 @@ function phase_3()
     //Open Door TrappedRoom
     let doorTrappedRoom = new InteractAction(
         "InteractAction/TrappedRoom/FinalDoor",
-        "Appuyez sur espace pour insérer la carte d'accès",
+        "Appuyez sur espace pour insérer le badge d'accès",
         ["La porte est ouverte"],
-        ["Vous devez avoir la carte d'accès et avoir parler à Yumi"],
+        ["Vous devez avoir le badge d'accès et avoir parler à Yumi"],
         'doorTrappedRoomText',
         () => {
         if (WA.player.state["cardAccess"] != null && WA.player.state["cardAccess"] == true &&
@@ -158,8 +158,7 @@ function phase_3()
         "Interactions/LabIndustrieRoom/PaulygoneVideo",
         "Appuyez sur espace pour regarder la vidéo",
         [
-        "Le youtubeur Paulygones cherche à comprendre comment Robin s'y prend pour concevoir des robots mobiles autonomes.",
-        "Regardez."
+        "Le youtubeur Paulygones cherche à comprendre comment Robin s'y prend pour concevoir des robots mobiles autonomes."
         ],
         "PaulygoneVideoText",
         PaulygonesIndustrieVideoLink,
@@ -174,7 +173,7 @@ function phase_3()
         [
         "Faut-il se former pour utiliser un robot mobile autonome ?",
         "Et bien oui nous apprend Lucie, ingénieure d'application !",
-        "Découvrez pourquoi en vidéo."
+        "Découvrez son parcours en vidéo."
         ],
         "LucieIndustrieVideoText",
         LucieIndustrieVideoLink,
@@ -189,7 +188,7 @@ function phase_3()
         [
         "Jade a seulement 18 ans.",
         "Pourtant, elle travaille déjà dans une centrale nucléaire.",
-        "Découvrez pourquoi en vidéo."
+        "Découvrez son parcours en vidéo."
         ],
         "JadeVideoText",
         JadeIndustrieVideoLink,
@@ -203,7 +202,7 @@ function phase_3()
         "Appuyez sur espace pour regarder la vidéo",
         [
         "Tiens, on dirait... un extrait vidéo ?",
-        "'Arnaud explique son métier au vidéaste Paulygones'",
+        '"Arnaud explique son métier au vidéaste Paulygones"',
         "Intéressant, regardons !"
         ],
         "ArnaudVideoText",
@@ -237,8 +236,8 @@ function phase_3()
     
     let keyItem = new ItemOnLayer(
         "Items/LabIndustry/Key",
-        "Appuyez sur espace pour prendre la clef",
-        ["Vous avez récuperé la clef du coffre"],
+        "Appuyez sur espace pour prendre la clé",
+        ["Vous avez récupéré la clé permettant d'ouvrir la caisse."],
         "keyText",
         "keyItem",
         "interract",
@@ -259,9 +258,9 @@ function phase_3()
     
     let chestHint = new ItemPickUpOnCondition(
         "Items/LabIndustry/ChestHint",
-        "Appuyez sur espace pour ouvrir le coffre",
+        "Appuyez sur espace pour ouvrir la caisse",
         ["Vous avez récuperé l'indice"],
-        ["Vous n'avez pas la clef du coffre"],
+        ["Vous n'avez pas la clé du coffre"],
         "chestText",
         "chestHint",
         () => {
@@ -344,7 +343,7 @@ function phase_3()
 
     let redButtonForm = new PopUpVideoAction(
         "Step4/Last/Redbutton",
-        "Appuyez sur espace pour sauver Rayonance!",
+        "Appuyez sur espace pour sauver Rayonance !",
         [
         "Bravo !!!",
         "Vous avez réussi.",
@@ -375,7 +374,7 @@ function phase_3()
         "Interactions/FinalRoom/WorldUIMMYTB",
         "Appuyez sur espace pour regarder les vidéos",
         [
-        "Sur la page Youtube de l'UIMM, la fabrique de l'avenir, vous pourrez décrouvrir tous les métiers de l'industrie."
+        "Sur la page Youtube de l'UIMM La Fabrique de l'Avenir, vous pourrez découvrir tous les métiers de l'industrie."
         ],
         "WorldUIMMYTBText",
         WorldUIMMYTBVideoLink,
@@ -386,7 +385,7 @@ function phase_3()
 
     let UIMMInsta = new Dialog(
         "Interactions/FinalRoom/UIMMInsta",
-        "Appuyez sur espace pour regarder l'affiche",
+        "Appuyez sur espace pour allumer l'écran",
         [
         "Infos, témoignages, nouveautés, toutes nos actus sont sur Instagram.",
         "Suivez-nous ! https://www.instagram.com/uimm.lafabriquedelavenir/"
@@ -399,7 +398,7 @@ function phase_3()
 
     let ForIndustrie = new PopUpVideo(
         "Interactions/FinalRoom/ForIndustrie",
-        "Appuyez sur espace pour regarder l'affiche",
+        "Appuyez sur espace pour allumer l'écran",
         [
         "Entrez dans le monde de 'Forindustrie, l'Univers Extraordinaire', un métavers qui présente de manière ludique et innovante les métiers et les entreprises de l’industrie !"
         ],
@@ -412,9 +411,9 @@ function phase_3()
 
     let Industriz = new PopUpVideo(
         "Interactions/FinalRoom/Industriz",
-        "Appuyez sur espace pour regarder l'affiche",
+        "Appuyez sur espace pour allumer l'écran",
         [
-        "Visitez sans tarder 'Industriz', une plateforme 3D sur laquelle vous pourrez en apprendre plus sur le monde de l'industrie, rencontrer des professionnels, participer à des rencontres ou encore tester vos connaissances !"
+        "Visitez sans tarder 'Industriz', une plateforme 3D sur laquelle vous pourrez en apprendre plus sur le monde de l'industrie, rencontrer des professionnels, participer à des événements ou encore tester vos connaissances !"
         ],
         "IndustrizText",
         IndustrizLink,
@@ -427,7 +426,7 @@ function phase_3()
         "Interactions/FinalRoom/WorldSkillsStatues",
         "Appuyez sur espace pour lire les statues",
         [
-        "Visitez sans tarder 'Industriz', une plateforme 3D sur laquelle vous pourrez en apprendre plus sur le monde de l'industrie, rencontrer des professionnels, participer à des rencontres ou encore tester vos connaissances !"
+        "Visitez sans tarder 'Industriz', une plateforme 3D sur laquelle vous pourrez en apprendre plus sur le monde de l'industrie, rencontrer des professionnels, participer à des événements ou encore tester vos connaissances !"
         ],
         "WorldSkillsStatuesText",
         WorldSkillsStatuesLink,
@@ -452,7 +451,7 @@ function phase_3()
 
     let TeleporteurFinalRoom = new InteractAction(
         "Interactions/FinalRoom/TeleporteurFinalRoom",
-        "Merci encore pour ton aide, tu as sauvé le Monde de Yumi. Si tu prends ce transporteur, tu iras directement dans le hub des métiers. Ce sera l'occasion pour toi de décrouvrir des femmes et des hommes passionants qui travailent dans l'industrie.",
+        "Merci encore pour ton aide, tu as sauvé le Monde de Yumi. Si tu prends ce transporteur, tu retourneras dans le hub des métiers. Ce sera l'occasion pour toi de découvrir des femmes et des hommes passionnants qui travailent dans l'industrie.",
         [
         "Merci encore pour ton aide, tu as sauvé le Monde de Yumi."    
         ],
@@ -554,7 +553,7 @@ function phase_3()
         "Step4bis/Anton",
         "Appuyez sur espace pour parler à Anton !",
         [
-        "Vous avez retrouvé ma clef.",
+        "Vous avez retrouvé ma clé.",
         "Vous avez ma gratitude éternelle !",
         "Voilà ce que je craignais tant de perdre",
         "Je ne suis pas sûr de sa signification, mais j'ai le sentiment que c'est très important pour vous.",
@@ -563,9 +562,9 @@ function phase_3()
         [
         "Ah, vous voilà enfin !",
         "Je suis dans une situation désespérée...",
-        "Un habitant, avec qui j'ai eu une dispute récente, a volé la clef de mon coffre par vengeance.",
+        "Un habitant, avec qui j'ai eu une dispute récente, a volé la clé de mon coffre par vengeance.",
         "Le contenu de ce coffre est essentiel, il ne doit pas tomber entre de mauvaises mains.",
-        "Je vous en prie, pouvez-vous m'aider à retrouver la clef et me la ramener ?",
+        "Je vous en prie, pouvez-vous m'aider à retrouver la clé et me la ramener ?",
         " Je ne peux pas quitter le coffre, mais je suis certain que les habitants du Monde de Yumi pourront vous aider à retrouver le voleur."
         ],
         "AntonText",
@@ -593,7 +592,7 @@ function phase_3()
         "Vous avez récupéré une mystérieuse séquence !",
         "Gardez-la précieusement, elle vous servira pour les prochaines quêtes"
         ],
-        ["Vous n'avez pas l'autorisation d'ouvrir le coffre !"],
+        ["Vous avez besoin d'une clé pour ouvrir ce coffre !"],
         "ChestDidierText",
         () => {
         if (WA.player.state["allowOpenChest"] == true ) {
@@ -616,10 +615,10 @@ function phase_3()
         "Cette chaise est vraiment confortable !",
         "Vous cherchez quelque chose ?",
         "À me regarder comme ça, vous me rendez nerveux.",
-        "Ok, c'est moi qui ai volé la clef d'Anton.",
+        "Ok, c'est moi qui ai volé la clé d'Anton.",
         "La voici !",
-        "Vous pouvez lui rapporter sa précieuse clef.",
-        "*Vous avez récupéré la clef*"
+        "Vous pouvez lui rapporter sa précieuse clé.",
+        "*Vous avez récupéré la clé*"
         ],
         [
         "Cette chaise est vraiment confortable !",
