@@ -159,7 +159,7 @@ function phase_1()
 
     let Statue = new PopUpVideo(
         "Interactions/Statue",
-        "Appuyez sur espace pour intéragir avec la statue !",
+        "Appuyez sur espace pour lire la pancarte",
         [
             "Cette tête de tigre géante a été réalisée l'année dernière, en collaboration avec l'influenceur HiHacks et les apprentis chaudronniers du Pôle formation UIMM Nouvelle-Aquitaine",
         ],

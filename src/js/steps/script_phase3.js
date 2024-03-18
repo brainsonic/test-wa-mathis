@@ -23,7 +23,7 @@ function phase_3()
     const UIMMInstaLink = "https://www.instagram.com/uimm.lafabriquedelavenir/";
     const ForIndustrieLink = "https://univers.forindustrie.fr/";
     const IndustrizLink = "https://ajir.industriz.fr/Application/";
-    const WorldSkillsStatuesLink = "https://www.worldskills-laserie.fr";
+    const WorldSkillsStatuesLink = "https://www.worldskills-laserie.fr/";
     const UIMMRecruteLink = "https://www.lindustrie-recrute.fr";
 
     let YumiStep2Depart = new ModalAction(
@@ -385,7 +385,7 @@ function phase_3()
 
     let UIMMInsta = new Dialog(
         "Interactions/FinalRoom/UIMMInsta",
-        "Appuyez sur espace pour allumer l'écran",
+        "Appuyez sur espace pour regarder l'affiche",
         [
         "Infos, témoignages, nouveautés, toutes nos actus sont sur Instagram.",
         "Suivez-nous ! https://www.instagram.com/uimm.lafabriquedelavenir/"
@@ -411,7 +411,7 @@ function phase_3()
 
     let Industriz = new PopUpVideo(
         "Interactions/FinalRoom/Industriz",
-        "Appuyez sur espace pour allumer l'écran",
+        "Appuyez sur espace pour lire la pancarte",
         [
         'Visitez sans tarder "Industriz", une plateforme 3D sur laquelle vous pourrez en apprendre plus sur le monde de l\'industrie, rencontrer des professionnels, participer à des événements ou encore tester vos connaissances !'
         ],
@@ -424,9 +424,9 @@ function phase_3()
 
     let WorldSkillsStatues = new PopUpVideo(
         "Interactions/FinalRoom/WorldSkillsStatues",
-        "Appuyez sur espace pour lire les statues",
+        "Appuyez sur espace pour lire la pancarte",
         [
-        'Visitez sans tarder "Industriz", une plateforme 3D sur laquelle vous pourrez en apprendre plus sur le monde de l\'industrie, rencontrer des professionnels, participer à des événements ou encore tester vos connaissances !'
+        'Connaissez-vous les WorldSkills, la grande compétition des métiers ? Venez découvrir ses compétiteurs, ses défis et ses rebondissements en regardant la websérie "WorldSkills, La Série" ! Accrochez-vous, sensations fortes garanties ! Mais qui se hissera sur les marches du podium ?!'
         ],
         "WorldSkillsStatuesText",
         WorldSkillsStatuesLink,
@@ -451,7 +451,7 @@ function phase_3()
 
     let TeleporteurFinalRoom = new InteractAction(
         "Interactions/FinalRoom/TeleporteurFinalRoom",
-        "Merci encore pour ton aide, tu as sauvé le Monde de Yumi. Si tu prends ce transporteur, tu retourneras dans le hub des métiers. Ce sera l'occasion pour toi de découvrir des femmes et des hommes passionnants qui travailent dans l'industrie.",
+        "Merci encore pour ton aide, tu as sauvé le Monde de Yumi. Si tu prends ce transporteur, tu retourneras dans le hub des métiers. Ce sera l'occasion pour toi de découvrir des femmes et des hommes passionnants qui travaillent dans l'industrie.",
         [
         "Merci encore pour ton aide, tu as sauvé le Monde de Yumi."    
         ],
