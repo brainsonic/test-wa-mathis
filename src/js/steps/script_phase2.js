@@ -519,7 +519,7 @@ function phase_2()
     );
 
     let Aurélien = new PopUpVideo(
-        "Interactions/DinningRoom/Aurélien",
+        "Interactions/DinningRoom/Aurelien",
         "Appuyez sur espace pour discuter avec Aurélien !",
         [
             "Moi, c'est Aurélien.",
@@ -527,7 +527,7 @@ function phase_2()
             "J'aime jouer des coudes.",
             "Je suis …"
         ],
-        "AurélienText",
+        "AurelienText",
         AurélienChatLink,
         "interact",
         "PNJ",
