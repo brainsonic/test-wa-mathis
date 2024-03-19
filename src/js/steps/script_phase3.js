@@ -26,6 +26,55 @@ function phase_3()
     const WorldSkillsStatuesLink = "https://www.worldskills-laserie.fr/";
     const UIMMRecruteLink = "https://www.lindustrie-recrute.fr";
 
+    //ParkOutside (Out of the gate)
+
+    let chat = new Dialog(
+        "Interactions/ParkOutside/chat",
+        "Appuyez sur espace pour parler au chat !",
+        [
+            "Chalut, Cha va ?",
+            "Pour chauver Rayonance, ici vous gelez.",
+            "Un concheil : trouvez la Yumi ingénière.",
+            "Un indice elle aura pour vous, ch'est chûr !"
+        ],
+        "chatText",
+        "interact",
+        "PNJ",
+        "PNJ_Chat"
+    );
+
+    let Marlene = new Dialog(
+        "Interactions/ParkOutside/Marlene",
+        "Appuyez sur espace pour parler à Marlène !",
+        [
+            "Toi aussi, tu dois sauver Rayonance ?!",
+            "Pour le moment, pas de Technophoby à l'horizon.",
+            "Mais y a urgence, il faut trouver un code.",
+        ],
+        "MarleneText",
+        "interact",
+        "PNJ",
+        "PNJ_Marlene"
+    );
+
+    //ParkInside
+
+    let ChatParkInside = new Dialog(
+        "Interactions/ParkInside/CatParkInside",
+        "Appuyez sur espace pour parler au chat !",
+        [
+            "Chalut, Cha va ?",
+            "Vous cherchez encore le code de la porte ?",
+            "Allez, je vous aide.",
+            "Quel est le point commun entre le paPIllon, le PIaf et le laPIn ?",
+            "Oui, j'aime les chacher, mais c'est l'orthographe qu'il faut étudier !"
+        ],
+        "ChatParkInsideText",
+        "interact",
+        "PNJ",
+        "PNJ_ChatParkInside"
+    );
+
     let YumiStep2Depart = new ModalAction(
         "Step2/YumiStep2Depart",
         "Appuyez sur espace pour discuter avec Yumi !",
@@ -271,7 +320,11 @@ function phase_3()
     let trapDoor = new InteractAction(
         "InteractAction/LabIndustry/TrapDoor",
         "Appuyez sur espace pour ouvrir la trappe",
-        ["Vous entrez dans la trappe"],
+        [
+            "Cha alors, tu as réuchi la troisième épreuve.",
+            "Appuyez chur espace pour ouvrir la trappe.",
+            "Chalut et bonne route, cha a été un plaisir de vous rencontrer !"
+        ],
         ["Vous devez rassembler les 4 indices avant de pouvoir ouvrir la trappe"],
         'trapDoorText',
         () => {
@@ -542,6 +595,27 @@ function phase_3()
     //Zone d'arrivée
     onEnterAuthorization(zoneFinalStep4, ['cardAccessZoneFinalStep4'], 'EscapeGameText');
     onTpCondition('Step4/Last/TpBack', '#start', () => { return true }, 'tpBackFinal');
+
+    WA.onInit().then(() => {
+        const textEnterFinalRoom = "Nous sommes les Technophoby. Nous voulons conserver le monde tel qu'il est aujourd'hui sans Rayonance. Ne vous approchez pas de ce bouton. Si vous appuyez, le Monde de Yumi sera sous le contrôle de l'énergie infinie."
+        let popupOpened = false
+        WA.room.onEnterLayer("Interactions/FinalRoom/EnterFinalRoom").subscribe(() => {
+            if (!popupOpened) {
+                WA.ui.openPopup("EnterFinalRoomText", textEnterFinalRoom, [
+                    {
+                        label: "Fermer",
+                        className: "primary",
+                        callback: (popup) => {
+                            WA.room.onLeaveLayer("Interactions/FinalRoom/EnterFinalRoom").subscribe(() => {
+                                popupOpened = true
+                                popup.close()
+                            })
+                        }
+                    }
+                ])
+            }
+        })
+    });
 
     /* ----- Step 4 bis ----- */
 

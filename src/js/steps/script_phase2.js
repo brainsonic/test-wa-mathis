@@ -53,6 +53,7 @@ function phase_2()
     const LudivineChatLink = "https://chat.csml.dev/s/oegmltlziitgfljossd3gdvstkoggde7"; //
     const LudovicChatLink = " https://chat.csml.dev/s/5swwzc2ho5ldzer5orwie8uksvsymrjj"; //
     const SéverineChatLink = "https://chat.csml.dev/s/iofny0f6wdowp8avygfofsqg5lm5hmx8"; //
+    const YumiCafetBotLink = "https://chat.csml.dev/s/dbti1brmn89khgwsxonkmku7cpuotgvw"
 
     //Phase 2
     //MetierRoom
@@ -548,6 +549,16 @@ function phase_2()
         "PNJ",
         "PNJ_LudivineDinningRoom",
         "right"
+    );
+
+    let YumiCafet = new Modal(
+        "Interactions/DinningRoom/YumiCafet",
+        "Appuyez sur espace pour discuter avec Yumi !",
+        YumiCafetBotLink,
+        "right",
+        "interact",
+        "PNJ",
+        "PNJ_YumiCafet",
     );
 }
 
