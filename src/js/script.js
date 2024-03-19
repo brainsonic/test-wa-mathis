@@ -37,9 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let openInfoPopup = false; //Check if the popUp is already open
   WA.room.onLeaveLayer("Zones/OutGate").subscribe(() => {
-    if (openInfoPopup == false)
-    {
-      openInfoPopup = true;
       // open modal 
       WA.ui.modal.openModal({
         title: "Popup",
@@ -48,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
         allowApi: !0,
         position: "center",
       });
-    }
   });
 
   //BUTTON TUTORIAL
