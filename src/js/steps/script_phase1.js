@@ -9,6 +9,7 @@ function phase_1()
 
     const linkChatBotAccueil = "https://chat.csml.dev/s/qqr2rsopfpb7do1mhvqhu5wtmezc0qzg"; //
     const linkChatBotYumiTransporteurPhase1 = "https://chat.csml.dev/s/3pkrfecaabpnkm4evxotkvovoyhkc4o5"; //
+    const linkChatBotIngénieure = "https://chat.csml.dev/s/cveg2t5ddnfrdlelb9vmzvpqvpzdlhew"
     const linkVideoJeune1 = "https://www.youtube.com/embed/9QDd6dH0-Xc?si=nVcJ4ryPrmNZ8c7u";
     const linkVideoJeune2 = "https://www.youtube.com/embed/pDMzhgu_Qbo?si=VKqmGCg01AkfOIQJ";
     const linkVideoJeune3 = "https://www.youtube.com/embed/mgX4eHVDlTc?si=DIfTDwIU92KX9KWg";
@@ -107,7 +108,7 @@ function phase_1()
     let YumiTransporteurPhase1 = new Modal(
         "Interactions/YumiTransporteurPhase1",
         "Appuyez sur espace pour discuter avec Yumi !",
-        linkChatBotIngénieure,
+        linkChatBotYumiTransporteurPhase1,
         "right",
         "interact",
         "PNJ",
