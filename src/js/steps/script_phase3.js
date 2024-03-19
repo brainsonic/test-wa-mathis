@@ -447,7 +447,7 @@ function phase_3()
 
     let TeleporteurFinalRoom = new InteractAction(
         "Interactions/FinalRoom/TeleporteurFinalRoom",
-        "Merci encore pour ton aide, tu as sauvé le Monde de Yumi. Si tu prends ce transporteur, tu retourneras dans le hub des métiers. Ce sera l'occasion pour toi de découvrir des femmes et des hommes passionnants qui travaillent dans l'industrie.",
+        "Appuyez sur espace pour vous téléporter ! Merci encore pour ton aide, tu as sauvé le Monde de Yumi. Si tu prends ce transporteur, tu retourneras dans le hub des métiers. Ce sera l'occasion pour toi de découvrir des femmes et des hommes passionnants qui travaillent dans l'industrie.",
         [
             "Merci encore pour ton aide, tu as sauvé le Monde de Yumi."    
         ],
