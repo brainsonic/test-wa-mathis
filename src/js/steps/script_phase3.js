@@ -341,14 +341,14 @@ function phase_3()
         "Step4/Last/Redbutton",
         "Appuyez sur espace pour sauver Rayonance !",
         [
-        "Bravo !!!",
-        "Vous avez réussi.",
-        "Rayonance est en sécurité et notre monde est sauvé.",
-        "Vous êtes notre héros.",
-        "Pour vous remercier, n'hésitez pas à remplir ce formulaire pour participer à notre jeu concours et tenter de gagner une playstation 5 slim et plein d'autres cadeaux bien stylés.",
-        "L'aventure dans le Monde de Yumi ne s'arrête pas là.",
-        "Continuez à vous balader dans les différentes salles grâce au transporteur situé dans la prochaine pièce.",
-        "Les professionnels de l'industrie qui peuplent ce monde vous attendent pour vous parler de leurs métiers et de leurs projets passionnants !"
+            "Bravo !!!",
+            "Vous avez réussi.",
+            "Rayonance est en sécurité et notre monde est sauvé.",
+            "Vous êtes notre héros.",
+            "Pour vous remercier, n'hésitez pas à remplir ce formulaire pour participer à notre jeu concours et tenter de gagner une playstation 5 slim et plein d'autres cadeaux bien stylés.",
+            "L'aventure dans le Monde de Yumi ne s'arrête pas là.",
+            "Continuez à vous balader dans les différentes salles grâce au transporteur situé dans la prochaine pièce.",
+            "Les professionnels de l'industrie qui peuplent ce monde vous attendent pour vous parler de leurs métiers et de leurs projets passionnants !"
         ],
         ["Erreur dialogue"],
         "redButtonTxt",
@@ -370,7 +370,7 @@ function phase_3()
         "Interactions/FinalRoom/WorldUIMMYTB",
         "Appuyez sur espace pour regarder les vidéos",
         [
-        "Sur la page Youtube de l'UIMM La Fabrique de l'Avenir, vous pourrez découvrir tous les métiers de l'industrie."
+            "Sur la page Youtube de l'UIMM La Fabrique de l'Avenir, vous pourrez découvrir tous les métiers de l'industrie."
         ],
         "WorldUIMMYTBText",
         WorldUIMMYTBVideoLink,
@@ -383,8 +383,8 @@ function phase_3()
         "Interactions/FinalRoom/UIMMInsta",
         "Appuyez sur espace pour lire l'affiche",
         [
-        "Infos, témoignages, nouveautés, toutes nos actus sont sur Instagram.",
-        "Suivez-nous ! https://www.instagram.com/uimm.lafabriquedelavenir/"
+            "Infos, témoignages, nouveautés, toutes nos actus sont sur Instagram.",
+            "Suivez-nous ! https://www.instagram.com/uimm.lafabriquedelavenir/"
         ],
         "UIMMInstaText",
         "interact",
@@ -396,7 +396,7 @@ function phase_3()
         "Interactions/FinalRoom/ForIndustrie",
         "Appuyez sur espace pour allumer l'écran",
         [
-        'Entrez dans le monde de "Forindustrie, l\'Univers Extraordinaire", un métavers qui présente de manière ludique et innovante les métiers et les entreprises de l’industrie !'
+            'Entrez dans le monde de "Forindustrie, l\'Univers Extraordinaire", un métavers qui présente de manière ludique et innovante les métiers et les entreprises de l’industrie !'
         ],
         "ForIndustrieText",
         ForIndustrieLink,
@@ -409,7 +409,7 @@ function phase_3()
         "Interactions/FinalRoom/Industriz",
         "Appuyez sur espace pour lire la pancarte",
         [
-        'Visitez sans tarder "Industriz", une plateforme 3D sur laquelle vous pourrez en apprendre plus sur le monde de l\'industrie, rencontrer des professionnels, participer à des événements ou encore tester vos connaissances !'
+            'Visitez sans tarder "Industriz", une plateforme 3D sur laquelle vous pourrez en apprendre plus sur le monde de l\'industrie, rencontrer des professionnels, participer à des événements ou encore tester vos connaissances !'
         ],
         "IndustrizText",
         IndustrizLink,
@@ -422,7 +422,7 @@ function phase_3()
         "Interactions/FinalRoom/WorldSkillsStatues",
         "Appuyez sur espace pour lire la pancarte",
         [
-        'Connaissez-vous les WorldSkills, la grande compétition des métiers ? Venez découvrir ses compétiteurs, ses défis et ses rebondissements en regardant la websérie "WorldSkills, La Série" ! Accrochez-vous, sensations fortes garanties ! Mais qui se hissera sur les marches du podium ?!'
+            'Connaissez-vous les WorldSkills, la grande compétition des métiers ? Venez découvrir ses compétiteurs, ses défis et ses rebondissements en regardant la websérie "WorldSkills, La Série" ! Accrochez-vous, sensations fortes garanties ! Mais qui se hissera sur les marches du podium ?!'
         ],
         "WorldSkillsStatuesText",
         WorldSkillsStatuesLink,
@@ -435,8 +435,8 @@ function phase_3()
         "Interactions/FinalRoom/UIMMRecrute",
         "Appuyez sur espace pour lire la pancarte",
         [
-        'Vous êtes à la recherche d\'un stage, d\'une alternance ou d\'un emploi ? De nombreuses opportunités vous attendent sur le site "L\'Industrie Recrute" !',
-        "N'hésitez plus et rejoignez-nous."
+            'Vous êtes à la recherche d\'un stage, d\'une alternance ou d\'un emploi ? De nombreuses opportunités vous attendent sur le site "L\'Industrie Recrute" !',
+            "N'hésitez plus et rejoignez-nous."
         ],
         "UIMMRecruteText",
         UIMMRecruteLink,
@@ -449,10 +449,10 @@ function phase_3()
         "Interactions/FinalRoom/TeleporteurFinalRoom",
         "Merci encore pour ton aide, tu as sauvé le Monde de Yumi. Si tu prends ce transporteur, tu retourneras dans le hub des métiers. Ce sera l'occasion pour toi de découvrir des femmes et des hommes passionnants qui travaillent dans l'industrie.",
         [
-        "Merci encore pour ton aide, tu as sauvé le Monde de Yumi."    
+            "Merci encore pour ton aide, tu as sauvé le Monde de Yumi."    
         ],
         [
-        "Merci encore pour ton aide, tu as sauvé le Monde de Yumi."    
+            "Merci encore pour ton aide, tu as sauvé le Monde de Yumi."    
         ],
         "TeleporteurFinalRoomText",
         () => {
@@ -549,19 +549,19 @@ function phase_3()
         "Step4bis/Anton",
         "Appuyez sur espace pour parler à Anton !",
         [
-        "Vous avez retrouvé ma clé.",
-        "Vous avez ma gratitude éternelle !",
-        "Voilà ce que je craignais tant de perdre. (une mystérieuse séquence apparait en capture sous le texte)",
-        "Je ne suis pas sûr de sa signification, mais j'ai le sentiment que c'est très important pour vous.",
-        "Concervez-la ou mémorisez-la, cela pourra vous être utile.",
+            "Vous avez retrouvé ma clé.",
+            "Vous avez ma gratitude éternelle !",
+            "Voilà ce que je craignais tant de perdre. (une mystérieuse séquence apparait en capture sous le texte)",
+            "Je ne suis pas sûr de sa signification, mais j'ai le sentiment que c'est très important pour vous.",
+            "Concervez-la ou mémorisez-la, cela pourra vous être utile.",
         ],
         [
-        "Ah, vous voilà enfin !",
-        "Je suis dans une situation désespérée...",
-        "Un habitant, avec qui j'ai eu une dispute récente, a volé la clé de mon coffre par vengeance.",
-        "Le contenu de ce coffre est essentiel, il ne doit pas tomber entre de mauvaises mains.",
-        "Je vous en prie, pouvez-vous m'aider à retrouver la clé et me la ramener ?",
-        "Je ne peux pas quitter le coffre, mais je suis certain que les habitants du Monde de Yumi pourront vous aider à retrouver le voleur."
+            "Ah, vous voilà enfin !",
+            "Je suis dans une situation désespérée...",
+            "Un habitant, avec qui j'ai eu une dispute récente, a volé la clé de mon coffre par vengeance.",
+            "Le contenu de ce coffre est essentiel, il ne doit pas tomber entre de mauvaises mains.",
+            "Je vous en prie, pouvez-vous m'aider à retrouver la clé et me la ramener ?",
+            "Je ne peux pas quitter le coffre, mais je suis certain que les habitants du Monde de Yumi pourront vous aider à retrouver le voleur."
         ],
         "AntonText",
         () => {
@@ -585,10 +585,12 @@ function phase_3()
         "Step4bis/ChestDidier",
         "Appuyez sur espace pour ouvrir le coffre !",
         [
-        "Vous avez récupéré une mystérieuse séquence !",
-        "Gardez-la précieusement, elle vous servira pour les prochaines quêtes"
+            "Vous avez récupéré une mystérieuse séquence !",
+            "Gardez-la précieusement, elle vous servira pour les prochaines quêtes"
         ],
-        ["Vous avez besoin d'une clé pour ouvrir ce coffre !"],
+        [
+            "Vous avez besoin d'une clé pour ouvrir ce coffre !"
+        ],
         "ChestDidierText",
         () => {
         if (WA.player.state["allowOpenChest"] == true ) {
@@ -608,17 +610,17 @@ function phase_3()
         "Step4bis/Arnaud",
         "Appuyez sur espace pour parler à Arnaud !",
         [
-        "Cette chaise est vraiment confortable !",
-        "Vous cherchez quelque chose ?",
-        "À me regarder comme ça, vous me rendez nerveux.",
-        "Ok, c'est moi qui ai volé la clé d'Anton.",
-        "La voici !",
-        "Vous pouvez lui rapporter sa précieuse clé.",
-        "*Vous avez récupéré la clé*"
+            "Cette chaise est vraiment confortable !",
+            "Vous cherchez quelque chose ?",
+            "À me regarder comme ça, vous me rendez nerveux.",
+            "Ok, c'est moi qui ai volé la clé d'Anton.",
+            "La voici !",
+            "Vous pouvez lui rapporter sa précieuse clé.",
+            "*Vous avez récupéré la clé*"
         ],
         [
-        "Cette chaise est vraiment confortable !",
-        "Vous cherchez quelque chose ?"
+            "Cette chaise est vraiment confortable !",
+            "Vous cherchez quelque chose ?"
         ],
         "ArnaudText",
         () => {
