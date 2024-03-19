@@ -441,14 +441,14 @@ function phase_2()
     );
 
     let Aurélie = new PopUpVideo(
-        "Interactions/DinningRoom/Aurélie",
+        "Interactions/DinningRoom/Aurelie",
         "Appuyez sur espace pour discuter avec Aurélie !",
         [
-        "Connaissez-vous l'automatisme ?",
-        "Aurélie vous explique tout.",
-        "Suivez le guide."
+            "Connaissez-vous l'automatisme ?",
+            "Aurélie vous explique tout.",
+            "Suivez le guide."
         ],
-        "AurélieText",
+        "AurelieText",
         AurélieChatLink,
         "interact",
         "PNJ",
@@ -506,21 +506,26 @@ function phase_2()
     let Laure = new PopUpVideo(
         "Interactions/DinningRoom/Laure",
         "Appuyez sur espace pour discuter avec Laure !",
+        [
+            "Selon Laure, pour devenir une mouleuse hors pair, il faut aimer fabriquer des objets de ses mains et être créative.",
+            "Découvrez comment ce métier a changé sa vie."
+        ],
+        "LaureText",
         LaureChatLink,
-        "right",
         "interact",
         "PNJ",
-        "PNJ_LaureDinningRoom"
+        "PNJ_LaureDinningRoom",
+        "right",
     );
 
     let Aurélien = new PopUpVideo(
         "Interactions/DinningRoom/Aurélien",
         "Appuyez sur espace pour discuter avec Aurélien !",
         [
-        "Moi, c'est Aurélien.",
-        "Je travaille le titane, l'inox ou l'inconel.",
-        "J'aime jouer des coudes.",
-        "Je suis …"
+            "Moi, c'est Aurélien.",
+            "Je travaille le titane, l'inox ou l'inconel.",
+            "J'aime jouer des coudes.",
+            "Je suis …"
         ],
         "AurélienText",
         AurélienChatLink,
@@ -534,8 +539,8 @@ function phase_2()
         "Interactions/DinningRoom/Ludivine",
         "Appuyez sur espace pour discuter avec Ludivine !",
         [
-        "Réparer des moteurs d'avions, un rêve de gosse ?!",
-        "Pour Ludivine, c'est son quotidien."
+            "Réparer des moteurs d'avions, un rêve de gosse ?!",
+            "Pour Ludivine, c'est son quotidien."
         ],
         "LudivineText",
         LudivineChatLink,
