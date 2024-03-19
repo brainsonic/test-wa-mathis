@@ -149,7 +149,7 @@ function phase_2()
         "Appuyez sur espace pour parler à Mélody",
         [
         "Salut, moi c'est Mélody ! Au quotidien, je suis très rigoureuse, minutieuse même.",
-        "C'est important, car je suis est en charge de la conformité de pièces complexes ! Et dans le nucléaire, on ne rigole pas avec la sécurité.",
+        "Vous allez dire encore une matheuse que le chiffre PI n'effraie pas, tout comme le trio dans le jardin. Mais c'est normal, car je suis en charge de la conformité de pièces complexes. Et dans le nucléaire, on ne rigole pas avec la sécurité.",
         "Laissez-moi vous en dire plus !",
         ],
         "MelodyText",
@@ -335,8 +335,7 @@ function phase_2()
         "Appuyez sur espace pour parler à Maëva !",
         [
         "Hello, moi c’est Maëva : le vidéaste Tibo InShape est revenu en Bac Pro pour découvrir mon métier d’ajusteur-monteur, ainsi que les autres métiers de l'industrie aéronautique. Regardez ce que ça donne !",
-        "Avant ça, si vous cherchez une personne avec une clé...",
-        "Je l'ai vu partir vers la cafétéria, il avait du bleu sur lui",
+        "Avant ça, si vous cherchez une personne possédant une clé, je l'ai vu partir vers le hub des métiers, il avait une chemise bleue.",
         ],
         [
         "Hello, moi c’est Maëva : le vidéaste Tibo InShape est revenu en Bac Pro pour découvrir mon métier d’ajusteur-monteur, ainsi que les autres métiers de l'industrie aéronautique. Regardez ce que ça donne !",

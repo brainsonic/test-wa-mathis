@@ -72,14 +72,10 @@ function phase_3()
         "Appuyez sur espace pour discuter avec Yumi !",
         [
         "Bonjour, dépêchez-vous les saboteurs sont à votre poursuite !",
-        "Pour sortir d'ici, vous devez fabriquer un transporteur.",
-        'C\'est le seul moyen pour échapper aux "Technophoby".',
-        "Dans le labo, il y a en tout 4 éléments à récupérer pour le fabriquer.",
-        "Mais attention, la mission se complique.",
-        "Car un des objets est bloqué dans une caisse.",
-        "Pour l'obtenir, il faudra d'abord trouver la clé de la caisse, puis l'ouvrir.",
-        "Ensuite, quand vous aurez les quatre objets en votre possession, cherchez une trappe secrète.",
-        "Elle donnera accès à un sous-sol. Dans cet atelier, vous serrez tranquille pour assembler le transporteur.",
+        "Pour sortir d'ici, vous devez récupérer 4 indices éparpillés dans le labo.",
+        "Mais, la mission se complique. Car un des messages est bloqué dans une caisse. Il faudra d'abord trouver la clé pour l'ouvrir.",
+        "Tous les indices forment un mot qui vous donnera une indication pour trouver une trappe secrète. Celle-ci donnera accès à un sous-sol.",
+        "Dans cet atelier, vous trouverez un transporteur pour vous échapper.",
         "Allez-y maintenant, ils arrivent."
         ],
         [
