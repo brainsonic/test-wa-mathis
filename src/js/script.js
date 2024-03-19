@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
        });
     }
     WA.controls.disablePlayerProximityMeeting();
+    WA.controls.disableMicrophone();
+    WA.controls.disableWebcam();
     createVariableWA('TutorialRead');
     console.log("APRES :",WA.player.state['TutorialRead']);
   });
