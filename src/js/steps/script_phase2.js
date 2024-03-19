@@ -288,7 +288,7 @@ function phase_2()
     
     let MaximeVideo = new PopUpVideo(
         "Interactions/ShowRoom/MaximeVideo",
-        "Appuyez sur espace pour regarder la vidéo !",
+        "Appuyez sur espace pour écouter le podcast !",
         [
         "Quelqu'un peut me dire ce qu'est la mécatronique ?",
         "Écoutez bien Maxime, responsable de la R&D chez Otech, il vous dit tout."
@@ -302,7 +302,7 @@ function phase_2()
 
     let Liebherr_aerospace = new PopUpVideo(
         "Interactions/ShowRoom/LiebherrAerospace",
-        "Appuyez sur espace pour écouter le podcast !",
+        "Appuyez sur espace pour regarder la vidéo !",
         [
         "Quel est le point commun entre l'aéronautique et l'automobile ?",
         "Capucine, ingénieure système chez Liebherr-Aerospace Toulouse, vous donne la réponse."
