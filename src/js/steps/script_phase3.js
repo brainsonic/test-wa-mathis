@@ -60,7 +60,7 @@ function phase_3()
     //ParkInside
 
     let ChatParkInside = new Dialog(
-        "Interactions/ParkInside/CatParkInside",
+        "Interactions/ParkInside/ChatParkInside",
         "Appuyez sur espace pour parler au chat !",
         [
             "Chalut, Cha va ?",
