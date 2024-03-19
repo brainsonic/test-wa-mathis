@@ -107,7 +107,7 @@ function phase_1()
         "Interactions/MoonbikePNJ",
         "Appuyez sur espace pour parler à Anthony !",
         [
-            "Bonjour, moi c’est Anthony, je suis en charge de la production des MoonBikes. Je vous laisse découvrir mon projet.",
+            "Dans le Monde de Yumi, il y a des vidéos, des podcats, des interviews qui vous aident à mieux comprendre l'industrie. Mais pas que. Dans ces contenus se cachent parfois des indices. En fait, moi, c'est Anthony. Je suis en charge de la production des MoonBikes. Je vous laisse découvrir mon projet.",
         ],
         "Moonbike",
         linkVideoMoonbike,
@@ -146,9 +146,9 @@ function phase_1()
         "Interactions/Magaly",
         "Appuyer sur espace pour parler à Magaly",
         [
-            "Bonjour, moi c’est Magaly, et grâce à l’industrie j’ai réussi à combiner ma passion et mon métier.",
-            "Vous voulez savoir comment ?",
-            "Allez, j'enfile mon casque et je vous montre !",
+            "Bonjour, moi c’est Magaly. Grâce à l’industrie j’ai réussi à combiner ma passion et mon métier.",
+            "Vous voulez savoir comment ? Allez, j'enfile mon casque et je vous montre !",
+            "Et si vous cherchez la clé d'Anton, je crois que Fanny a des informations pour vous. Une brune, chemise noire, qui travaille pour l'industrie, facile non ?",
         ],
         "MagalyText",
         linkVideoMagaly,
@@ -198,7 +198,7 @@ function phase_1()
     let PanneauPont = new Dialog(
         "Interactions/Panneau Pont",
         "Appuyez sur espace pour intéragir avec le panneau !",
-        ["Au Nord, la gare. Au Sud, la place principale."],
+        ["Au Nord, la gare. Après le pont, suivez le chemin pour le lab de Yumi."],
         "Panneau Pont",
         "interact",
         "Panel",
@@ -218,7 +218,7 @@ function phase_1()
     let PanneauChemin = new Dialog(
         "Interactions/Panneau Chemin",
         "Appuyez sur espace pour intéragir avec le panneau !",
-        ["À l'Ouest, la place principale. Au Sud, le port."],
+        ["Continuez tout droit pour le lab de Yumi. Sinon vous trouverez le port au Sud."],
         "Panneau Chemin",
         "interact",
         "Panel",
@@ -239,7 +239,7 @@ function phase_1()
         "Interactions/Panneau Terrasse",
         "Appuyez sur espace pour intéragir avec le panneau !",
         [
-            "Partez à la rencontre des habitants du Monde de Yumi, les femmes et les hommes qui font l'Industrie",
+            "Partez à la rencontre des habitants du Monde de Yumi, les femmes et les hommes qui font l'Industrie. Ils vous aideront à sauver Rayonance !",
         ],
         "Panneau Terrasse",
         "interact",

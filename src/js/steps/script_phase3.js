@@ -555,7 +555,7 @@ function phase_3()
         [
         "Vous avez retrouvé ma clé.",
         "Vous avez ma gratitude éternelle !",
-        "Voilà ce que je craignais tant de perdre",
+        "Voilà ce que je craignais tant de perdre. (une mystérieuse séquence apparait en capture sous le texte)",
         "Je ne suis pas sûr de sa signification, mais j'ai le sentiment que c'est très important pour vous.",
         "Concervez-la ou mémorisez-la, cela pourra vous être utile.",
         ],
@@ -565,7 +565,7 @@ function phase_3()
         "Un habitant, avec qui j'ai eu une dispute récente, a volé la clé de mon coffre par vengeance.",
         "Le contenu de ce coffre est essentiel, il ne doit pas tomber entre de mauvaises mains.",
         "Je vous en prie, pouvez-vous m'aider à retrouver la clé et me la ramener ?",
-        " Je ne peux pas quitter le coffre, mais je suis certain que les habitants du Monde de Yumi pourront vous aider à retrouver le voleur."
+        "Je ne peux pas quitter le coffre, mais je suis certain que les habitants du Monde de Yumi pourront vous aider à retrouver le voleur."
         ],
         "AntonText",
         () => {
