@@ -432,7 +432,7 @@ function phase_2()
         "Ou peut-être que si finalement.",
         "La réponse avec Adrien."
         ],
-        "Adrientext",
+        "AdrienText",
         AdrienChatLink,
         "interact",
         "PNJ",
