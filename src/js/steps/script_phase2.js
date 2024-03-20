@@ -12,7 +12,7 @@ function phase_2()
     const apprentiRobotLink = "https://www.youtube.com/embed/CZae_izqWiw?si=QQiQ9J4Pc7s2gUk8";
     const apprentiChaudronniereVideoLink = "https://www.youtube.com/embed/Oxo69n0aoTo?si=jJ7e6AM-wAx4Gw6K";
     const YumiMetierBot = "https://chat.csml.dev/s/y8l6b6nctclj5edykh5uig5furqheumt"; //
-    const MelodyVideoLink = "https://www.youtube.com/embed/Oxo69n0aoTo?si=jJ7e6AM-wAx4Gw6K";
+    const MelodyVideoLink = "https://www.youtube.com/embed/mubNAyW5st8?si=ijmaQp-jQudypbBD";
 
     //ShowRoom
 
@@ -149,9 +149,9 @@ function phase_2()
         "Interactions/MetierRoom/Melody",
         "Appuyez sur espace pour parler à Mélody",
         [
-        "Salut, moi c'est Mélody ! Au quotidien, je suis très rigoureuse, minutieuse même.",
-        "Vous allez dire encore une matheuse que le chiffre PI n'effraie pas, tout comme le trio dans le jardin. Mais c'est normal, car je suis en charge de la conformité de pièces complexes. Et dans le nucléaire, on ne rigole pas avec la sécurité.",
-        "Laissez-moi vous en dire plus !",
+            "Salut, moi c'est Mélody ! Au quotidien, je suis très rigoureuse, minutieuse même.",
+            "Vous allez dire encore une matheuse que le chiffre PI n'effraie pas, tout comme le trio dans le jardin. Mais c'est normal, car je suis en charge de la conformité de pièces complexes. Et dans le nucléaire, on ne rigole pas avec la sécurité.",
+            "Laissez-moi vous en dire plus !",
         ],
         "MelodyText",
         MelodyVideoLink,
