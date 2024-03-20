@@ -499,12 +499,8 @@ function phase_3()
     let TeleporteurFinalRoom = new InteractAction(
         "Interactions/FinalRoom/TeleporteurFinalRoom",
         "Appuyez sur espace pour vous téléporter ! Merci encore pour ton aide, tu as sauvé le Monde de Yumi. Si tu prends ce transporteur, tu retourneras dans le hub des métiers. Ce sera l'occasion pour toi de découvrir des femmes et des hommes passionnants qui travaillent dans l'industrie.",
-        [
-        "Merci encore pour ton aide, tu as sauvé le Monde de Yumi."    
-        ],
-        [
-        "Merci encore pour ton aide, tu as sauvé le Monde de Yumi."    
-        ],
+        [],
+        [],
         "TeleporteurFinalRoomText",
         () => {
         WA.nav.goToRoom("#tpShowRoom");
@@ -687,25 +683,22 @@ function phase_3()
         "Step4bis/Arnaud",
         "Appuyez sur espace pour parler à Arnaud !",
         [
-        "Cette chaise est vraiment confortable !",
-        "Vous cherchez quelque chose ?",
-        "À me regarder comme ça, vous me rendez nerveux.",
-        "Ok, c'est moi qui ai volé la clé d'Anton.",
-        "La voici !",
-        "Vous pouvez lui rapporter sa précieuse clé.",
-        "*Vous avez récupéré la clé*"
+            "Cette chaise est vraiment confortable !",
+            "Vous cherchez quelque chose ?",
+            "À me regarder comme ça, vous me rendez nerveux.",
+            "Ok, c'est moi qui ai volé la clé d'Anton.",
+            "La voici !",
+            "Vous pouvez lui rapporter sa précieuse clé.",
+            "*Vous avez récupéré la clé*"
         ],
         [
-        "Cette chaise est vraiment confortable !",
-        "Vous cherchez quelque chose ?"
+            "Cette chaise est vraiment confortable !",
+            "Vous cherchez quelque chose ?"
         ],
         "ArnaudText",
         () => {
         if (WA.player.state["arnaudRevealed"] != true
-        && WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true 
-        && WA.player.state["TalkHint_1"] != null && WA.player.state["TalkHint_1"] == true
-        && WA.player.state["TalkHint_2"] != null && WA.player.state["TalkHint_2"] == true
-        && WA.player.state["TalkHint_3"] != null && WA.player.state["TalkHint_3"] == true) {
+        && WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true) {
             
             //Variable pour revenir au dialogue de départ quand arnaud a été démasqué
             createVariableWA('arnaudRevealed');
