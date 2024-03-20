@@ -491,7 +491,7 @@ function phase_2()
 
     let Ludovic = new PopUpVideo(
         "Interactions/DinningRoom/Ludovic",
-        "Appuyez sur espace pour discuter avec Ludovic !",
+        "Appuyez sur espace pour découvrir Ludovic !",
         [
         "Savez-vous ce qu'est l'usinage ?",
         "Pour en savoir plus, discutez avec Yumi et Ludovic !"
