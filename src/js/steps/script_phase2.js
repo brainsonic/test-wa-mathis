@@ -427,7 +427,7 @@ function phase_2()
     
     let Adrien = new PopUpVideo(
         "Interactions/DinningRoom/Adrien",
-        "Appuyez sur espace pour discuter avec Adrien !",
+        "Appuyez sur espace pour découvrir Adrien !",
         [
         "Non, le chaudronnier ne fait pas de magie.",
         "Ou peut-être que si finalement.",
@@ -443,7 +443,7 @@ function phase_2()
 
     let Aurélie = new PopUpVideo(
         "Interactions/DinningRoom/Aurelie",
-        "Appuyez sur espace pour discuter avec Aurélie !",
+        "Appuyez sur espace pour découvrir Aurélie !",
         [
             "Connaissez-vous l'automatisme ?",
             "Aurélie vous explique tout.",
@@ -459,7 +459,7 @@ function phase_2()
 
     let Anne = new PopUpVideo(
         "Interactions/DinningRoom/Anne",
-        "Appuyez sur espace pour discuter avec Anne !",
+        "Appuyez sur espace pour découvrir Anne !",
         [
         "Anne est technicienne QHSE.",
         "Quésaco ?",
@@ -506,7 +506,7 @@ function phase_2()
 
     let Laure = new PopUpVideo(
         "Interactions/DinningRoom/Laure",
-        "Appuyez sur espace pour discuter avec Laure !",
+        "Appuyez sur espace pour découvrir Laure !",
         [
             "Selon Laure, pour devenir une mouleuse hors pair, il faut aimer fabriquer des objets de ses mains et être créative.",
             "Découvrez comment ce métier a changé sa vie."
@@ -521,7 +521,7 @@ function phase_2()
 
     let Aurélien = new PopUpVideo(
         "Interactions/DinningRoom/Aurelien",
-        "Appuyez sur espace pour discuter avec Aurélien !",
+        "Appuyez sur espace pour découvrir Aurélien !",
         [
             "Moi, c'est Aurélien.",
             "Je travaille le titane, l'inox ou l'inconel.",
