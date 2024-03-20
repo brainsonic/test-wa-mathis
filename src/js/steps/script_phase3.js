@@ -519,6 +519,32 @@ function phase_3()
     if (WA.player.state["GameFinished"] == true)
     {
         WA.room.hideLayer('Step4/Last/ButtonNotPressed');
+
+    }
+    else
+    {
+        WA.onInit().then(() => {
+            const textEnterFinalRoom = "Nous sommes les Technophoby. Nous voulons conserver le monde tel qu'il est aujourd'hui sans Rayonance. Ne vous approchez pas de ce bouton. Si vous appuyez, le Monde de Yumi sera sous le contrôle de l'énergie infinie."
+            let popupOpened = false
+            WA.room.onEnterLayer("Interactions/FinalRoom/EnterFinalRoom").subscribe(() => {
+                if (!popupOpened) {
+                    let popupFinalRoom = WA.ui.openPopup("EnterFinalRoomText", textEnterFinalRoom, [
+                        {
+                            label: "Fermer",
+                            className: "primary",
+                            callback: (popup) => {
+                                popup.close()
+                                popupOpened = true
+                            }
+                        }
+                    ])
+                    WA.room.onLeaveLayer("Interactions/FinalRoom/EnterFinalRoom").subscribe(() => {
+                        popupOpened = true
+                        popupFinalRoom.close()
+                    })
+                }
+            })
+        });
     }
 
     /*
@@ -593,27 +619,6 @@ function phase_3()
     //Zone d'arrivée
     onEnterAuthorization(zoneFinalStep4, ['cardAccessZoneFinalStep4'], 'EscapeGameText');
     onTpCondition('Step4/Last/TpBack', '#start', () => { return true }, 'tpBackFinal');
-
-    WA.onInit().then(() => {
-        const textEnterFinalRoom = "Nous sommes les Technophoby. Nous voulons conserver le monde tel qu'il est aujourd'hui sans Rayonance. Ne vous approchez pas de ce bouton. Si vous appuyez, le Monde de Yumi sera sous le contrôle de l'énergie infinie."
-        let popupOpened = false
-        WA.room.onEnterLayer("Interactions/FinalRoom/EnterFinalRoom").subscribe(() => {
-            if (!popupOpened) {
-                WA.ui.openPopup("EnterFinalRoomText", textEnterFinalRoom, [
-                    {
-                        label: "Fermer",
-                        className: "primary",
-                        callback: (popup) => {
-                            WA.room.onLeaveLayer("Interactions/FinalRoom/EnterFinalRoom").subscribe(() => {
-                                popupOpened = true
-                                popup.close()
-                            })
-                        }
-                    }
-                ])
-            }
-        })
-    });
 
     /* ----- Step 4 bis ----- */
 
