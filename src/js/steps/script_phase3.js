@@ -34,7 +34,7 @@ function phase_3()
         [
             "Chalut, Cha va ?",
             "Pour chauver Rayonance, ici vous gelez.",
-            "Un concheil : trouvez la Yumi ingénière.",
+            "Un concheil : trouvez la Yumi ingénieure.",
             "Un indice elle aura pour vous, ch'est chûr !"
         ],
         "chatText",
@@ -303,8 +303,8 @@ function phase_3()
     
     let chestHint = new ItemPickUpOnCondition(
         "Items/LabIndustry/ChestHint",
-        "Appuyez sur espace pour ouvrir la caisse",
-        ["Super, tu viens de prendre le quatrième et dernier indice, c'est la lettre T ! À ton avis, où se trouve la trappe secrète ?"],
+        "Appuyez sur espace pour prendre l'indice",
+        ["Super, tu viens de prendre le quatrième et dernier indice, c'est la lettre T ! _ _ _ T"],
         ["Vous n'avez pas la clé du coffre"],
         "chestText",
         "chestHint",
@@ -321,7 +321,7 @@ function phase_3()
         "InteractAction/LabIndustry/TrapDoor",
         "Appuyez sur espace pour ouvrir la trappe",
         [
-            "Cha alors, tu as réuchi la troisième épreuve. Chalut et bonne route, cha a été un plaisir de vous rencontrer !"
+            "Cha alors, tu as réuchi la troisième épreuve. Appuyez chur espace pour ouvrir la trappe. Chalut et bonne route, cha a été un plaisir de vous rencontrer !"
         ],
         ["Vous devez rassembler les 4 indices avant de pouvoir ouvrir la trappe"],
         'trapDoorText',

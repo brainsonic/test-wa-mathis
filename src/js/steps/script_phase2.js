@@ -538,7 +538,7 @@ function phase_2()
 
     let Ludivine = new PopUpVideo(
         "Interactions/DinningRoom/Ludivine",
-        "Appuyez sur espace pour discuter avec Ludivine !",
+        "Appuyez sur espace pour découvrir avec Ludivine !",
         [
             "Réparer des moteurs d'avions, un rêve de gosse ?!",
             "Pour Ludivine, c'est son quotidien."
