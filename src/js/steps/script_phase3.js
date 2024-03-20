@@ -321,9 +321,7 @@ function phase_3()
         "InteractAction/LabIndustry/TrapDoor",
         "Appuyez sur espace pour ouvrir la trappe",
         [
-            "Cha alors, tu as réuchi la troisième épreuve.",
-            "Appuyez chur espace pour ouvrir la trappe.",
-            "Chalut et bonne route, cha a été un plaisir de vous rencontrer !"
+            "Cha alors, tu as réuchi la troisième épreuve. Chalut et bonne route, cha a été un plaisir de vous rencontrer !"
         ],
         ["Vous devez rassembler les 4 indices avant de pouvoir ouvrir la trappe"],
         'trapDoorText',
