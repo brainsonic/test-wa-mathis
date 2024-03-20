@@ -260,7 +260,7 @@ function phase_3()
     let coatRackHint = new ItemOnLayer(
         "Items/LabIndustry/CoatRackHint",
         "Appuyez sur espace pour prendre l'indice.",
-        ["Bravo, vous avez récupéré le premier indice, c'est la lettre C ! C_ _ _"],
+        ["Bravo, vous avez récupéré le premier indice, c'est la lettre C ! C _ _ _"],
         "coatRackText",
         "coatRackHint",
         "interract",
@@ -271,7 +271,7 @@ function phase_3()
     let cafetHint = new ItemOnLayer(
         "Items/LabIndustry/CafetHint",
         "Appuyez sur espace pour prendre l'indice",
-        ["Félicitations, vous avez trouvé le deuxième indice, c'est la lettre H ! CH_ _"],
+        ["Félicitations, vous avez trouvé le deuxième indice, c'est la lettre H ! _ H _ _"],
         "cafetText",
         "cafetHint",
         "interract",
@@ -293,7 +293,7 @@ function phase_3()
     let BinHint = new ItemOnLayer(
         "Items/LabIndustry/BinHint",
         "Appuyez sur espace pour prendre l'indice",
-        ["Bien joué, tu as le troisième indice, c'est la lettre A !"],
+        ["Bien joué, tu as le troisième indice, c'est la lettre A ! _ _ A _"],
         "binText",
         "binHint",
         "interract",
