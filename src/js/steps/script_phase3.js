@@ -339,7 +339,11 @@ function phase_3()
             });
             let url_segments =  window.location.href.split('/');
             url_segments[url_segments.length - 1] = "map2.tmj";
-            WA.nav.goToRoom(url_segments.join('/'));
+
+            setInterval(() => {
+                WA.nav.goToRoom(url_segments.join('/'));
+            }, 2000)
+            
             return true;
         }
         else
