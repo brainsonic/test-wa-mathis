@@ -260,7 +260,7 @@ function phase_3()
     let coatRackHint = new ItemOnLayer(
         "Items/LabIndustry/CoatRackHint",
         "Appuyez sur espace pour prendre l'indice.",
-        ["Bravo, vous avez récupéré le premier indice, c'est la lettre C ! C _ _ _"],
+        ["Bravo, vous avez récupéré le premier indice, c'est la lettre C !", <br></br>, "C _ _ _"],
         "coatRackText",
         "coatRackHint",
         "interract",
