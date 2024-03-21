@@ -925,11 +925,12 @@ function phase_3()
     );
 
     WA.onInit().then(() => {
+        console.log('sequenceObtained');
         if (WA.player.state['sequenceObtained'] != null && WA.player.state['sequenceObtained'] == true)
         {
         WA.ui.actionBar.addButton({
             id: 'sequence-btn',
-            label: 'Carte Secrète',
+            label: 'Séquence secrète',
             callback: (event) => {
             WA.player.state['sequenceButtonDisplayed'] = true;
             WA.ui.modal.openModal({
@@ -950,7 +951,7 @@ function phase_3()
         {
             WA.ui.actionBar.addButton({
             id: 'sequence-btn',
-            label: 'Carte Secrète',
+            label: 'Séquence secrète',
             callback: (event) => {
                 createVariableWA("sequenceButtonDisplayed");
                 WA.ui.modal.openModal({
