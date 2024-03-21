@@ -305,8 +305,8 @@ function phase_3()
     let coatRackHint = new InteractAction(
         "Items/LabIndustry/CoatRackHint",
         "Appuyez sur espace pour prendre l'indice.",
-        ["Bravo, vous avez récupéré le premier indice, c'est la lettre C ! \n C _ _ _"],
         ["Vous avez déjà récupéré l'indice 'C'."],
+        ["Bravo, vous avez récupéré le premier indice, c'est la lettre C ! \n C _ _ _"],
         "coatRackText",
         () => {
             let itemObtained = true;
@@ -366,8 +366,8 @@ function phase_3()
     let cafetHint = new InteractAction(
         "Items/LabIndustry/CafetHint",
         "Appuyez sur espace pour prendre l'indice",
-        ["Félicitations, vous avez trouvé le deuxième indice, c'est la lettre H ! _ H _ _"],
         ["Vous avez déjà récupéré l'indice 'H'."],
+        ["Félicitations, vous avez trouvé le deuxième indice, c'est la lettre H ! _ H _ _"],
         "cafetText",
         () => {
             let itemObtained = true;
@@ -427,8 +427,8 @@ function phase_3()
     let keyItem = new InteractAction(
         "Items/LabIndustry/Key",
         "Appuyez sur espace pour prendre la clé",
-        ["Vous avez récupéré la clé permettant d'ouvrir la caisse."],
         ["Vous avez déjà récupéré la clé du coffre."],
+        ["Vous avez récupéré la clé permettant d'ouvrir la caisse."],
         "keyText",
         () => {
             let itemObtained = true;
@@ -448,8 +448,8 @@ function phase_3()
     let BinHint = new InteractAction(
         "Items/LabIndustry/BinHint",
         "Appuyez sur espace pour prendre l'indice",
-        ["Bien joué, tu as le troisième indice, c'est la lettre A ! _ _ A _"],
         ["Vous avez récupéré l'indice 'A'."],
+        ["Bien joué, tu as le troisième indice, c'est la lettre A ! _ _ A _"],
         "binText",
         () => {
             let itemObtained = true;
