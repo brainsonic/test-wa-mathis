@@ -50,4 +50,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //Log to check in the WA that the script has passed
-console.log('VERSION 10');
+console.log('VERSION 11');
