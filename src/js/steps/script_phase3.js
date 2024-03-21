@@ -306,10 +306,15 @@ function phase_3()
         "Items/LabIndustry/CoatRackHint",
         "Appuyez sur espace pour prendre l'indice.",
         ["Bravo, vous avez récupéré le premier indice, c'est la lettre C ! \n C _ _ _"],
-        ["Bravo, vous avez récupéré le premier indice, c'est la lettre C ! \n C _ _ _"],
+        ["Vous avez déjà récupéré l'indice 'C'."],
         "coatRackText",
         () => {
-            createVariableWA("coatRackHint");
+            let itemObtained = true;
+            if (WA.player.state["coatRackHint"] == null || WA.player.state["coatRackHint"] == false)
+            {
+                createVariableWA("coatRackHint");
+                itemObtained = false;
+            }
             if (WA.player.state["cafetHint"] != null && WA.player.state["cafetHint"] == true
                     && WA.player.state["chestHint"] != null && WA.player.state["chestHint"] == true
                     && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
@@ -351,7 +356,7 @@ function phase_3()
                     "Object_trapDoor"
                 );
             }
-            return true
+            return itemObtained;
         },
         "interract",
         "Object",
@@ -362,10 +367,15 @@ function phase_3()
         "Items/LabIndustry/CafetHint",
         "Appuyez sur espace pour prendre l'indice",
         ["Félicitations, vous avez trouvé le deuxième indice, c'est la lettre H ! _ H _ _"],
-        ["Félicitations, vous avez trouvé le deuxième indice, c'est la lettre H ! _ H _ _"],
+        ["Vous avez déjà récupéré l'indice 'H'."],
         "cafetText",
         () => {
-            createVariableWA("cafetHint");
+            let itemObtained = true;
+            if (WA.player.state["cafetHint"] == null || WA.player.state["cafetHint"] == false)
+            {
+                createVariableWA("cafetHint");
+                itemObtained = false;
+            }
             if (WA.player.state["cafetHint"] != null && WA.player.state["cafetHint"] == true
                     && WA.player.state["chestHint"] != null && WA.player.state["chestHint"] == true
                     && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
@@ -407,7 +417,7 @@ function phase_3()
                     "Object_trapDoor"
                 );
             }
-            return true;
+            return itemObtained;
         },
         "interract",
         "Object",
@@ -418,11 +428,17 @@ function phase_3()
         "Items/LabIndustry/Key",
         "Appuyez sur espace pour prendre la clé",
         ["Vous avez récupéré la clé permettant d'ouvrir la caisse."],
-        ["Vous avez récupéré la clé permettant d'ouvrir la caisse."],
+        ["Vous avez déjà récupéré la clé du coffre."],
         "keyText",
         () => {
-            createVariableWA("keyItem");
-            return true;
+            let itemObtained = true;
+            if (WA.player.state["keyItem"] == null || WA.player.state["keyItem"] == false)
+            {
+                createVariableWA("keyItem");
+                itemObtained = false;
+            }
+            
+            return itemObtained;
         },
         "interract",
         "Object",
@@ -433,10 +449,15 @@ function phase_3()
         "Items/LabIndustry/BinHint",
         "Appuyez sur espace pour prendre l'indice",
         ["Bien joué, tu as le troisième indice, c'est la lettre A ! _ _ A _"],
-        ["Bien joué, tu as le troisième indice, c'est la lettre A ! _ _ A _"],
+        ["Vous avez récupéré l'indice 'A'."],
         "binText",
         () => {
-            createVariableWA("binHint");
+            let itemObtained = true;
+            if (WA.player.state["binHint"] == null || WA.player.state["cafetHint"] == false)
+            {
+                createVariableWA("binHint");
+                itemObtained = false;
+            }
             if (WA.player.state["cafetHint"] != null && WA.player.state["cafetHint"] == true
                     && WA.player.state["chestHint"] != null && WA.player.state["chestHint"] == true
                     && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
@@ -453,32 +474,32 @@ function phase_3()
                     ["Vous devez rassembler les 4 indices avant de pouvoir ouvrir la trappe"],
                     'trapDoorText',
                     () => {
-                    if (WA.player.state["cafetHint"] != null && WA.player.state["cafetHint"] == true
-                        && WA.player.state["chestHint"] != null && WA.player.state["chestHint"] == true
-                        && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
-                        && WA.player.state["binHint"] != null && WA.player.state["binHint"] == true)
-                    {
-                        createVariableWA("cardAccessStep4")
-                        let url_segments =  window.location.href.split('/');
-                        url_segments[url_segments.length - 1] = "map2.tmj";
-            
-                        setInterval(() => {
-                            WA.nav.goToRoom(url_segments.join('/'));
-                        }, 1000)
-                        
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                        if (WA.player.state["cafetHint"] != null && WA.player.state["cafetHint"] == true
+                            && WA.player.state["chestHint"] != null && WA.player.state["chestHint"] == true
+                            && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
+                            && WA.player.state["binHint"] != null && WA.player.state["binHint"] == true)
+                        {
+                            createVariableWA("cardAccessStep4")
+                            let url_segments =  window.location.href.split('/');
+                            url_segments[url_segments.length - 1] = "map2.tmj";
+                
+                            setInterval(() => {
+                                WA.nav.goToRoom(url_segments.join('/'));
+                            }, 1000)
+                            
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
                     },
                     "interract",
                     "InteractAction",
                     "Object_trapDoor"
                 );
             }
-            return true;
+            return itemObtained;
         },
         "interract",
         "Object",
@@ -536,7 +557,7 @@ function phase_3()
                         "Object_trapDoor"
                     );
                 }
-                return true
+                return true;
             }
             return false;
         },
