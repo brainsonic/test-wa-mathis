@@ -732,12 +732,12 @@ function phase_3()
     let TeleporteurFinalRoom = new InteractAction(
         "Interactions/FinalRoom/TeleporteurFinalRoom",
         "Appuyez sur espace pour vous téléporter ! Merci encore pour ton aide, tu as sauvé le Monde de Yumi. Si tu prends ce transporteur, tu retourneras dans le hub des métiers. Ce sera l'occasion pour toi de découvrir des femmes et des hommes passionnants qui travaillent dans l'industrie.",
-        [],
-        [],
+        ["Vous avez été téléporté."],
+        ["Vous avez été téléporté."],
         "TeleporteurFinalRoomText",
         () => {
-        WA.nav.goToRoom("#tpShowRoom");
-        return true;
+            WA.nav.goToRoom("#tpShowRoom");
+            return true;
         },
         "interact",
         "Teleport",
@@ -832,19 +832,19 @@ function phase_3()
         "Step4bis/Anton",
         "Appuyez sur espace pour parler à Anton !",
         [
-        "Vous avez retrouvé ma clé.",
-        "Vous avez ma gratitude éternelle !",
-        "Voilà ce que je craignais tant de perdre.",
-        "En guise de gratitude, voici une mystérieuse séquence, je ne suis pas sûr de sa signification, mais j'ai le sentiment que c'est très important pour vous.",
-        "Concervez-la ou mémorisez-la, cela pourra vous être utile.",
+            "Vous avez retrouvé ma clé.",
+            "Vous avez ma gratitude éternelle !",
+            "Voilà ce que je craignais tant de perdre.",
+            "En guise de gratitude, voici une mystérieuse séquence, je ne suis pas sûr de sa signification, mais j'ai le sentiment que c'est très important pour vous.",
+            "Concervez-la ou mémorisez-la, cela pourra vous être utile.",
         ],
         [
-        "Ah, vous voilà enfin !",
-        "Je suis dans une situation désespérée...",
-        "Un habitant, avec qui j'ai eu une dispute récente, a volé la clé de mon coffre par vengeance.",
-        "Le contenu de ce coffre est essentiel, il ne doit pas tomber entre de mauvaises mains.",
-        "Je vous en prie, pouvez-vous m'aider à retrouver la clé et me la ramener ?",
-        "Je ne peux pas quitter le coffre, mais je suis certain que les habitants du Monde de Yumi pourront vous aider à retrouver le voleur."
+            "Ah, vous voilà enfin !",
+            "Je suis dans une situation désespérée...",
+            "Un habitant, avec qui j'ai eu une dispute récente, a volé la clé de mon coffre par vengeance.",
+            "Le contenu de ce coffre est essentiel, il ne doit pas tomber entre de mauvaises mains.",
+            "Je vous en prie, pouvez-vous m'aider à retrouver la clé et me la ramener ?",
+            "Je ne peux pas quitter le coffre, mais je suis certain que les habitants du Monde de Yumi pourront vous aider à retrouver le voleur."
         ],
         "AntonText",
         () => {
