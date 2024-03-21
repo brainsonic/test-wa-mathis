@@ -57,17 +57,20 @@ function phase_2()
 
     //Phase 2
     //MetierRoom
-    let Nicolas = new PopUpVideo(
-        "Interactions/MetierRoom/Nicolas",
-        "Appuyez sur espace pour parler à Nicolas !",
+    let Melody = new PopUpVideo(
+        "Interactions/MetierRoom/Melody",
+        "Appuyez sur espace pour parler à Mélody !",
         [
-        "Bonjour, moi c’est Nicolas et je suis soudeur dans l’industrie aéronautique. Venez découvrir mon métier !",
+        "Salut, moi c'est Mélody ! Au quotidien, je suis très rigoureuse, minutieuse même.",
+        "Je suis en charge de la conformité de pièces complexes. Et dans le nucléaire, on ne rigole pas avec la sécurité.",
+        "J'aime les maths : PI ne m'effraie pas (tout comme le trio dans le jardin) !",
+        "Laissez-moi vous en dire plus !"
         ],
-        "Nicolas",
-        nicolasVideoLink,
+        "Mélody",
+        MelodyVideoLink,
         "interact",
         "PNJ",
-        "PNJ_Nicolas"
+        "PNJ_Melody"
     )
     
     let Cari = new PopUpVideo(
@@ -145,19 +148,17 @@ function phase_2()
         "PNJ_YumiMetier"
     );
 
-    let Melody = new PopUpVideo(
-        "Interactions/MetierRoom/Melody",
-        "Appuyez sur espace pour parler à Mélody",
+    let Nicolas = new PopUpVideo(
+        "Interactions/MetierRoom/Nicolas",
+        "Appuyez sur espace pour parler à Nicolas",
         [
-            "Salut, moi c'est Mélody ! Au quotidien, je suis très rigoureuse, minutieuse même.",
-            "Vous allez dire encore une matheuse que le chiffre PI n'effraie pas, tout comme le trio dans le jardin. Mais c'est normal, car je suis en charge de la conformité de pièces complexes. Et dans le nucléaire, on ne rigole pas avec la sécurité.",
-            "Laissez-moi vous en dire plus !",
+            "Bonjour, moi c’est Nicolas et je suis soudeur dans l’industrie aéronautique. Venez découvrir mon métier !",
         ],
-        "MelodyText",
-        MelodyVideoLink,
+        "NicolasText",
+        NicolasVideoLink,
         "interact",
         "PNJ",
-        "PNJ_Melody"
+        "PNJ_Nicolas"
     );
 
     let Scribble = new Modal(
