@@ -319,9 +319,13 @@ function phase_3()
     //Open trapDoor if all hint is gathered
     let trapDoor = new InteractAction(
         "InteractAction/LabIndustry/TrapDoor",
-        "Appuyez sur espace pour ouvrir la trappe",
+        (WA.player.state["cafetHint"] != null && WA.player.state["cafetHint"] == true
+            && WA.player.state["chestHint"] != null && WA.player.state["chestHint"] == true
+            && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
+            && WA.player.state["binHint"] != null && WA.player.state["binHint"] == true) ? 
+            "Cha alors, tu as réuchi la troisième épreuve. Appuyez chur espace pour ouvrir la trappe. Chalut et bonne route, cha a été un plaisir de vous rencontrer !" : "",
         [
-            "Cha alors, tu as réuchi la troisième épreuve. Appuyez chur espace pour ouvrir la trappe. Chalut et bonne route, cha a été un plaisir de vous rencontrer !"
+            "Vous entrez dans la trappe"
         ],
         ["Vous devez rassembler les 4 indices avant de pouvoir ouvrir la trappe"],
         'trapDoorText',
@@ -342,7 +346,7 @@ function phase_3()
 
             setInterval(() => {
                 WA.nav.goToRoom(url_segments.join('/'));
-            }, 2000)
+            }, 1000)
             
             return true;
         }
