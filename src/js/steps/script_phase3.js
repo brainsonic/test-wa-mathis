@@ -628,7 +628,7 @@ function phase_3()
         [
         "Vous avez retrouvé ma clé.",
         "Vous avez ma gratitude éternelle !",
-        "Voilà ce que je craignais tant de perdre. (une mystérieuse séquence apparait en capture sous le texte)",
+        "Voilà ce que je craignais tant de perdre.",
         "Je ne suis pas sûr de sa signification, mais j'ai le sentiment que c'est très important pour vous.",
         "Concervez-la ou mémorisez-la, cela pourra vous être utile.",
         ],
