@@ -59,10 +59,9 @@ function phase_2()
     //MetierRoom
     let Nicolas = new PopUpVideo(
         "Interactions/MetierRoom/Nicolas",
-        "Appuyez sur espace pour parler à Mélodie !",
+        "Appuyez sur espace pour parler à Nicolas !",
         [
         "Bonjour, moi c’est Nicolas et je suis soudeur dans l’industrie aéronautique. Venez découvrir mon métier !",
-        "vvvt"
         ],
         "Nicolas",
         nicolasVideoLink,

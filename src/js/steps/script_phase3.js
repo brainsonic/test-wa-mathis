@@ -622,8 +622,9 @@ function phase_3()
         "redButtonTxt",
         formLink,
         () => {
-        createVariableWA("GameFinished");
-        WA.room.hideLayer('Step4/Last/ButtonNotPressed');
+            createVariableWA("GameFinished");
+            WA.room.hideLayer('Step4/Last/ButtonNotPressed');
+            WA.room.hideLayer('Step4/Last/ButtonNotPressedAnimation');
         return true;
         },
         "right",
@@ -631,6 +632,21 @@ function phase_3()
         "Form",
         "Formulaire_final"
     );
+
+    let technophobys = new Dialog(
+        'Step4/Last/ButtonNotPressed',
+        "Appuyez sur espace pour parler aux technophoby",
+        [
+            "Nous sommes les Technophoby.",
+            "Nous voulons conserver le monde tel qu'il est aujourd'hui sans Rayonance.",
+            "Ne vous approchez pas de ce bouton.",
+            "Si vous appuyez, le Monde de Yumi sera sous le contrôle de l'énergie infinie."
+        ],
+        "TechnophobysText",
+        "interact",
+        "PNJ",
+        "PNJ_Technophoby"
+    )
 
     /**---- FinalRoom ----**/
 
@@ -733,6 +749,7 @@ function phase_3()
         if (WA.player.state["GameFinished"] == true)
         {
             WA.room.hideLayer('Step4/Last/ButtonNotPressed');
+            WA.room.hideLayer('Step4/Last/ButtonNotPressedAnimation');
         }
         else
         {
