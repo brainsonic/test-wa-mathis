@@ -516,14 +516,13 @@ function phase_3()
     )
 
     //Condition si le joueur a déjà fait le jeu on ouvre la porte
-    if (WA.player.state["GameFinished"] == true)
-    {
-        WA.room.hideLayer('Step4/Last/ButtonNotPressed');
-
-    }
-    else
-    {
-        WA.onInit().then(() => {
+    WA.onInit().then(() => {
+        if (WA.player.state["GameFinished"] == true)
+        {
+            WA.room.hideLayer('Step4/Last/ButtonNotPressed');
+        }
+        else
+        {
             const textEnterFinalRoom = "Nous sommes les Technophoby. Nous voulons conserver le monde tel qu'il est aujourd'hui sans Rayonance. Ne vous approchez pas de ce bouton. Si vous appuyez, le Monde de Yumi sera sous le contrôle de l'énergie infinie."
             let popupOpened = false
             WA.room.onEnterLayer("Interactions/FinalRoom/EnterFinalRoom").subscribe(() => {
@@ -544,8 +543,9 @@ function phase_3()
                     })
                 }
             })
-        });
-    }
+
+        }
+    });
 
     /*
     * The code below is to check if the player has the access to certain zone of the TP
