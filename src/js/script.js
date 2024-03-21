@@ -16,22 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   WA.onInit().then(() => {
     // désactiver les proximity meeting parceque peu utile
-    console.log("DEBUT :",WA.player.state['TutorialRead']);
-    if (WA.player.state['TutorialRead'] != true)
-    {
-       WA.ui.modal.openModal({
-         title: "Tutorial",
-         src: tutorialLink,
-         allow: "fullscreen; clipboard-read; clipboard-write",
-         allowApi: !0,
-         position: "right",
-       });
-    }
     WA.controls.disablePlayerProximityMeeting();
     WA.controls.disableMicrophone();
     WA.controls.disableWebcam();
-    createVariableWA('TutorialRead');
-    console.log("APRES :",WA.player.state['TutorialRead']);
   });
 
 
