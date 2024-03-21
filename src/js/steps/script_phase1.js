@@ -173,7 +173,7 @@ function phase_1()
         "Interactions/Statue",
         "Appuyez sur espace pour lire la pancarte",
         [
-            "Cette tête de tigre géante a été réalisée l'année dernière, en collaboration avec l'influenceur HiHacks et les apprentis chaudronniers du Pôle formation UIMM Nouvelle-Aquitaine",
+            "Cette tête de tigre géante a été réalisée l'année dernière, en collaboration avec l'influenceur Hihacks et les apprentis chaudronniers du Pôle formation UIMM Nouvelle-Aquitaine",
         ],
         "Statue",
         "https://www.youtube.com/embed/APBCjKv6nvA",
