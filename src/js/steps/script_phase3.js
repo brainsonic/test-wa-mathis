@@ -257,108 +257,296 @@ function phase_3()
         "Video_ArnaudIndustrie",
     );
     
-    let coatRackHint = new ItemOnLayer(
+    let trapAppear =  false;
+    WA.onInit().then(() => {
+        if (WA.player.state["cafetHint"] != null && WA.player.state["cafetHint"] == true
+            && WA.player.state["chestHint"] != null && WA.player.state["chestHint"] == true
+            && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
+            && WA.player.state["binHint"] != null && WA.player.state["binHint"] == true
+            && trapAppear == false)
+        {
+            trapAppear = true;
+            let trapDoor = new InteractAction(
+                "InteractAction/LabIndustry/TrapDoor",
+                "Cha alors, tu as réuchi la troisième épreuve. Appuyez chur espace pour ouvrir la trappe. Chalut et bonne route, cha a été un plaisir de vous rencontrer !",
+                [
+                    "Vous entrez dans la trappe"
+                ],
+                ["Vous devez rassembler les 4 indices avant de pouvoir ouvrir la trappe"],
+                'trapDoorText',
+                () => {
+                if (WA.player.state["cafetHint"] != null && WA.player.state["cafetHint"] == true
+                    && WA.player.state["chestHint"] != null && WA.player.state["chestHint"] == true
+                    && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
+                    && WA.player.state["binHint"] != null && WA.player.state["binHint"] == true)
+                {
+                    createVariableWA("cardAccessStep4")
+                    let url_segments =  window.location.href.split('/');
+                    url_segments[url_segments.length - 1] = "map2.tmj";
+
+                    setInterval(() => {
+                        WA.nav.goToRoom(url_segments.join('/'));
+                    }, 1000)
+                    
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                },
+                "interract",
+                "InteractAction",
+                "Object_trapDoor"
+            );
+        }
+    });
+
+    let coatRackHint = new InteractAction(
         "Items/LabIndustry/CoatRackHint",
         "Appuyez sur espace pour prendre l'indice.",
         ["Bravo, vous avez récupéré le premier indice, c'est la lettre C ! \n C _ _ _"],
+        ["Bravo, vous avez récupéré le premier indice, c'est la lettre C ! \n C _ _ _"],
         "coatRackText",
-        "coatRackHint",
+        () => {
+            createVariableWA("coatRackHint");
+            if (WA.player.state["cafetHint"] != null && WA.player.state["cafetHint"] == true
+                    && WA.player.state["chestHint"] != null && WA.player.state["chestHint"] == true
+                    && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
+                    && WA.player.state["binHint"] != null && WA.player.state["binHint"] == true
+                    && trapAppear == false)
+            {
+                trapAppear = true;
+                let trapDoor = new InteractAction(
+                    "InteractAction/LabIndustry/TrapDoor",
+                    "Cha alors, tu as réuchi la troisième épreuve. Appuyez chur espace pour ouvrir la trappe. Chalut et bonne route, cha a été un plaisir de vous rencontrer !",
+                    [
+                        "Vous entrez dans la trappe"
+                    ],
+                    ["Vous devez rassembler les 4 indices avant de pouvoir ouvrir la trappe"],
+                    'trapDoorText',
+                    () => {
+                    if (WA.player.state["cafetHint"] != null && WA.player.state["cafetHint"] == true
+                        && WA.player.state["chestHint"] != null && WA.player.state["chestHint"] == true
+                        && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
+                        && WA.player.state["binHint"] != null && WA.player.state["binHint"] == true)
+                    {
+                        createVariableWA("cardAccessStep4")
+                        let url_segments =  window.location.href.split('/');
+                        url_segments[url_segments.length - 1] = "map2.tmj";
+            
+                        setInterval(() => {
+                            WA.nav.goToRoom(url_segments.join('/'));
+                        }, 1000)
+                        
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                    },
+                    "interract",
+                    "InteractAction",
+                    "Object_trapDoor"
+                );
+            }
+            return true
+        },
         "interract",
         "Object",
         "Object_coatRackItem"
     );
     
-    let cafetHint = new ItemOnLayer(
+    let cafetHint = new InteractAction(
         "Items/LabIndustry/CafetHint",
         "Appuyez sur espace pour prendre l'indice",
         ["Félicitations, vous avez trouvé le deuxième indice, c'est la lettre H ! _ H _ _"],
+        ["Félicitations, vous avez trouvé le deuxième indice, c'est la lettre H ! _ H _ _"],
         "cafetText",
-        "cafetHint",
+        () => {
+            createVariableWA("cafetHint");
+            if (WA.player.state["cafetHint"] != null && WA.player.state["cafetHint"] == true
+                    && WA.player.state["chestHint"] != null && WA.player.state["chestHint"] == true
+                    && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
+                    && WA.player.state["binHint"] != null && WA.player.state["binHint"] == true
+                    && trapAppear == false)
+            {
+                trapAppear = true;
+                let trapDoor = new InteractAction(
+                    "InteractAction/LabIndustry/TrapDoor",
+                    "Cha alors, tu as réuchi la troisième épreuve. Appuyez chur espace pour ouvrir la trappe. Chalut et bonne route, cha a été un plaisir de vous rencontrer !",
+                    [
+                        "Vous entrez dans la trappe"
+                    ],
+                    ["Vous devez rassembler les 4 indices avant de pouvoir ouvrir la trappe"],
+                    'trapDoorText',
+                    () => {
+                    if (WA.player.state["cafetHint"] != null && WA.player.state["cafetHint"] == true
+                        && WA.player.state["chestHint"] != null && WA.player.state["chestHint"] == true
+                        && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
+                        && WA.player.state["binHint"] != null && WA.player.state["binHint"] == true)
+                    {
+                        createVariableWA("cardAccessStep4")
+                        let url_segments =  window.location.href.split('/');
+                        url_segments[url_segments.length - 1] = "map2.tmj";
+            
+                        setInterval(() => {
+                            WA.nav.goToRoom(url_segments.join('/'));
+                        }, 1000)
+                        
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                    },
+                    "interract",
+                    "InteractAction",
+                    "Object_trapDoor"
+                );
+            }
+            return true;
+        },
         "interract",
         "Object",
         "Object_keyItem",
     );
     
-    let keyItem = new ItemOnLayer(
+    let keyItem = new InteractAction(
         "Items/LabIndustry/Key",
         "Appuyez sur espace pour prendre la clé",
         ["Vous avez récupéré la clé permettant d'ouvrir la caisse."],
+        ["Vous avez récupéré la clé permettant d'ouvrir la caisse."],
         "keyText",
-        "keyItem",
+        () => {
+            createVariableWA("keyItem");
+            return true;
+        },
         "interract",
         "Object",
         "Object_keyItem",
     );
     
-    let BinHint = new ItemOnLayer(
+    let BinHint = new InteractAction(
         "Items/LabIndustry/BinHint",
         "Appuyez sur espace pour prendre l'indice",
         ["Bien joué, tu as le troisième indice, c'est la lettre A ! _ _ A _"],
+        ["Bien joué, tu as le troisième indice, c'est la lettre A ! _ _ A _"],
         "binText",
-        "binHint",
+        () => {
+            createVariableWA("binHint");
+            if (WA.player.state["cafetHint"] != null && WA.player.state["cafetHint"] == true
+                    && WA.player.state["chestHint"] != null && WA.player.state["chestHint"] == true
+                    && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
+                    && WA.player.state["binHint"] != null && WA.player.state["binHint"] == true
+                    && trapAppear == false)
+            {
+                trapAppear = false;
+                let trapDoor = new InteractAction(
+                    "InteractAction/LabIndustry/TrapDoor",
+                    "Cha alors, tu as réuchi la troisième épreuve. Appuyez chur espace pour ouvrir la trappe. Chalut et bonne route, cha a été un plaisir de vous rencontrer !",
+                    [
+                        "Vous entrez dans la trappe"
+                    ],
+                    ["Vous devez rassembler les 4 indices avant de pouvoir ouvrir la trappe"],
+                    'trapDoorText',
+                    () => {
+                    if (WA.player.state["cafetHint"] != null && WA.player.state["cafetHint"] == true
+                        && WA.player.state["chestHint"] != null && WA.player.state["chestHint"] == true
+                        && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
+                        && WA.player.state["binHint"] != null && WA.player.state["binHint"] == true)
+                    {
+                        createVariableWA("cardAccessStep4")
+                        let url_segments =  window.location.href.split('/');
+                        url_segments[url_segments.length - 1] = "map2.tmj";
+            
+                        setInterval(() => {
+                            WA.nav.goToRoom(url_segments.join('/'));
+                        }, 1000)
+                        
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                    },
+                    "interract",
+                    "InteractAction",
+                    "Object_trapDoor"
+                );
+            }
+            return true;
+        },
         "interract",
         "Object",
         "Object_binItem",
     );
     
-    let chestHint = new ItemPickUpOnCondition(
+    let chestHint = new InteractAction(
         "Items/LabIndustry/ChestHint",
         "Appuyez sur espace pour prendre l'indice",
         ["Super, tu viens de prendre le quatrième et dernier indice, c'est la lettre T ! _ _ _ T"],
         ["Vous n'avez pas la clé du coffre"],
         "chestText",
-        "chestHint",
         () => {
-        return  WA.player.state["keyItem"] != null && WA.player.state["keyItem"] == true ? true : false;
+            if (WA.player.state["keyItem"] != null && WA.player.state["keyItem"] == true)
+            {
+                createVariableWA("chestHint");
+                if (WA.player.state["cafetHint"] != null && WA.player.state["cafetHint"] == true
+                    && WA.player.state["chestHint"] != null && WA.player.state["chestHint"] == true
+                    && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
+                    && WA.player.state["binHint"] != null && WA.player.state["binHint"] == true
+                    && trapAppear == false)
+                {
+                    trapAppear = true;
+                    let trapDoor = new InteractAction(
+                        "InteractAction/LabIndustry/TrapDoor",
+                        "Cha alors, tu as réuchi la troisième épreuve. Appuyez chur espace pour ouvrir la trappe. Chalut et bonne route, cha a été un plaisir de vous rencontrer !",
+                        [
+                            "Vous entrez dans la trappe"
+                        ],
+                        ["Vous devez rassembler les 4 indices avant de pouvoir ouvrir la trappe"],
+                        'trapDoorText',
+                        () => {
+                        if (WA.player.state["cafetHint"] != null && WA.player.state["cafetHint"] == true
+                            && WA.player.state["chestHint"] != null && WA.player.state["chestHint"] == true
+                            && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
+                            && WA.player.state["binHint"] != null && WA.player.state["binHint"] == true)
+                        {
+                            createVariableWA("cardAccessStep4")
+                            let url_segments =  window.location.href.split('/');
+                            url_segments[url_segments.length - 1] = "map2.tmj";
+                
+                            setInterval(() => {
+                                WA.nav.goToRoom(url_segments.join('/'));
+                            }, 1000)
+                            
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                        },
+                        "interract",
+                        "InteractAction",
+                        "Object_trapDoor"
+                    );
+                }
+                return true
+            }
+            return false;
         },
         "interract",
         "Object",
         "Object_chestItem",
     );
     
+    let text = "Il n'y a rien ici";
     //Open trapDoor if all hint is gathered
-    let trapDoor = new InteractAction(
-        "InteractAction/LabIndustry/TrapDoor",
-        (WA.player.state["cafetHint"] != null && WA.player.state["cafetHint"] == true
-            && WA.player.state["chestHint"] != null && WA.player.state["chestHint"] == true
-            && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
-            && WA.player.state["binHint"] != null && WA.player.state["binHint"] == true) ? 
-            "Cha alors, tu as réuchi la troisième épreuve. Appuyez chur espace pour ouvrir la trappe. Chalut et bonne route, cha a été un plaisir de vous rencontrer !" : "",
-        [
-            "Vous entrez dans la trappe"
-        ],
-        ["Vous devez rassembler les 4 indices avant de pouvoir ouvrir la trappe"],
-        'trapDoorText',
-        () => {
-        if (WA.player.state["cafetHint"] != null && WA.player.state["cafetHint"] == true
-            && WA.player.state["chestHint"] != null && WA.player.state["chestHint"] == true
-            && WA.player.state["coatRackHint"] != null && WA.player.state["coatRackHint"] == true
-            && WA.player.state["binHint"] != null && WA.player.state["binHint"] == true)
-        {
-            WA.player.state.saveVariable("cardAccessStep4", true, {
-                public: true,
-                persist: true,
-                ttl: 720 * 3600,
-                scope: "world"
-            });
-            let url_segments =  window.location.href.split('/');
-            url_segments[url_segments.length - 1] = "map2.tmj";
-
-            setInterval(() => {
-                WA.nav.goToRoom(url_segments.join('/'));
-            }, 1000)
-            
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-        },
-        "interract",
-        "InteractAction",
-        "Object_trapDoor"
-    );
     onEnterAuthorization('Zones/ZoneStep3', ['cardAccessStep3'], 'EscapeGameText');
     
     /* ----- STEP 4 ----- */
