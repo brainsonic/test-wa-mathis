@@ -459,8 +459,8 @@ function phase_2()
     );
 
     let Séverine = new Modal(
-        "Interactions/DinningRoom/Séverine",
-        "Appuyez sur espace pour discuter avec Séverine !",
+        "Interactions/DinningRoom/Severine",
+        "Appuyez sur espace pour découvrir Séverine !",
         SéverineChatLink,
         "center",
         "interact",
