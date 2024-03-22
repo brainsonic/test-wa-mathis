@@ -150,8 +150,8 @@ function phase_2()
         "Appuyez sur espace pour parler à Mélody",
         [
             "Salut, moi c'est Mélody ! Au quotidien, je suis très rigoureuse, minutieuse même.",
-            "Vous allez dire encore une matheuse que le chiffre PI n'effraie pas, tout comme le trio dans le jardin. Mais c'est normal, car je suis en charge de la conformité de pièces complexes. Et dans le nucléaire, on ne rigole pas avec la sécurité.",
-            "Laissez-moi vous en dire plus !",
+            "Je suis en charge de la conformité de pièces complexes. Et dans le nucléaire, on ne rigole pas avec la sécurité. Laissez-moi vous en dire plus !",
+            "Ah ! Et j'aime les maths : PI ne m'effraie pas (tout comme le trio dans le jardin) !",
         ],
         "MelodyText",
         MelodyVideoLink,

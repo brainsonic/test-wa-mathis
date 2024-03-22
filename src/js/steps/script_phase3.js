@@ -96,7 +96,7 @@ function phase_3()
     let cardAccess = new ItemPickUpOnCondition(
         "Items/TrappedRoom/CardAccess",
         "Appuyez sur espace pour ramasser le badge d'accès",
-        ["Vous avez récuperé le badge d'accès"],
+        ["Vous avez récupéré le badge d'accès"],
         ["Vous devez d'abord parler à Yumi avant de le ramasser"],
         "cardAccessText",
         "cardAccess",
@@ -635,7 +635,7 @@ function phase_3()
 
     let technophobys = new Dialog(
         'Step4/Last/ButtonNotPressed',
-        "Appuyez sur espace pour parler aux technophoby",
+        "Appuyez sur espace pour parler aux Technophoby",
         [
             "Nous sommes les Technophoby.",
             "Nous voulons conserver le monde tel qu'il est aujourd'hui sans Rayonance.",
