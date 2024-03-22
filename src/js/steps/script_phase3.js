@@ -668,7 +668,7 @@ function phase_3()
         "Appuyez sur espace pour lire l'affiche",
         [
         "Infos, témoignages, nouveautés, toutes nos actus sont sur Instagram.",
-        "Suivez-nous ! https://www.instagram.com/uimm.lafabriquedelavenir/"
+        "Suivez nous sur instagram : @uimm.lafabriquedelavenir"
         ],
         "UIMMInstaText",
         "interact",
