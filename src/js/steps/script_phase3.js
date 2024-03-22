@@ -907,8 +907,7 @@ function phase_3()
         ],
         "ArnaudText",
         () => {
-        if (WA.player.state["arnaudRevealed"] != true
-        && WA.player.state["startSideQuestStep4"] != null && WA.player.state["startSideQuestStep4"] == true) {
+        if (WA.player.state["arnaudRevealed"] != true) {
             
             //Variable pour revenir au dialogue de départ quand arnaud a été démasqué
             createVariableWA('arnaudRevealed');
