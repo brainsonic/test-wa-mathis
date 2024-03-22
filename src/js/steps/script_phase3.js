@@ -640,7 +640,7 @@ function phase_3()
             "Nous sommes les Technophoby.",
             "Nous voulons conserver le monde tel qu'il est aujourd'hui sans Rayonance.",
             "Ne vous approchez pas de ce bouton.",
-            "Si vous appuyez, le Monde de Yumi sera sous le contrôle de l'énergie infinie."
+            "Si vous appuyez, le Monde de Yumi aura accès à l'énergie infinie."
         ],
         "TechnophobysText",
         "interact",
