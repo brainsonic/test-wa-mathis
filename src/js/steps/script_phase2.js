@@ -45,14 +45,14 @@ function phase_2()
 
     //DinningRoom
 
-    const AurélienChatLink = "https://chat.csml.dev/s/mdpagk2kgwff7cjjjlqxfbkmtaegcc8z"; //
-    const AdrienChatLink = "https://chat.csml.dev/s/eimrkwagnizsgkt2exfyzpqikxvsiqok"; //
-    const AnneChatLink = "https://chat.csml.dev/s/urfgrirj0fzedjnkgdtc8pndlybbirja"; //
-    const AurélieChatLink = "https://chat.csml.dev/s/nzulmz6enql33he6f7ghqv6vmw9iyqai"; //
-    const LaureChatLink = "https://chat.csml.dev/s/cjue6rorfvlktkzitr71bdjrxchv8rg9"; //
-    const LudivineChatLink = "https://chat.csml.dev/s/oegmltlziitgfljossd3gdvstkoggde7"; //
-    const LudovicChatLink = " https://chat.csml.dev/s/5swwzc2ho5ldzer5orwie8uksvsymrjj"; //
-    const SéverineChatLink = "https://chat.csml.dev/s/iofny0f6wdowp8avygfofsqg5lm5hmx8"; //
+    const AurélienChatLink = "https://www.youtube.com/embed/nH7qhiTUPdY?si=jQ8I8OD7DVdgh2AC"; //
+    const AdrienChatLink = "https://www.youtube.com/embed/shjCyZuwchA?si=TG0lMgCoy2fTwN-3"; //
+    const AnneChatLink = "https://www.youtube.com/embed/7sbKfKr-w1c?si=akuUHSYWtf28lWbD"; //
+    const AurélieChatLink = "https://www.youtube.com/embed/pIamQ3YJ9IU?si=B6YamXBMBN4u3_M4"; //
+    const LaureChatLink = "https://www.youtube.com/embed/d8h_Gwr6eak?si=R-cvw0vWtJ4Cs30I"; //
+    const LudivineChatLink = "https://www.youtube.com/embed/M0R3-yRvyx0?si=H5fy8V3L41WtlJjY"; //
+    const LudovicChatLink = " https://www.youtube.com/embed/VqaM9iW8dD4?si=zLzfQy8JkdvLtpC3"; //
+    const SéverineChatLink = "https://www.youtube.com/embed/8XtgezkSy9E?si=akkdFcg_pqojP-qX"; //
     const YumiCafetBotLink = "https://chat.csml.dev/s/dbti1brmn89khgwsxonkmku7cpuotgvw"
 
     //Phase 2
@@ -428,130 +428,84 @@ function phase_2()
     );
     //Dinning Room
     
-    let Adrien = new PopUpVideo(
+    let Adrien = new Modal(
         "Interactions/DinningRoom/Adrien",
         "Appuyez sur espace pour découvrir Adrien !",
-        [
-        "Non, le chaudronnier ne fait pas de magie.",
-        "Ou peut-être que si finalement.",
-        "La réponse avec Adrien."
-        ],
-        "AdrienText",
         AdrienChatLink,
+        "center",
         "interact",
         "PNJ",
         "PNJ_AdrienDinningRoom",
-        "right",
     );
 
-    let Aurélie = new PopUpVideo(
+    let Aurélie = new Modal(
         "Interactions/DinningRoom/Aurelie",
         "Appuyez sur espace pour découvrir Aurélie !",
-        [
-            "Connaissez-vous l'automatisme ?",
-            "Aurélie vous explique tout.",
-            "Suivez le guide."
-        ],
-        "AurelieText",
         AurélieChatLink,
+        "center",
         "interact",
         "PNJ",
         "PNJ_AurélieDinningRoom",
-        "right",
     );
 
-    let Anne = new PopUpVideo(
+    let Anne = new Modal(
         "Interactions/DinningRoom/Anne",
         "Appuyez sur espace pour découvrir Anne !",
-        [
-        "Anne est technicienne QHSE.",
-        "Quésaco ?",
-        "Elle vous dit tout."
-        ],
-        "AnneText",
         AnneChatLink,
+        "center",
         "interact",
         "PNJ",
         "PNJ_AnneDinningRoom",
-        "right",
     );
 
-    let Séverine = new PopUpVideo(
+    let Séverine = new Modal(
         "Interactions/DinningRoom/Séverine",
         "Appuyez sur espace pour discuter avec Séverine !",
-        [
-        "Je dessine des compresseurs, des condenseurs, des détendeurs, des évaporateurs…",
-        "Je suis dessinatrice industrielle.",
-        "Venez découvrir mon métier."
-        ],
-        "SéverineText",
         SéverineChatLink,
+        "center",
         "interact",
         "PNJ",
         "PNJ_SéverineDinningRoom",
-        "right",
     );
 
-    let Ludovic = new PopUpVideo(
+    let Ludovic = new Modal(
         "Interactions/DinningRoom/Ludovic",
         "Appuyez sur espace pour découvrir Ludovic !",
-        [
-        "Savez-vous ce qu'est l'usinage ?",
-        "Pour en savoir plus, discutez avec Yumi et Ludovic !"
-        ],
-        "LudovicText",
         LudovicChatLink,
+        "center",
         "interact",
         "PNJ",
         "PNJ_LudovicDinningRoom",
-        "right",
     );
 
-    let Laure = new PopUpVideo(
+    let Laure = new Modal(
         "Interactions/DinningRoom/Laure",
         "Appuyez sur espace pour découvrir Laure !",
-        [
-            "Selon Laure, pour devenir une mouleuse hors pair, il faut aimer fabriquer des objets de ses mains et être créative.",
-            "Découvrez comment ce métier a changé sa vie."
-        ],
-        "LaureText",
         LaureChatLink,
+        "center",
         "interact",
         "PNJ",
         "PNJ_LaureDinningRoom",
-        "right",
     );
 
     let Aurélien = new PopUpVideo(
         "Interactions/DinningRoom/Aurelien",
         "Appuyez sur espace pour découvrir Aurélien !",
-        [
-            "Moi, c'est Aurélien.",
-            "Je travaille le titane, l'inox ou l'inconel.",
-            "J'aime jouer des coudes.",
-            "Je suis …"
-        ],
-        "AurelienText",
         AurélienChatLink,
+        "center",
         "interact",
         "PNJ",
         "PNJ_AurélienDinningRoom",
-        "right"
     );
 
-    let Ludivine = new PopUpVideo(
+    let Ludivine = new Modal(
         "Interactions/DinningRoom/Ludivine",
         "Appuyez sur espace pour découvrir Ludivine !",
-        [
-            "Réparer des moteurs d'avions, un rêve de gosse ?!",
-            "Pour Ludivine, c'est son quotidien."
-        ],
-        "LudivineText",
         LudivineChatLink,
+        "center",
         "interact",
         "PNJ",
         "PNJ_LudivineDinningRoom",
-        "right"
     );
 
     let YumiCafet = new Modal(
