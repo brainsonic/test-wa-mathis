@@ -488,7 +488,7 @@ function phase_2()
         "PNJ_LaureDinningRoom",
     );
 
-    let Aurélien = new PopUpVideo(
+    let Aurélien = new Modal(
         "Interactions/DinningRoom/Aurelien",
         "Appuyez sur espace pour découvrir Aurélien !",
         AurélienChatLink,
