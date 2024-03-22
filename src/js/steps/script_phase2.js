@@ -149,8 +149,11 @@ function phase_2()
         "Interactions/MetierRoom/Melody",
         "Appuyez sur espace pour parler à Mélody",
         [
-            "Salut, moi c'est Mélody ! Au quotidien, je suis très rigoureuse, minutieuse même.",
-            "Je suis en charge de la conformité de pièces complexes. Et dans le nucléaire, on ne rigole pas avec la sécurité. Laissez-moi vous en dire plus !",
+            "Salut, moi c'est Mélody !",
+            "Au quotidien, je suis très rigoureuse, minutieuse même.",
+            "Je suis en charge de la conformité de pièces complexes.",
+            "Et dans le nucléaire, on ne rigole pas avec la sécurité.",
+            "Laissez-moi vous en dire plus !",
             "Ah ! Et j'aime les maths : PI ne m'effraie pas (tout comme le trio dans le jardin) !",
         ],
         "MelodyText",
