@@ -869,7 +869,7 @@ function phase_3()
         "Appuyez sur espace pour ouvrir le coffre !",
         [
         "Vous avez récupéré une mystérieuse séquence !",
-        "Gardez-la précieusement, elle vous servira pour les prochaines quêtes"
+        'Gardez-la précieusement, elle vous servira pour les prochaines quêtes, vous la retrouverez en cliquant sur "Séquence secrète" en bas de l\'écran !'
         ],
         [
             "Vous avez besoin d'une clé pour ouvrir ce coffre !"
