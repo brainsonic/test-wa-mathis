@@ -448,7 +448,7 @@ function phase_3()
     let BinHint = new InteractAction(
         "Items/LabIndustry/BinHint",
         "Appuyez sur espace pour prendre l'indice",
-        ["Vous avez récupéré l'indice 'A'."],
+        ["Vous avez déjà récupéré l'indice 'A'."],
         ["Bien joué, tu as le troisième indice, c'est la lettre A ! _ _ A _"],
         "binText",
         () => {
