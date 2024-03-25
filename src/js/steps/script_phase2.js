@@ -45,14 +45,14 @@ function phase_2()
 
     //DinningRoom
 
-    const AurélienChatLink = "https://www.youtube.com/embed/nH7qhiTUPdY?si=jQ8I8OD7DVdgh2AC"; //
-    const AdrienChatLink = "https://www.youtube.com/embed/shjCyZuwchA?si=TG0lMgCoy2fTwN-3"; //
+    const AurélienChatLink = "https://www.youtube.com/embed/n8Pbny-FKiE?si=QgbWrqfXWxQLg-WQ"; //
+    const AdrienChatLink = "https://www.youtube.com/embed/dIKfjI_JKpk?si=J2DGwYvb96RiE9si"; //
     const AnneChatLink = "https://www.youtube.com/embed/7sbKfKr-w1c?si=akuUHSYWtf28lWbD"; //
     const AurélieChatLink = "https://www.youtube.com/embed/pIamQ3YJ9IU?si=B6YamXBMBN4u3_M4"; //
-    const LaureChatLink = "https://www.youtube.com/embed/d8h_Gwr6eak?si=R-cvw0vWtJ4Cs30I"; //
-    const LudivineChatLink = "https://www.youtube.com/embed/M0R3-yRvyx0?si=H5fy8V3L41WtlJjY"; //
+    const LaureChatLink = "https://www.youtube.com/embed/BU-dn2CQwnw?si=GYQVov9scTYTkcXd"; //
+    const LudivineChatLink = "https://www.youtube.com/embed/ZvNInc2G1Vg?si=6jNyyB8fz7ExvN8d"; //
     const LudovicChatLink = " https://www.youtube.com/embed/VqaM9iW8dD4?si=zLzfQy8JkdvLtpC3"; //
-    const SéverineChatLink = "https://www.youtube.com/embed/8XtgezkSy9E?si=akkdFcg_pqojP-qX"; //
+    const SéverineChatLink = "https://www.youtube.com/embed/t9UrYnXyaTw?si=U2NcDc-T9UNT0wOq"; //
     const YumiCafetBotLink = "https://chat.csml.dev/s/dbti1brmn89khgwsxonkmku7cpuotgvw"
 
     //Phase 2
