@@ -49,7 +49,7 @@ function phase_3()
         [
             "Toi aussi, tu dois sauver Rayonance ?!",
             "Pour le moment, pas de Technophoby à l'horizon.",
-            "Mais y a urgence, il faut trouver un code.",
+            "Mais il y a urgence, il faut trouver un code. Tu sais, celui de la porte rouge dans le lab de Yumi.",
         ],
         "MarleneText",
         "interact",
@@ -153,7 +153,7 @@ function phase_3()
         "InteractAction/TrappedRoom/FinalDoor",
         "Appuyez sur espace pour insérer le badge d'accès",
         ["La porte est ouverte"],
-        ["Vous devez avoir le badge d'accès et avoir parler à Yumi"],
+        ["Vous devez avoir le badge d'accès et avoir parlé à Yumi"],
         'doorTrappedRoomText',
         () => {
         if (WA.player.state["cardAccess"] != null && WA.player.state["cardAccess"] == true &&
@@ -720,7 +720,6 @@ function phase_3()
         "Appuyez sur espace pour lire la pancarte",
         [
         'Vous êtes à la recherche d\'un stage, d\'une alternance ou d\'un emploi ? De nombreuses opportunités vous attendent sur le site "L\'Industrie Recrute" !',
-        "N'hésitez plus et rejoignez-nous."
         ],
         "UIMMRecruteText",
         UIMMRecruteLink,
