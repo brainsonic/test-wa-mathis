@@ -145,7 +145,7 @@ function phase_1()
         "Interactions/Jeune2",
         "Appuyez sur espace pour parler à Killian !",
         [
-            "Salut, moi c'est Killian \n ! Toi aussi tu es un passionné de l'industrie comme Yumi ! Pour découvrir sur quel super projet j'ai travaillé c'est ici :",
+            "Salut, moi c'est \n Killian ! Toi aussi tu es un passionné de l'industrie comme Yumi ! Pour découvrir sur quel super projet j'ai travaillé c'est ici :",
         ],
         "Jeune2",
         linkVideoJeune2,
