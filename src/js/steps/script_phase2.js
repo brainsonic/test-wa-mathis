@@ -425,81 +425,119 @@ function phase_2()
     );
     //Dinning Room
     
-    let Adrien = new Modal(
+    let Adrien = new PopUpVideo(
         "Interactions/DinningRoom/Adrien",
         "Appuyez sur espace pour découvrir Adrien !",
+        [
+            "Non, le chaudronnier ne fait pas de magie.",
+            "Ou peut-être que si finalement.",
+            "La réponse avec Adrien."
+        ],
+        "AdrienText",
         AdrienChatLink,
-        "center",
         "interact",
         "PNJ",
         "PNJ_AdrienDinningRoom",
     );
 
-    let Aurélie = new Modal(
+    let Aurélie = new PopUpVideo(
         "Interactions/DinningRoom/Aurelie",
         "Appuyez sur espace pour découvrir Aurélie !",
+        [
+            "Connaissez-vous l'automatisme ?",
+            "Aurélie vous explique tout.",
+            "Suivez le guide."
+        ],
+        "AurelieText",
         AurélieChatLink,
-        "center",
         "interact",
         "PNJ",
         "PNJ_AurélieDinningRoom",
     );
 
-    let Anne = new Modal(
+    let Anne = new PopUpVideo(
         "Interactions/DinningRoom/Anne",
         "Appuyez sur espace pour découvrir Anne !",
+        [
+            "Anne est technicienne QHSE.",
+            "Quésaco ?",
+            "Elle vous dit tout."
+        ],
+        "AnneText",
         AnneChatLink,
-        "center",
         "interact",
         "PNJ",
         "PNJ_AnneDinningRoom",
     );
 
-    let Séverine = new Modal(
+    let Séverine = new PopUpVideo(
         "Interactions/DinningRoom/Severine",
         "Appuyez sur espace pour découvrir Séverine !",
+        [
+            "Je dessine des compresseurs, des condenseurs, des détendeurs, des évaporateurs…",
+            "Je suis dessinatrice industrielle.",
+            "Venez découvrir mon métier."
+        ],
+        "SeverineText",
         SéverineChatLink,
-        "center",
         "interact",
         "PNJ",
         "PNJ_SéverineDinningRoom",
     );
 
-    let Ludovic = new Modal(
+    let Ludovic = new PopUpVideo(
         "Interactions/DinningRoom/Ludovic",
         "Appuyez sur espace pour découvrir Ludovic !",
+        [
+            "Savez-vous ce qu'est l'usinage ?",
+            "Pour en savoir plus, discutez avec Yumi et Ludovic !"
+        ],
+        "LudovicText",
         LudovicChatLink,
-        "center",
         "interact",
         "PNJ",
         "PNJ_LudovicDinningRoom",
     );
 
-    let Laure = new Modal(
+    let Laure = new PopUpVideo(
         "Interactions/DinningRoom/Laure",
         "Appuyez sur espace pour découvrir Laure !",
+        [
+            "Selon Laure, pour devenir une mouleuse hors pair, il faut aimer fabriquer des objets de ses mains et être créative.",
+            "Découvrez comment ce métier a changé sa vie."
+        ],
+        "LaureText",
         LaureChatLink,
-        "center",
         "interact",
         "PNJ",
         "PNJ_LaureDinningRoom",
     );
 
-    let Aurélien = new Modal(
+    let Aurélien = new PopUpVideo(
         "Interactions/DinningRoom/Aurelien",
         "Appuyez sur espace pour découvrir Aurélien !",
+        [
+            "Moi, c'est Aurélien.",
+            "Je travaille le titane, l'inox ou l'inconel.",
+            "J'aime jouer des coudes.",
+            "Je suis …"
+        ],
+        "AurelienText",
         AurélienChatLink,
-        "center",
         "interact",
         "PNJ",
         "PNJ_AurélienDinningRoom",
     );
 
-    let Ludivine = new Modal(
+    let Ludivine = new PopUpVideo(
         "Interactions/DinningRoom/Ludivine",
         "Appuyez sur espace pour découvrir Ludivine !",
+        [
+            "Réparer des moteurs d'avions, un rêve de gosse ?!",
+            "Pour Ludivine, c'est son quotidien."
+        ],
+        "LudivineText",
         LudivineChatLink,
-        "center",
         "interact",
         "PNJ",
         "PNJ_LudivineDinningRoom",
