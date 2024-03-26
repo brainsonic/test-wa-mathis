@@ -442,9 +442,9 @@ function phase_2()
 
     let Aurélie = new PopUpVideo(
         "Interactions/DinningRoom/Aurelie",
-        "Appuyez sur espace pour découvrir \n Aurélie !",
+        "Appuyez sur espace pour découvrir Aurélie !",
         [
-            "Connaissez-vous l'automatisme ?",
+            "Connaissez-vous \n l'automatisme ?",
             "Aurélie vous explique tout.",
             "Suivez le guide."
         ],
