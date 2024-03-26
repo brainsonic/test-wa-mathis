@@ -48,7 +48,7 @@ function phase_2()
     const AurélienChatLink = "https://www.youtube.com/embed/n8Pbny-FKiE?si=QgbWrqfXWxQLg-WQ"; //
     const AdrienChatLink = "https://www.youtube.com/embed/dIKfjI_JKpk?si=J2DGwYvb96RiE9si"; //
     const AnneChatLink = "https://www.youtube.com/embed/7sbKfKr-w1c?si=akuUHSYWtf28lWbD"; //
-    const AurélieChatLink = "https://www.youtube.com/embed/pIamQ3YJ9IU?si=B6YamXBMBN4u3_M4"; //
+    const AurélieChatLink = "https://www.youtube.com/embed/lLaAlP0h5kg?si=6Mwr2HaDnG9Oo9ME"; //
     const LaureChatLink = "https://www.youtube.com/embed/BU-dn2CQwnw?si=GYQVov9scTYTkcXd"; //
     const LudivineChatLink = "https://www.youtube.com/embed/ZvNInc2G1Vg?si=6jNyyB8fz7ExvN8d"; //
     const LudovicChatLink = " https://www.youtube.com/embed/VqaM9iW8dD4?si=zLzfQy8JkdvLtpC3"; //
