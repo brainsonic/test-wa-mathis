@@ -108,7 +108,7 @@ function phase_1()
         },
         "interact",
         "PNJ",
-        "PNJ_Scientifique"
+        "PNJ_Scientifique" 
     );
     /*
     let Scientifique = new Dialog(
