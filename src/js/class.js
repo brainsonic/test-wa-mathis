@@ -71,6 +71,8 @@ class Interaction {
           console.error('Error:', error)
         }) 
     }
+
+    
     //fonction d'intéraction, à override
     interact() {
       // override this

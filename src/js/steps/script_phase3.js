@@ -1,5 +1,6 @@
 import {} from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, ItemOnLayer, ItemPickUpOnCondition, PopUpVideoAction, onTpCondition, tutorial, onEnterAuthorization, getVariableOnZone, createVariableWA, trapLayer} from '../class';
+import { formLink } from '../script';
 
 function phase_3()
 {
@@ -67,7 +68,8 @@ function phase_3()
             "Vous cherchez encore le code de la porte ?",
             "Allez, je vous aide.",
             "Quel est le point commun entre le paPIllon, le PIaf et le laPIn ?",
-            "Oui, j'aime les chacher, mais c'est l'orthographe qu'il faut étudier !"
+            "Oui, j'aime les chacher, mais c'est l'orthographe qu'il faut étudier !",
+            "\"Pi\" se retrouve dans chaque mot. Ce sont deux lettres, mais c'est aussi un nombre infini qui commence par 3.",
         ],
         "ChatParkInsideText",
         "interact",
@@ -605,7 +607,8 @@ function phase_3()
         "PNJ_YumiStep4",
     );
 
-    let redButtonForm = new PopUpVideoAction(
+    /* A remettre pour le 1e 14 aout 2024
+    let redButtonForm = new InteractAction(
         "Step4/Last/Redbutton",
         "Appuyez sur espace pour sauver Rayonance !",
         [
@@ -613,14 +616,20 @@ function phase_3()
         "Vous avez réussi.",
         "Rayonance est en sécurité et notre monde est sauvé.",
         "Vous êtes notre héros.",
-        "Pour vous remercier, n'hésitez pas à remplir ce formulaire pour participer à notre jeu concours et tenter de gagner une playstation 5 slim et plein d'autres cadeaux bien stylés.",
         "L'aventure dans le Monde de Yumi ne s'arrête pas là.",
         "Continuez à vous balader dans les différentes salles grâce au transporteur situé dans la prochaine pièce.",
         "Les professionnels de l'industrie qui peuplent ce monde vous attendent pour vous parler de leurs métiers et de leurs projets passionnants !"
         ],
-        ["Erreur dialogue"],
+        [
+            "Bravo !!!",
+            "Vous avez réussi.",
+            "Rayonance est en sécurité et notre monde est sauvé.",
+            "Vous êtes notre héros.",
+            "L'aventure dans le Monde de Yumi ne s'arrête pas là.",
+            "Continuez à vous balader dans les différentes salles grâce au transporteur situé dans la prochaine pièce.",
+            "Les professionnels de l'industrie qui peuplent ce monde vous attendent pour vous parler de leurs métiers et de leurs projets passionnants !"
+            ],
         "redButtonTxt",
-        formLink,
         () => {
             createVariableWA("GameFinished");
             WA.room.hideLayer('Step4/Last/ButtonNotPressed');
@@ -631,7 +640,38 @@ function phase_3()
         "interact",
         "Form",
         "Formulaire_final"
+    );*/
+
+    // A enlever pour le 1e 14 aout 2024
+    let textredButtonFormEclair = [
+        "Bravo !!!",
+        "Vous avez réussi.",
+        "Rayonance est en sécurité et notre monde est sauvé.",
+        "Vous êtes notre héros.",
+        "L'aventure dans le Monde de Yumi ne s'arrête pas là.",
+        "Continuez à vous balader dans les différentes salles grâce au transporteur situé dans la prochaine pièce.",
+        "Les professionnels de l'industrie qui peuplent ce monde vous attendent pour vous parler de leurs métiers et de leurs projets passionnants !",
+        "Pour vous remercier, n'hésitez pas à remplir ce formulaire pour participer à notre jeu-concours et tenter de gagner un iphone et plein d'autres cadeaux."
+        ];
+    let redButtonFormEclair = new PopUpVideoAction(
+        "Step4/Last/Redbutton",
+        "Appuyez sur espace pour sauver Rayonance !",
+        textredButtonFormEclair,
+        textredButtonFormEclair,
+        "redButtonTxt",
+        formLink,
+        () => {
+            createVariableWA("GameFinished");
+            WA.room.hideLayer('Step4/Last/ButtonNotPressed');
+            WA.room.hideLayer('Step4/Last/ButtonNotPressedAnimation');
+            return true;
+        },
+        "interact",
+        "Form",
+        "Formulaire_final"
     );
+
+    // A enlever pour le 1e 14 aout 2024
 
     let technophobys = new Dialog(
         'Step4/Last/ButtonNotPressed',
@@ -668,7 +708,7 @@ function phase_3()
         "Appuyez sur espace pour lire l'affiche",
         [
         "Infos, témoignages, nouveautés, toutes nos actus sont sur Instagram.",
-        "Suivez nous sur instagram : @uimm.lafabriquedelavenir"
+        "Suivez nous sur Instagram : @uimm.lafabriquedelavenir"
         ],
         "UIMMInstaText",
         "interact",
@@ -730,7 +770,7 @@ function phase_3()
 
     let TeleporteurFinalRoom = new InteractAction(
         "Interactions/FinalRoom/TeleporteurFinalRoom",
-        "Appuyez sur espace pour vous téléporter ! Merci encore pour ton aide, tu as sauvé le Monde de Yumi. Si tu prends ce transporteur, tu retourneras dans le hub des métiers. Ce sera l'occasion pour toi de découvrir des femmes et des hommes passionnants qui travaillent dans l'industrie.",
+        "Appuyez sur espace pour vous téléporter ! Merci encore pour votre aide, vous avez sauvé le Monde de Yumi. Si vous prenez ce transporteur, vous irez directement dans le hub des métiers. Ce sera l'occasion pour vous de décrouvrir des femmes et des hommes passionants qui travailent dans l'industrie.",
         ["Vous avez été téléporté."],
         ["Vous avez été téléporté."],
         "TeleporteurFinalRoomText",

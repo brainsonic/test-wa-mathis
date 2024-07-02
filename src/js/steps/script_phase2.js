@@ -1,5 +1,6 @@
 import {} from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, ItemOnLayer, ItemPickUpOnCondition, PopUpVideoAction, onTpCondition, tutorial, onEnterAuthorization, getVariableOnZone, createVariableWA, trapLayer} from '../class';
+import { formLink } from '../script';
 
 function phase_2()
 {    
@@ -151,7 +152,8 @@ function phase_2()
         [
             "Salut, moi c'est Mélody ! Au quotidien, je suis très rigoureuse, minutieuse même. C'est important, car je suis responsable de la conformité de pièces complexes !",
             "Et dans le nucléaire, on ne rigole pas avec la sécurité. Laissez-moi vous en dire plus !",
-            "Ah ! Et j'aime les maths : PI ne m'effraie pas (tout comme le trio dans le jardin) !",
+            "Ah ! Et j'aime les maths : le chiffre π (Pi) ne m'effraie pas (tout comme le trio dans le jardin) !",
+            "Les premiers numéros de Pi sont d'ailleurs souvent utilisés pour les digicodes.",
         ],
         "MelodyText",
         MelodyVideoLink,
@@ -543,6 +545,7 @@ function phase_2()
         "PNJ_LudivineDinningRoom",
     );
 
+    /*
     let YumiCafet = new Modal(
         "Interactions/DinningRoom/YumiCafet",
         "Appuyez sur espace pour discuter avec Yumi !",
@@ -551,6 +554,27 @@ function phase_2()
         "interact",
         "PNJ",
         "PNJ_YumiCafet",
+    );*/
+
+    let textYumiCafetEclair= [
+        "Bonjour, bienvenue dans la cafet des pros.",
+        "Je suis Yumi journaliste. 8 femmes et hommes qui travaillent dans l'industrie m'ont raconté leurs parcours et les enjeux de leurs métiers.",
+        "Vous avez bien 5 minutes pour découvrir l'usinage ou l'inconel ?",
+        "Ah ! J’ai autre chose à vous dire, bien joué, j’ai un ⚡️  pour vous ! Ne le dites à personne, il vous permet de participer au jeu-concours directement sans avoir à finaliser la quête, bravo, et bonne chance ! ",
+    ];
+    let YumiCafetEclair = new PopUpVideoAction(
+        "Interactions/DinningRoom/YumiCafet",
+        "Appuyez sur espace pour discuter avec Yumi !",
+        textYumiCafetEclair,
+        textYumiCafetEclair,
+        "YumiCafetText",
+        formLink,
+        () => {
+            return true;
+        },
+        "interact",
+        "PNJ",
+        "PNJ_YumiCafet"
     );
 }
 
