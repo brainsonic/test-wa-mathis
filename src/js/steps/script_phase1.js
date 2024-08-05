@@ -1,8 +1,6 @@
 import {} from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, ItemOnLayer, ItemPickUpOnCondition, PopUpVideoAction, onTpCondition, tutorial, onEnterAuthorization, getVariableOnZone, createVariableWA, trapLayer} from '../class';
 
-import { formLink } from '../script';
-
 function phase_1()
 {
     const pongLink = "https://64ix.github.io/WA-Edited-Tutorial/pong.html";
@@ -18,7 +16,6 @@ function phase_1()
     const linkVideoMoonbike = "https://www.youtube.com/embed/eE3kWcMZsuE";
     const linkVideo = "https://www.youtube.com/embed/videoseries?si=wKcics6QWpDWdVob&amp;list=PLEe-8ZKtOy6Oxx1qU_qRhdcBmy-lXBtqQ";
     const linkVideoMagaly = "https://www.youtube.com/embed/bIG_XU7XRbw?si=ADidl-gwJ42Jh5kB";
-
 
     const textCaptain = [
         "Ahoy !",
@@ -57,15 +54,6 @@ function phase_1()
         "C'est très pratique, vous verrez."
     ];
 
-    const textScientifiqueEclair = [
-        "Bienvenue à vous, je suis la scientifique de la bande.",
-        "Ce que j’adore, c’est trouver des solutions pour améliorer la vie de chacun.",
-        "J’ai mis au point les transporteurs que vous verrez un peu partout sur l’île.",
-        "Pour les essayer, il suffit de se placer dessus afin de se téléporter d’une pièce à l’autre.",
-        "C'est très pratique, vous verrez.",
-        "Ah ! J’ai autre chose à vous dire, bien joué, j’ai un ⚡️ pour vous ! Ne le dites à personne, il vous permet de participer au jeu-concours directement sans avoir à finaliser la quête, bravo, et bonne chance ! "
-    ];
-
     let Accueil = new Modal(
         "Interactions/pnj1",
         "Appuyez sur espace pour discuter avec Yumi !",
@@ -96,30 +84,15 @@ function phase_1()
         "PNJ_Skieuse"
     );
         
-    let ScientifiqueEclair = new PopUpVideoAction(
+    let Scientifique = new Dialog(
         "Interactions/pnj5",
         "Appuyez sur espace pour discuter avec la Scientifique !",
-        textScientifiqueEclair,
-        textScientifiqueEclair,
-        "pnj5text",
-        formLink,
-        () => {
-            return true;
-        },
-        "interact",
-        "PNJ",
-        "PNJ_Scientifique" 
-    );
-    /*
-    let Scientifique = new Dialog(
-        "Interactions/pnj5sd",
-        "Appuyez sur espace pour discuter avec la Scientifique !",
         textScientifique,
-        "pnj5text2",
+        "pnj5text",
         "interact",
         "PNJ",
         "PNJ_Scientifique"
-    );*/
+    );
 
     let Ingénieure = new Modal(
         "Interactions/pnj6",

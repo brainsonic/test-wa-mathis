@@ -1,6 +1,5 @@
 import {} from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 import { Interaction, InteractAction, Dialog, Modal, ModalAction, PopUpVideo, ItemOnLayer, ItemPickUpOnCondition, PopUpVideoAction, onTpCondition, tutorial, onEnterAuthorization, getVariableOnZone, createVariableWA, trapLayer} from '../class';
-import { formLink } from '../script';
 
 function phase_3()
 {
@@ -607,7 +606,6 @@ function phase_3()
         "PNJ_YumiStep4",
     );
 
-    /* A remettre pour le 1e 14 aout 2024
     let redButtonForm = new InteractAction(
         "Step4/Last/Redbutton",
         "Appuyez sur espace pour sauver Rayonance !",
@@ -640,38 +638,7 @@ function phase_3()
         "interact",
         "Form",
         "Formulaire_final"
-    );*/
-
-    // A enlever pour le 1e 14 aout 2024
-    let textredButtonFormEclair = [
-        "Bravo !!!",
-        "Vous avez réussi.",
-        "Rayonance est en sécurité et notre monde est sauvé.",
-        "Vous êtes notre héros.",
-        "L'aventure dans le Monde de Yumi ne s'arrête pas là.",
-        "Continuez à vous balader dans les différentes salles grâce au transporteur situé dans la prochaine pièce.",
-        "Les professionnels de l'industrie qui peuplent ce monde vous attendent pour vous parler de leurs métiers et de leurs projets passionnants !",
-        "Pour vous remercier, n'hésitez pas à remplir ce formulaire pour participer à notre jeu-concours et tenter de gagner un iphone et plein d'autres cadeaux."
-        ];
-    let redButtonFormEclair = new PopUpVideoAction(
-        "Step4/Last/Redbutton",
-        "Appuyez sur espace pour sauver Rayonance !",
-        textredButtonFormEclair,
-        textredButtonFormEclair,
-        "redButtonTxt",
-        formLink,
-        () => {
-            createVariableWA("GameFinished");
-            WA.room.hideLayer('Step4/Last/ButtonNotPressed');
-            WA.room.hideLayer('Step4/Last/ButtonNotPressedAnimation');
-            return true;
-        },
-        "interact",
-        "Form",
-        "Formulaire_final"
     );
-
-    // A enlever pour le 1e 14 aout 2024
 
     let technophobys = new Dialog(
         'Step4/Last/ButtonNotPressed',

@@ -325,7 +325,7 @@
                         {
                          "name":"exitUrl",
                          "type":"string",
-                         "value":"map.tmj#from-conference"
+                         "value":"#from-conference"
                         }],
                  "rotation":0,
                  "visible":true,
