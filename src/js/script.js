@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   WA.room.onLeaveLayer("Zones/StartingPoint").subscribe(() => {
+    console.log("Opening starting popup...")
     // open modal
     WA.ui.modal.openModal({
       title: "Popup",
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       allowApi: !0,
       position: "center",
     });
+    console.log("Popup opened...")
     tracking();
   });
 
