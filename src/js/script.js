@@ -11,6 +11,7 @@ const tutorialLink = "https://64ix.github.io/WA-Edited-Tutorial/tutorial.html";
 //ZONE OUTGATE INFO
 const popupLink = "https://brainsonic.github.io/UIMM-WA-Extras/popupSansPlay.html";
 const textOutGate = "Vous êtes sorti de la gare";
+export const formLink = "https://0eb89b36.sibforms.com/serve/MUIFAMTWQq_m3rCQrgfnBO8-HUshniX2rebB99OuvGmVKli0cw-cqIAuuXmPLAf59d5fr3da55Y6I8vGYtYzUJYlP7Y1Fyqerb7hzo1g46RIoDQctc_3J1eAnLxeaf9_TDTFVFtxgL-yPG4vYXJyDTYTY91roQ8Dc_iPWu5Mk4jex5m-RA-4UEf_3X7zhPuKy2UIZmyYxyp7AEPK";
 
 // SETUP ///////////////////////////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
