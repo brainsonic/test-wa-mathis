@@ -23,6 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
     WA.controls.disableWebcam();
   });
 
+
+  let openInfoPopup = false; //Check if the popUp is already open
+  WA.room.onLeaveLayer("Zones/OutGate").subscribe(() => {
+      tracking();
+  });
+
   
   phase_1();
   phase_2();
