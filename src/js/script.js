@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     WA.controls.disableWebcam();
   });
 
-  WA.room.onLeaveLayer("Zones/StartingPoint").subscribe(() => {
+  WA.room.onLeaveLayer("StartingPoint").subscribe(() => {
     console.log("Opening starting popup...")
     // open modal
     WA.ui.modal.openModal({
