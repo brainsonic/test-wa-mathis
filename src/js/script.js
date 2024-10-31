@@ -23,6 +23,20 @@ document.addEventListener('DOMContentLoaded', () => {
     WA.controls.disableWebcam();
   });
 
+  WA.room.onLeaveLayer("StartingPoint").subscribe(() => {
+    console.log("Opening starting popup...")
+    // open modal
+    WA.ui.modal.openModal({
+      title: "Popup",
+      src: popupLink,
+      allow: "fullscreen; clipboard-read;",
+      allowApi: !0,
+      position: "center",
+    });
+    console.log("Popup opened...")
+    tracking();
+  });
+
   
   phase_1();
   phase_2();
