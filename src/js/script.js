@@ -22,13 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     WA.controls.disableMicrophone();
     WA.controls.disableWebcam();
   });
-
-
-  let openInfoPopup = false; //Check if the popUp is already open
-  WA.room.onLeaveLayer("Zones/OutGate").subscribe(() => {
-      tracking();
-  });
-
+  
   WA.room.onLeaveLayer("Zones/StartingPoint").subscribe(() => {
     // open modal
     WA.ui.modal.openModal({
