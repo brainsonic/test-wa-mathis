@@ -610,7 +610,6 @@ function phase_3()
     let redButtonForm = new InteractAction(
         "Step4/Last/Redbutton",
         "Appuyez sur espace pour sauver Rayonance !",
-        formLink,
         [
         "Bravo !!!",
         "Vous avez réussi.",
@@ -631,6 +630,7 @@ function phase_3()
             "Pour vous remercier, n'hésitez pas à remplir ce formulaire pour participer à notre jeu-concours et tenter de gagner une Nintendo switch et plein d'autres cadeaux."
             ],
         "redButtonTxt",
+        formLink,
         () => {
             createVariableWA("GameFinished");
             WA.room.hideLayer('Step4/Last/ButtonNotPressed');
