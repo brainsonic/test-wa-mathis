@@ -29,6 +29,18 @@ document.addEventListener('DOMContentLoaded', () => {
       tracking();
   });
 
+  WA.room.onLeaveLayer("Zones/StartingPoint").subscribe(() => {
+    // open modal
+    WA.ui.modal.openModal({
+      title: "Popup",
+      src: popupLink,
+      allow: "fullscreen; clipboard-read;",
+      allowApi: !0,
+      position: "center",
+    });
+    tracking();
+  });
+
   
   phase_1();
   phase_2();
