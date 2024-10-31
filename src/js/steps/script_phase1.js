@@ -51,7 +51,8 @@ function phase_1()
         "Ce que j’adore, c’est trouver des solutions pour améliorer la vie de chacun.",
         "J’ai mis au point les transporteurs que vous verrez un peu partout sur l’île.",
         "Pour les essayer, il suffit de se placer dessus afin de se téléporter d’une pièce à l’autre.",
-        "C'est très pratique, vous verrez."
+        "C'est très pratique, vous verrez.",
+        "Ah ! J’ai autre chose à vous dire, bien joué, j’ai un ⚡️pour vous ! Ne le dites à personne, il vous permet de participer au jeu-concours directement sans avoir à finaliser la quête, bravo, et bonne chance !"
     ];
 
     let Accueil = new Modal(
@@ -83,12 +84,14 @@ function phase_1()
         "PNJ",
         "PNJ_Skieuse"
     );
-        
-    let Scientifique = new Dialog(
+
+    let scienfiqueLink = "https://0eb89b36.sibforms.com/serve/MUIFANY_JLwqJR5cqCev_yJX9BfhJE7CVsQdK6ZY9WXlSHsQP9a[…]4C6Th5_VkfAzhkW55kkDBpnweiVBsLDwInXe5FZzaFgbDkCPGs_mmBBJC5";
+    let Scientifique = new PopUpVideo(
         "Interactions/pnj5",
         "Appuyez sur espace pour discuter avec la Scientifique !",
         textScientifique,
         "pnj5text",
+        scienfiqueLink,
         "interact",
         "PNJ",
         "PNJ_Scientifique"
