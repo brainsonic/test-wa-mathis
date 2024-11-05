@@ -22,18 +22,32 @@ document.addEventListener('DOMContentLoaded', () => {
     WA.controls.disableMicrophone();
     WA.controls.disableWebcam();
   });
+  let isOnStartingPointDoor = false;
+
+  WA.room.onLeaveLayer("StartingPointDoor").subscribe(() => {
+    isOnStartingPointDoor = true;
+    console.log("Player left StartingPointDoor");
+  });
+
+  WA.room.onEnterLayer("StartingPointDoor2").subscribe(() => {
+    isOnStartingPointDoor = false;
+    console.log("Player is on StartingPointDoor2");
+  });
 
   WA.room.onLeaveLayer("StartingPoint").subscribe(() => {
-    console.log("Opening starting popup...")
-    // open modal
-    WA.ui.modal.openModal({
-      title: "Popup",
-      src: popupLink,
-      allow: "fullscreen; clipboard-read;",
-      allowApi: !0,
-      position: "center",
-    });
-    console.log("Popup opened...")
+    if (isOnStartingPointDoor) {
+      console.log("Opening starting popup...")
+      // open modal
+      WA.ui.modal.openModal({
+        title: "Popup",
+        src: popupLink,
+        allow: "fullscreen; clipboard-read;",
+        allowApi: !0,
+        position: "center",
+      });
+      console.log("Popup opened...")
+    }
+
     tracking();
   });
 
