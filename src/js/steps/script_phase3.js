@@ -615,21 +615,20 @@ function phase_3()
         "L'aventure dans le Monde de Yumi ne s'arrête pas là.",
         "Continuez à vous balader dans les différentes salles grâce au transporteur situé dans la prochaine pièce.",
         "Les professionnels de l'industrie qui peuplent ce monde vous attendent pour vous parler de leurs métiers et de leurs projets passionnants !",
-        "Pour vous remercier, n'hésitez pas à remplir ce formulaire pour participer à notre jeu-concours et tenter de gagner une Nintendo switch et plein d'autres cadeaux."
     ];
-    let redButtonFormEclair = new PopUpVideoAction(
+    let redButtonForm = new InteractAction(
         "Step4/Last/Redbutton",
         "Appuyez sur espace pour sauver Rayonance !",
         textredButtonFormEclair,
         textredButtonFormEclair,
         "redButtonTxt",
-        formLink,
         () => {
             createVariableWA("GameFinished");
             WA.room.hideLayer('Step4/Last/ButtonNotPressed');
             WA.room.hideLayer('Step4/Last/ButtonNotPressedAnimation');
             return true;
         },
+        "right",
         "interact",
         "Form",
         "Formulaire_final"
