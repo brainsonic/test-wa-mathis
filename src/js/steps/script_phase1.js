@@ -52,7 +52,6 @@ function phase_1()
         "J’ai mis au point les transporteurs que vous verrez un peu partout sur l’île.",
         "Pour les essayer, il suffit de se placer dessus afin de se téléporter d’une pièce à l’autre.",
         "C'est très pratique, vous verrez.",
-        "Ah ! J’ai autre chose à vous dire, bien joué, j’ai un ⚡️pour vous ! Ne le dites à personne, il vous permet de participer au jeu-concours directement sans avoir à finaliser la quête, bravo, et bonne chance !"
     ];
 
     let Accueil = new Modal(
@@ -85,13 +84,12 @@ function phase_1()
         "PNJ_Skieuse"
     );
 
-    let scienfiqueLink = "https://0eb89b36.sibforms.com/serve/MUIFANY_JLwqJR5cqCev_yJX9BfhJE7CVsQdK6ZY9WXlSHsQP9akteNwpJWGJ06PcwOqtb2lu99aJPKOHxbSgXIddTBkSWtak8TVdIvaDbwjawxKV4JbrxJxfyoyZLry1u4CHsZdCTkyMROC5PcjPT4C6Th5_VkfAzhkW55kkDBpnweiVBsLDwInXe5FZzaFgbDkCPGs_mmBBJC5";
-    let Scientifique = new PopUpVideo(
+    //let scienfiqueLink = "https://0eb89b36.sibforms.com/serve/MUIFANY_JLwqJR5cqCev_yJX9BfhJE7CVsQdK6ZY9WXlSHsQP9akteNwpJWGJ06PcwOqtb2lu99aJPKOHxbSgXIddTBkSWtak8TVdIvaDbwjawxKV4JbrxJxfyoyZLry1u4CHsZdCTkyMROC5PcjPT4C6Th5_VkfAzhkW55kkDBpnweiVBsLDwInXe5FZzaFgbDkCPGs_mmBBJC5";
+    let Scientifique = new Modal(
         "Interactions/pnj5",
         "Appuyez sur espace pour discuter avec la Scientifique !",
         textScientifique,
         "pnj5text",
-        scienfiqueLink,
         "interact",
         "PNJ",
         "PNJ_Scientifique"
